@@ -9,8 +9,8 @@ draft: false
 ---
 
 
-El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2021-01-spring/unit03/dc-class01).
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2021-04-CalculoDiferencial/AU-sesion-01).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2021-01-spring/unit03/dc-class01", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2021-04-CalculoDiferencial/AU-sesion-01", ratio = "4:3")
 ```
