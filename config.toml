@@ -120,11 +120,11 @@ enableEmoji = true
     title = "Cálculo Diferencial"
     url = "/calculo-diferencial/"
     weight = 4
-  [[menu.header]]
-    name = "Slides"
-    title = "Slides"
-    url = "/slides/"
-    weight = 5
+  #[[menu.header]]
+  #  name = "Slides"
+  #  title = "Slides"
+  #  url = "/slides/"
+  #  weight = 5
     
   # Configure footer  
   #[[menu.footer]]

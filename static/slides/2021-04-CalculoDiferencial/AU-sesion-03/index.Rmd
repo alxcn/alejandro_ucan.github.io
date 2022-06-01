@@ -1,0 +1,118 @@
+---
+title: "Desigualdades"
+subtitle: "Sesión 03"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#f6b26b",
+  secondary_color = "#fc8100",
+  inverse_header_color = "#5E4701"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Conocer las propiedades de orden. <br/> <br/>
+ * Reducir desigualdades. <br/> <br/>
+ * Describir un conjunto solución a una desigualdad.
+
+---
+# Propiedades de Orden
+
+- (__Propiedad Transitiva__) Si $a>b$ y $b>c$ entonces $a>c.$ <br><br><br>
+Supongamos que $a,b,c,d\in \mathbb{R}.$ <br>
+- (__Monotonía suma__) Si $a<b,$ entonces $a+c<b+c.$ <br> <br><br>
+- (__Monotonía producto__) Si $a<b$ y $c>0,$ entonces $ac<bc.$ <br><br><br>
+- (__Inversión producto__) Si $a<b$ y $c<0,$ entonces $ac>bc.$ <br><br><br>
+
+- (__Monotonía suma 2__) Si $a<b$ y $c<d,$ entonces $a+c<b+d.$
+---
+# Solución de una Desigualdad
+
+> <span style="font-size:30px"> Dada una desigualdad de números reales, la solución es el __conjunto__ de números que satisfacen la desigualdad.
+
+__Por ejemplo:__ Consideremos los números mayores que -5 pero menores que 17. 
+
+Esto se traduce a los números $x\in \mathbb{R}$ tales que $-5 < x$ y $x < 17.$ Es decir, 
+
+<span style="font-size:25px"> $$\{x\in \mathbb{R}: -5 < x < 17\}.$$
+
+__Por ejemplo:__ Consideremos los números $x$ tales que satisfacen: $x+3<5.$
+
+> Usemos la propiedad Monotonía Suma:
+$x+3<5$ es equivalente a $x+3+ (-3) < 5+ (-3)$
+
+---
+# Ejemplos
+
+__Por ejemplo:__ Consideremos los números $x$ tales que satisfacen: $4\leq 3x-2.$
+
+> Usamos la propiedad de Monotonía Suma:
+
+<br/> <br/> <br/> <br/> <br/>
+
+> Usamos la propiedad de Monotonía Producto:
+
+<br/> <br/> <br/> <br/> <br/>
+
+> El __conjunto solución es:__
+---
+# Ejemplos
+
+__Por ejemplo:__ Consideremos los números $x$ tales que satisfacen: $2+3x<5x+8.$
+
+> Usamos 2 veces la propiedad de Monotonía Suma:
+
+<br/> <br/> <br/> <br/> <br/> 
+
+> Usamos la propiedad Monotonía Producto: Notemos que 2>0.
+
+<br/> <br/> <br/> <br/> <br/> 
+
+> El __conjunto solución es:__
+
+---
+# Ejemplos
+
+__Por ejemplo:__ Consideremos los números $x$ tales que satisfacen: $4<3x-2\leq 10.$
+
+> Usamos 2 veces la propiedad de Monotonía Suma:
+
+<br/> <br/> <br/> <br/> <br/> 
+
+> Usamos la propiedad Monotonía Producto: Notemos que 2>0.
+
+<br/> <br/> <br/> <br/> <br/> 
+
+> El __conjunto solución es:__

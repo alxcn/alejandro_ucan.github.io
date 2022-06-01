@@ -1,0 +1,16 @@
+---
+title: "Sesion 1: Los números reales y su clasificación."
+weight: 1
+subtitle: ""
+excerpt: "Los números reales"
+date: '31-05-2022'
+slug: AU-sesion-01
+draft: false
+---
+
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2021-01-spring/unit03/dc-class01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2021-01-spring/unit03/dc-class01", ratio = "4:3")
+```
