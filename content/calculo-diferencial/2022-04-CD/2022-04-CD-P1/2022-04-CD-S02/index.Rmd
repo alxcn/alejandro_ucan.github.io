@@ -3,7 +3,7 @@ title: "Sesión 2: Conjuntos e Intervalos."
 weight: 2
 subtitle: ""
 excerpt: "Conjuntos e Intervalos"
-date: '31-05-2022'
+date: "31-05-2022"
 slug: AU-sesion-02
 draft: false
 ---
