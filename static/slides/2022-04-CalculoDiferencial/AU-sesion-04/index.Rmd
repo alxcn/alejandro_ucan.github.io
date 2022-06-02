@@ -1,0 +1,98 @@
+---
+title: "Desigualdades racionales"
+subtitle: "Sesión 04"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#f6b26b",
+  secondary_color = "#fc8100",
+  inverse_header_color = "#5E4701"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Distinguir cuando una desigualdad es racional. <br/> <br/>
+ * Reducir desigualdades racionales. <br/> <br/>
+ * Describir un conjunto solución a una desigualdad racional.
+
+---
+# Desigualdades Racionales
+
+Una __desigualdad racional__ es una desigualdad que involucre variables que estén en cocientes. 
+
+__Por ejemplo:__ $\frac{7}{x}<2$ o $\frac{3-x}{2+x}>4.$
+
+> __Importante:__ Recuerda que en un cociente el denominador (la parte de abajo de la fracción) __NO__ puede ser igual a cero.
+
+---
+# Solución de una desigualdad Racional
+
+En el ejemplo $\frac{7}{x}<2,$ notemos que el denominador es $x$ y este tiene que se diferente de cero. De aquí obtenemos dos casos:
+<br/><br/>
+
+> _Caso 1:_ $x>0$
+
+<br/><br/><br/><br/>
+
+> _Caso 2:_ $x<0$
+
+<br/><br/><br/><br/>
+La solución es:
+---
+# Solución de una desigualdad Racional
+__Ejemplo:__ $\frac{x}{x-3}<4,$ notemos que el denominador es $x-3$ y este tiene que se diferente de cero. De aquí obtenemos dos casos:
+<br/><br/>
+
+> _Caso 1:_ $x-3>0$
+
+<br/><br/><br/><br/>
+
+> _Caso 2:_ $x-3<0$
+
+<br/><br/><br/><br/>
+La solución es:
+---
+# Solución de una desigualdad Racional
+En el ejemplo $\frac{3-x}{2+x}>4,$ notemos que el denominador es $2+x$ y este tiene que se diferente de cero. De aquí obtenemos dos casos:
+<br/><br/>
+
+> _Caso 1:_ $2+x>0$
+
+<br/><br/><br/><br/>
+
+> _Caso 2:_ $2+x<0$
+
+<br/><br/><br/><br/>
+La solución es:

@@ -1,0 +1,21 @@
+---
+title: "Sesión 7: Funciones"
+weight: 7
+subtitle: "¿cómo se grafican?"
+excerpt: "funciones 2"
+date: '31-05-2022'
+slug: AU-sesion-07
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:
+
+ * Aprender a evaluar una función. <br/> <br/>
+ * Realizar una tabulación para una función. <br/> <br/>
+ * Realizar la gráfica asociada a una función. <br/> <br/>
+ 
+El contenido para la **Sesión 07** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-07).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-07", ratio = "4:3")
+```
