@@ -77,9 +77,9 @@ Consideremos los siguientes conjuntos: $A=\{2,4,6,8,10,12\}$, $B\{1,4,9,16\},$ y
 
 > La _unión_ de $B$ y $C$ es un nuevo conjunto, denotado $B\cup C$ que consta de los elementos de $B$ "más" los de $C.$
 
-$$ A\cup C= \{1,2,4,9,10,16\}.$$
+$$ B\cup C= \{1,2,4,9,10,16\}.$$
 <br/> <br/>
-> La _intersección_ de $A$ y $B$ es un núevo conjunto, denotado $A\cap B,$ que consta de los elementos que están en $A$ y $B$ (al mismo tiempo).
+> La _intersección_ de $A$ y $B$ es un nuevo conjunto, denotado $A\cap B,$ que consta de los elementos que están en $A$ y $B$ (al mismo tiempo).
 
 $$ A\cap B =\{4\}.$$
 ---
@@ -146,6 +146,6 @@ __Ejemplo 2:__ Sea $S$ el conjunto de números reales mayores o iguales que $3$ 
 <br/><br/>
 __Ejemplo 3:__ Sea $S$ el conjunto de números reales mayores o iguales que $3$ y menores que $10,$ y se denota por $[3,10)$ conocido como __intervalo semi-abierto__.
 <br/><br/>
-__Ejemplo 4:__ Sea $S$ el conjunto de números reales mayores que $3$ y se denota por $[3,\infty)$ conocido como __rayo__. Otros ejemplos son: $(3,\infty),\, (-\infty, 3),\,(-\infty,3].$  
+__Ejemplo 4:__ Sea $S$ el conjunto de números reales mayores que $3$ y se denota por $(3,\infty)$ conocido como __rayo__. Otros ejemplos son: $[3,\infty),\, (-\infty, 3),\,(-\infty,3].$  
 ---
  

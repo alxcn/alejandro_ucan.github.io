@@ -136,7 +136,7 @@ los decimales tienen un fin, _por ejemplo:_ $2.36=\frac{236}{100},$ $-0.003251=-
 
 los decimales no tiene un fin, pero tienen un patrón bien definido, _por ejemplo:_ $0.333...=\frac{1}{3},$ y $-0.549549549549...=-\frac{61}{111}.$
 
-> Los dos anteriores son parte de los números racionales.
+> <span style="font-size:30px"> Los dos anteriores son parte de los números racionales.
 
 ---
 # Los Irracionales
@@ -149,8 +149,6 @@ los decimales no tiene un fin, pero tienen un patrón bien definido, _por ejempl
 .pull-right[
 
 - Son números que __NO__ se pueden representar como el _cociente_ de dos __enteros__.
-
-- Asociadas con cantidades fraccionarias ya sean positivas o negativas.
 
 - Problemente conozcas algunos cómo: $\pi,$ $\sqrt{2},$ and $e$.
 
@@ -185,9 +183,7 @@ print(m.e)
 
 
 ---
-# Actividad de Clase: 
 
-### Checa las propiedades de los números reales y descifra en que conjunto se encuentra.
 
 
 
