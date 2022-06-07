@@ -1,8 +1,8 @@
 ---
-title: "Sesión 3: Desigualdades"
+title: "Sesión 3: Inecuaciones"
 weight: 3
 subtitle: ""
-excerpt: "Desigualdades"
+excerpt: "Inecuaciones"
 date: '31-05-2022'
 slug: AU-sesion-03
 draft: false
@@ -11,8 +11,8 @@ draft: false
 En la Sesión uno trabajaremos con los objetivos:
 
  * Conocer las propiedades de orden. <br/> <br/>
- * Reducir desigualdades. <br/> <br/>
- * Describir un conjunto solución a una desigualdad.
+ * Reducir inecuaciones. <br/> <br/>
+ * Describir un conjunto solución a una inecuación.
 
 
 El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-03).

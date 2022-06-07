@@ -1,5 +1,5 @@
 ---
-title: "Desigualdades"
+title: "Inecuaciones"
 subtitle: "Sesión 03"  
 author: 
   - "Alejandro Ucan"
@@ -44,8 +44,8 @@ xaringanExtra::use_scribble()
 # Objetivos:
 
  * Conocer las propiedades de orden. <br/> <br/>
- * Reducir desigualdades. <br/> <br/>
- * Describir un conjunto solución a una desigualdad.
+ * Reducir inecuaciones. <br/> <br/>
+ * Describir un conjunto solución a una inecuación.
 
 ---
 # Propiedades de Orden
@@ -58,7 +58,7 @@ Supongamos que $a,b,c,d\in \mathbb{R}.$ <br>
 
 - (__Monotonía suma 2__) Si $a<b$ y $c<d,$ entonces $a+c<b+d.$
 ---
-# Solución de una Desigualdad
+# Solución de una Inecuación
 
 > <span style="font-size:30px"> Dada una desigualdad de números reales, la solución es el __conjunto__ de números que satisfacen la desigualdad.
 

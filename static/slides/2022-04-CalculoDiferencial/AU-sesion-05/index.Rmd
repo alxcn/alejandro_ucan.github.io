@@ -1,5 +1,5 @@
 ---
-title: "Desigualdades cuadráticas"
+title: "Inecuaciones cuadráticas"
 subtitle: "Sesión 05"  
 author: 
   - "Alejandro Ucan"
@@ -43,21 +43,21 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Determinar cuando una desigualdad es cuadrática. <br/> <br/>
- * Reducir desigualdades cuadráticas. <br/> <br/>
- * Describir un conjunto solución a una desigualdad cuadrática.
+ * Determinar cuando una inecuación es cuadrática. <br/> <br/>
+ * Reducir inecuaciones cuadráticas. <br/> <br/>
+ * Describir un conjunto solución a una inecuación cuadrática.
 
 ---
 # Desigualdades Racionales
 
-Una __desigualdad cuadrática__ es una desigualdad que involucre una expresión igual a un polinomio de grado dos.
+Una __inecuación cuadrática__ es una desigualdad que involucre una expresión igual a un polinomio de grado dos.
 
 __Por ejemplo:__ $x^2-2<2$ o $x^2+2x>15.$
 
 > __Importante:__ Para este tipo de desigualdades es importante dejarlas hacia a una desigualdad con cero, es decir, $>0$ o $<0.$
 
 ---
-# Solución de una desigualdad Cuadrática
+# Solución de una inecuación Cuadrática
 
 En el ejemplo $x^2-2<2,$ no comparamos con cero, por lo que hay que dejarla en la forma usual.
 <br/><br/>
@@ -71,7 +71,7 @@ En el ejemplo $x^2-2<2,$ no comparamos con cero, por lo que hay que dejarla en l
  Por la regla de los signos sabemos que para que un producto sea negativo debemos tener signos distintos. De donde obtenemos casos:
 
 ---
-# Solución de una desigualdad Cuadrática
+# Solución de una inecuación Cuadrática
 
 > __Caso 1:__ $x+2<0$ y $x-2>0$
 
@@ -80,7 +80,7 @@ En el ejemplo $x^2-2<2,$ no comparamos con cero, por lo que hay que dejarla en l
 > __Caso 2:__ $x+2>0$ y $x-2<0$
 
 ---
-# Solución de una desigualdad cuadrática
+# Solución de una inecuación cuadrática
 
 __Ejemplo:__ Encontrar el conjunto donde es válida $$x^2+2x>15.$$
 

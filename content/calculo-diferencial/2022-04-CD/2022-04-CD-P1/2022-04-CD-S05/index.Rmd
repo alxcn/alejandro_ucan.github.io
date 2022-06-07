@@ -1,8 +1,8 @@
 ---
-title: "Sesión 5 Desigualdades cuadráticas: ."
+title: "Sesión 5: Inecuaciones cuadráticas: ."
 weight: 5
 subtitle: ""
-excerpt: "desigualdades cuadraticas"
+excerpt: "inecuaciones cuadraticas"
 date: '31-05-2022'
 slug: AU-sesion-05
 draft: false
@@ -10,9 +10,9 @@ draft: false
 
 En la Sesión uno trabajaremos con los objetivos:
 
-* Determinar cuando una desigualdad es cuadrática. <br/> <br/>
- * Reducir desigualdades cuadráticas. <br/> <br/>
- * Describir un conjunto solución a una desigualdad cuadrática.
+* Determinar cuando una inecuación es cuadrática. <br/> <br/>
+ * Reducir inecuaciones cuadráticas. <br/> <br/>
+ * Describir un conjunto solución a una inecuación cuadrática.
 
 El contenido para la **Sesión 05** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-05).
 
