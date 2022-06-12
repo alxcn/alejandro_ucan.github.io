@@ -99,8 +99,11 @@ ggplot(pressure, aes(x = temperature, y = pressure)) +geom_line()
 
 > <span style="font-size:30px"> El rango de una función es el subconjunto del codominio que consiste en todos los posibles valores que se puedan obtener para cada elemento de $D.$
 
- $$ Im(f)=\left\{f(x)\in Y: x\in D\right\} $$
+ $$ Im(f) = \{ f ( x ) \in Y : x \in D \} .$$
+Nota: en el conjunto anterior debemos poner llaves $(\{,\}),$ así que no los olviden. El programa no quiso ponerlos.
 
+
+Nota 2: El rango puede coincidir con el codominio.
 ---
 # Ejemplo:
 
@@ -108,10 +111,13 @@ ggplot(pressure, aes(x = temperature, y = pressure)) +geom_line()
 <span style="font-size:35px"> $$f(r)=2 \pi r$$
 
 <br/>
-* <span style="font-size:30px"> __Dominio:__
+* <span style="font-size:30px"> __Dominio:__ $[0,\infty).$
 <br/><br/><br/>
-* .pull-left[<span style="font-size:30px"> __Codominio:__]
-.pull-right[<span style="font-size:30px"> __Rango:__]
+* <span style="font-size:30px"> __Codominio:__ $[0,\infty).$ 
+
+* <span style="font-size:30px"> __Rango:__ $[0,\infty).$ 
+
+
 
 ---
 # Visualizar funciones:

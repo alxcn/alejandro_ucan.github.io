@@ -4,9 +4,9 @@
     <title>Inecuaciones racionales</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-06-06" />
+    <meta name="date" content="2022-06-12" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c540e2423aff4095a2d1ff1da6f720f6","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"e01a3bffa4924b77b8204aa8ae867bb2","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-06-06
+### 2022-06-12
 ]
 
 ---
@@ -63,29 +63,61 @@ __Por ejemplo:__ `\(\frac{7}{x}&lt;2\)` o `\(\frac{3-x}{2+x}&gt;4.\)`
 En el ejemplo `\(\frac{7}{x}&lt;2,\)` notemos que el denominador es `\(x\)` y este tiene que se diferente de cero. De aquí obtenemos dos casos:
 &lt;br/&gt;&lt;br/&gt;
 
-&gt; _Caso 1:_ `\(x&gt;0\)`
+&gt; _Caso 1:_ `\(x&gt;0.\)` Cómo `\(x&gt;0\)` podemos usar monotonía producto para desahecernos del denominador.
 
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+$$
+\frac{7}{x}\color{red}{x} &lt; 2\color{red}{x}
+$$
 
-&gt; _Caso 2:_ `\(x&lt;0\)`
+$$
+7&lt;2x \iff \frac{7}{2}&lt;x.
+$$
 
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-La solución es:
+En el primer caso, la `\(x\)` debe cumplir `\(x&gt;0\)` y `\(x&gt;\frac{7}{2},\)` es decir, y esto sucede cuando `\(x&gt;\frac{7}{2}.\)`
+
+---
+&gt; _Caso 2:_ `\(x&lt;0.\)` Cómo `\(x&lt;0\)` podemos usar inversión producto para desahecernos del denominador.
+
+$$
+\frac{7}{x}\color{red}{x} \color{green}{&gt;} 2\color{red}{x}
+$$
+
+$$
+7&gt;2x \iff \frac{7}{2}&gt;x.
+$$
+En el segundo caso, la `\(x\)` debe cumplir que `\(x&lt;0\)` y `\(x&lt;\frac{7}{2}&lt;x.\)` Esto sucede cuando `\(x&lt;0.\)`
+
+La solución es: `\((-\infty,0)\cup\left(\frac{7}{2},\infty\right).\)`
 ---
 # Solución de una desigualdad Racional
 __Ejemplo:__ `\(\frac{x}{x-3}&lt;4,\)` notemos que el denominador es `\(x-3\)` y este tiene que se diferente de cero. De aquí obtenemos dos casos:
-&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;
 
-&gt; _Caso 1:_ `\(x-3&gt;0\)`
+&gt; _Caso 1:_ `\(x-3&gt;0.\)` Cómo `\(x-3&gt;0\)` podemos usar monotonía producto para desahecernos del denominador. 
 
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+$$
+\left(\frac{x}{x-3}\right)(\color{red}{x-3}) &lt; 4(\color{red}{x-3})
+$$
+$$
+x&lt; 4x-12 \iff 12&lt;3x \iff 4&lt;x
+$$
 
-&gt; _Caso 2:_ `\(x-3&lt;0\)`
-
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-La solución es:
+Entonces en el primer caso se debe cumplir `\(x-3&gt;0\)` (o lo que es lo mismo `\(x&gt;3\)`) y `\(4&lt;x.\)`  Lo cual ocurre cuando `\(x&gt;4.\)`
 ---
-# Solución de una desigualdad Racional
+&gt; _Caso 2:_ `\(x-3&lt;0.\)` Cómo `\(x-3&lt;0\)` podemos usar inversión producto para desahecernos del denominador. 
+
+$$
+\left(\frac{x}{x-3}\right)(\color{red}{x-3}) \color{green}{&gt;} 4(\color{red}{x-3})
+$$
+$$
+x&gt; 4x-12 \iff 12&gt;3x \iff 4&gt;x
+$$
+Entonces en el segundo caso se debe cumplir `\(x-3&lt;0\)` (o lo que es lo mismo `\(x&lt;3\)`) y `\(4&gt;x.\)`  Lo cual ocurre cuando `\(x&lt;3.\)`
+
+
+La solución es: `\((-\infty,3)\cup (4,\infty).\)`
+---
+# Ahora intentalo tú.
 En el ejemplo `\(\frac{3-x}{2+x}&gt;4,\)` notemos que el denominador es `\(2+x\)` y este tiene que se diferente de cero. De aquí obtenemos dos casos:
 &lt;br/&gt;&lt;br/&gt;
 

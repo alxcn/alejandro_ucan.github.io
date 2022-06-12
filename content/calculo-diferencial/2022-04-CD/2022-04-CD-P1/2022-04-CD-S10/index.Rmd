@@ -1,0 +1,21 @@
+---
+title: "Sesión 10: Modelación con funciones"
+weight: 10
+subtitle: "la vida real a través de funciones"
+excerpt: "modelacion"
+date: '12-06-2022'
+slug: AU-sesion-10
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:
+
+ * Describir la función asociada a un problema de la vida real. <br/> <br/>
+ * Determinar quien es la variable dependiente y quien es la variable independiente. <br/> <br/>
+
+ 
+El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-10).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-10", ratio = "4:3")
+```

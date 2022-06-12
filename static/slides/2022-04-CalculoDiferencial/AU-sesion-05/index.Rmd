@@ -75,9 +75,15 @@ En el ejemplo $x^2-2<2,$ no comparamos con cero, por lo que hay que dejarla en l
 
 > __Caso 1:__ $x+2<0$ y $x-2>0$
 
-<br/><br/><br/><br/>
+Notemos que la solución a cada una de esas ecuaciones es: $x<-2$ y $x>2.$ Con las regiones así
 
-> __Caso 2:__ $x+2>0$ y $x-2<0$
+![Región 1](/Users/koyomi/Documents/GitHub/alejandro_ucan.github.io/static/slides/2022-04-CalculoDiferencial/AU-sesion-05/region1.jpg)
+
+> __Caso 2:__ $x+2>0$ y $x-2<0.$ 
+
+En este caso, la solución a cada una de esas ecuaciones es: $x>-2$ y $x<2.$ Por lo que en este caso, si hay interssión. 
+
+La solución es $(-2,2).$
 
 ---
 # Solución de una inecuación cuadrática

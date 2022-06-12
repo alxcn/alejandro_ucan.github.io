@@ -4,9 +4,9 @@
     <title>Conjuntos e Intervalos</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-06-06" />
+    <meta name="date" content="2022-06-12" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c3a31ce1d3e244ff96e5adad2ae6a297","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x338ee8b44db41749ab6b47e43bd7de9","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-06-06
+### 2022-06-12
 ]
 
 ---
@@ -63,26 +63,32 @@ Algunos elementos:
 - `\(\in\)` denota _"pertenece"_, por lo que `\(2\in S\)` se traduce como: dos pertenece a `\(S.\)` Para denotar la _"no pertenencia"_ usamos `\(\not\in.\)`
 
 ---
-&gt; &lt;span style="font-size:35px"&gt; Por ejemplo: `\(S_1=\{1,2,3,4,5\}.\)`  ¿ `\(3 \,\,\,\,S_1\)` ?
-&lt;br/&gt; &lt;br/&gt;
-&gt; &lt;span style="font-size:35px"&gt; Por ejemplo: `\(S_2=\{p  \in \mathbb{Z}: p \mbox{ es negativo}.\}\)` y `\(20\,\,\,\, S_2.\)`
+&lt;br/&gt;&lt;br/&gt;
+&gt; &lt;span style="font-size:35px"&gt; Por ejemplo: `\(S_1=\{1,2,3,4,5\}.\)`  ¿ `\(3 \,\,\,\,S_1\)` ? Sí, `\(3\color{red}{\in} S_1.\)`
+&lt;br/&gt; &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+&gt; &lt;span style="font-size:35px"&gt; Por ejemplo: `\(S_2=\{p \in \mathbb{Z}: p \mbox{ es negativo}.\}\)` y `\(20\color{red}{\not\in} S_2.\)`
 
-- `\(p\in \mathbb{Z}\)` nos está delimitando donde vamos a encontrar nuestros elementos, y `\(p\)` se le conoce como variable.
+&lt;br/&gt;&lt;br/&gt;
+- `\(p\in \mathbb{Z}\)` nos está delimitando donde vamos a encontrar nuestros elementos, y `\(p\)` se le conoce como variable. &lt;rb/&gt;&lt;br/&gt;
 - Los dos puntos (:) se traducen como _"tal que"_, por lo que el conjunto se leería: los enteros tales que son negativos.
 
 
 ---
 # Operaciones de conjuntos:
 
-Consideremos los siguientes conjuntos: `\(A=\{2,4,6,8,10,12\}\)`, `\(B\{1,4,9,16\},\)` y `\(C=\{2,10\}.\)` 
+Consideremos los siguientes conjuntos: `\(A=\{2,4,6,8,10,12\}\)`, `\(B=\{1,4,9,16\},\)` y `\(C=\{2,10\}.\)` 
 
 &gt; La _unión_ de `\(B\)` y `\(C\)` es un nuevo conjunto, denotado `\(B\cup C\)` que consta de los elementos de `\(B\)` "más" los de `\(C.\)`
 
-$$ B\cup C= \{1,2,4,9,10,16\}.$$
+$$ 
+B\cup C= \{ 1,2,4,9,10,16 \} .
+$$
 &lt;br/&gt; &lt;br/&gt;
+
 &gt; La _intersección_ de `\(A\)` y `\(B\)` es un nuevo conjunto, denotado `\(A\cap B,\)` que consta de los elementos que están en `\(A\)` y `\(B\)` (al mismo tiempo).
 
-$$ A\cap B =\{4\}.$$
+$$ A\cap B = \{ 4 \} .$$
+_Nota:_ En los conjuntos `\(B\cup C\)` y `\(A\cap B\)` debería de salir unas llaves `\(\{,\}\)` pero el programa no quiere que aparezcan, no sé por qué.
 ---
 # Operaciones de Conjuntos:
 

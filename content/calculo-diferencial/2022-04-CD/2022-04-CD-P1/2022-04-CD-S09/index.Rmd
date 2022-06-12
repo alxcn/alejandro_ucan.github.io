@@ -1,0 +1,22 @@
+---
+title: "Sesión 9: Funciones a través de otras funciones"
+weight: 9
+subtitle: "Transformación de funciones"
+excerpt: "transformación de funciones"
+date: '31-05-2022'
+slug: AU-sesion-09
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:
+
+ * Realizar operaciones con funciones. <br/> <br/>
+ * Conocer las condiciones cuando se pueden realizar estas operaciones. <br/> <br/>
+ * Saber como se modifican la grafica de la función mediante operaciones con constantes. <br/> <br/>
+ * Saber cómo realizar la composición de dos funciones.
+ 
+El contenido para la **Sesión 09** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-09).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-09", ratio = "4:3")
+```
