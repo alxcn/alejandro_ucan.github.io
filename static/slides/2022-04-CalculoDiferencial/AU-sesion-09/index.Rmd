@@ -59,9 +59,9 @@ Supongamos que $c>0$ y $y=f(x)$ la expresión de una función. Las siguientes op
 <br/><br/>
 * $y=f(x)-c$ entonces $c$ desplaza la gráfica de $y=f(x)$ unas $c$ unidades hacia abajo.
 <br/><br/>
-* $y=f(x+c)$ entonces $c$ desplaza la gráfica de $y=f(x)$ unas $c$ unidades hacia la derecha.
+* $y=f(x+c)$ entonces $c$ desplaza la gráfica de $y=f(x)$ unas $c$ unidades hacia la izquierda.
 <br/><br/>
-* $y=f(x-c)$ entonces $c$ desplaza la gráfica de $y=f(x)$ unas $c$ unidades hacia la izquierda.
+* $y=f(x-c)$ entonces $c$ desplaza la gráfica de $y=f(x)$ unas $c$ unidades hacia la derecha.
 
 ---
 # Veamos
