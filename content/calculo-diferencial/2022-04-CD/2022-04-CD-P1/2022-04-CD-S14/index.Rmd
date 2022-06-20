@@ -1,0 +1,21 @@
+---
+title: "Sesión 14: Límites infinitos"
+weight: 14
+subtitle: ""
+excerpt: "limites infinitos"
+date: '20-06-2022'
+slug: AU-sesion-14
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:<br/><br/>
+
+ * Determinar cuando un límite es infinito. <br/><br/>
+ * Calcular asíntotas verticales.
+
+ 
+El contenido para la **Sesión 14** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-14).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-14", ratio = "4:3")
+```

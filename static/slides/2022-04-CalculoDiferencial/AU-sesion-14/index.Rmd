@@ -1,6 +1,6 @@
 ---
-title: "Límites"
-subtitle: "Sesión 11"  
+title: "Límites Infinitos"
+subtitle: "Sesión 14"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,241 +43,142 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Conocer la definición de límite. <br/> <br/>
- * Calcular visualmente un límite. <br/> <br/>
- * Conocer la notación de límites. <br/><br/>
- * Conocer las propiedades de límites. <br/><br/>
+ * Determinar cuando un límite es infinito.
+ * Calcular asíntotas verticales.
 
 ---
-# ¿Límite?
-<center>
-![Galleta](http://st2.depositphotos.com/3259223/10718/v/450/depositphotos_107182436-stock-illustration-chocolate-chip-cookies-vector-illustration.jpg)
-<center>
+# Recordemos nuestra función racional predilecta.
 
+$$f(x)=\frac{1}{x}$$
+<iframe src="https://www.geogebra.org/graphing/0?embed" width="900" height="350" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 ---
-# En un ejemplo más concreto.
-<br/>
-> En un monitor cardiaco para medir la frecuencia cardiaca de un paciente después de la cirugía se recopila el número de latidos después de $t$ minutos. Estos latidos están dados por la expresión $$ f(x)=\frac{x^2-25}{x-5}$$
+# ¿Existe el límite de $f(x)$ cuando $x\to 0$?
 
-> Con lo anterior, sabemos que:
-* En el minuto $t=3,$ hay $f(3)=\frac{(3)^2-25}{3-5}=\frac{9-25}{-2}=8.$ <br/><br/>
-* En el minuto $t=4,$ hay $f(4)=\frac{(4)^2-16}{4-5}=\frac{16-25}{-1}=9.$
+> $\displaystyle{\lim_{x\to 0^+}\frac{1}{x}}=+\infty.$ 
 
----
-# ¿Cuántos latidos hay en el minuto $t=5$?
 
-> Evaluando, $$f(5)=\frac{(5)^2-25}{5-5}=\frac{0}{0}!! $$
+> $\displaystyle{\lim_{x\to 0^-}\frac{1}{x}}=-\infty.$
 
 <br/><br/>
-Dado que la división $0/0$ no está definida, no sabemos cual es el valor que le corresponde. 
 
-<span style="font-size:35px"> ¿Qué podemos hacer para conocer el valor (aproximado) del número de latidos en el tiempo $t=5$?
-
----
-# Veamos el _comportamiento_ de la función cerca del 5.
-
-.pull-left[
-
-Menores (pero cercanos) a 5
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("Tiempo","Latidos")
-t<-c(4,4.5,4.9,4.99,4.999,4.9999)
-f<-function(x){
-  (x**2-25)/(x-5)
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
-
-.pull-right[
-Mayores (pero cercanos) a 5
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("Tiempo","Latidos")
-t<-c(5.0001,5.001,5.01,5.1,5.5,6)
-f<-function(x){
-  (x**2-25)/(x-5)
-}
-  
-L<-c(f(5.0001),f(5.001),f(5.01),f(5.1),f(5.5),f(6))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
-<br/>
-¿Qué podemos decir de esto? Que el valor de la función en $t=5$ se acerca a $10.$
+Por lo tanto, $$\lim_{x\to 0}\frac{1}{x}=\mbox{ No existe.}$$
 
 ---
-# El límite
+# Ejemplo 2:
+¿Qué pasa si cambiamos la función a que sea $f(x)=\frac{1}{x^2}$?
 
-> En el ejemplo anterior decimos que el __límite__ de la función $f$ cuando $x$ __tiende__ a $5$ es igual a $10.$  $$ \lim_{x\to 5}f(x)=10.$$
-
----
-# Visualmente
-
-<iframe src="https://www.geogebra.org/graphing/nhhtjetm?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/graphing/0?embed" width="1200" height="350" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 # Ejemplo 2:
 
-Utilicemos una tabla de aproximaciones para calcular el $$\lim_{x\to 1}\frac{x-1}{x^2-1}.$$
+> $\displaystyle{\lim_{x\to 0^+}\frac{1}{x^2}}=+\infty.$ 
 
-.pull-left[
 
-Menores (pero cercanos) a 1
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(0,0.5,0.9,0.99,0.999,0.9999)
-f<-function(x){
-  (x-1)/(x**2-1)
-}
-  
-L<-c(f(0),f(0.5),f(0.9),f(0.999),f(0.9999),f(0.99999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+> $\displaystyle{\lim_{x\to 0^-}\frac{1}{x^2}}=+\infty.$
 
-.pull-right[
-Mayores (pero cercanos) a 1
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(1.0001,1.001,1.01,1.1,1.5,2)
-f<-function(x){
-  (x-1)/(x**2-1)
-}
-  
-L<-c(f(1.00001),f(1.0001),f(1.001),f(1.1),f(1.5),f(2))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+<br/><br/>
 
----
-# Con las tablas anteriores podemos decir:
-
-$$ \lim_{x\to 1} \frac{x-1}{x^2-1} = \color{red}{\frac{1}{2}}.$$
----
-# Visualmente
-
-<iframe src="https://www.geogebra.org/graphing/v4tu6kr7?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+Por lo tanto, $$\lim_{x\to 0}\frac{1}{x}=+\infty.$$
 
 ---
 # Ejemplo 3:
 
-Utilicemos una tabla de aproximaciones para calcular el $$\lim_{x\to -3}x^3-2x+1.$$
+Encuentra el valor de: $$ \lim_{x\to 1}\frac{1-3x^2}{x^3-3x^2+3x-1}.$$
 
-.pull-left[
+__Solución:__
 
-Mayores (pero cercanos) a -3
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-2,-2.5,-2.9,-2.99,-2.999,-2.9999)
-f<-function(x){
-  x**3-2*x+1
-}
-  
-L<-c(f(-2),f(-2.5),f(-2.9),f(-2.999),f(-2.9999),f(-2.99999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+1. Evaluamos $x=1$ en la función, $$\frac{1-3(1)^2}{(1)^3-3(1)^2+3(1)-1}=\frac{2}{0}.$$
 
-.pull-right[
-Menores (pero cercanos) a -3
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-3.0001,-3.001,-3.01,-3.1,-3.5,-4)
-f<-function(x){
-  x**3-2*x+1
-}
-  
-L<-c(f(-3.00001),f(-3.0001),f(-3.01),f(-3.1),f(-3.5),f(-4))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+No podemos decidir si vale $+\infty$ o $-\infty.$
+
+<br/>
+¿Qué podemos hacer para decirdir? Cómo ya sabemos que nos acercamos a un $\mbox{algo}/0,$ basta con checar el comportamiento de la función cerca del valor $x=1.$
 
 ---
-# Con las tablas anteriores podemos decir:
+# Ejemplo 3:
 
-$$ \lim_{x\to -3} x^3-2x+1 = \color{red}{-20}.$$
+Vamos a checar que signo tiene la función en las zonas cercanas a $x=1.$
 
+$$\begin{array}{|c|c|c|c|} \hline
+x &  x<1 & 1 & x>1 \\ \hline
+f(x) & \color{red}{+} & \frac{2}{0} & \color{green}{-} \\ \hline
+\end{array}$$
 
-> Cabe mencionar que este caso, $-3$ si pertenece al dominio de la función $x^3-2x+1$ (por que es un polinomio) y $f(-3)=-20.$ Así que aquí:
+Cómo los signos son diferentes, entonces el límite no existe.
 
-$$ \lim_{x\to -3} x^3-2x+1= (-3)^3-2(-3)+1=-20$$
+$$ \lim_{x\to 1}\frac{1-3x^2}{x^3-3x^2+3x-1}=\mbox{ No existe}.$$
 
 ---
-# Visualmente
+# Ejemplo 4:
+Encuentre el valor de $$ \lim_{x\to 0} \frac{2x}{x^4+2x^3}.$$
 
-<iframe src="https://www.geogebra.org/graphing/sqemd7jv?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+1. Evaluamos la función en $x=0.$
+
+$$ \frac{2(0)}{(0)^4+2(0)^3}=\frac{0}{0}!!$$
+
+Tenemos una indeterminación, entonces necesitamos utilizar recursos algebraicos. 
+
+$$\frac{2x}{x^4+2x^3}=\frac{2x}{x^3(x+2)}=\frac{2}{x^2(x+2)}.$$
 
 ---
 # Ejemplo 4:
 
-Utilicemos una tabla de aproximaciones para calcular el $$\lim_{x\to 0}\frac{sin(x)}{x}.$$
+Ahora si sustituimos $x=0,$
 
-.pull-left[
+$$\frac{2}{(0)^2(0+2)}=\frac{2}{0}.$$
 
-Mayores (pero cercanos) a 0
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(0.00001,0.0001,0.01,0.1,0.5,1)
-f<-function(x){
-  sin(x)/x
-}
-  
-L<-c(f(0.00001),f(0.0001),f(0.01),f(0.1),f(0.5),f(1))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+2. Chequemos el comportamiento:
 
-.pull-right[
-Menores (pero cercanos) a 0
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-0.00001,-0.0001,-0.01,-0.1,-0.5,-1)
-f<-function(x){
-  sin(x)/x
-}
-  
-L<-c(f(-0.00001),f(-0.0001),f(-0.01),f(-0.1),f(-0.5),f(-1))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-]
+$$\begin{array}{|c|c|c|c|} \hline
+x &  x<0 & 0 & x>0 \\ \hline
+f(x) & \color{red}{+} & \frac{2}{0} & \color{red}{+} \\ \hline
+\end{array}$$
+
+Entonces: $$\displaystyle{\lim_{x\to 0}\frac{2x}{x^4+2x^3}=\infty.}$$
 
 ---
-# Con las tablas anteriores podemos decir:
+# Asintotas Verticales:
 
-$$ \lim_{x\to 0} \frac{sin(x)}{x} = \color{red}{0}.$$
+> Si $f(x)$ es una función tal que para $x=a$ se cumple que al "evaluar" la expresión obtenemos algo de la forma $$f(a)=\frac{k}{a}$$ donde $k\neq 0.$
+<br/><br/>
+Entonces, la recta vertical $x=a$ se conoce como __asíntota vertical__ de $f(x).$
 
-<iframe src="https://www.geogebra.org/graphing/fdneffem?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+![Asíntota Vertical](http://4.bp.blogspot.com/-arzayLZsmYk/VhysMpKajHI/AAAAAAAAABQ/XfOkAUW95xw/s1600/asintota_vertical.png)(output-width=10%)
+---
+# Ejemplo 5:
+
+Para la función $f(x)=\frac{7}{2x-10},$ encuentre sus asíntotas verticales y analice el comportamiento al rededor de ellas.
+
+1. Primero tenemos que encontrar donde puede haber asíntotas, para esto resolvemos la ecuación $$\mbox{denominador}=0\Rightarrow 2x-10=0 \Rightarrow 2x=10 \Rightarrow x=5.$$
+
+2. Evaluo para ver si no hay indeterminación, $f(5)=\frac{7}{0}.$ Cómo no la hay, entonces $x=5$ es una __asíntota vertical__ para $f.$
+
+3. Checamos el comportamiento:
+
+$$\begin{array}{|c|c|c|c|} \hline
+x &  x<5 & 5 & x>5 \\ \hline
+f(x) & \color{red}{-} & \frac{7}{0} & \color{red}{+} \\ \hline
+\end{array}$$
+
+Como los signos son distintos, $$\lim_{x\to 5}f(x)=\mbox{ No existe}.$$
+
+---
+# Ejemplos 6:
+
+Dada la función $f(x)=\frac{3x+2}{x^2+5x-6},$ encuentre sus asíntotas verticales y analice el comportamiento alrededor de ellas.
+
+1. Primero tenemos que encontrar donde puede haber asíntotas, para esto resolvemos la ecuación $$\mbox{denominador}=0\Rightarrow x^2+5x-6=0 \Rightarrow (x+6)(x-1)=10 \Rightarrow x_1=1, x_2=-6.$$
+
+2. Evaluo para ver si no hay indeterminación, $f(-6)=\frac{-16}{0}.$ Cómo no la hay, entonces $x=-6$ es una __asíntota vertical__ para $f.$ Ahora, $f(1)=\frac{5}{0},$ no hay indeterminación, entonces $x=1$ también es una asíntota vertical
+
+3. Checamos el comportamiento:
+
+$$\begin{array}{|c|c|c|c|c|c|c|} \hline
+x &  x<-6 & -6 & -6<x& x<1 & 1 & 1<x\\ \hline
+f(x) & \color{red}{-} & \frac{-16}{0} & \color{red}{+} & \color{green}{-} & \frac{5}{0} & \color{green}{+} \\ \hline
+\end{array}$$
+
+Cómo en ninguna asintota el signo es igual, ningún límite existe.
+

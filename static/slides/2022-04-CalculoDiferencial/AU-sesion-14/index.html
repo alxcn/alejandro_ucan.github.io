@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Límites</title>
+    <title>Límites Infinitos</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-06-14" />
+    <meta name="date" content="2022-06-20" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x71ed39813ce4154a6e9f7a560f2c714","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x14913b2b2204a578a175753aa4aeed3","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Límites
+# Límites Infinitos
 ]
 .subtitle[
-## Sesión 11
+## Sesión 14
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-06-14
+### 2022-06-20
 ]
 
 ---
@@ -44,204 +44,145 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
- * Conocer la definición de límite. &lt;br/&gt; &lt;br/&gt;
- * Calcular visualmente un límite. &lt;br/&gt; &lt;br/&gt;
- * Conocer la notación de límites. &lt;br/&gt;&lt;br/&gt;
- * Conocer las propiedades de límites. &lt;br/&gt;&lt;br/&gt;
+ * Determinar cuando un límite es infinito.
+ * Calcular asíntotas verticales.
 
 ---
-# ¿Límite?
-&lt;center&gt;
-![Galleta](http://st2.depositphotos.com/3259223/10718/v/450/depositphotos_107182436-stock-illustration-chocolate-chip-cookies-vector-illustration.jpg)
-&lt;center&gt;
+# Recordemos nuestra función racional predilecta.
 
+`$$f(x)=\frac{1}{x}$$`
+&lt;iframe src="https://www.geogebra.org/graphing/0?embed" width="900" height="350" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
 ---
-# En un ejemplo más concreto.
-&lt;br/&gt;
-&gt; En un monitor cardiaco para medir la frecuencia cardiaca de un paciente después de la cirugía se recopila el número de latidos después de `\(t\)` minutos. Estos latidos están dados por la expresión $$ f(x)=\frac{x^2-25}{x-5}$$
+# ¿Existe el límite de `\(f(x)\)` cuando `\(x\to 0\)`?
 
-&gt; Con lo anterior, sabemos que:
-* En el minuto `\(t=3,\)` hay `\(f(3)=\frac{(3)^2-25}{3-5}=\frac{9-25}{-2}=8.\)` &lt;br/&gt;&lt;br/&gt;
-* En el minuto `\(t=4,\)` hay `\(f(4)=\frac{(4)^2-16}{4-5}=\frac{16-25}{-1}=9.\)`
+&gt; `\(\displaystyle{\lim_{x\to 0^+}\frac{1}{x}}=+\infty.\)` 
 
----
-# ¿Cuántos latidos hay en el minuto `\(t=5\)`?
 
-&gt; Evaluando, $$f(5)=\frac{(5)^2-25}{5-5}=\frac{0}{0}!! $$
+&gt; `\(\displaystyle{\lim_{x\to 0^-}\frac{1}{x}}=-\infty.\)`
 
 &lt;br/&gt;&lt;br/&gt;
-Dado que la división `\(0/0\)` no está definida, no sabemos cual es el valor que le corresponde. 
 
-&lt;span style="font-size:35px"&gt; ¿Qué podemos hacer para conocer el valor (aproximado) del número de latidos en el tiempo `\(t=5\)`?
-
----
-# Veamos el _comportamiento_ de la función cerca del 5.
-
-.pull-left[
-
-Menores (pero cercanos) a 5
-
-| Tiempo| Latidos|
-|------:|-------:|
-| 4.0000|  9.0000|
-| 4.5000|  9.5000|
-| 4.9000|  9.9000|
-| 4.9900|  9.9900|
-| 4.9990|  9.9990|
-| 4.9999|  9.9999|
-]
-
-.pull-right[
-Mayores (pero cercanos) a 5
-
-| Tiempo| Latidos|
-|------:|-------:|
-| 5.0001| 10.0001|
-| 5.0010| 10.0010|
-| 5.0100| 10.0100|
-| 5.1000| 10.1000|
-| 5.5000| 10.5000|
-| 6.0000| 11.0000|
-]
-&lt;br/&gt;
-¿Qué podemos decir de esto? Que el valor de la función en `\(t=5\)` se acerca a `\(10.\)`
+Por lo tanto, `$$\lim_{x\to 0}\frac{1}{x}=\mbox{ No existe.}$$`
 
 ---
-# El límite
+# Ejemplo 2:
+¿Qué pasa si cambiamos la función a que sea `\(f(x)=\frac{1}{x^2}\)`?
 
-&gt; En el ejemplo anterior decimos que el __límite__ de la función `\(f\)` cuando `\(x\)` __tiende__ a `\(5\)` es igual a `\(10.\)`  $$ \lim_{x\to 5}f(x)=10.$$
-
----
-# Visualmente
-
-&lt;iframe src="https://www.geogebra.org/graphing/nhhtjetm?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;iframe src="https://www.geogebra.org/graphing/0?embed" width="1200" height="350" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
 
 ---
 # Ejemplo 2:
 
-Utilicemos una tabla de aproximaciones para calcular el `$$\lim_{x\to 1}\frac{x-1}{x^2-1}.$$`
+&gt; `\(\displaystyle{\lim_{x\to 0^+}\frac{1}{x^2}}=+\infty.\)` 
 
-.pull-left[
 
-Menores (pero cercanos) a 1
+&gt; `\(\displaystyle{\lim_{x\to 0^-}\frac{1}{x^2}}=+\infty.\)`
 
-|      x|      f(x)|
-|------:|---------:|
-| 0.0000| 1.0000000|
-| 0.5000| 0.6666667|
-| 0.9000| 0.5263158|
-| 0.9900| 0.5002501|
-| 0.9990| 0.5000250|
-| 0.9999| 0.5000025|
-]
+&lt;br/&gt;&lt;br/&gt;
 
-.pull-right[
-Mayores (pero cercanos) a 1
-
-|      x|      f(x)|
-|------:|---------:|
-| 1.0001| 0.4999975|
-| 1.0010| 0.4999750|
-| 1.0100| 0.4997501|
-| 1.1000| 0.4761905|
-| 1.5000| 0.4000000|
-| 2.0000| 0.3333333|
-]
-
----
-# Con las tablas anteriores podemos decir:
-
-$$ \lim_{x\to 1} \frac{x-1}{x^2-1} = \color{red}{\frac{1}{2}}.$$
----
-# Visualmente
-
-&lt;iframe src="https://www.geogebra.org/graphing/v4tu6kr7?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+Por lo tanto, `$$\lim_{x\to 0}\frac{1}{x}=+\infty.$$`
 
 ---
 # Ejemplo 3:
 
-Utilicemos una tabla de aproximaciones para calcular el `$$\lim_{x\to -3}x^3-2x+1.$$`
+Encuentra el valor de: $$ \lim_{x\to 1}\frac{1-3x^2}{x^3-3x^2+3x-1}.$$
 
-.pull-left[
+__Solución:__
 
-Mayores (pero cercanos) a -3
+1. Evaluamos `\(x=1\)` en la función, `$$\frac{1-3(1)^2}{(1)^3-3(1)^2+3(1)-1}=\frac{2}{0}.$$`
 
-|       x|      f(x)|
-|-------:|---------:|
-| -2.0000|  -3.00000|
-| -2.5000|  -9.62500|
-| -2.9000| -17.58900|
-| -2.9900| -19.97501|
-| -2.9990| -19.99750|
-| -2.9999| -19.99975|
-]
+No podemos decidir si vale `\(+\infty\)` o `\(-\infty.\)`
 
-.pull-right[
-Menores (pero cercanos) a -3
-
-|       x|      f(x)|
-|-------:|---------:|
-| -3.0001| -20.00025|
-| -3.0010| -20.00250|
-| -3.0100| -20.25090|
-| -3.1000| -22.59100|
-| -3.5000| -34.87500|
-| -4.0000| -55.00000|
-]
+&lt;br/&gt;
+¿Qué podemos hacer para decirdir? Cómo ya sabemos que nos acercamos a un `\(\mbox{algo}/0,\)` basta con checar el comportamiento de la función cerca del valor `\(x=1.\)`
 
 ---
-# Con las tablas anteriores podemos decir:
+# Ejemplo 3:
 
-$$ \lim_{x\to -3} x^3-2x+1 = \color{red}{-20}.$$
+Vamos a checar que signo tiene la función en las zonas cercanas a `\(x=1.\)`
 
+`$$\begin{array}{|c|c|c|c|} \hline
+x &amp;  x&lt;1 &amp; 1 &amp; x&gt;1 \\ \hline
+f(x) &amp; \color{red}{+} &amp; \frac{2}{0} &amp; \color{green}{-} \\ \hline
+\end{array}$$`
 
-&gt; Cabe mencionar que este caso, `\(-3\)` si pertenece al dominio de la función `\(x^3-2x+1\)` (por que es un polinomio) y `\(f(-3)=-20.\)` Así que aquí:
+Cómo los signos son diferentes, entonces el límite no existe.
 
-$$ \lim_{x\to -3} x^3-2x+1= (-3)^3-2(-3)+1=-20$$
+$$ \lim_{x\to 1}\frac{1-3x^2}{x^3-3x^2+3x-1}=\mbox{ No existe}.$$
 
 ---
-# Visualmente
+# Ejemplo 4:
+Encuentre el valor de $$ \lim_{x\to 0} \frac{2x}{x^4+2x^3}.$$
 
-&lt;iframe src="https://www.geogebra.org/graphing/sqemd7jv?embed" width="1200" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+1. Evaluamos la función en `\(x=0.\)`
+
+$$ \frac{2(0)}{(0)^4+2(0)^3}=\frac{0}{0}!!$$
+
+Tenemos una indeterminación, entonces necesitamos utilizar recursos algebraicos. 
+
+`$$\frac{2x}{x^4+2x^3}=\frac{2x}{x^3(x+2)}=\frac{2}{x^2(x+2)}.$$`
 
 ---
 # Ejemplo 4:
 
-Utilicemos una tabla de aproximaciones para calcular el `$$\lim_{x\to 0}\frac{sin(x)}{x}.$$`
+Ahora si sustituimos `\(x=0,\)`
 
-.pull-left[
+`$$\frac{2}{(0)^2(0+2)}=\frac{2}{0}.$$`
 
-Mayores (pero cercanos) a 0
+2. Chequemos el comportamiento:
 
-|     x|      f(x)|
-|-----:|---------:|
-| 1e-05| 1.0000000|
-| 1e-04| 1.0000000|
-| 1e-02| 0.9999833|
-| 1e-01| 0.9983342|
-| 5e-01| 0.9588511|
-| 1e+00| 0.8414710|
-]
+`$$\begin{array}{|c|c|c|c|} \hline
+x &amp;  x&lt;0 &amp; 0 &amp; x&gt;0 \\ \hline
+f(x) &amp; \color{red}{+} &amp; \frac{2}{0} &amp; \color{red}{+} \\ \hline
+\end{array}$$`
 
-.pull-right[
-Menores (pero cercanos) a 0
-
-|      x|      f(x)|
-|------:|---------:|
-| -1e-05| 1.0000000|
-| -1e-04| 1.0000000|
-| -1e-02| 0.9999833|
-| -1e-01| 0.9983342|
-| -5e-01| 0.9588511|
-| -1e+00| 0.8414710|
-]
+Entonces: `$$\displaystyle{\lim_{x\to 0}\frac{2x}{x^4+2x^3}=\infty.}$$`
 
 ---
-# Con las tablas anteriores podemos decir:
+# Asintotas Verticales:
 
-$$ \lim_{x\to 0} \frac{sin(x)}{x} = \color{red}{0}.$$
+&gt; Si `\(f(x)\)` es una función tal que para `\(x=a\)` se cumple que al "evaluar" la expresión obtenemos algo de la forma `$$f(a)=\frac{k}{a}$$` donde `\(k\neq 0.\)`
+&lt;br/&gt;&lt;br/&gt;
+Entonces, la recta vertical `\(x=a\)` se conoce como __asíntota vertical__ de `\(f(x).\)`
 
-&lt;iframe src="https://www.geogebra.org/graphing/fdneffem?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+
+![Asíntota Vertical](http://4.bp.blogspot.com/-arzayLZsmYk/VhysMpKajHI/AAAAAAAAABQ/XfOkAUW95xw/s1600/asintota_vertical.png)(output-width=10%)
+---
+# Ejemplo 5:
+
+Para la función `\(f(x)=\frac{7}{2x-10},\)` encuentre sus asíntotas verticales y analice el comportamiento al rededor de ellas.
+
+1. Primero tenemos que encontrar donde puede haber asíntotas, para esto resolvemos la ecuación `$$\mbox{denominador}=0\Rightarrow 2x-10=0 \Rightarrow 2x=10 \Rightarrow x=5.$$`
+
+2. Evaluo para ver si no hay indeterminación, `\(f(5)=\frac{7}{0}.\)` Cómo no la hay, entonces `\(x=5\)` es una __asíntota vertical__ para `\(f.\)`
+
+3. Checamos el comportamiento:
+
+`$$\begin{array}{|c|c|c|c|} \hline
+x &amp;  x&lt;5 &amp; 5 &amp; x&gt;5 \\ \hline
+f(x) &amp; \color{red}{-} &amp; \frac{7}{0} &amp; \color{red}{+} \\ \hline
+\end{array}$$`
+
+Como los signos son distintos, `$$\lim_{x\to 5}f(x)=\mbox{ No existe}.$$`
+
+---
+# Ejemplos 6:
+
+Dada la función `\(f(x)=\frac{3x+2}{x^2+5x-6},\)` encuentre sus asíntotas verticales y analice el comportamiento alrededor de ellas.
+
+1. Primero tenemos que encontrar donde puede haber asíntotas, para esto resolvemos la ecuación `$$\mbox{denominador}=0\Rightarrow x^2+5x-6=0 \Rightarrow (x+6)(x-1)=10 \Rightarrow x_1=1, x_2=-6.$$`
+
+2. Evaluo para ver si no hay indeterminación, `\(f(-6)=\frac{-16}{0}.\)` Cómo no la hay, entonces `\(x=-6\)` es una __asíntota vertical__ para `\(f.\)` Ahora, `\(f(1)=\frac{5}{0},\)` no hay indeterminación, entonces `\(x=1\)` también es una asíntota vertical
+
+3. Checamos el comportamiento:
+
+`$$\begin{array}{|c|c|c|c|c|c|c|} \hline
+x &amp;  x&lt;-6 &amp; -6 &amp; -6&lt;x&amp; x&lt;1 &amp; 1 &amp; 1&lt;x\\ \hline
+f(x) &amp; \color{red}{-} &amp; \frac{-16}{0} &amp; \color{red}{+} &amp; \color{green}{-} &amp; \frac{5}{0} &amp; \color{green}{+} \\ \hline
+\end{array}$$`
+
+Cómo en ninguna asintota el signo es igual, ningún límite existe.
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
