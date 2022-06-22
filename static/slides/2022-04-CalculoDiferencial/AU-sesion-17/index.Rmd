@@ -1,6 +1,6 @@
 ---
-title: "Límites al infinito"
-subtitle: "Sesión 15"  
+title: "Reglas de Derivación"
+subtitle: "Sesión 17"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,154 +43,104 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Comprender el significa de tender a infinito. <br/> <br/>
- * Calcular un límite al infinito. <br/> <br/>
- * Determinar cuando un límite es al infinito. <br/><br/>
- * Conocer la definición de asíntota horizontal. <br/><br/>
- * Calcular las asíntotas horizontales de una función.
-
+ * Calcular derivadas sin utilizar la definición. <br/> <br/>
+ * Conocer las principales reglas de derivación. <br/> <br/>
+ * Determinar que regla se aplica. <br/><br/>
+ 
 ---
-# Comportamientos extremos.
+# Derivada de una función constante.
 
-Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
-<br/><br/>
+> Si $f(x)=k$ es una función constante, entonces su derivada es: $$f'(x)=(k)'=0$$
 
-¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
-
----
-# Comportamientos extremos.
-
-Supongamos que tenemos la función $f(x)=2,$ una función constante. 
-
-.pull-left[
-
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,100,1000,10000,1000000,100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=2$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-100,-1000,-10000,-1000000,-100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=2.$$
-]
-
----
-# Ejemplo 2:
-
-Veamos que pasa en el infinito para $f(x)=\frac{1}{x}.$
-
-.pull-left[
-
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,1000,100000)
-L<-c(0.1,0.001,0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=0$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-1000,-100000)
-L<-c(-0.1,-0.001,-0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=0.$$
-]
-
----
-# Límites al Infinito
-
-> Tenemos el siguiente comportamiento para las siguientes funciones:
-<br/><br/>
-1. Para cualquier función constante $f(x)=k,$ siempre se cumple que $$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$
+__Por ejemplo:__ 
 <br/>
-2. Para cualquier función de la forma $f(x)=\frac{a}{x^n}$ donde $a$ es positivo y $n$ es un natural. Siempre se cumple que:
-$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$
+1. $(3)'=0.$<br/>
+1. $\frac{d}{dx}\left(\frac{-3}{2}\right)=0.$<br/>
+1. $(0)'=0$<br/>
 
 ---
-# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
+# Derivada de una función potencia.
 
-Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
+> Si $f(x)=x^n$ para cualquier $n$ racional, entonces su derivada cumple:
+
+$$f'(x)=(x^n)'=n\cdot x^{n-1}.$$
+
+__Por ejemplo:__
 <br/>
-1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por $x$ a la potencia más grande que aparezca en la función.
+1. $(x^3)'=3x^2,$
+1. $(x^{-2})'=(-2x^{-3}),$
+1. $\frac{d}{dx}(x^{3/2})=\frac{3}{2}x^{1/2}.$
 
-$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$
----
-# Continuación.
-
-2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
-
-$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$
-3. Entonces $$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$
+> Notemos que, aquí necesitamos las reglas de exponentes. Recordemos que se cumplen: $$\frac{1}{x^n}=x^{-n} \mbox{ y } \sqrt[n]{x^m}=x^{m/n},$$ es decir, podemos transformar potencias en denominadores como potencias negativas y raíces como potencias fraccionarias.
 
 ---
-Ejemplo 3:
+# Linealidad de la Derivada
 
-Encuentra el valor del siguiente límite al infinito:
-$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
+> Decimos que la derivada es lineal por que cumple las siguientes propiedades:<br/>
+* Si $k$ es un real, entonces $(k\cdot f)'=k\cdot f',$ es decir, la derivada "saca" constantes.
+<br/><br/>
+* Si $f$ y $g$ son dos funciones, entonces $(f\pm g)'=f'\pm g',$ es decir, la derivada "separa sumas/restas".
 
->Solución:
+__Por ejemplo:__
 
-$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$
+1. $\frac{d(2x^6)}{dx}=2\frac{dx^6}{dx}=(2)(6x^5)=12x^5.$
+1. $\frac{d(7\sqrt[5]{x^7})}{dx}=7\frac{d\sqrt[5]{x^7}}{dx}=7\frac{d(x^{7/5})}{dx}=(7)\left(\frac{7}{5}x^{2/5}\right)=\frac{49}{5}x^{2/5}.$
+1. $\frac{d(x^2+3x^3-2x)}{dx}=\frac{d(x^2)}{dx}+\frac{d(3x^3)}{dx}-\frac{d(2x)}{dx}=2x+9x^2-2$
 
 ---
-# Asíntotas Horizontales
+# Regla del funciones trigonométricas y trascendentales
 
-> Si $f(x)$ es una función tal que $$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$ entonces, las asíntotas horizontales de $f(x)$ son las rectas $y=a$ y $y=b.$
+> En ingenieria usualmente trabajamos con funciones que no son algebraicas, estas pueden ser las funciones trigonométricas y trascendentales, a continuación enunciamos la regla de como derivarlas.
+<br/><br/>
+* $(\sin x)'=\cos x$ <br/>
+* $(\cos x)'= -\sin x$ <br/>
+* $(\tan x)'=(\sec x)^2$ <br/>
+* $(\cot x)'=-(\csc x)^2$ <br/>
+* $(\sec x)'=\sec x \cdot \tan x$<br/>
+* $(\csc x)'=-\csc x \cdot \cot x$ <br/>
+* $(e^x)'=e^x$ <br/>
+* $(\ln x)'=\frac{1}{x}.$
 
-
-## Ejemplo: 
-Calcule las asíntotas verticales para la función $$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$
-
-
-$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
 ---
-## Continuación:
+# Regla del producto.
 
-$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
+> Si $f(x)$ y $g(x)$ son dos funciones, entonces la derivada de $(fg)(x)$ cumple $$(fg)'=f' \cdot g + f\cdot g',$$ es decir, la derivada del producto es la derivada del primer factor por el segundo factor más el primer factor por la derivada del segundo factor.
 
-<iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+__Por ejemplo:__
+<br/><br/>
+* $\frac{d}{dx}(x^3\sin x)=\left(\frac{d}{dx}x^3\right)\sin x + x^3 \left(\frac{d}{dx}\sin x\right)= 3x^2\sin x + x^3\cos x.$ <br/><br/>
+
+* $(\ln x \cdot \cos x)'=(\ln x)'\cdot \cos x + \ln x \cdot (\cos x)'=\frac{1}{x}\cos x+(\ln x)(-\sin x)=\frac{\cos x}{x}-\ln x\sin x.$
+
+> Si un factor en el producto es una constante, entonces no se recomienda usar la regla del producto, si no la linealidad de la derivada.
+
+---
+# Regla del cociente.
+
+>  Si $f(x)$ y $g(x)$ son dos funciones, entonces la derivada de $\left(\frac{f}{g}\right)(x)$ cumple $$\left(\frac{f}{g}\right)'=\frac{f' \cdot g - f\cdot g'}{g^2},$$ es decir, la derivada del producto es la derivada del numerador por el denominador menos el numerador por la derivada del denominador, todo eso divido entre el denominador al cuadrado.
+
+<br/><br/>
+__Por ejemplo:__
+
+$$\left(\frac{3x-5}{x^2-7}\right)'=\frac{(3x-5)'(x^2+7)-(3x-5)(x^2+7)'}{(x^2+7)^2}=\frac{3(x^2+7)-(3x-5)(2x)}{(x^2+7)^2}$$
+$$=\frac{3x^2+24-6x^2+10x}{(x^2+7)^2}=\frac{-3x^2+10x+24}{(x^2+7)^2}.$$
+
+---
+# Otro ejemplo del cociente:
+
+$$\left(\frac{e^x+7}{2\sin x-1}\right)'=\frac{(e^x+7)'(2\sin x-1)-(e^x-7)(2\sin x-1)'}{(2\sin x-1)^2}=\frac{e^x(2\sin x-1)-(e^x+7)(2\cos x)}{(2\sin x-1)^2}$$
+
+$$=\frac{2 e^x \sin x -e^x -2e^x\cos x -14 \cos x}{(2\sin x-1)^2}.$$
+
+---
+# Actividad de Práctica:
+
+Calcule las derivadas utilizando las reglas de las siguientes funciones:
+
+* $f(y)=y^{10}+7y^5-y^3+1.$
+* $g(x)=4x^4-\frac{1}{4x^4}$
+* $p(u)=3\sqrt[4]{x^3}-\frac{2}{x^5}-10x^4$
+* $h(x)=\frac{\sin x-1}{\cos x +1}$
+* $f(t)=\cos t\cot t$
+* $j(z)=(z^2+\cos z)(2z-\sin z)$
+* $m(z)=\frac{1-e^{x}}{e^x+1}.$
