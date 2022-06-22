@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Derivadas como razón de cambio</title>
+    <title>Límites al infinito</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-06-21" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"f3a634bd7a074e7dab1ccd28b9f8c2e0","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x81de891182f4db8bbac78b43fa33b1a","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Derivadas como razón de cambio
+# Límites al infinito
 ]
 .subtitle[
-## Sesión 16
+## Sesión 15
 ]
 .author[
 ### Alejandro Ucan
@@ -44,90 +44,139 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
- * Entender por qué vamos a estudiar la derivada de una función. &lt;br/&gt;&lt;br/&gt;
- * Conocer la definición de derivada de una función. &lt;br/&gt;&lt;br/&gt;
- * Conocer algunas aplicaciones de las derivadas. &lt;br/&gt;&lt;br/&gt;
- 
----
-# ¿Qué vamos a hacer?
+ * Comprender el significa de tender a infinito. &lt;br/&gt; &lt;br/&gt;
+ * Calcular un límite al infinito. &lt;br/&gt; &lt;br/&gt;
+ * Determinar cuando un límite es al infinito. &lt;br/&gt;&lt;br/&gt;
+ * Conocer la definición de asíntota horizontal. &lt;br/&gt;&lt;br/&gt;
+ * Calcular las asíntotas horizontales de una función.
 
-.pull_left[
-* Si conocermos la posición de un carro en cada momento, estamos interesados en saber la __velocidad__ del carro cuando esta viajando a cierto tiempo.
+---
+# Comportamientos extremos.
+
+Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
 &lt;br/&gt;&lt;br/&gt;
-* Queremos conocer, que __tan rápido__ crece la población en un momento específico.
-&lt;br/&gt;&lt;br/&gt;
-* ¿Ustedes conocen la otro fenómeno con este comportamiento?
+
+¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
+
+---
+# Comportamientos extremos.
+
+Supongamos que tenemos la función `\(f(x)=2,\)` una función constante. 
+
+.pull-left[
+
+Valores muy grandes (positivos)
+
+|     x| f(x)|
+|-----:|----:|
+| 1e+01|    2|
+| 1e+02|    2|
+| 1e+03|    2|
+| 1e+04|    2|
+| 1e+06|    2|
+| 1e+08|    2|
+
+$$ \lim_{x\to +\infty}f(x)=2$$
 ]
 
-.pull_right[
-&lt;iframe src="https://giphy.com/embed/UNVdEj8LK9iuY" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/watch-years-how-UNVdEj8LK9iuY"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+.pull-left[
+
+Valores muy grandes (negativos)
+
+|      x| f(x)|
+|------:|----:|
+| -1e+01|    2|
+| -1e+02|    2|
+| -1e+03|    2|
+| -1e+04|    2|
+| -1e+06|    2|
+| -1e+08|    2|
+`$$\lim_{x\to -\infty}f(x)=2.$$`
 ]
----
-# La razón de cambio.
-
-Consideremos una función `\(f(x)\)` y vamos a calcular una razón de cambio en el punto `\(a.\)` `$$m=\frac{\Delta y}{\Delta x}=\frac{f(a+h)-f(a)}{(a+h)-a}=\frac{f(a+h)-f(a)}{h}.$$`
-
-El cociente anterior mide que tanto crece la función en razon del crecimiento de los valores que evaluamos.
-
----
-# Visualmente.
-
-&lt;iframe src="https://www.geogebra.org/graphing/mj5najqr?embed" width="1200" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
-
----
-# La mejor razón de cambio
-
-De lo anterior podemos decir que la mejor razón de cambio se da por el límite: `$$f'(x)=\lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.$$`
-
-&gt; La función anterior ( `\(f'(x)\)` ) se conoce como la __derivada__ de la función `\(f(x),\)` y el límite anterior se conoce como la definición de la derivada.
-
----
-# Ejemplo 1:
-
-Encuentre la derivada de la función `\(f(x)=5x.\)`
-
-
-&gt; Solución:
-
-Calculemos primero quien es `\(f(x+h)=5(x+h)=5x+5h,\)` entonces sustituimos en el límite 
-`$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\to 0}\frac{(5x+5h)-5x}{h}=\lim_{h\to 0}\frac{5h}{h}=5.$$`
-
-Por lo tanto, `\(f'(x)=5.\)`
 
 ---
 # Ejemplo 2:
 
-Encuentre la derivada de la función `\(f(x)=3x-10.\)`
+Veamos que pasa en el infinito para `\(f(x)=\frac{1}{x}.\)`
 
-&gt; Solución:
+.pull-left[
 
-Calculemos primero quien es `\(f(x+h)=3(x+h)-10=3x+3h-10,\)` entonces sustituimos en el límite 
-`$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\to 0}\frac{(3x+3h-10)-(3x-10)}{h}=\lim_{h\to 0}\frac{3h}{h}=3.$$`
-Por lo tanto, `\(f'(x)=3.\)`
+Valores muy grandes (positivos)
+
+|     x|  f(x)|
+|-----:|-----:|
+| 1e+01| 1e-01|
+| 1e+03| 1e-03|
+| 1e+05| 1e-05|
+
+$$ \lim_{x\to +\infty}f(x)=0$$
+]
+
+.pull-left[
+
+Valores muy grandes (negativos)
+
+|      x|   f(x)|
+|------:|------:|
+| -1e+01| -1e-01|
+| -1e+03| -1e-03|
+| -1e+05| -1e-05|
+`$$\lim_{x\to -\infty}f(x)=0.$$`
+]
+
 ---
-# Ejemplo 3:
+# Límites al Infinito
 
-Encuentre la derivada de la función `\(f(x)=x^2.\)`
-
-&gt; Solución:
-
-Calculemos primero quien es `\(f(x+h)=(x+h)^2=x^2+2xh+h^2,\)` y sustituimos en el límite
-`$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\to 0}\frac{x^2+2xh+h^2-x^2}{h}=\lim_{h\to 0}\frac{h(2x+h)}{h}=\lim_{h\to 0}(2x+h)=2x.$$`
-
-Por lo tanto, `\(f'(x)=2x.\)`
+&gt; Tenemos el siguiente comportamiento para las siguientes funciones:
+&lt;br/&gt;&lt;br/&gt;
+1. Para cualquier función constante `\(f(x)=k,\)` siempre se cumple que `$$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$`
+&lt;br/&gt;
+2. Para cualquier función de la forma `\(f(x)=\frac{a}{x^n}\)` donde `\(a\)` es positivo y `\(n\)` es un natural. Siempre se cumple que:
+`$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$`
 
 ---
-# Ejemplo 4:
+# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
 
-Encuentre la derivada de la función `\(f(x)=\sqrt{x}.\)`
+Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
+&lt;br/&gt;
+1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por `\(x\)` a la potencia más grande que aparezca en la función.
 
-&gt; Solución:
+`$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$`
+---
+# Continuación.
 
-Calculemos primero quien es `\(f(x+h)=\sqrt{x+h}\)` y sustituimos en el límite
-`$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\to 0}\frac{\sqrt{x+h}-x}{h}=\lim_{h\to 0}\frac{\sqrt{x+h}-x}{h}\cdot\frac{\sqrt{x+h}+x}{\sqrt{x+h}+h}$$`
-`$$=\lim_{h\to 0}\frac{x+h-x}{h(\sqrt{x+h}+\sqrt{x})}=\lim_{h\to 0}\frac{1}{\sqrt{x+h}+\sqrt{x}}=\frac{1}{2\sqrt{x}}.$$`
+2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
 
-Por lo tanto, `\(f'(x)=\frac{1}{2\sqrt{x}}.\)`
+`$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$`
+3. Entonces `$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$`
+
+---
+Ejemplo 3:
+
+Encuentra el valor del siguiente límite al infinito:
+$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
+
+&gt;Solución:
+
+`$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$`
+
+---
+# Asíntotas Horizontales
+
+&gt; Si `\(f(x)\)` es una función tal que `$$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$` entonces, las asíntotas horizontales de `\(f(x)\)` son las rectas `\(y=a\)` y `\(y=b.\)`
+
+
+## Ejemplo: 
+Calcule las asíntotas verticales para la función `$$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$`
+
+
+`$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
+---
+## Continuación:
+
+`$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
+
+&lt;iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
