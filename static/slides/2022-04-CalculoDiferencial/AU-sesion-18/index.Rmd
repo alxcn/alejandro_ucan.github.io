@@ -1,6 +1,6 @@
 ---
-title: "Límites al infinito"
-subtitle: "Sesión 15"  
+title: "Reglas de Derivación (II)"
+subtitle: "Sesión 18"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,154 +43,56 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Comprender el significa de tender a infinito. <br/> <br/>
- * Calcular un límite al infinito. <br/> <br/>
- * Determinar cuando un límite es al infinito. <br/><br/>
- * Conocer la definición de asíntota horizontal. <br/><br/>
- * Calcular las asíntotas horizontales de una función.
+ * Conocer la regla de la cadena. <br/><br/>
+ * Aprender a aplicar la regla de la cadena. <br/><br/>
+ * Dedudir las reglas generalizadas de derivación. <br/><br/>
 
 ---
-# Comportamientos extremos.
+# Recapitulación:
 
-Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
+Derive la función $$f(x)=x^2\cos x-2x\sin x-2\cos x.$$
+
+---
+# Regla de la Cadena.
+
+> Supongamos que tenemos una función $h(x)$ que se puede escribir como una composición de funciones, es decir, $h(x)=f(g(x))$ para algunas funciones $f$ y $g.$ Entonces se cumple que:
+
+$$h'(x)=f'(g(x))\cdot g'(x),$$ es decir, la derivada de una composición es la derivada de la función exterior evaluada en la función interior por la derivada de la función interior. 
 <br/><br/>
-
-¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
-
----
-# Comportamientos extremos.
-
-Supongamos que tenemos la función $f(x)=2,$ una función constante. 
-
-.pull-left[
-
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,100,1000,10000,1000000,100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=2$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-100,-1000,-10000,-1000000,-100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=2.$$
-]
+__Por ejemplo:__ Deriva la función $h(x)=\sqrt{\sin x}.$ En este caso, $f(x)=\sqrt{x}$ y $g(x)=\sin x,$ y notemos que $f(g(x))=h(x).$ Recordemos que $f'(x)=\frac{1}{2\sqrt{x}}$ y $g'(x)=\cos x.$ <br/>
+Sustituyendo en la regla de la cadena tenemos: $$h'(x)=f'(g(x))g'(x)=\frac{1}{2\sqrt{\color{red}{\sin x}}}\cdot \cos x.$$
 
 ---
 # Ejemplo 2:
 
-Veamos que pasa en el infinito para $f(x)=\frac{1}{x}.$
-
-.pull-left[
-
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,1000,100000)
-L<-c(0.1,0.001,0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=0$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-1000,-100000)
-L<-c(-0.1,-0.001,-0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=0.$$
-]
-
----
-# Límites al Infinito
-
-> Tenemos el siguiente comportamiento para las siguientes funciones:
+Sea $h(x)=(\sin x)^6,$ en este caso $f(x)=x^6$ y $g(x)=\sin x,$ y la derivadas son:<br/><br/> $$f'(x)=6x^5\mbox{ y }g'(x)=\cos x,$$ entonces sustituimos en la regla de la cadena:
 <br/><br/>
-1. Para cualquier función constante $f(x)=k,$ siempre se cumple que $$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$
-<br/>
-2. Para cualquier función de la forma $f(x)=\frac{a}{x^n}$ donde $a$ es positivo y $n$ es un natural. Siempre se cumple que:
-$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$
+$$h'(x)=f'(g(x))g'(x)=6(\sin x)^5\cdot \cos x.$$
 
 ---
-# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
+# Ejemplo 3:
 
-Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
-<br/>
-1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por $x$ a la potencia más grande que aparezca en la función.
+Calcule la derivada de $h(x)=(3x^3+17x^2+2x-1)^{100}.$ 
 
-$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$
----
-# Continuación.
-
-2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
-
-$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$
-3. Entonces $$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$
+<br/><br/>
+En este caso $f(x)=x^{100}$ y $g(x)=3x^3+17x^2+2x-1,$ y calculamos sus derivadas:
+<br/><br/>
+$$f'(x)=100x^{99}\mbox{ y }g'(x)=9x^2+34x+2,$$ y sustituimos en la regla de la cadena:
+<br/><br/>
+$$h'(x)=f'(g(x))g'(x)=100(3x^3+17x^2+2x-1)^{99}(9x^2+34x+2).$$
 
 ---
-Ejemplo 3:
+# Reglas generalizadas
 
-Encuentra el valor del siguiente límite al infinito:
-$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
+Utilizando la regla de la cadena, podemos ahora aplicarla para construir las siguientes reglas generales, si $u$ es una función de $x$ y calculamos la derivada respecto a $x,$ tenemos:
 
->Solución:
+.pull_left[* $\frac{d}{dx}((u)^n)=nu^{n-1}\cdot \frac{du}{dx}.$
+* $\frac{d}{dx}\sin(u)=\cos(u)\cdot \frac{du}{dx}$
+* $\frac{d}{dx}\cos(u)=-\sin(u)\cdot \frac{du}{dx}$
+* $\frac{d}{dx}\tan(u)=(\sec(u))^2\cdot \frac{du}{dx}$]
 
-$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$
-
----
-# Asíntotas Horizontales
-
-> Si $f(x)$ es una función tal que $$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$ entonces, las asíntotas horizontales de $f(x)$ son las rectas $y=a$ y $y=b.$
-
-
-## Ejemplo: 
-Calcule las asíntotas verticales para la función $$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$
-
-
-$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
----
-## Continuación:
-
-$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
-
-<iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+.pull_right[* $\frac{d}{dx}\cot(u)=(-\csc(u))^2\cdot \frac{du}{dx}$
+* $\frac{d}{dx}\csc(u)=-\csc(u)\cdot \cot(u)\cdot \frac{du}{dx}$
+* $\frac{d}{dx}\sec(u)=\sec(u)\cdot \tan(u)\cdot \frac{du}{dx}$
+* $\frac{d}{dx}e^u=e^u\cdot \frac{du}{dx}$
+* $\frac{d}{dx}\ln(u)=\frac{1}{u}\frac{du}{dx}$]

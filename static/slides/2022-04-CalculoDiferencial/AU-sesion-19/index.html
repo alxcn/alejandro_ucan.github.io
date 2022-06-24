@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Reglas de Derivación (II)</title>
+    <title>Límites al infinito</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-06-23" />
+    <meta name="date" content="2022-06-21" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x290ca4aaf0c4a9a9f73f6602f11cc7a","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x1620c6850194d10b93dc61887dbacd1","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Reglas de Derivación (II)
+# Límites al infinito
 ]
 .subtitle[
-## Sesión 18
+## Sesión 15
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-06-23
+### 2022-06-21
 ]
 
 ---
@@ -44,59 +44,139 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
- * Conocer la regla de la cadena. &lt;br/&gt;&lt;br/&gt;
- * Aprender a aplicar la regla de la cadena. &lt;br/&gt;&lt;br/&gt;
- * Dedudir las reglas generalizadas de derivación. &lt;br/&gt;&lt;br/&gt;
+ * Comprender el significa de tender a infinito. &lt;br/&gt; &lt;br/&gt;
+ * Calcular un límite al infinito. &lt;br/&gt; &lt;br/&gt;
+ * Determinar cuando un límite es al infinito. &lt;br/&gt;&lt;br/&gt;
+ * Conocer la definición de asíntota horizontal. &lt;br/&gt;&lt;br/&gt;
+ * Calcular las asíntotas horizontales de una función.
 
 ---
-# Recapitulación:
+# Comportamientos extremos.
 
-Derive la función `$$f(x)=x^2\cos x-2x\sin x-2\cos x.$$`
-
----
-# Regla de la Cadena.
-
-&gt; Supongamos que tenemos una función `\(h(x)\)` que se puede escribir como una composición de funciones, es decir, `\(h(x)=f(g(x))\)` para algunas funciones `\(f\)` y `\(g.\)` Entonces se cumple que:
-
-`$$h'(x)=f'(g(x))\cdot g'(x),$$` es decir, la derivada de una composición es la derivada de la función exterior evaluada en la función interior por la derivada de la función interior. 
+Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
 &lt;br/&gt;&lt;br/&gt;
-__Por ejemplo:__ Deriva la función `\(h(x)=\sqrt{\sin x}.\)` En este caso, `\(f(x)=\sqrt{x}\)` y `\(g(x)=\sin x,\)` y notemos que `\(f(g(x))=h(x).\)` Recordemos que `\(f'(x)=\frac{1}{2\sqrt{x}}\)` y `\(g'(x)=\cos x.\)` &lt;br/&gt;
-Sustituyendo en la regla de la cadena tenemos: `$$h'(x)=f'(g(x))g'(x)=\frac{1}{2\sqrt{\color{red}{\sin x}}}\cdot \cos x.$$`
+
+¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
+
+---
+# Comportamientos extremos.
+
+Supongamos que tenemos la función `\(f(x)=2,\)` una función constante. 
+
+.pull-left[
+
+Valores muy grandes (positivos)
+
+|     x| f(x)|
+|-----:|----:|
+| 1e+01|    2|
+| 1e+02|    2|
+| 1e+03|    2|
+| 1e+04|    2|
+| 1e+06|    2|
+| 1e+08|    2|
+
+$$ \lim_{x\to +\infty}f(x)=2$$
+]
+
+.pull-left[
+
+Valores muy grandes (negativos)
+
+|      x| f(x)|
+|------:|----:|
+| -1e+01|    2|
+| -1e+02|    2|
+| -1e+03|    2|
+| -1e+04|    2|
+| -1e+06|    2|
+| -1e+08|    2|
+`$$\lim_{x\to -\infty}f(x)=2.$$`
+]
 
 ---
 # Ejemplo 2:
 
-Sea `\(h(x)=(\sin x)^6,\)` en este caso `\(f(x)=x^6\)` y `\(g(x)=\sin x,\)` y la derivadas son:&lt;br/&gt;&lt;br/&gt; `$$f'(x)=6x^5\mbox{ y }g'(x)=\cos x,$$` entonces sustituimos en la regla de la cadena:
-&lt;br/&gt;&lt;br/&gt;
-`$$h'(x)=f'(g(x))g'(x)=6(\sin x)^5\cdot \cos x.$$`
+Veamos que pasa en el infinito para `\(f(x)=\frac{1}{x}.\)`
+
+.pull-left[
+
+Valores muy grandes (positivos)
+
+|     x|  f(x)|
+|-----:|-----:|
+| 1e+01| 1e-01|
+| 1e+03| 1e-03|
+| 1e+05| 1e-05|
+
+$$ \lim_{x\to +\infty}f(x)=0$$
+]
+
+.pull-left[
+
+Valores muy grandes (negativos)
+
+|      x|   f(x)|
+|------:|------:|
+| -1e+01| -1e-01|
+| -1e+03| -1e-03|
+| -1e+05| -1e-05|
+`$$\lim_{x\to -\infty}f(x)=0.$$`
+]
 
 ---
-# Ejemplo 3:
+# Límites al Infinito
 
-Calcule la derivada de `\(h(x)=(3x^3+17x^2+2x-1)^{100}.\)` 
-
+&gt; Tenemos el siguiente comportamiento para las siguientes funciones:
 &lt;br/&gt;&lt;br/&gt;
-En este caso `\(f(x)=x^{100}\)` y `\(g(x)=3x^3+17x^2+2x-1,\)` y calculamos sus derivadas:
-&lt;br/&gt;&lt;br/&gt;
-`$$f'(x)=100x^{99}\mbox{ y }g'(x)=9x^2+34x+2,$$` y sustituimos en la regla de la cadena:
-&lt;br/&gt;&lt;br/&gt;
-`$$h'(x)=f'(g(x))g'(x)=100(3x^3+17x^2+2x-1)^{99}(9x^2+34x+2).$$`
+1. Para cualquier función constante `\(f(x)=k,\)` siempre se cumple que `$$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$`
+&lt;br/&gt;
+2. Para cualquier función de la forma `\(f(x)=\frac{a}{x^n}\)` donde `\(a\)` es positivo y `\(n\)` es un natural. Siempre se cumple que:
+`$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$`
 
 ---
-# Reglas generalizadas
+# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
 
-Utilizando la regla de la cadena, podemos ahora aplicarla para construir las siguientes reglas generales, si `\(u\)` es una función de `\(x\)` y calculamos la derivada respecto a `\(x,\)` tenemos:
+Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
+&lt;br/&gt;
+1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por `\(x\)` a la potencia más grande que aparezca en la función.
 
-.pull_left[* `\(\frac{d}{dx}((u)^n)=nu^{n-1}\cdot \frac{du}{dx}.\)`
-* `\(\frac{d}{dx}\sin(u)=\cos(u)\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}\cos(u)=-\sin(u)\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}\tan(u)=(\sec(u))^2\cdot \frac{du}{dx}\)`]
+`$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$`
+---
+# Continuación.
 
-.pull_right[* `\(\frac{d}{dx}\cot(u)=(-\csc(u))^2\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}\csc(u)=-\csc(u)\cdot \cot(u)\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}\sec(u)=\sec(u)\cdot \tan(u)\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}e^u=e^u\cdot \frac{du}{dx}\)`
-* `\(\frac{d}{dx}\ln(u)=\frac{1}{u}\frac{du}{dx}\)`]
+2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
+
+`$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$`
+3. Entonces `$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$`
+
+---
+Ejemplo 3:
+
+Encuentra el valor del siguiente límite al infinito:
+$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
+
+&gt;Solución:
+
+`$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$`
+
+---
+# Asíntotas Horizontales
+
+&gt; Si `\(f(x)\)` es una función tal que `$$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$` entonces, las asíntotas horizontales de `\(f(x)\)` son las rectas `\(y=a\)` y `\(y=b.\)`
+
+
+## Ejemplo: 
+Calcule las asíntotas verticales para la función `$$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$`
+
+
+`$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
+---
+## Continuación:
+
+`$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
+
+&lt;iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
