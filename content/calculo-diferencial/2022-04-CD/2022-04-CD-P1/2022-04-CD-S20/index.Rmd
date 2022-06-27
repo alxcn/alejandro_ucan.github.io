@@ -1,0 +1,22 @@
+---
+title: "Sesión 20: Reglas de Derivación (II)"
+weight: 20
+subtitle: ""
+excerpt: "Regla Cadena"
+date: '27-06-2022'
+slug: AU-sesion-20
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:<br/><br/>
+
+ * Calcular la pendiente de la recta tangente. <br/> <br/>
+ * Describir la ecuación de la recta tangente a una función en un punto. <br/> <br/>
+ 
+
+ 
+El contenido para la **Sesión 20** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-20).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-20", ratio = "4:3")
+```

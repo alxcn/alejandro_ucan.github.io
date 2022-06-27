@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Derivadas de Orden Superior y Derivación Implícita</title>
+    <title>Máximos y Mínimos de una función en cerrados</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-06-27" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa63643ff884414c8be4a41acf5d2701","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x62db7147c954b2681daf1193ec62e7d","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Derivadas de Orden Superior y Derivación Implícita
+# Máximos y Mínimos de una función en cerrados
 ]
 .subtitle[
-## Sesión 19
+## Sesión 22
 ]
 .author[
 ### Alejandro Ucan
@@ -44,107 +44,88 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
- * Comprender el concepto de derivadas multiples. &lt;br/&gt;&lt;br/&gt;
- * Calcular derivadas de orden superior. &lt;br/&gt;&lt;br/&gt;
+ * Calcular los valores extremos de una función definida en un intervalo cerrado. &lt;br/&gt;&lt;br/&gt;
+ * Conocer las condiciones donde puede suceder estos valores extremos. &lt;br/&gt;&lt;br/&gt;
+ 
 
 ---
-# Derivadas de Orden superior
+# Valores extremos
 
-&gt; Debido a que la derivada de una función es una __función__ también, podemos preguntar la derivada de la derivada, es decir, `$$f''(x)=(f')'(x).$$`
+&gt; Un valor extremo de una función es aquel valor más grande (__máximo__) o más chico (__mínimo__) que se pueda obtener para la función en un intervalo `\([a,b].\)`
+
+&lt;iframe src="https://www.geogebra.org/graphing/urcnkeut?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+
+---
+# La graficación no siempre es la solución
+
+Calcula los valores extremos de la función `\(f(x)=\frac{\sin x+\cos x}{\ln x},\)` aquí ya es un poco más complicado graficar para verificar cuales son los valores extremos.
+
+&lt;br/&gt;
+
+Supongamos queremos conocer los valores extremos de la función `\(f(x)=x+1\)` en el intervalo `\([-2,1].\)` 
+
+&lt;iframe src="https://www.geogebra.org/graphing/jzvd768s?embed" width="800" height="300" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+
+---
+# ¿Dónde se pueden encontrar los valores extremos?
+
+&gt; De los ejemplos anteriores tenemos que un valor extremo para `\(f\)` definida en `\([a,b]\)` puede ocurrir en dos lugares:
 &lt;br/&gt;&lt;br/&gt;
-Así mismo, podemos preguntartos por las derivadas de las derivadas de las derivadas, etcétera. En notación podemos decir:
+* En las fronteras del intervalo cerrado, o sea, en `\(a\)` y `\(b\)`. &lt;br/&gt;&lt;br/&gt;
+* En los puntos donde la recta tangente sea horizontal, es decir, donde `\(f'(x)=0.\)` A estos puntos se conoce como puntos estacionarios.
+
+---
+# ¿Cómo calculo los valores extremos de una función?
+
+Para calcular los valores extremos de una función `\(f(x)\)` definida en un intervalo cerrado `\([a,b]\)` se hace lo siguiente:
 &lt;br/&gt;&lt;br/&gt;
-* Segunda derivada: `\(f''(x),\quad \frac{d^2f}{dx^2}.\)`
-* Tercera derivada: `\(f^{(3)}(x), \quad \frac{d^3f}{dx^3}.\)`
-* Cuarta derivada: `\(f^{(4)}(x), \quad \frac{d^4f}{dx^4}.\)`
+* Primero determino mis puntos frontera y estacionarios (donde `\(f'(x)=0\)`) de `\(f\)` sobre el intervalo `\([a,b].\)` &lt;br/&gt;&lt;br/&gt;
+* Evaluar cada uno de los puntos encontrados en el paso 1 en la función. El valor más pequeño es donde ocurre el mínimo y el valor más grande es donde ocurre el máximo.
 
 ---
-# Ejemplos:
+# Ejemplo 1:
 
-Calcule la segunda derivada de la función `\(f(x)=x+\sin x.\)`
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-Nos piden calcular `\(f''(x),\)` para ello derivamos __consecutivamente__ dos veces la función `\(f.\)`
-&lt;br/&gt;
-`$$f''(x)=(x+\sin x)''=(1+\cos x)'=-\sin x.$$`
+Encuentra los valores extremos de la función `\(f(x)=x^2-2x+3\)` en el intervalo `\([-1,4].\)` &lt;br/&gt;
 
----
-# Ejemplos:
-Caclule la tercera derivada de la función `\(f(x)=x^4-3x^2+2x.\)`
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-Nos piden calcular `\(f^{(3)}(x),\)` para ello derivamos __consecutivamente__ tres veces la función `\(f.\)`
-&lt;br/&gt;
-`$$f^{(3)}(x)=\frac{d^3}{dx^3}(x^4-3x^2-2x)=\frac{d^2}{dx^2}(4x^3-6x-2)=\frac{d}{dx}(12x^2-6)=24x.$$`
-
----
-# Ejemplos:
-
-Calcule la cuarta derivada de `\(f(x)=\cos(2x).\)`
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-Nos piden calcular `\(f^{(4)}(x),\)` para ello derivamos __consecutivamente__ cuatro veces la función `\(f.\)`
-&lt;br/&gt;
-`$$f^{(4)}(x)=\frac{d^4}{dx^4}(\cos(2x))=\frac{d^3}{dx^3}(-2\sin(2x))=\frac{d^2}{dx^2}(-4\cos(2x)=\frac{d}{dx}(8\sin(2x)=16\cos(2x).$$`
----
-# Derivación Implícita
-
-&gt; A veces tenemos que una cantidad depende de otra pero no es precisamente una función, sino una ecuación, ¿será posible derivadar para conocer su tasa de cambio?
-&lt;br/&gt;&lt;br/&gt;
-__Por ejemplo:__ `$$y^2+3y=x^3$$`
-&lt;br/&gt;
-`$$x^2y-xy^2=\sin x$$`
-&lt;br/&gt;
-$$ x^2+y^2=1.$$
-
----
-# Derivación Implícita
-
-&gt; Podemos usar __derivación implícita__ para conocer estas de cambio. Pra derivar una ecuación vamos a pensar que `\(y\)` depende de `\(y\)` y utilizaremos las reglas que conocemos, y cuando nos toque derivar cosas con `\(y\)` pensamos que es una composición.
+&gt; _Puntos fronterizos:_ `\(x=-1\)` y `\(x=4.\)` &lt;br/&gt;
+_Puntos estacionarios:_ `\(f'(x)=2x-2\)` así que `\(f'(x)=2x-2=0\)` ocurre cuando `\(x=1.\)`
 
 &lt;br/&gt;&lt;br/&gt;
-Encuentre la derivada de `$$y^2+3y=x^3.$$`
-&lt;br/&gt;
-1. Derivamos ambas partes de la ecuación. `$$(y^2+3y)'=(x^3)'$$`
+
+&gt; _Evaluación:_ `\(f(-1)=6,\)` `\(f(4)=11\)` y `\(f(1)=2.\)`
+
+&lt;br/&gt;&lt;br/&gt;
+&gt; Solución: El mínimo es 2 (y se alcanza en `\(x=1\)`) y el máximo es 11 (y se alcanza en `\(x=4\)`).
 
 ---
-2. Utilizamos las reglas de derivación en ambas partes.
-`$$(y^2)'+(3y)'=(x^3)'$$`
-3. En las partes donde derivemos algo con `\(y,\)` multiplicamos por la expresión de `\(y'.\)` 
-`$$2y\color{red}{\cdot y'} +3\cdot \color{red}{y'}=3x^2.$$`
+# Ejemplo 2:
 
+Encuentra los valores extremos de la función `\(f(x)=-2x^3+3x\)` en el intervalo `\([-1/2,2].\)` &lt;br/&gt;
 
-4. Si es posible despejar `\(y'\)` para que se encuentre lo hacemos, si no dejamos la ecuación resultante. En este ejemplo si podemos despejar:
-`$$y'(2y+3)=3x^2$$`
-`$$y'=\frac{3x^2}{2y+3}.$$`
----
-# Ejemplo:
-Encuentre la derivada de la ecuación `\(x^2y-xy^2=\sin x\)`
+&gt; _Puntos fronterizos:_ `\(x=-1/2\)` y `\(x=2.\)` &lt;br/&gt;
+_Puntos estacionarios:_ `\(f'(x)=-6x^2+6x\)` así que `\(f'(x)=0\)` ocurre cuando `\(x=0,1.\)`
 
-&gt;Solución:
+&lt;br/&gt;&lt;br/&gt;
 
-1. `$$(x^2y)'-(xy^2)'=(\sin x)'$$`
+&gt; _Evaluación:_ `\(f(-1/2)=1,\)` `\(f(2)=-4,\)` `\(f(0)=0\)` y `\(f(1)=1.\)`
 
-2. Utilizo regla del producto en cada término del lado izquierdo:
-`$$2xy+x^2\color{red}{y'}-(y^2+x\color{red}{(2y y')})=\cos x$$`
-
-3. Despejamos `\(y':\)`
-
-`$$y'(x^2-2xy)=\cos x-2xy+y^2$$`
-`$$y'=\frac{\cos x-2xy+y^2}{x^2-2xy}.$$`
+&lt;br/&gt;&lt;br/&gt;
+&gt; Solución: El mínimo es -4 (y se alcanza en `\(x=2\)`) y el máximo es 1 (y se alcanza en `\(x=-1/2\)` y `\(x=1\)`).
 
 ---
-# Ejemplos:
+# Ejemplo 1:
 
-Encuentre la derivada de `\(y^3=x^2.\)`
+Encuentra los valores extremos de la función `\(f(x)=\frac{x^4}{4}-\frac{x^3}{3}-6x^2+3\)` en el intervalo `\([-2,5].\)` &lt;br/&gt;
 
-&gt;Solución:
+&gt; _Puntos fronterizos:_ `\(x=-2\)` y `\(x=5.\)` &lt;br/&gt;
+_Puntos estacionarios:_ `\(f'(x)=x^3-x^2-12x\)` así que `\(f'(x)=0=x(x+3)(x-4)\)` ocurre cuando `\(x=0,\)` `\(x=4\)` y `\(\color{red}{x=-3}.\)` Notemos que este último no pertenece al intervalo cerrado donde estamos verificando, así que no lo tomaremos en cuenta.
 
-1. `$$(y^3)'=(x^2)'$$`
+&lt;br/&gt;&lt;br/&gt;
 
-2. Utilizo la regla de la potencia en cada lado de la ecuación:
-`$$3y^2y'=2x$$`
+&gt; _Evaluación:_ `\(f(-2)=-\frac{43}{3},\)` `\(f(0)=3,\)` `\(f(5)=-\frac{389}{12}\)` y `\(f(4)=-\frac{151}{3}.\)`
 
-3. Despejamos `\(y':\)`
-
-`$$y'=\frac{x^2}{3y^2}.$$`
+&lt;br/&gt;&lt;br/&gt;
+&gt; Solución: El mínimo es `\(-\frac{151}{3}\)` (y se alcanza en `\(x=4\)`) y el máximo es 3 (y se alcanza en `\(x=0\)`).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
