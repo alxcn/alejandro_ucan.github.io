@@ -129,3 +129,15 @@ Encuentra la ecuación de la recta tangente a la ecuación $y^3+7y=x^3$ en el pu
 # Ejemplos 4
 
 *  Sustituimos todo en la ecuación: $$y-y_0=m_{T}(x-x_0)\Leftrightarrow y-(1)=\frac{6}{5}(x-2)\Leftrightarrow y-1=\frac{6}{5}x-\frac{12}{5}\Leftrightarrow y=\frac{6}{5}x-\frac{7}{5}.$$
+
+---
+# Actividad en clase.
+
+Calcule la recta tangente a la función en el punto que te indica.
+
+* $f(x)=x^2+2x$ en el punto $(-3,3)$
+* $f(x)=1-2x-3x^2$ en el punto $(-2,-7)$
+* $f(x)=\frac{1}{\sqrt{x}}$ en el punto $(1,1)$
+* $\frac{x^2}{16}-\frac{y^2}{9}=1$ en el punto $(-5,9/4)$
+* $y^2=x^3(2-x)$ en el punto $(1,1)$
+* $x^{2/3}+y^{2/3}=4$ en el punto $(-3\sqrt{3},1)$
