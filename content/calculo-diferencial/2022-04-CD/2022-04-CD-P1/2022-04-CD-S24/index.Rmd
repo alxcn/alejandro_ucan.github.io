@@ -1,0 +1,22 @@
+---
+title: "Sesión 24: Monotonía y Concavidad"
+weight: 24
+subtitle: ""
+excerpt: "comportamiento"
+date: '04-07-2022'
+slug: AU-sesion-24
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos:<br/><br/>
+
+ * Determinar los intervalos de monotonía. <br/><br/>
+ * Determinar los intervalos de concavidad. <br/><br/>
+ 
+
+ 
+El contenido para la **Sesión 24** se encuentra en following [slides](/slides/2022-04-CalculoDiferencial/AU-sesion-24).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-04-CalculoDiferencial/AU-sesion-24", ratio = "4:3")
+```
