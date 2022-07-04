@@ -1,6 +1,6 @@
 ---
-title: "Límites al infinito"
-subtitle: "Sesión 15"  
+title: "Monotonía y Concavidad"
+subtitle: "Sesión 24"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,154 +43,86 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Comprender el significa de tender a infinito. <br/> <br/>
- * Calcular un límite al infinito. <br/> <br/>
- * Determinar cuando un límite es al infinito. <br/><br/>
- * Conocer la definición de asíntota horizontal. <br/><br/>
- * Calcular las asíntotas horizontales de una función.
+ * Determinar los intervalos de monotonía. <br/><br/>
+ * Determinar los intervalos de concavidad. <br/><br/>
+ 
+---
+# Mononotía.
+
+> Monotonía se refiere al comportamiento de la función cuando se ve un crecimiento o decrecimiento. 
+
+<iframe src="https://www.geogebra.org/graphing/mcwuyrqz?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
-# Comportamientos extremos.
+# Monotonía y Derivadas.
 
-Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
-<br/><br/>
-
-¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
-
----
-# Comportamientos extremos.
-
-Supongamos que tenemos la función $f(x)=2,$ una función constante. 
-
-.pull-left[
-
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,100,1000,10000,1000000,100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=2$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=6,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-100,-1000,-10000,-1000000,-100000000)
-f<-function(x){
-  2
-}
-  
-L<-c(f(4),f(4.5),f(4.9),f(4.99),f(4.999),f(4.9999))
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=2.$$
-]
+> Si $f(x)$ es una función, entonces tenemos que: <br/><br/>
+* $f(x)$ es __creciente__ en el intervalo $(a,b),$ si $f'(x)>0$ en el intervalo $(a,b).$ <br/><br/>
+* $f(x)$ es __decreciente__ en el intervalo $(a,b),$ si $f'(x)<0$ en el intervalo $(a,b).$
 
 ---
-# Ejemplo 2:
+# Ejemplo:
 
-Veamos que pasa en el infinito para $f(x)=\frac{1}{x}.$
+Encuentra los intervalos donde la función $f(x)=x^2-6x+5$ es monotona.
 
-.pull-left[
+> Solución:
 
-Valores muy grandes (positivos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(10,1000,100000)
-L<-c(0.1,0.001,0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-
-$$ \lim_{x\to +\infty}f(x)=0$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-```{r}
-table=matrix(NA,nrow=3,ncol=2)
-colnames(table)=c("x","f(x)")
-t<-c(-10,-1000,-100000)
-L<-c(-0.1,-0.001,-0.00001)
-table[,1]=t
-table[,2]=L
-library(knitr)
-kable(table)
-```
-$$\lim_{x\to -\infty}f(x)=0.$$
-]
-
----
-# Límites al Infinito
-
-> Tenemos el siguiente comportamiento para las siguientes funciones:
-<br/><br/>
-1. Para cualquier función constante $f(x)=k,$ siempre se cumple que $$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$
 <br/>
-2. Para cualquier función de la forma $f(x)=\frac{a}{x^n}$ donde $a$ es positivo y $n$ es un natural. Siempre se cumple que:
-$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$
+* Encontrar los puntos _críticos_ (resolver $f'(x)=0$): $$f'(x)=2x-6=0\Rightarrow x=3.$$
+
+* Realicemos un test: chequemos el signo de la derivada en un punto $x<3$ y el signo de la derivada de un punto $x>3.$ <br/><br/>
+
+* Creciente en $(3,+\infty)$ y Decreciente en $(-\infty,3).$
 
 ---
-# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
+# Ejemplo:
+Encuentre donde la función $f(x)=2x^3-3x^2-12x+7$ es decreciente.
 
-Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
+> Solución:
+
 <br/>
-1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por $x$ a la potencia más grande que aparezca en la función.
 
-$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$
----
-# Continuación.
+* Calculemos la derivada $f'(x)=6x^2-6x-12.$ <br/>
 
-2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
+* Resolvemos la desigualdad $f'(x)<0.$ $$6x^2-6x-12<0 \Rightarrow (x-2)(x+1)<0.$$ <br/><br/><br/>
 
-$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$
-3. Entonces $$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$
+
+* Es decreciente en $(-1,2).$
 
 ---
-Ejemplo 3:
+# Concavidad de Funciones:
 
-Encuentra el valor del siguiente límite al infinito:
-$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
-
->Solución:
-
-$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$
+> Ahora nos interesa conocer donde la función parace una cúpula o un valle, y cuales son los puntos donde hace el cambio.
 
 ---
-# Asíntotas Horizontales
+# Concavidad y Derivadas.
 
-> Si $f(x)$ es una función tal que $$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$ entonces, las asíntotas horizontales de $f(x)$ son las rectas $y=a$ y $y=b.$
+> Si $f(x)$ es una función, entonces se cumple que: <br/><br/><br/>
+* $f(x)$ es __cóncava hacia arriba__ en $(a,b),$ si $f''(x)>0$ en el intervalo $(a,b).$ <br/><br/>
+* $f(x)$ es __cóncava hacia abajo__ en $(a,b),$ si $f''(x)<0$ en el intervalo $(a,b).$ <br/><br/>
+* Si $f''(x)$ realiza un cambio de signo en $x=c,$ entonces $f$ tiene un punto de inflexión en $x=c.$ 
 
-
-## Ejemplo: 
-Calcule las asíntotas verticales para la función $$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$
-
-
-$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
 ---
-## Continuación:
+# Ejemplo:
+Encuentre los intervalos de concavidad y puntos de inflexión para la función $f(x)=2x^3-3x^2-12x+7.$
 
-$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$
+> Solución:
 
-<iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<br/>
+
+* Resolver $f''(x)=0.$ $$ f''(x)=12x-6=0\Rightarrow x=\frac{1}{2}.$$
+
+* Realizamos un test con $f''$ para puntos $<1/2$ y $>1/2.$ <br/><br/><br/>
+
+
+* Cóncava hacia arriba en $(1/2,\infty),$ cóncava hacía abajo en $(-\infty, 1/2)$ y tiene un punto de inflexión en $x=1/2.$
+
+---
+# Ejercicios:
+
+Determine los intervalos de monotonía, los intervalos de concavidad y los puntos de inflexión de las siguientes funciones: <br/><br/>
+
+1. $f(x)=x^2-12x+1.$ <br/><br/>
+2. $f(x)=5-3x^2+x^3.$ <br/><br/>
+3. $f(x)=x^2 e^x$ <br/><br/>
+4. $f(x)=\frac{x}{(1+x)^2}.$

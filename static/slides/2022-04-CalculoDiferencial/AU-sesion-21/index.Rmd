@@ -142,3 +142,22 @@ Desde lo alto de un edificio de 100 $pies$ de altura se lanza una pelota hacia a
 
 > La pelota llega al piso cuando la altura es cero. Primero calculemos la función que mide la altura, es decir, sustituyamos en la fórmula los valores iniciales: $$f(t)=-16t^2+50t+100.$$
 Ahora calculemos donde la altura es cero, para eso resolvemos la ecuación $$f(t)=0\Leftrightarrow -16t^2+50t+100=0.$$ Usamos la fórmual general y obtenemos que esto pasa cuando $t=-1.3$ y $t=4.5$. Cómo no hay tiempo negativo, la pelota llega al piso a los 4.5 $s.$
+
+---
+# Ejercicios: 
+
+1. Desde lo alto de un edificio de 256 $pies$, se dispara un proyectil hacia arriba con una velocidad inicial de 48 $pies/s.$ <br/>
+  (a) ¿A qué altura del piso se encuentra el proyectil en el primer segundo?<br/>
+  (b) ¿Cuándo alcanza la altura máxima? <br/>
+  (c) Encuentra la velocidad del proyectil al primer segundo. <br/>
+  (d) ¿Cuál es la altura máxima? <br/>
+  
+  <br/><br/>
+  
+2. Desde lo alto de un edificio de 96 $pies$ de altura, se lanza una pelota hacia arriba con una velocidad de 16 $pies/s.$ <br/>
+  (a) ¿Cuándo tiene la pelota una altura de 100 $pies$? <br/>
+  (b) ¿Cuándo llega la pelota al piso? <br/>
+  (c) ¿A qué velocidad llega al piso? <br/>
+  (d) ¿Cuál es la aceleración de la pelota al segundo 5?
+  
+  

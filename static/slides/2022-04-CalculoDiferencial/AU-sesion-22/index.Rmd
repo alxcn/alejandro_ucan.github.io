@@ -112,7 +112,7 @@ _Puntos estacionarios:_ $f'(x)=-6x^2+6x$ así que $f'(x)=0$ ocurre cuando $x=0,1
 > Solución: El mínimo es -4 (y se alcanza en $x=2$) y el máximo es 1 (y se alcanza en $x=-1/2$ y $x=1$).
 
 ---
-# Ejemplo 1:
+# Ejemplo 3:
 
 Encuentra los valores extremos de la función $f(x)=\frac{x^4}{4}-\frac{x^3}{3}-6x^2+3$ en el intervalo $[-2,5].$ <br/>
 
@@ -125,3 +125,13 @@ _Puntos estacionarios:_ $f'(x)=x^3-x^2-12x$ así que $f'(x)=0=x(x+3)(x-4)$ ocurr
 
 <br/><br/>
 > Solución: El mínimo es $-\frac{151}{3}$ (y se alcanza en $x=4$) y el máximo es 3 (y se alcanza en $x=0$).
+
+---
+# Ejercicios:
+
+Calcula los valos extremos de la función indicada en el intervalo correspondiente:
+
+1. $f(x)=1+(x+1)^2$ en $[-2,5].$ <br/>
+2. $f(x)=x^3-3x+1$ en $[0,3].$ <br/>
+3. $f(x)=\frac{x^3+2}{x}$ en $\left[\frac{1}{2},2\right].$ <br/>
+4. $f(x)=\sqrt{9-x^2}$ en $[-1,2].$ 
