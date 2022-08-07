@@ -1,10 +1,10 @@
 ---
 title: "Alejandro Ucan-Puc"
 subtitle: "mathematician"
-description: "Currently I'm a signature teacher at Universidad del Mayab Anahuac."
+description: "Currently I'm a full-time professor at Instituto Tecnológico y de Estudios Superiores de Monterrey Campus Monterrey."
 date:
 images:
-  - img/aup.jpg
+  - img/aup2.jpg
 image_left: false
 text_align_left: false
 show_social_links: false # specify social accounts in site config

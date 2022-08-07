@@ -1,0 +1,193 @@
+---
+title: "Introducción a los Vectores y Funciones de Varias Variables"
+subtitle: "Sesión 01"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Recordar los conceptos de vector en $\mathbb{R}^2$ y $\mathbb{R}^3$. <br/> <br/>
+ * Recordar como operar vectores (suma y producto escalar). <br/> <br/>
+ * Aprender la definición de _campo escalar_ y _campo vectorial_, sus gráficas y curvas de nivel.
+
+---
+# El plano y el espacio
+
+Antes de iniciar a hablar de _cálculo vectorial_ o _cálculo multivariado_ es importante definir los espacios donde trabajaremos. <br/><br/>
+
+En este curso trabajaremos con el plano y el espacio, denotados por $\mathbb{R}^2$ y $\mathbb{R}^3,$ que son generalizaciones de la recta real.
+
+> __Definición:__ El __plano euclidiano__ y el __espacio euclidiano__, denotador por $\mathbb{R}^2$ y $\mathbb{R}^3$, se definen como el conjunto de pares y ternas (respectivamente) de números reales.  $$ (x_1,x_2)\in \mathbb{R}^2 \qquad \mbox{y} \qquad (x_1,x_2,x_3)\in \mathbb{R}^3.$$
+
+---
+# Geométricamente 
+
+
+---
+# Operaciones con coordenadas:
+
+Podemos definir operaciones aritméticas en $\mathbb{R}^m,$ como a continuación:
+
+> __Definición:__ Para sumar dos elementos de $\mathbb{R}^m$  $(m=2,3)$ se realiza coordenada a coordenada. 
+$$ (x_1,x_2)+(y_1,y_2)=(x_1+y_1,x_2+y_2)$$
+$$(a_1,a_2,a_3)+(b_1,b_2,b_3)= (a_1+b_1,a_2+b_2,a_3+b_3)$$
+
+
+__Ejemplo:__ 
+- $(1,1)+(2,-3)=(3,-2),$ 
+- $(2,-3,4)+(-1,-1,-1)=(-1,-4,3),$ 
+- $(0,0)+(2,-2)=(2,-2).$
+
+---
+# Algunas propiedades de la suma:
+
+- Los elementos $(0,0)$ y $(0,0,0)$ se conocen como elemento _neutro_ o _cero_ de $\mathbb{R}^2$ y $\mathbb{R}^3$ respectivamente. Y cumple, que cuando lo sumamos a cualquier elemento no cambiamos nada. <br/><br/><br/>
+
+- Para cualquier elemento $(a,b,c)\in \mathbb{R}^3,$ el elemento $(-a,-b,-c)$ se conoce como el _opuesto_ y cumple $$(a,b,c)+(-a,-b,-c)=(0,0,0).$$ Denotaremos al opuesto por $-(a,b,c),$ y con esto definimos la resta. <br/><br/><br/>
+
+- Los opuestos también se definen para $\mathbb{R}^2.$
+
+---
+# Producto escalar.
+
+Para distinguir los números reales de los elementos en $\mathbb{R}^m,$ de ahora en adelante los llamaremos _escalares_.
+
+> __Definición:__ Sea $k$ un escalar y $v=(v_1,v_2)\in \mathbb{R}^2,$ y $w=(w_1,w_2,w_3)\in\mathbb{R}^3,$ entonces definimos el _producto escalar_ como:
+$$ k\cdot (v_1,v_2)=(k v_1, k v_2),$$
+$$ k\cdot (w_1,w_2,w_2)=(k w_1, k w_2, k w_3).$$
+
+__Ejemplo:__
+- $3 \cdot (2,-4)=(6,-12),$
+- $-2 \cdot (-1,\pi,1)=(2,-2\pi,-2),$
+- $1\cdot (3,4)=(3,4).$
+
+---
+# Espacio Vectorial
+
+> __Definición:__ Los espacios $\mathbb{R}^2$ y $\mathbb{R}^3,$ en conjunto con la suma y el producto escalar, se dice que son __espacios vectoriales__, y a sus elementos se le llaman __vectores__.
+
+En un espacio vectorial, la suma de vectores y el producto escalar cumplen algunas propiedades interesantes:
+
+- __Distributiva I:__  $$ k\cdot\left[(v_1,v_2,v_3)+(w_1,w_2,w_3)\right]= k\cdot(v_1,v_2,v_3) + k\cdot (w_1,w_2,w_3).$$
+
+- __Distributiva II:__ $$(k+l)\cdot (v_1,v_2,v_3)= k\cdot (v_1,v_2,v_3) + l\cdot(v_1,v_2,v_3).$$
+
+Entre otras.
+---
+# Vectores Geométricos
+
+> __Definición:__ Un _vector_ en $\mathbb{R}^m$ $(m=2,3),$ geométricamente se representa como una flecha que inicia desde el elemento neutro hacía un punto $v\in\mathbb{R}^m.$ <br/><br/>
+Denotamos a los vectores con negritas, $\mathbf{v},$ o con una flecha, $\vec{v}.$ Y dado un vector $\vec{v},$ les asociamos una dirección y una magnitud.
+
+---
+# Vectores Geométricos
+
+Podemos asociar a cada vector $\vec{v}$ con su punto final $(v_1,v_2,v_3).$ Así que un vector se puede pensar como un elemento de $\mathbb{R}^m.$ <br/><br/>
+
+De esta manera, la suma de vectores tiene un expresión geométrica. 
+
+---
+# Funciones Multivariadas.
+
+> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$f:A\to \mathhb{R}$$ es una regla de asignación que a cada vector $\vec{v}\in A$ asocia un valor real f(\vec{v})\in \mathbb{R}$ y se conoce como un _campo escalar._
+
+<br/><br/>
+__Ejemplo:__ 
+
+- Podemos considerar la _norma_ que nos proporciona la magnitud de un vector, $ ||\cdot||: \mathbb{R}^2\to \\mathbb{R}$ dada por $$||\vec{v}||=||(v_1,v_2)|| = \sqrt{v_1^2+v_2^2}.$$ Está función también se puede definir para $\mathbb{R}^3.$
+
+- $f:\mathbb{R}^3\to \mathbb{R}$ dada por $$f((x,y,z))=x^2+z e^y+y e^z.$$
+
+- $f:\mathbb{R}^2\to \mathbb{R}$ dada por $$f((x,y))=\sin(x)+\cos(y).$$
+
+---
+# Representación gráfica de un Campo Escalar
+
+Podemos definir la gráfica de la función de una campo escalar $f:\mathbb{R}^m\to \mathbb{R}$ como el conjunto de puntos coordenados de $\mathbb{R}^{m+1}$ dados con las coordenadas $$\left(\vec{v},f(\vec{v})\right).$$ <br/><br/>
+
+> En el caso de campos escalares del plano, es posible realizar una gráfica visible dado que nuestra gráfica vivirá en $\mathbb{R}^3.$ Pero, para campos escalares del espacio, ya será muy complicado realizar un dibujo, dado que nuestra gráfica vivirá en $\mathbb{R}^4.$$
+
+---
+# Curvas o Superficies de Nivel.
+
+A veces realizar gráficas de funciones puede ser complicado (más si son campos escalares del espacio). __¿Cómo podemos solucionar esta complicación?__ <br/><br/>
+
+> __Definición:__ Una _curva o surperficie de nivel_ para un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ es el conjunto de vectores $\vec{v}$ de $\mathbb{R}^m$ que cumplen la siguiente ecuación $$f(\vec{v})=k, \quad \mbox{ para cualquier } k\in \mathbb{R}.$ <br/>
+Se llama curva cuando $m=2$ y superficie cuando $m=3.$
+
+---
+# Ejemplos de Curvas de Nivel
+
+
+---
+# Ejemplos de Superficies de Nivel
+
+---
+# Campos Vectoriales
+
+> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$g:A\to \mathhb{R}^n$$ (donde $n=2,3$ y no necesariamente igual a $m$) es una regla de asignación que a cada vector $\vec{v}\in A$ asocia otro vector g(\vec{v})\in \mathbb{R}^n$ y se conoce como un _campo vectorial._
+
+<br/><br/>
+
+__Ejemplo:__  <br/>
+- Existen campos vectorial especiales que veremos más adelante como por ejemplo: _rotacional, gradiente, y derivada._
+
+- $g:\mathbb{R}^2\to \mathbb{R}^3$ dado por $$g\left((x,y)\right)=(x^2,y^2,xy).$$
+
+- $g:\mathbb{R}^2\to \mathbb{R}^2$ dada por $$g\left((x,y)\right)=(x+y,y-x).$$
+
+- $g:\mathbb{R}^3\to \mathbb{R}^2$ dada por $$g\left((x,y,z)\right)=(x^2+yz,y^2-xz).$$
+
+---
+# Representación gráfica de un Campo Vectorial
+
+Si los campos escalares son difíciles de representar gráficamente, los campos vectoriales son aún más. Pero, existen unas técnicas que pueden sernos útiles para ciertos casos.
+
+> Si tenemos un campo vectorial ya sea $\mathbb{R}^2\to \mathbb{R}^2$ o $\mathbb{R}^3\to \mathbb{R}^3,$ podemos representar el campo vectorial gráfica de la siguiente manera: <br/>
+- Para cada punta del vector $\vec{v}$ del dominio (posible entrada) dibujamos una flecha con la dirección y magnitud que indique $f(\vec{v}).
+
+<br/><br/>
+
+Lo anterior nos permitirá tener una imágen de como se modifican los vectores mediante la regla de asignación.
+---
+# Ejemplo
+
+---
+# Actividad de Repaso

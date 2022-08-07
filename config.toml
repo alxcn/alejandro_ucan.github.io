@@ -48,7 +48,7 @@ enableEmoji = true
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
   #         poppy / sky / violet / water 
-  theme = "poppy"
+  theme = "sky"
   
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
@@ -116,10 +116,15 @@ enableEmoji = true
     url = "/i.rracionalx/"
     weight = 3
   [[menu.header]]
-    name = "Cálculo Diferencial"
-    title = "Cálculo Diferencial"
-    url = "/calculo-diferencial/"
-    weight = 4
+    name = "MMF"
+    title = "Métodos Matemáticos para la Física"
+    url = "/mmf/"
+    weight = 3
+  #[[menu.header]]
+  #  name = "Cálculo Diferencial"
+  #  title = "Cálculo Diferencial"
+  #  url = "/calculo-diferencial/"
+  #  weight = 4
   #[[menu.header]]
   #  name = "Slides"
   #  title = "Slides"

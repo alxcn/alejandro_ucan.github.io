@@ -11,7 +11,7 @@ I have a mathematics Ph.D. from the Universidad Nacional Autónoma de México un
 
 My field of research correspond to dynamical systems, geometry and topology, with particular interests on actions of discrete groups, Kleinian group theory, (complex) projective geometry, and geometric group theory.
 
-Currently I'm a signature teacher at the Anahuac Mayab University (MID, Yucatan), previously I was a postdoc position by CONACyT (Mex) at the Institut de Mathématiques de Jussieu-Paris Rive Gauche under the supervision of Prof. Elisha Falbel. 
+Currently I'm a full-time professor at the Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Monterrey (NL, Mexico), previously I was a postdoc position by CONACyT (Mex) at the Institut de Mathématiques de Jussieu-Paris Rive Gauche under the supervision of Prof. Elisha Falbel. 
 
 My current project is related to the study of complex projective structures on special manifolds (like links' complements, Deligne-Mostow lattices quotients). 
 

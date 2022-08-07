@@ -1,7 +1,7 @@
 ---
 title: Contact
 name: Contact Me
-description: "If you have some doubts, do not hesitate and vontact me."
+description: "If you have some doubts, do not hesitate and contact me."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact
@@ -10,7 +10,7 @@ layout: split-right # split-right or split-left
 submit_button_label: Send Message
 show_social_links: true # specify social accounts in site config
 show_poweredby_formspree: true
-formspree_form_id: alejandro.ucan@anahuac.mx
+formspree_form_id: alejandro.ucan-puc@imj-prg.fr
 ---
 
 ** Contact page don't contain a body, just the front matter above.
