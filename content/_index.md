@@ -1,7 +1,7 @@
 ---
 title: "Alejandro Ucan-Puc"
 subtitle: "mathematician"
-description: "Currently I'm a full-time professor at Instituto Tecnológico y de Estudios Superiores de Monterrey Campus Monterrey."
+description: "Currently I'm a full-time professor at Instituto Tecnológico y de Estudios Superiores de Monterrey Campus Monterrey, Ofice __A7-222__."
 date:
 images:
   - img/aup2.jpg
