@@ -223,4 +223,4 @@ Lo anterior nos permitirá tener una imágen de como se modifican los vectores m
 
 4. Grafica las curvas de nivel del campo escalar $\displaystyle{g(x,y)=x^3-y}.$ ¿Qué tipo de curvas obtenemos?
 
-5. Usando Wolfram Alpha, realiza la gráfica del campo vectorial $h(x,y)=(3y-x-1,-5x+y+2)$ ¿Qué puedes decir de la gráfica? __Hint:__ El comando es _vector field plot.
+5. Usando Wolfram Alpha, realiza la gráfica del campo vectorial $h(x,y)=(3y-x-1,-5x+y+2)$ ¿Qué puedes decir de la gráfica? __Hint:__ El comando es _vector field plot._
