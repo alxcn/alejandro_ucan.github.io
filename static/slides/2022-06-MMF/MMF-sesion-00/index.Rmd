@@ -83,7 +83,7 @@ xaringanExtra::use_scribble()
   * Funciones complejas.
   * Cálculo de variable compleja.
   * Series, Singularidades y Residuos.
-  * Transoformación conforme.
+  * Transformación conforme.
 
 ---
 # Plan de Evaluación
@@ -97,6 +97,7 @@ xaringanExtra::use_scribble()
 
 * Arfken George B, Mathematical methods for physicists : a comprehensive guide, 7th
 ed., Boston : Elsevier, 2013, 9780123846549 <br/> <br/>
+* Stewart, J. (2008). Cálculo de varias variables. Trascendentes tempranas, 6.
 * Marsden, J. E., Tromba, A. J., & Mateos, M. L. (1991). Cálculo vectorial (Vol. 69). México: Addison-Wesley Iberoamericana. <br/> <br/>
 * Gasquet Claude, Fourier analysis and applications : filtering, numerical computation wavelets, New York : Springer, 1999, eng, 0387984852 (hardcover : papel no ácido) <br/> <br/>
 * Churchill Ruel V, Variable compleja y aplicaciones, 5 ed., Aravaca (Madrid) : McGraw-Hill, 1995m spa, 8476157304.
