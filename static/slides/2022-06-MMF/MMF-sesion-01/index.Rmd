@@ -54,7 +54,7 @@ Antes de iniciar a hablar de _cálculo vectorial_ o _cálculo multivariado_ es i
 
 En este curso trabajaremos con el plano y el espacio, denotados por $\mathbb{R}^2$ y $\mathbb{R}^3,$ que son generalizaciones de la recta real.
 
-> __Definición:__ El __plano euclidiano__ y el __espacio euclidiano__, denotador por $\mathbb{R}^2$ y $\mathbb{R}^3$, se definen como el conjunto de pares y ternas (respectivamente) de números reales.  $$ (x_1,x_2)\in \mathbb{R}^2 \qquad \mbox{y} \qquad (x_1,x_2,x_3)\in \mathbb{R}^3.$$
+> __Definición:__ El __plano euclidiano__ y el __espacio euclidiano__, denotados por $\mathbb{R}^2$ y $\mathbb{R}^3$, se definen como el conjunto de pares y ternas (respectivamente) de números reales.  $$ (x_1,x_2)\in \mathbb{R}^2 \qquad \mbox{y} \qquad (x_1,x_2,x_3)\in \mathbb{R}^3.$$
 
 ---
 # Geométricamente 
@@ -116,22 +116,28 @@ Entre otras.
 > __Definición:__ Un _vector_ en $\mathbb{R}^m$ $(m=2,3),$ geométricamente se representa como una flecha que inicia desde el elemento neutro hacía un punto $v\in\mathbb{R}^m.$ <br/><br/>
 Denotamos a los vectores con negritas, $\mathbf{v},$ o con una flecha, $\vec{v}.$ Y dado un vector $\vec{v},$ les asociamos una dirección y una magnitud.
 
+<iframe src="https://www.geogebra.org/calculator/gfatrppa?embed" width="1200" height="350" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 ---
 # Vectores Geométricos
 
 Podemos asociar a cada vector $\vec{v}$ con su punto final $(v_1,v_2,v_3).$ Así que un vector se puede pensar como un elemento de $\mathbb{R}^m.$ <br/><br/>
 
 De esta manera, la suma de vectores tiene un expresión geométrica. 
-
+<br/><br/>
+![Suma Vectores](https://vitual.lat/wp-content/uploads/2020/01/Suma-de-vectores-por-el-método-gráfico-del-paralelogramo-imagen-4.png)
+![Suma Vectores 3d](http://www.analyzemath.com/high_school_math/grade_12/3_D_vectors/add_vect.gif)
 ---
 # Funciones Multivariadas.
 
-> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$f:A\to \mathhb{R}$$ es una regla de asignación que a cada vector $\vec{v}\in A$ asocia un valor real f(\vec{v})\in \mathbb{R}$ y se conoce como un _campo escalar._
+> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$f:A\to \mathbb{R}$$ es una regla de asignación que a cada vector $\vec{v} \in A$ asocia un valor real $f(\vec{v}) \in \mathbb{R}$ y se conoce como un _campo escalar._
 
 <br/><br/>
 __Ejemplo:__ 
 
-- Podemos considerar la _norma_ que nos proporciona la magnitud de un vector, $ ||\cdot||: \mathbb{R}^2\to \\mathbb{R}$ dada por $$||\vec{v}||=||(v_1,v_2)|| = \sqrt{v_1^2+v_2^2}.$$ Está función también se puede definir para $\mathbb{R}^3.$
+- Podemos considerar la _norma_ que nos proporciona la magnitud de un vector, $||\cdot||: \mathbb{R}^2\to \mathbb{R}$ dada por $$||\vec{v}||=||(v_1,v_2)|| = \sqrt{v_1^2+v_2^2}.$$ Está función también se puede definir para $\mathbb{R}^3.$
+
+---
+# Ejemplo:
 
 - $f:\mathbb{R}^3\to \mathbb{R}$ dada por $$f((x,y,z))=x^2+z e^y+y e^z.$$
 
@@ -142,34 +148,44 @@ __Ejemplo:__
 
 Podemos definir la gráfica de la función de una campo escalar $f:\mathbb{R}^m\to \mathbb{R}$ como el conjunto de puntos coordenados de $\mathbb{R}^{m+1}$ dados con las coordenadas $$\left(\vec{v},f(\vec{v})\right).$$ <br/><br/>
 
-> En el caso de campos escalares del plano, es posible realizar una gráfica visible dado que nuestra gráfica vivirá en $\mathbb{R}^3.$ Pero, para campos escalares del espacio, ya será muy complicado realizar un dibujo, dado que nuestra gráfica vivirá en $\mathbb{R}^4.$$
+> En el caso de campos escalares del plano, es posible realizar una gráfica visible dado que nuestra gráfica vivirá en $\mathbb{R}^3.$ Pero, para campos escalares del espacio, ya será muy complicado realizar un dibujo, dado que nuestra gráfica vivirá en $\mathbb{R}^4.$
 
+---
+# Ejemplo 
+
+<iframe src="https://www.geogebra.org/calculator/gtxggk7j?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 ---
 # Curvas o Superficies de Nivel.
 
 A veces realizar gráficas de funciones puede ser complicado (más si son campos escalares del espacio). __¿Cómo podemos solucionar esta complicación?__ <br/><br/>
 
-> __Definición:__ Una _curva o surperficie de nivel_ para un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ es el conjunto de vectores $\vec{v}$ de $\mathbb{R}^m$ que cumplen la siguiente ecuación $$f(\vec{v})=k, \quad \mbox{ para cualquier } k\in \mathbb{R}.$ <br/>
+> __Definición:__ Una _curva o surperficie de nivel_ para un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ es el conjunto de vectores $\vec{v}$ de $\mathbb{R}^m$ que cumplen la siguiente ecuación $$f(\vec{v})=k, \quad \mbox{ para cualquier } k\in \mathbb{R}.$$ <br/>
 Se llama curva cuando $m=2$ y superficie cuando $m=3.$
 
 ---
 # Ejemplos de Curvas de Nivel
 
-
+<iframe src="https://www.geogebra.org/calculator/pvtzxgxz?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 ---
 # Ejemplos de Superficies de Nivel
+
+<iframe src="https://www.geogebra.org/calculator/dcas6cum?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 # Campos Vectoriales
 
-> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$g:A\to \mathhb{R}^n$$ (donde $n=2,3$ y no necesariamente igual a $m$) es una regla de asignación que a cada vector $\vec{v}\in A$ asocia otro vector g(\vec{v})\in \mathbb{R}^n$ y se conoce como un _campo vectorial._
+> __Definición:__ Dado un subconjunto $A\subset \mathbb{R}^m,$ una función $$g:A\to \mathbb{R}^n$$ (donde $n=2,3$ y no necesariamente igual a $m$) es una regla de asignación que a cada vector $\vec{v}\in A$ asocia otro vector $g(\vec{v})\in \mathbb{R}^n$ y se conoce como un _campo vectorial._
 
 <br/><br/>
-
 __Ejemplo:__  <br/>
 - Existen campos vectorial especiales que veremos más adelante como por ejemplo: _rotacional, gradiente, y derivada._
 
 - $g:\mathbb{R}^2\to \mathbb{R}^3$ dado por $$g\left((x,y)\right)=(x^2,y^2,xy).$$
+
+---
+# Ejemplos: 
+
+- $g:\mathbb{R}^3\to \mathbb{R}^3$ dada por $$g\left((x,y,z)\right)=(x^2,cos(y)+z,x+y+z)$$
 
 - $g:\mathbb{R}^2\to \mathbb{R}^2$ dada por $$g\left((x,y)\right)=(x+y,y-x).$$
 
@@ -181,7 +197,7 @@ __Ejemplo:__  <br/>
 Si los campos escalares son difíciles de representar gráficamente, los campos vectoriales son aún más. Pero, existen unas técnicas que pueden sernos útiles para ciertos casos.
 
 > Si tenemos un campo vectorial ya sea $\mathbb{R}^2\to \mathbb{R}^2$ o $\mathbb{R}^3\to \mathbb{R}^3,$ podemos representar el campo vectorial gráfica de la siguiente manera: <br/>
-- Para cada punta del vector $\vec{v}$ del dominio (posible entrada) dibujamos una flecha con la dirección y magnitud que indique $f(\vec{v}).
+- Para cada punta del vector $\vec{v}$ del dominio (posible entrada) dibujamos una flecha con la dirección y magnitud que indique $f(\vec{v}).$
 
 <br/><br/>
 
@@ -189,5 +205,22 @@ Lo anterior nos permitirá tener una imágen de como se modifican los vectores m
 ---
 # Ejemplo
 
+- [Fuerza del Viento]("https://es.windfinder.com/#3/39.5000/-98.3500")
+- [Corriente de Océanos]("https://classic.nullschool.net/#current/ocean/surface/currents/overlay=primary_waves/equirectangular=-73.65,9.42,758/loc=-89.362,8.541")
+- ![Magnetic](https://www.muratasoftware.com/en/products/image/mainhelp/Examples/Gauss/result21_2.gif)
 ---
 # Actividad de Repaso
+
+1. Realiza las siguientes operaciones de vectores:
+  * $\left((3,4)-(1,0.5)\right)+4\cdot(-3,-2)$
+  * $-2\cdot\left((0,-10,-\pi)+(0,0,-1)\right)-(-\pi,0,0).$
+  
+2. Usando el método del paralelogramo, calcule las siguientes sumas:
+  * $(-1,3)+(3,2)$
+  * $(-4,-4)+(1,2)$
+
+3. Usando Geogebra, realiza la gráfica del campo escalar $\displaystyle{f(x,y)=\frac{y}{x^2+y^2}}.$ ¿Está la función definida para el vector $(0,0)$?
+
+4. Grafica las curvas de nivel del campo escalar $\displaystyle{g(x,y)=x^3-y}.$ ¿Qué tipo de curvas obtenemos?
+
+5. Usando Wolfram Alpha, realiza la gráfica del campo vectorial $h(x,y)=(3y-x-1,-5x+y+2)$ ¿Qué puedes decir de la gráfica? __Hint:__ El comando es _vector field plot.

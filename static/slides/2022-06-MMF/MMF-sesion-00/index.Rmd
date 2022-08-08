@@ -43,12 +43,12 @@ xaringanExtra::use_scribble()
 ```
 # El profesor
 
-[left-] Alejandro Ucan Puc <br/>
-- Doctor en Ciencias Matemáticas. <br/>
-- Especialización en: Sistemas Dinámicos, Geometría y Topología. <br/>
-- Interés en: Programación, Escritura Creativa, Cocina.
-- Correo: alejandro.ucan-puc@imj-prg.fr
-- Webpage: [alejandro_ucan-puc.netflify.app](https://alejandro_ucan-puc.netlify.app)
+### Alejandro Ucan Puc <br/>
+- Doctor en Ciencias Matemáticas. <br/><br/>
+- Especialización en: Sistemas Dinámicos, Geometría y Topología. <br/><br/>
+- Interés en: Programación, Escritura Creativa, Cocina. <br/><br/>
+- Correo: alejandro.ucan-puc@imj-prg.fr <br/><br/>
+- Webpage: [alejandro-ucan.netflify.app](https://alejandro-ucan.netlify.app)
 
 ---
 # Objetivos del Curso
@@ -75,7 +75,9 @@ xaringanExtra::use_scribble()
   * Transformada de Laplace ys sus aplicaciones.
   * Concepto de transformada integral canónica.
   * Otras transformadas integrales relevantes.
-  
+
+---
+
 3. Variable Compleja:
   * Aritmética de números complejos.
   * Funciones complejas.
@@ -94,8 +96,8 @@ xaringanExtra::use_scribble()
 # Bibliografía:
 
 * Arfken George B, Mathematical methods for physicists : a comprehensive guide, 7th
-ed., Boston : Elsevier, 2013, 9780123846549
-* Marsden, James and, Tromba, Cálculo Vectorial, ...
-* Gasquet Claude, Fourier analysis and applications : filtering, numerical computation wavelets, New York : Springer, 1999, eng, 0387984852 (hardcover : papel no ácido)
+ed., Boston : Elsevier, 2013, 9780123846549 <br/> <br/>
+* Marsden, J. E., Tromba, A. J., & Mateos, M. L. (1991). Cálculo vectorial (Vol. 69). México: Addison-Wesley Iberoamericana. <br/> <br/>
+* Gasquet Claude, Fourier analysis and applications : filtering, numerical computation wavelets, New York : Springer, 1999, eng, 0387984852 (hardcover : papel no ácido) <br/> <br/>
 * Churchill Ruel V, Variable compleja y aplicaciones, 5 ed., Aravaca (Madrid) : McGraw-Hill, 1995m spa, 8476157304.
 
