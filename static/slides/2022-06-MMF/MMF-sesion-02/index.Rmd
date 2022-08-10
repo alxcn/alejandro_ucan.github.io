@@ -44,8 +44,8 @@ xaringanExtra::use_scribble()
 # Objetivos:
 
  * Determinar la existencia de límites en campos escalares. <br/> <br/>
- * Calcular límites en campos escalares. <br/> <br/>
- * Calcular derivadas parciales y la derivada de un campo escalar y campo vectorial.
+ * Calcular límites en campos escalares y en campos vectoriales. <br/> <br/>
+ * Calcular derivadas parciales de un campo escalar.
 
 ---
 # Límites
