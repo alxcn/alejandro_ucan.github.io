@@ -15,4 +15,4 @@ Currently I'm a full-time professor at the Instituto Tecnológico y de Estudios 
 
 My current project is related to the study of complex projective structures on special manifolds (like links' complements, Deligne-Mostow lattices quotients). 
 
-Other of my interest are: programming, writing (with the blog i.rracionalx) and photographie.:mx:
+Other of my interest are: programming, writing (with the blog i.rracionalx) and photography. :mx:
