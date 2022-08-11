@@ -47,8 +47,8 @@ xaringanExtra::use_scribble()
 - Doctor en Ciencias Matemáticas. <br/><br/>
 - Especialización en: Sistemas Dinámicos, Geometría y Topología. <br/><br/>
 - Interés en: Programación, Escritura Creativa, Cocina. <br/><br/>
-- Correo: alejandro.ucan-puc@imj-prg.fr <br/><br/>
-- Webpage: [alejandro-ucan.netflify.app](https://alejandro-ucan.netlify.app)
+- Correo: alejandro.ucan-puc@tec.mx <br/><br/>
+- Webpage: [alejandro-ucan.netlify.app](https://alejandro-ucan.netlify.app)
 
 ---
 # Objetivos del Curso
