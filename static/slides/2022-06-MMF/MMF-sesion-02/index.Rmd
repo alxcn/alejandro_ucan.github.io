@@ -63,9 +63,9 @@ Calcule el límite de la función $f(x,y)=x^2+y^2+2$ cuando $(x,y)$ tiende a $(0
 ---
 # No Ejemplo:
 
-Calcule el límite de la función $f(x,y)=\displaystyle{\frac{x^2-y^2}{x^2+y^2}}.$
+Calcule el límite de la función $f(x,y)=\displaystyle{\frac{x^2-y^2}{x^2+y^2}}$ cuando $(x,y)$ tiende a $(0,0).$
 
-
+<iframe src="https://www.geogebra.org/calculator/hywpmx8h?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 ---
 # ¿Cuándo no existe un límite?
 
