@@ -1,0 +1,57 @@
+---
+title: "Operadores vectoriales: gradiente, divergencia y rotacional."
+subtitle: "Sesión 04"
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Conocer el concepto de derivada direccional. <br/><br/>
+ * Aprender la definición de gradiente, divergencia y rotacional. <br/><br/>
+ * Aplicar el gradiente, divergencia y rotacional en problemas físicos. <br/><br/>
+
+---
+# Gradiente
+
+> Dada un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ el gradiente de $f$ (denotado por $\nabla f)$ es el campo vectorial $$\nabla f(\vec{v})=\left(\frac{\partial f}{\partial x_1}(\vec{v}),\cdots,\frac{\partial f}{\partial x_m}(\vec{v})\right).$$
+
+<br/><br/>
+
+El campo asigna a cada vector $v$ el vector de las derivadas de la función en todas las direcciones principales.

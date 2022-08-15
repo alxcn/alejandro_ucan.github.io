@@ -119,7 +119,7 @@ enableEmoji = true
     name = "MMF"
     title = "Métodos Matemáticos para la Física"
     url = "/mmf/"
-    weight = 3
+    weight = 5
   #[[menu.header]]
   #  name = "Cálculo Diferencial"
   #  title = "Cálculo Diferencial"
@@ -130,6 +130,11 @@ enableEmoji = true
   #  title = "Slides"
   #  url = "/slides/"
   #  weight = 5
+    [[menu.header]]
+    name = "photos"
+    title = "My Favorite Photos"
+    url = "/photos/"
+    weight=4
     
   # Configure footer  
   #[[menu.footer]]
