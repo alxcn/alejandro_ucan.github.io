@@ -14,7 +14,7 @@ En la Sesión 03 trabajaremos con los objetivos:
  * Realizar rotaciones y reflexiones en $\mathbb{R}^3.$ <br/> <br/>
  * Aplicar estas transformaciones en sistemas físicos.
 
-El contenido para la **Sesión 0e** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-03).
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-03).
 
 ```{r embed-xaringan, echo=FALSE}
 xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-03", ratio = "4:3")
