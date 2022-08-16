@@ -126,7 +126,7 @@ pl.title("Campo de velocidades de un gas.")
 pl.show()
 ```
 
-![Gas Speed](/alejandro_ucan.github.io/static/slides/2022-06-MMF/MMF-sesion-04/Gas-speed.png)
+![Gas Speed](Gas-speed.png)
 ---
 # Divergencia:
 
@@ -161,7 +161,7 @@ Calcule el producto cruz  de los vectores $(1,2)$ y $(2,3),$ y los vectores $(1,
 ---
 # Interpretación física del rotacional.
 
-Imaginemos que tenemos el campo vectorial $\mathbf{F}(x,y,z)=(y,-x,0),$ que representa las velocidades de un fluído. 
+.pull-left[Imaginemos que tenemos el campo vectorial $\mathbf{F}(x,y,z)=(y,-x,0),$ que representa las velocidades de un fluído. ]
 
 ```{python eval=FALSE, include=FALSE}
 import numpy as np
@@ -180,12 +180,12 @@ ax.quiver(x,y,z,u,v,w,length=0.1,color="blue")
 pl.title("Campo de velocidades de un fluído.")
 pl.show()
 ```
-
-![Gas Speed](/users/koyomi/Documents/Github/alejandro_ucan.github.io/static/slides/2022-06-MMF/MMF-sesion-04/fluid-speed.png)
+.pull-right[
+![Gas Speed](fluid-speed.png)]
 ---
 # Interpretación física del Rotacional
 
-En una sección de altura, esto se ve cómo:
+.pull-left[En una sección de altura, esto se ve cómo:]
 
 ```{python eval=FALSE, include=FALSE}
 import numpy as np
@@ -200,5 +200,5 @@ pl.quiver(x,y,u,v,scale=7,units="xy",color="blue")
 pl.title("Campo de velocidades de un gas.")
 pl.show()
 ```
-![Gas Speed](/users/koyomi/Documents/Github/alejandro_ucan.github.io/static/slides/2022-06-MMF/MMF-sesion-04/transversal-fluid-speed.png)
+.pull-right[![Gas Speed](transversal-fluid-speed.png)]
 Cuando calculamos el rotacional: $$\nabla \times \mathbf{F}= (0,0,-2z).$$
