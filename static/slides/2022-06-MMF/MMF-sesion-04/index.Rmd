@@ -126,7 +126,7 @@ pl.title("Campo de velocidades de un gas.")
 pl.show()
 ```
 
-![Gas Speed](/users/koyomi/Documents/Github/alejandro_ucan.github.io/static/slides/2022-06-MMF/MMF-sesion-04/Gas-speed.png)
+![Gas Speed](/alejandro_ucan.github.io/static/slides/2022-06-MMF/MMF-sesion-04/Gas-speed.png)
 ---
 # Divergencia:
 
