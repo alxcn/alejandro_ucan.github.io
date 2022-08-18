@@ -135,7 +135,7 @@ pl.show()
   - En $\mathbb{R}^3,$ la _razón de expansión del volumen_ en un campo.
   
 <br/><br/>
-__Ejemplo:__ Calcule el rotacional para las siguientes campos vectoriales: $\mathbf{F}_1(x,y)=(x,0),\, \mathbf{F}_2(x,y)=(x,y)$ y $\mathbf{F}_3=(-x,-y).$
+__Ejemplo:__ Calcule divergencia para las siguientes campos vectoriales: $\mathbf{F}_1(x,y)=(x,0),\, \mathbf{F}_2(x,y)=(x,y)$ y $\mathbf{F}_3=(-x,-y).$
 
 ---
 # El producto cruz o producto vectorial
@@ -151,7 +151,7 @@ Algunas propiedades:
 ---
 # Ejemplo: 
 
-Calcule el producto cruz  de los vectores $(1,2)$ y $(2,3),$ y los vectores $(1,2,-3)$ y $(-1,4,2).$
+Calcule el producto cruz  de los vectores los vectores $(1,2,-3)$ y $(-1,4,2).$
 
 ---
 # Rotacional
