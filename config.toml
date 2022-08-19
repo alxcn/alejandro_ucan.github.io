@@ -32,7 +32,7 @@ enableEmoji = true
   orgLocal = ""
   description = "A personal website."
   favicon = "/img/favicon.ico"
-  logo = "/img/non-regular-wall.jpg"
+  logo = "/img/au.png"
   mainSections = ["about", "teaching", "MMF"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -41,7 +41,7 @@ enableEmoji = true
   socialInFooter = true
   # Default image for social sharing and search engines. 
   # Place image file in `static` folder and specify image name here.
-  sharing_image = "/img/share.jpg"
+  sharing_image = "/img/au.png"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
   #twitter = "apreshill"
   
