@@ -8,14 +8,12 @@ headline: |
 
 <!-- this is a subheadline -->
 
-* Análisis de Métodos Matemáticos para la Física (F1009).
-* (F1006B).
+* Análisis de Métodos Matemáticos para la Física (F1009). <br/><br/>
+* (F1006B). <br/>
 * (F1017B).
 * (MA1002B).
 * (MA1029).
 * (MA1035).
 
----
 
-# This is my Schedule.
-
+:mx:
