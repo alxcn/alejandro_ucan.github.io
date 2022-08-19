@@ -3,7 +3,7 @@
 text_align_right: false
 show_title_as_headline: false
 headline: |
-  Hi, my name is Alejandro Ucan-Puc..
+  Hi, my name is Alejandro Ucan-Puc...
 ---
 
 <!-- this is a subheadline -->

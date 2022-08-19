@@ -114,27 +114,28 @@ enableEmoji = true
     name = "I.rracionalx"
     title = "i.rracionalx"
     url = "/i.rracionalx/"
-    weight = 3
+    weight = 5
   [[menu.header]]
     name = "MMF"
     title = "Métodos Matemáticos para la Física"
     url = "/mmf/"
-    weight = 5
+    weight = 4
   #[[menu.header]]
   #  name = "Cálculo Diferencial"
   #  title = "Cálculo Diferencial"
   #  url = "/calculo-diferencial/"
   #  weight = 4
-  #[[menu.header]]
-  #  name = "Slides"
-  #  title = "Slides"
-  #  url = "/slides/"
-  #  weight = 5
+  [[menu.header]]
+    name = "Teaching"
+    title = "teaching"
+    url = "/teaching/"
+    weight = 3
     [[menu.header]]
     name = "photos"
     title = "My Favorite Photos"
     url = "/photos/"
-    weight=4
+    weight=6
+    
     
   # Configure footer  
   #[[menu.footer]]
