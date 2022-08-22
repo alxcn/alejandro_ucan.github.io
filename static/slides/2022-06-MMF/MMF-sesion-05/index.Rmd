@@ -169,3 +169,24 @@ En particular, las curvas pueden ser formadas por pedazos de curva o curvas a tr
 #### Ejemplo: 
 
 Calcula la integral del campo $\mathbf{F}(x,y)=(3x,-2y)$ sobre la curva dada por $$c(t)=\left\{\begin{array}{cc} (\cos(2t\pi),\sin(2t\pi)) & \mbox{ si }0\leq t\leq 1/2 \\ (-3+4t,0) & \mbox{ si } 1/2\leq t \leq 1\end{array}\right.$$
+
+---
+# Actividad de Clase:
+
+1. Calcula la integral de la función indicada en la región $R=[0,1]\times[0,1].$ 
+  * $f(x,y)=ye^{xy}.$
+  * $f(x,y)=\ln\left[(x+1)(y+1)\right].$
+
+2. Calcula las siguientes integrales:
+  * $\displaystyle{\int_{-1}^1 \int_{-2|x|}^{|x|} e^{x+y}dydx.}$
+  * $\displaystyle{\int_{0}^{\pi/2}\int_{0}^{\cos x}y\sin x dy dx.}$
+  
+3. __Reto:__ Si $f(x)$ es continua en $[a,b]$ y $g(y)$ es continua en $[c,d].$ Pruebe que para la función $h(x,y)=f(x)g(y)$ se cumple $$\int_{[a,b]\times [c,d]}h(x,y) dA= \left[\int_a^b f(x)dx\right] \left[\int_c^d g(y)dy\right].$$
+
+---
+
+4. Integre $f(x,y,z)=ze^{x+y}$ en la caja $B=[0,1]^3.$
+
+5. Calcule la integral de línea del campo $\mathbf{F}(x,y,z)=(x,y,z)$ sobre las siguientes trayectorias:
+  * $c(t)=(\sin(t),0,\cos(t))$ con $0\leq t\leq 2\pi.$
+  * $c(t)=(t^2,3t,2t^3)$ con $-1\leq t \leq 2.$
