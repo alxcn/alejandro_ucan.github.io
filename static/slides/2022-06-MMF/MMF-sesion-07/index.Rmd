@@ -1,0 +1,99 @@
+---
+title: "Teoría del Potencial"
+subtitle: "Sesión 07"
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Conocer los dos tipos de potencial que existen. <br/><br/>
+ * Aprender las técnicas para calcular el potencial de un campo de fuerzas. <br/><br/>
+ * Aplicar la teoría del potencial en problemas físicos. <br/><br/>
+
+---
+# ¿Qué es un potencial?
+
+> Un __potencial__ es un objeto que nos va a permitir derivar un campo de fuerzas.
+
+### El potencial escalar.
+
+> Supongamos que tenemos una región simple $D$ y una fuerza $\mathbf{F}$ definia en la región. Si existe una función $\varphi:D\to \mathbb{R}$ de tal manera que $$\mathbf{F}=-\nabla \varphi.$$ Entonces diremos que $\varphi$ es un __potencial escalar__ para $\mathbf{F}.$
+
+<br/><br/>
+
+__Ejemplo:__ El campo gravitacional tiene un potencial escalar asociado.
+
+---
+### Propiedades de las Fuerzas con Potencial Escalar.
+
+  * El campo es conservativo (independencias de curvas en integrales de línea).
+  
+Si $c:[a,b]\to \mathbb{R}^3$ es una curva y $\mathbf{F}=-\nabla \varphi$ dónde $\phi:\mathbb{R}^3\to\mathbb{R}.$ Si queremos calcular el trabajo que realiza una partícula que se desplaza sobre $c$ dada por el campo $\mathbf{F}.$ 
+
+$$ \oint_c \mathbf{F}\cdot ds =-\oint_c \nabla\varphi\cdot ds =- \int_a^b \left(\frac{\partial \varphi}{\partial x}(c(t)),\frac{\partial \varphi}{\partial y}(c(t)),\frac{\partial \varphi}{\partial z}(c(t))\right)\cdot \left(\frac{d x}{dt}(t),\frac{d y}{dt}(t),\frac{d z}{dt}(t)\right)$$
+
+$$ -\int_a^b \frac{d}{dt}\varphi\circ c dt=\varphi(c(b))-\varphi(c(a)).$$
+
+---
+### Propiedades de los potenciales escalares
+
+* Si la curva es cerrada, entonces no hay trabajo. 
+
+<br/><br/>
+
+* No tiene rotacional (claramente es un campo gradiente).
+
+<br/><br/>
+
+* Las líneas de flujo no pueden ser cerradas.
+
+---
+#### Ejemplo: El campo gravitacional
+
+Consideremos el campo dado por $$\mathbf{F}_G=-k \frac{x\mathbf{i}+y\mathbf{j}+z\mathbf{k}}{x^2+y^2+z^2}.$$
+
+En un punto $p=(x,y,z)$ yo quiero moverme en dirección hacia el "infinito" en una trayectoria recta y calcular el trabajo que obtengo al moverme (contra el campo de fuerza).
+
+$$\int_C \mathbf{F}_G\cdot ds =-\lim_{t\to \infty}\int_t^0 \mathbf{F}_G(c(x))c'(x)dx=-\lim_{t\to \infty} \left[\frac{k}{(x^2+y^2+z^2)}(p)-\frac{k}{x^2+y^2+z^2}(c(t))\right]=\frac{-k}{x^2+y^2+z^2}.$$
+
+
+---
+### El potencial vectorial.
+
