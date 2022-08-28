@@ -19,9 +19,9 @@ cascade:
 -   Modelación matemática intermedia (MA1029). <br/><br/>
 -   Modelación en ingeniería mediante sistemas dinámicos (MA1035). <br/><br/>
 
-# My office hours:
+## My office hours:
 
-## Período 1
+### Período 1
 
 | "Horario " | "Lu" | "Ma" | "Mi" | "Ju" | "Vi" |
 |-----|------|------|------|------|------|

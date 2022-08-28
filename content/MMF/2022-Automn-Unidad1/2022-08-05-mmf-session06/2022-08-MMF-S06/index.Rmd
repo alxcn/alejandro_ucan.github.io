@@ -17,5 +17,5 @@ En la Sesión 06 trabajaremos con los objetivos:
 El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-06).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-05", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-06", ratio = "4:3")
 ```
