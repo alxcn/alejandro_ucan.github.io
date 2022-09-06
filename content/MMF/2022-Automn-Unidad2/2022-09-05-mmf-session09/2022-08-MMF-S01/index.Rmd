@@ -1,0 +1,21 @@
+---
+title: "Sesión 1: Introducción a los Vectores y Funciones de Varias Variables."
+weight: 1
+subtitle: ""
+excerpt: "Introducción"
+date: '`r Sys.Date()`'
+slug: MMF-sesion-01
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos: 
+
+ * Recordar los conceptos de vector en $\mathbb{R}^2$ y $\mathbb{R}^3$. <br/> <br/>
+ * Recordar como operar vectores (suma y producto escalar). <br/> <br/>
+ * Aprender la definición de _campo escalar_ y _campo vectorial_, sus gráficas y curvas de nivel.
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-01", ratio = "4:3")
+```

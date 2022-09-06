@@ -1,0 +1,47 @@
+---
+title: "El plano complejo"
+subtitle: "Sesión 08"
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Conocer la aritmética, geometría y álgebra de los números complejos y el plano complejo. <br/><br/>
+---

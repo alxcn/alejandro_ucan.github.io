@@ -1,0 +1,21 @@
+---
+title: "Sesión 6: Teoremas de Green, Stokes y Gauss"
+weight: 6
+subtitle: ""
+excerpt: "Los teoremas fuertes de la unidad 1"
+date: '`r Sys.Date()`'
+slug: MMF-session-06
+draft: false
+---
+
+En la Sesión 06 trabajaremos con los objetivos:
+
+-   Conocer las condiciones (hipótesis) para usar los teorema anteriores. <br/><br/>
+-   Comprender las consecuencias de los teoremas anteriores. <br/><br/>
+-   Aplicar los teoremas anteriores en problemas físicos. <br/><br/>
+
+El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-06).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-06", ratio = "4:3")
+```

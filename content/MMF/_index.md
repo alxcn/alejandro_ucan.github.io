@@ -16,6 +16,7 @@ sidebar:
     Puedes encontrar los recursos de los siguientes periodos:
     
     - 2022 Otoño Unidad 1
+    - 2022 Otoño Unidad 2
     
   #  Check out the _index.md file in the /blog folder 
   #  to edit this content. 

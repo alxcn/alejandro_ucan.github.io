@@ -90,7 +90,7 @@ Este teorema nos permite relacionas integrales de línea con integrales de área
 ---
 # Teorema de Green: aplicación.
 
-.pull_left[ > Calcule la integral de línea del campo $\mathbf{F}(x,y)=(x^2y^2,x^3y+y^2)$ sobre la curva frontera de la región descrita en la figura. ]
+> Calcule la integral de línea del campo $\mathbf{F}(x,y)=(x^2y^2,x^3y+y^2)$ sobre la curva frontera de la región descrita en la figura. ]
 
 ---
 # Teorema de Stokes: requerimientos.
