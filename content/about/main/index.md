@@ -6,7 +6,7 @@ number_categories: 0 # set to zero to exclude
 show_intro: true
 intro: |
   
-show_outro: true
+show_outro: false
 outro: |
   <i class="fas fa-mug-hot pr2"></i>If my blog has helped you, you can [buy me a coffee](https://ko-fi.com/)!
 ---
