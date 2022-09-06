@@ -121,9 +121,9 @@ enableEmoji = true
     url = "/mmf/"
     weight = 4
   #[[menu.header]]
-  #  name = "Cálculo Diferencial"
-  #  title = "Cálculo Diferencial"
-  #  url = "/calculo-diferencial/"
+  #  name = ""
+  #  title = ""
+  #  url = ""
   #  weight = 4
   [[menu.header]]
     name = "Teaching"
