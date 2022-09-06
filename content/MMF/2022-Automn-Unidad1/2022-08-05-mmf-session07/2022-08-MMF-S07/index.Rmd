@@ -1,14 +1,14 @@
 ---
-title: "Sesión 7: Teoremas de Green, Stokes y Gauss"
+title: "Sesión 7: Teoría del potencial"
 weight: 7
 subtitle: ""
-excerpt: "Los teoremas fuertes de la unidad 1"
+excerpt: ""
 date: '`r Sys.Date()`'
 slug: MMF-session-06
 draft: false
 ---
 
-En la Sesión 06 trabajaremos con los objetivos:
+En la Sesión 07 trabajaremos con los objetivos:
 
  * Conocer los dos tipos de potencial que existen. <br/><br/>
  * Aprender las técnicas para calcular el potencial de un campo de fuerzas. <br/><br/>
