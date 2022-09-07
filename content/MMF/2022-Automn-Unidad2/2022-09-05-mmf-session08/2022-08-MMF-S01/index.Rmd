@@ -1,6 +1,6 @@
 ---
-title: "Los números complejos"
-weight: 1
+title: "Sesión 08: Los números complejos"
+weight: 9
 subtitle: "Aritmética, Álgebra y Geometría"
 excerpt: ""
 date: '`r Sys.Date()`'
