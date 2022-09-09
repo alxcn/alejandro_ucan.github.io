@@ -1,21 +1,22 @@
 ---
-title: "Sesión 1: Introducción a los Vectores y Funciones de Varias Variables."
-weight: 1
-subtitle: ""
-excerpt: "Introducción"
+title: "Sesión 09: Funciones complejas"
+weight: 8
+subtitle: "Analiticas y Holomorfas"
+excerpt: ""
 date: '`r Sys.Date()`'
-slug: MMF-sesion-01
+slug: MMF-sesion-09
 draft: false
 ---
 
 En la Sesión uno trabajaremos con los objetivos: 
 
- * Recordar los conceptos de vector en $\mathbb{R}^2$ y $\mathbb{R}^3$. <br/> <br/>
- * Recordar como operar vectores (suma y producto escalar). <br/> <br/>
- * Aprender la definición de _campo escalar_ y _campo vectorial_, sus gráficas y curvas de nivel.
+ * Introducir los conceptos de regiones en el plano complejo. <br/> <br/>
+ * Entender la compactificación en un punto del plano complejo. <br/> <br/>
+ * Introducir el concepto de función de variable compleja. <br/><br/>
+ * Entender los límites y continuidad en el plano complejo.
 
-El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-01).
+El contenido para la **Sesión 09** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-09).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-01", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-09", ratio = "4:3")
 ```

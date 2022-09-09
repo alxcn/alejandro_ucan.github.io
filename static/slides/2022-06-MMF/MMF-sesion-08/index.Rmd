@@ -41,6 +41,13 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
 # Objetivos:
 
  * Conocer la aritmética, geometría y álgebra de los números complejos y el plano complejo. <br/><br/>
@@ -87,7 +94,7 @@ Notemos que si multiplicamos dos reales $$(x_1,0)(x_2,0)=(x_1 x_2,0)$$ y su mult
 ---
 # El plano complejo
 
-> El plano $\mathbb{R}^2$ con las operaciones anteriores se conoce como el espacio de los números complejos, y podemos servirnos de su representación gráfica para representar a los números complejos. 
+> El plano $\mathbb{R}^2$ con las operaciones anteriores se conoce como el espacio de los números complejos y lo vamos a denotar por $\mathbb{C},$ y podemos servirnos de su representación gráfica para representar a los números complejos. 
 <br/><br/>
 En este caso, los ejes coordenados se conocen como el eje real y el eje imaginario. 
 <br/><br/>
