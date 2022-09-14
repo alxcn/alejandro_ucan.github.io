@@ -50,131 +50,87 @@ xaringanExtra::use_logo(
 ```
 # Objetivos:
 
- * Introducir los conceptos de regiones en el plano complejo. <br/> <br/>
- * Entender la compactificación en un punto del plano complejo. <br/> <br/>
- * Introducir el concepto de función de variable compleja. <br/><br/>
- * Entender los límites y continuidad en el plano complejo.
+ * Conocer la definición de derivada (compleja). <br/><br/>
+ * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
+ * Aprender las condiciones para que una función sea holomorfa. <br/><br/>
+
 ---
-# Regiones del Plano complejo (Topología del plano complejo)
+# Derivación (compleja)
 
-> __Definición:__ la distancia entre los complejos $z_1=a+bi$ y $z_2=c+di$ está dada por la expresión $$|z_1-z_2|=\sqrt{(a-c)^2+(b-d)^2}.$$
+> Sea $f$ una función y $z_0$ un punto interior de su dominio. Definimos la _derivada_ de $f$ en $z_0,$ como el límite: $$\frac{d\,f}{dz}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.$$ Si el límite existe, entonces diremos que $f$ es _diferenciable_ en $z_0.$
 
-### Algunas propiedades de la distancia:
+__Ejemplo:__ Supongamos que $f(z)=z^2.$ Veamos que $f$ es diferenciable en todo $\mathbb{C}.$ Escribiendo $\Delta z= z_0-z$ y $\Delta w=f(z+\Delta z)-f(z),$ notemos que $$f'(z)=\lim_{\Delta z\to 0}\frac{\Delta w}{\Delta z}=\lim_{\Delta z\to 0}\frac{(z+\Delta z)^2-z^2}{\Delta z}=\lim_{\Delta z\to 0}(2z+\Delta z)=2z.$$
 
-  * $|z_1-z_2|=|z_2-z_1|.$ <br/>
-  * $|z_1+z_2|\leq |z_1|+|z_2|.$ <br/>
+---
+## Continuidad no implica diferenciabilidad.
+
+__Ejemplo:__ ¿Qué pasa con la función $f(z)=|z|^2$ en $z=0$? ¿Es diferenciable? ¿Es diferenciable en $z\neq 0$?
+
+$$ \frac{\Delta w}{\Delta z}=\frac{(z+\Delta z)(\overline{z}+\overline{\Delta z})-z\overline{z}}{\Delta z}=\overline{z}+\overline{\Delta z}+z\frac{\overline{\Delta z}}{\Delta z},$$
+  * Cuando $z=0,$ $f'(0)=0.$ <br/><br/>
+  * Cuando $z\neq 0,$ la derivada no existe.
+      * Si $z\to 0$ por valores reales $\frac{\Delta w}{\Delta z}=z+\overline{z}.$ <br/>
+      * Si $z\to 0$ por valores imaginarios, $\frac{\Delta w}{\Delta z}=\overline{z}-z.$
+---
+## Reglas de Derivación:
+
+> __Teorema:__ Supongamos que $f$ y $g$ son funciones diferenciables, entonces: <br/>
+  * $\frac{d}{dz}c=0$ donde $c\in \mathbb{C}.$ <br/>
+  * $\frac{d}{dz}[c f(z)]= c\frac{df}{dz}.$ <br/>
+  * $\frac{d}{dz}[f(z)+g(z)]=\frac{df}{dz}+\frac{dg}{dz}.$ <br/>
+  * $\frac{d}{dz}[f(z)g(z)]=g\cdot\frac{df}{z}+f\cdot\frac{dg}{dz}.$ <br/>
+  * Si $g(z)\neq 0$, $\frac{d}{dz}\left[\frac{f(z)}{g(z)}\right]=\frac{g(z)f'(z)-f(z)g'(z)}{[g(z)]^2}.$ <br/>
+  * Para cada $n\in \mathbb{N},$ $\frac{d}{dz}z^n=n z^{n-1}.$ <br/>
+  * $\frac{d}{dz}[f(g(z))]=f'(g(z))\cdot g'(z).$
   
-> __Definición:__ una $\varepsilon-$vecindad de $z_0$ es simplemente el conjunto de complejos que se encuentran a distancia a lo más $\varepsilon$ del centro $z_0,$ en notación esto es: $$|z - z_0|<\varepsilon.$$
+---
+## Reglas de Derivación:
+
+> __Ejemplo:__ Calcule la derivada de la función $f(z)=(2z^2+i)^5.$
 
 ---
-## Clasificación de puntos.
+# Ecuaciones de Cauchy-Riemann
 
-> __Definición:__ dado un conjunto $S$ en nuestro plano complejo, un punto $z$ se dice que es: <br/><br/>
-  * _interior_ si podemos construir una vecindad de $z$ donde todos los puntos sean de $S.$ <br/><br/>
-  * _exterior_ si podemos construir una vecindad de $z$ donde todos los puntos no pertenezcan a $S.$ <br/><br/>
-  * _frontera_ si para toda vecindad de $z$ esta contiene puntos de $S$ y puntos que no pertenecen a $S.$ <br/><br/>
-  Denotaremos por $\mbox{int}(S)$ al conjunto de puntos interiores, $\mbox{ext}(S)$ al conjunto de puntos exteriores, y por $\partial S$ el conjunto de puntos frontera.
-  
----
-## Abiertos, cerrados y otras propiedades:
+Supongamos que localmente, $$f(x+iy)=u(x,y)+iv(x,y).$$ Entonces, $\Delta z=\Delta x+i\Delta y,$ y la el cociente de incrementos se ve $$\frac{f(z+\Delta z)-f(z)}{\Delta z}=\frac{u(x+\Delta x,y+\Delta y)-u(x,y)+i[v(x+\Delta x,y+\Delta y)-v(x,y)]}{\Delta x+i \Delta y}$$
 
-> __Definición:__ Un conjunto $S$ del plano complejo se dice que es: <br/><br/>
-  * _abierto_ si sólo contiene puntos interiores. <br/><br/>
-  * _cerrado_ si todos sus puntos frontera pertenecen al conjunto. <br/><br/>
-Denotaremos por $\overline{S}$ al conjunto que resulta de unir $S$ con sus puntos frontera $\partial S,$ y se le llama _cerradura._
+* Si tomo la dirección real, $\Delta z=\Delta x+i0,$ entonces $$f'(z)=\frac{\partial}{\partial x}u(x,y)+ i \frac{\partial}{\partial x}v(x,y).$$
 
-<br/>
-> __Definición:__ Un conjunto abiero $S$ en $\mathbb{C}$ se dice que es _conexo_ si cualquier par de puntos los puedo unir por un camino de rectas contenido enteramente en $S.$ <br/>
-Un conjunto $S$ es _acotado_ si existe un círculo de radio $R$ que contiene al conjunto $S.$ Si no existe tal circulo, entonces diremos que $S$ es _no acotado._
+* Si tomo la dirección imaginaria, $\Delta z= 0 +i\Delta y,$ entonces $$f'(z)=\frac{\partial }{\partial y}v(x,y)-i\frac{\partial }{\partial y}u(x,y).$$
 
 ---
-# Compactificación a un punto de $\mathbb{C}.$
+# Ecuaciones de Cauchy-Riemann
 
-
----
-# Funciones de (una) variable compleja.
-
-> __Definición:__ Sea $S$ un conjunto de los número complejos. Una _función_ definida en $S$ es una regla que asigna a cada $z\in S$ un número complejo $w.$ Denotaremos por $$w=f(z)$$ a esta regla de asignación. <br/><br/>
-En general pediremos que $S$ sea un _dominio_ (conjunto abierto y conexo).
-
-__Example:__ Consideremos la función $f(z)=\frac{1}{z},$ la función que asigna a cada complejo $z$ su inverso multiplicativo $1/z.$ <br/><br/>
-
-Podemos definirla en el dominio $\mbox{Im} z>1$ o en el dominio $z\neq 0.$
+> De lo anterior, si la función es diferenciable ambas expresiones deben ser las mismas (por definición de existencia del límite). Así que se cumple $$\frac{\partial u}{\partial x}(x,y) =\frac{\partial v }{\partial y}(x,y) \mbox{ y } \frac{\partial v}{\partial x}(x,y)=-\frac{\partial u}{\partial y}(x,y).$$ <br/><br/> Ecuaciones conocidas como __Ecuaciones de Cauchy-Riemann.__
 
 ---
-## ¿Funciones multivariadas?
+## Condiciones necesarias y suficientes de diferenciabilidad
 
-Recordemos que para que una expresión sea llamado función, necesitamos que para cada $z$ debe haber un solo valor de la expresión. En caso que esto no se cumpla, decimos que la regla de asignación define una _función multivaluada_. 
+> __Teorema:__ Supongamos que $f(x+iy)=u(x,y)+iv(x,y)$ en una vecindad de $z_0.$ Entonces se cumple que:
+* Si $f'(z_0)$ existe, entonces las derivadas parciales de $u$ y $v$ satisfacen las ecuaciones de Cauchy-Riemann. <br/><br/>
+* Si las derivadas parciales de $u$ y $v$ existen y son continuas en $z_0,$ y satisfacen las ecuaciones de Cauchy-Riemann, entonces $f'(z_0)$ existe.
+
+---
+## Condiciones necesarias y suficientes.
+
+> __Ejemplo:__ recordemos la función $f(z)=|z|^2.$ En este caso $|x+iy|^2=x^2+y^2+i0,$ por lo que $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ Las ecuaciones de Cauchy-Riemann me dicen $$2x=0\mbox{ y }2y=0$$ que se satisfacen unicamente cuando $x=y=0.$ <br/><br/>
+Esta es otra manera de demostrar que $f$ no es diferenciable en $z\neq 0.$
+
+---
+# Funciones Holomorfas
+
+> __Definición:__ Una función $f$ es _holomorfa_ en $z_0$ si su derivada existe en una vecindad de $z_0$ y no solo en $z_0,$ y es holomorfa en una región $R$ si lo es para cada uno de los puntos de $R.$
+
+__Contraejemplo:__ La función $f(z)=|z|^2$ no es holomorfa pues $f'$ sólo existe en $z=0.$
 
 <br/><br/>
-__Ejemplo:__ Las funciones raíz $f(z)=z^{1/k},$ es una función multivaluada dado que para cada complejo $z$ existen $k$ raíces que satisfacen $w^k=z.$
-<br/><br/>
 
-En estos casos podemos tomar regiones tales que la función multivaluada, se convierta a una univaluada (función usual).
-
-### Función significa función univaluada.
----
-## Funciones componente.
-
-> Si $f$ es una función compleja, entonces para cada $z$ tenemos que $w=f(z)$ es un complejo, por lo que se puede escribir como su parte real y su parte imaginaria o lo que es lo mismo $$f(z)=u(\mbox{Re}z,\mbox{Im}z)+iv(\mbox{Re}z,\mbox{Im}z)$$ donde $u$ y $v$ podemos pensarlo como funciones $\mathbb{R}^2\to \mathbb{R}.$
-
-__Ejemplo:__ Sea $f(z)=z^2=(x+iy)^2=x^2-y^2+2ixy,$ entonces: <br/><br/>
-
-  * $\mbox{Re}(f)(z)=u(z)=x^2-y^2.$ <br/><br/>
-  * $\mbox{Im}(f)(z)=v(z)=2xy.$
-  
----
-## Funciones componente.
-
-__Ejemplo:__ Sea $f(z)=z*\overline{z},$ ¿quiénes son sus funciones componentes?
-
-
-$$ z\overline{z}=(x+iy)(x-iy)=x^2+y^2+i0.$$ Entonces las funciones componente son $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ 
-
-> En estos casos cuando la componente $v$ sea identicamente cero, diremos que la función es _real-valuada_ de _variable compleja_.
+__Ejemplo:__ Todo polinomio es holomorfo en cualquier region de $\mathbb{C}.$ En particular para todo $\mathbb{C},$ por lo que se dice que los polinomios son funciones _enteras._
 
 ---
-# ¿Cómo visualizar mis funciones?
+## Singularidades
 
-> Informalmente hablando, podemos pensar que nuestras funciones complejas son funciones de $\mathbb{R}^4$ en \mathbb{R}^4,$ lo cual dificulta observarlas gráficamente. <br/><br/>
-Para esto utilizaremos algo llamado _mapeo_ o _transformación_ de un dominio en otro. 
+> __Definición:__ Sea $f$ una función y $z_0$ un punto, decimos que $z_0$ es una _singularidad_ de $f,$ si $f$ no es holomorfa en $z_0$ pero si en cualquier punto de una vecindad de $z_0.$
 
-__Ejemplo:__ Grafique $f(z)=|z|-i\mbox{Im}(z).$
+__Ejemplo:__ Las funciones $f(z)=z^{-n}$ tienen una singularidad en $z=0.$ <br/><br/>
 
----
-# Cálculo en variable compleja. 
-
-## Límites
-
-> Sea $f$ una función de variable compleja definida en un dominio $S.$ Diremos que $w_0\in D$ es el límite de $f$ cuando $z$ tiende a $z_0$ si para toda vecindad $V$ de $w_0,$ existe una vecindad $U$ de $z_0,$ tal que $f(U)\subset V.$
-
-<br/><br/>
-> __Teorema:__ Supongamos que $f(x+iy)=u(x,y)+iv(x,y),$ $z_0=x_0+iy_0$ y $w_0=u_0+iv_0.$ Entonces $\displaystyle{\lim_{z\to z_0}f(z)=w_0}$ si y sólo si:
-   $$\displaystyle{\lim_{(x,y)\to(x_0,y_0)}u(x,y)=u_0} \quad \mbox{ y } \quad \displaystyle{\lim_{(x,y)\to(x_0,y_0)}v(x,y)=v_0}.$$
-  
----
-__Ejemplo:__
-
-* Calcule el límite de $f(z)=(z^2+1)^{-1}$ cuando $z\to 0.$ 
-
----
-
-## Límites
-
-> __Teorema:__ Supongamos que se cumple que $\displaystyle{\lim_{z\to z_0}f(z)=w_0}$ y $\displaystyle{\lim_{z\to z_0}g(z)=W_0}.$ Entonces, se cumple:<br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}(f(z)+g(z))=w_0+W_0},$ <br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}(f(z)g(z))=w_0W_0}$ y  <br/><br/>
-  * si $W_0\neq 0,$ entonces $\displaystyle{\lim_{z\to z_0}(f(z)/g(z))=w_0/W_0}.$
-  
----
-## Continuidad
-
-> __Definición:__ Una función de variable compleja es continua en un punto $z_0$ si se cumplen las siguientes tres afirmaciones:
-  * $\displaystyle{\lim_{z\to z_0}f(z)}$ existe, <br/><br/>
-  * $f(z_0)$ existe y <br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}f(z)=f(z_0)}.$
-  
-<br/><br/>
-
-__Contraejemplo:__ la función $f(z)=z^{-1}$ es una función discontinua en $0.$
-
+__Contraejemplo:__ La función $f(z)=|z|^2$ no tiene singularidades.

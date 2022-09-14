@@ -1,21 +1,21 @@
 ---
-title: "Sesión 2: Límites y Derivadas Parciales."
-weight: 2
+title: "Sesión 10: Derivación compleja."
+weight: 11
 subtitle: ""
-excerpt: "Límites y Derivadas Parciales"
+excerpt: "Derivadas"
 date: '`r Sys.Date()`'
-slug: MMF-session-02
+slug: MMF-session-10
 draft: false
 ---
 
-En la Sesión 02 trabajaremos con los objetivos: 
+En la Sesión 10 trabajaremos con los objetivos: 
 
- * Determinar la existencia de límites en campos escalares. <br/> <br/>
- * Calcular límites en campos escalares y en campos vectoriales. <br/> <br/>
- * Calcular derivadas parciales de un campo escalar.
-
-El contenido para la **Sesión 02** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-02).
+ * Conocer la definición de derivada (compleja). <br/><br/>
+ * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
+ * Aprender las condiciones para que una función sea holomorfa. <br/><br/>
+ 
+El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-10).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-02", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-10", ratio = "4:3")
 ```
