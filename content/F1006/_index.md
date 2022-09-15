@@ -1,7 +1,7 @@
 ---
-title: "Análisis de Métodos Matemáticos para la Física"
+title: "Modelling the Movement in Engineering"
 description: |
-  Recursos para la materia F1009 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es).
+  Resources for F1006 signature offered at [ITESM Campus Monterrey](https://tec.mx/es).
 author: "Alejandro Ucan-Puc"
 show_post_thumbnail: true
 show_author_byline: true
@@ -11,12 +11,11 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: Recursos para la materia F1009 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es)
+  title: Resources for F1006 signature offered [ITESM Campus Monterrey](https://tec.mx/es)
   description: |
-    Puedes encontrar los recursos de los siguientes periodos:
+    Here you will find slides and other material for the following module:
     
-    - 2022 Otoño Unidad 1
-    - 2022 Otoño Unidad 2
+    - 2022 AD Module 1
     
   #  Check out the _index.md file in the /blog folder 
   #  to edit this content. 
@@ -36,7 +35,7 @@ cascade:
   # for single-sidebar layout
   sidebar:
     text_link_label: View recent posts
-    text_link_url: /f1009/
+    text_link_url: /f1006/
     show_sidebar_adunit: false # show ad container
 ---
 

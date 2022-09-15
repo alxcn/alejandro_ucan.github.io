@@ -1,0 +1,17 @@
+---
+title: "S01: Ecuaciones Diferenciales Ordinarias y Modelación"
+weight: 2
+subtitle: "EDOs"
+excerpt: "Primera sesión de la UF"
+date: '`r Sys.Date()`'
+slug: 2022-AD-MA1035
+draft: false
+---
+
+Descripción del curso.
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA!035/MA1035-sesion-01", ratio = "4:3")
+```
