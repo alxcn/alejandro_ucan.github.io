@@ -1,0 +1,23 @@
+---
+title: "S01: Ecuaciones Diferenciales Ordinarias y Modelación"
+weight: 2
+subtitle: "EDOs"
+excerpt: "Primera sesión de la UF"
+date: '`r Sys.Date()`'
+slug: 2022-AD-MA1035
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+
+* Conocer la definición de EDO y sus clasificaciones. <br/><br/>
+* Conocer el concepto de familia solución. <br/><br/>
+* Aplicar el método de separación de variables. <br/><br/>
+* Modelar mediante EDOS lineales de primer orden. <br/><br/>
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-01", ratio = "4:3")
+```

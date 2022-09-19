@@ -1,0 +1,22 @@
+---
+title: "S02: EDO's Lineales no homogéneas y variación de paramétros"
+weight: 2
+subtitle: "EDOs"
+excerpt: "Solución de EDOs lineales no homogéneas mediante el método de variación de parámetros."
+date: '`r Sys.Date()`'
+slug: 2022-AD-MA1035
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+* Conocer la forma genérica de una EDO lineal <br/><br/>
+* Aprender otras problematicas que modela una EDO lineal. <br/><br/>
+* Resolver EDO lineales no homogéneas. <br/><br/>
+* Aprender el método de variación de parámetros. <br/><br/>
+
+El contenido para la **Sesión 02** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-02).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-02", ratio = "4:3")
+```

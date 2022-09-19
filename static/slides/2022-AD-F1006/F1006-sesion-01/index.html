@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Mathematics for the Movement in Engineering</title>
+    <title>Mean and Instant Velocity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-09-17" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d7f1472fa7304b6e90a9b959e24544f8","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b5d3b5dee8be4233a7307ea2d8d0f0de","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Mathematics for the Movement in Engineering
+# Mean and Instant Velocity
 ]
 .subtitle[
-## Session 00
+## Session 01
 ]
 .author[
 ### Alejandro Ucan
@@ -42,34 +42,59 @@ class: center, middle, inverse, title-slide
 
 
 
-# The Professor
 
-### Alejandro Ucan Puc &lt;br/&gt;
-- Ph.D. with specialization in Mathematics. &lt;br/&gt;&lt;br/&gt;
-- Interests: Dynamical systems, Geometry and Topology. &lt;br/&gt;&lt;br/&gt;
-- Mail: alejandro.ucan-puc@tec.mx &lt;br/&gt;&lt;br/&gt;
-- Webpage: [alejandro-ucan.netlify.app](https://alejandro-ucan.netlify.app)
+# Goals:
+
+ * Understand the differences between mean and instant velocity. &lt;br/&gt;&lt;br/&gt;
+ * The derivative as a instant velocity indicator. &lt;br/&gt;&lt;br/&gt;
+ * The vectorial version of displacement and velocity.
+---
+# Problematic.
+
+&gt; A body falls from a building of 500 m height It is evident, body's height `\(h\)` diminish by the time pass. 
+
+
+&gt; Note that even if `\(h\)` diminish, the _rate of change_ it is not constant. This is true because the falling _velocity_ is not constant. Why?
 
 ---
-# Goals of the Module
+# Problematic, a graphic representation.
 
+---
+# The mean velocity.
 
 
 ---
-# Content
+# Computing the mean velocity.
+
+&gt; These are some known values for the height at the time `\(t\)` in seconds.
 
 
 ---
-# Evaluation Plan
+# Instant velocity.
 
-- __50%__ Exámenes Parciales Teóricos. &lt;br/&gt;&lt;br/&gt;
-- __20%__ Actividades, tareas y caso integrador. &lt;br/&gt;&lt;br/&gt;
-- __30%__ Examen Final Integrador.
 
 ---
-# Bibliography:
+# Mathematical formulation for Instant velocity.
+
+&gt; Mean velocity is `$$\overline{v}=\frac{\Delta h}{\Delta t}=\frac{\mbox{displacement}}{\mbox{time}}$$`
+
+If we reduce the time passed to cero (in the limit), we obtain the instant velocity.
+
+`$$v=\limit_{\Delta t\to 0}\overline{v}=\limit_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$`
+
+---
+# The vectorial version.
+
+&gt; The __vectorial curve__ that describe the displacement of the body is written as: `$$\vec{r}(t)=t\mathbf{i}+(500-4.9t^2)\mathbf{j}.$$` &lt;br/&gt;
+In this curve, we think that the `\(x-\)`axis correspond to tiem and the `\(y-\)`axis to the height. &lt;br/&gt;&lt;br/&gt; Note that `\(\mathbf{i}\)` and `\(\mathbf{j}\)` are the canonical vectors.
+
+---
+# And the derivative?
 
 
+&gt; Well, we can translate the velocity (derivative) of the body using vectors. The derivative will be the derivative of each component of the displacement vector respect to time. `$$\vec{v}(t)=\frac{d t}{dt}\mathbf{i}+\frac{d(500-4.9t^2)}{dt}\mathbf{j}=\mathbf{i}+-9.8t\mathbf{j}.$$`
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,6 +1,6 @@
 ---
-title: "Análisis de Métodos Matemáticos para la Física"
-subtitle: "Sesión 00"  
+title: "Mathematics for the Movement in Engineering"
+subtitle: "Session 00"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -41,64 +41,31 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
-# El profesor
+# The Professor
 
 ### Alejandro Ucan Puc <br/>
-- Doctor en Ciencias Matemáticas. <br/><br/>
-- Especialización en: Sistemas Dinámicos, Geometría y Topología. <br/><br/>
-- Interés en: Programación, Escritura Creativa, Cocina. <br/><br/>
-- Correo: alejandro.ucan-puc@tec.mx <br/><br/>
+- Ph.D. with specialization in Mathematics. <br/><br/>
+- Interests: Dynamical systems, Geometry and Topology. <br/><br/>
+- Mail: alejandro.ucan-puc@tec.mx <br/><br/>
 - Webpage: [alejandro-ucan.netlify.app](https://alejandro-ucan.netlify.app)
 
 ---
-# Objetivos del Curso
+# Goals of the Module
 
-* Definir las relaciones matemáticas entre las variables físicas relevantes de un sistema a través de principios fundamentales. <br/><br/>
 
-* Indetificar el problema a resolver con los elementos principales que lo caracterizan. <br/><br/>
-
-* Analizar la realidad con base en hechos, a través de un razonamiento lógico inductivo-deductivo que permita resolver problemas e interrogantes con criterios de validez y objetividad.
 
 ---
-# Contenido
+# Content
 
-1. Campos Escalares y Vectoriales:
-  * Cálculo en campos escalares y vectoriales.
-  * Campos vectoriales y transformaciones de coordenadas curvilíneas generales.
-  * Operadores Vectoriales: gradiente, divergencia y rotacional.
-  * Integrales sobre campos: teoremas de Gauss, Stokes y Green.
-  * Aplicación a teoría del potencial.
-  
-2. Transformaciones Integrales:
-  * Series de Fourier
-  * Transformadas de Fourier y sus aplicaciones.
-  * Transformada de Laplace ys sus aplicaciones.
-  * Concepto de transformada integral canónica.
-  * Otras transformadas integrales relevantes.
 
 ---
-
-3. Variable Compleja:
-  * Aritmética de números complejos.
-  * Funciones complejas.
-  * Cálculo de variable compleja.
-  * Series, Singularidades y Residuos.
-  * Transformación conforme.
-
----
-# Plan de Evaluación
+# Evaluation Plan
 
 - __50%__ Exámenes Parciales Teóricos. <br/><br/>
 - __20%__ Actividades, tareas y caso integrador. <br/><br/>
 - __30%__ Examen Final Integrador.
 
 ---
-# Bibliografía:
+# Bibliography:
 
-* Arfken George B, Mathematical methods for physicists : a comprehensive guide, 7th
-ed., Boston : Elsevier, 2013, 9780123846549 <br/> <br/>
-* Stewart, J. (2008). Cálculo de varias variables. Trascendentes tempranas, 6.
-* Marsden, J. E., Tromba, A. J., & Mateos, M. L. (1991). Cálculo vectorial (Vol. 69). México: Addison-Wesley Iberoamericana. <br/> <br/>
-* Gasquet Claude, Fourier analysis and applications : filtering, numerical computation wavelets, New York : Springer, 1999, eng, 0387984852 (hardcover : papel no ácido) <br/> <br/>
-* Churchill Ruel V, Variable compleja y aplicaciones, 5 ed., Aravaca (Madrid) : McGraw-Hill, 1995m spa, 8476157304.
 

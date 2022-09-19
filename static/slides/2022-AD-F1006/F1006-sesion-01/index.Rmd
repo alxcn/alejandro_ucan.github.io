@@ -1,0 +1,96 @@
+---
+title: "Mean and Instant Velocity"
+subtitle: "Session 01"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+
+# Goals:
+
+ * Understand the differences between mean and instant velocity. <br/><br/>
+ * The derivative as a instant velocity indicator. <br/><br/>
+ * The vectorial version of displacement and velocity.
+---
+# Problematic.
+
+> A body falls from a building of 500 m height It is evident, body's height $h$ diminish by the time pass. 
+
+
+> Note that even if $h$ diminish, the _rate of change_ it is not constant. This is true because the falling _velocity_ is not constant. Why?
+
+---
+# Problematic, a graphic representation.
+
+---
+# The mean velocity.
+
+
+---
+# Computing the mean velocity.
+
+> These are some known values for the height at the time $t$ in seconds.
+
+
+---
+# Instant velocity.
+
+
+---
+# Mathematical formulation for Instant velocity.
+
+> Mean velocity is $$\overline{v}=\frac{\Delta h}{\Delta t}=\frac{\mbox{displacement}}{\mbox{time}}$$
+
+If we reduce the time passed to cero (in the limit), we obtain the instant velocity.
+
+$$v=\limit_{\Delta t\to 0}\overline{v}=\limit_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$
+
+---
+# The vectorial version.
+
+> The __vectorial curve__ that describe the displacement of the body is written as: $$\vec{r}(t)=t\mathbf{i}+(500-4.9t^2)\mathbf{j}.$$ <br/>
+In this curve, we think that the $x-$axis correspond to tiem and the $y-$axis to the height. <br/><br/> Note that $\mathbf{i}$ and $\mathbf{j}$ are the canonical vectors.
+
+---
+# And the derivative?
+
+
+> Well, we can translate the velocity (derivative) of the body using vectors. The derivative will be the derivative of each component of the displacement vector respect to time. $$\vec{v}(t)=\frac{d t}{dt}\mathbf{i}+\frac{d(500-4.9t^2)}{dt}\mathbf{j}=\mathbf{i}+-9.8t\mathbf{j}.$$
+
+---

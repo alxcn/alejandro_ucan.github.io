@@ -1,0 +1,19 @@
+---
+title: "Mean and Instant Velocity"
+weight: 1
+subtitle: "A mathematical description of velocity."
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: F1006-sesion-01
+draft: false
+---
+
+ * Understand the differences between mean and instant velocity. <br/><br/>
+ * The derivative as a instant velocity indicator. <br/><br/>
+ * The vectorial version of displacement and velocity.
+
+El contenido para la **Sesión 00** se encuentra en following [slides](/slides/2022-AD-F1006/F1006-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-F1006/F1006-sesion-01", ratio = "4:3")
+```
