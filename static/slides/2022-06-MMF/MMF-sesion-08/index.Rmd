@@ -74,7 +74,7 @@ Notemos que si multiplicamos dos reales $$(x_1,0)(x_2,0)=(x_1 x_2,0)$$ y su mult
 ---
 # Propiedades Algebraicas
 
-> $\mathbb{R}^2$ con las operaciones complejas forman un espacio vectorial. <br/><br/>
+> $\mathbb{R}^2$ con las operaciones complejas forman un __campo__. <br/><br/>
 * Las operaciones son conmutativas: $z_1+z_2=z_2+z_1$ y $z_1 z_2=z_2 z_1.$
 <br/>
 * Las operaciones son asociativas: $z_1+(z_2+z_3)=(z_1+z_2)+z_3$ y $z_1(z_2z_3)=(z_1z_2)z_3.$
@@ -83,6 +83,7 @@ Notemos que si multiplicamos dos reales $$(x_1,0)(x_2,0)=(x_1 x_2,0)$$ y su mult
 <br/>
 * Si $z\neq 0$ con $z=a+ib,$ entonces el complejo $$1/z=\frac{a}{a^2+b^2}+i\frac{-b}{a^2+b^2}$$ satisface $z\left(\frac{1}{z}\right)=1.$
 
+__Reto:__ Investiga las propiedades de campo y prueba que los complejos son uno.
 ---
 # Ejemplo:
 
@@ -173,4 +174,22 @@ Notemos que para una raíz $k-$ésima tenemos $k$ complejos que cumplen la ecuac
 __Ejemplo:__
   * $\sqrt{i}=\sqrt{\cos(\pi/2)+i\sin(\pi/2)}=\cos\left(\frac{\pi+4m\pi}{4}\right)+i\sin\left(\frac{\pi+4m\pi}{4}\right),$ los complejos: $$z_1=\frac{1}{\sqrt{2}}(1+i)\quad \mbox{y}\quad \frac{1}{\sqrt{2}}(1-i).$$
 
+---
+# Actividad:
 
+1. Compruebe que para todo complejo $z,$ se cumple: $\overline{\overline{z}+3i}=z-3i$ y $\overline{iz}=-i\overline{z}.$ <br/><br/>
+
+2. Compruebe que se cumple $\sqrt{2}|z|\geq |\mbox{Re} z|+|\mbox{Im}z|.$ <br/><br/>
+
+3. Para un $R$ positivo (es real) y un número complejo $z_0.$ Compruebe que el conjunto de puntos que satisface la ecuación $$|z|^2+2\mbox{Re}(\overline{z_0}z)+|z_0|^2=R^2$$ es un círculo de radio $R$ y centro $z_0.$ <br/><br/>
+
+4. Encuentre el argumento de $\frac{i}{-2-2i}$ y $\left(\sqrt{3}-i\right)^6.$ <br/><br/>
+
+5. Use la forma polar para comprobar que $(-1+i)^7=-8(1+i).$ <br/><br/>
+
+6. Calcule las raíces $(-i)^{1/3}$ y $(-1)^{1/3}.$
+
+---
+# Reto del día (+1 pt sobre su examen parcial)
+
+> Supongamos que se cumple la siguiente identidad: $$1+z+z^2+\cdots+z^n=\frac{1-z^{n+1}}{1-z}\quad \mbox{ con }z\neq 1,$$ derive la _identidad trigonométrica de Lagrange_ $$1+\cos\theta +\cos 2\theta +\cdots+ \cos n\theta =\frac{1}{2}+\frac{\sin\left[\left(n+\frac{1}{2}\right)\theta\right]}{2\sin\left(\frac{\theta}{2}\right)}.$$

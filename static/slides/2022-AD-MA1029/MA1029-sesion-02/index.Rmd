@@ -46,6 +46,7 @@ xaringanExtra::use_scribble()
  * Conocer la geometría básica del espacio euclidiano de dimensión 3. <br/><br/>
  * Aplicar los conceptos básicos para determinar propiedades geométricas en puntos, rectas y planos. <br/><br/>
  * Aprender a parametrizar rectas y planos. <br/><br/>
+ * Conocer las principales superficies en $\mathbb{R}^3.$
  
 ---
 # El espacio $\mathbb{R}^3.$
