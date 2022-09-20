@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>El espacio euclidiano de dimensión 3</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alejandro Ucan" />
+    <meta name="date" content="2022-09-18" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x3859d39ce034731aea801db05ada67a","expires":1}</script>
+    <script src="index_files/himalaya/himalaya.js"></script>
+    <script src="index_files/js-cookie/js.cookie.js"></script>
+    <link href="index_files/editable/editable.css" rel="stylesheet" />
+    <script src="index_files/editable/editable.js"></script>
+    <script src="index_files/fabric/fabric.min.js"></script>
+    <link href="index_files/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="index_files/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# El espacio euclidiano de dimensión 3
+]
+.subtitle[
+## Sesión 01
+]
+.author[
+### Alejandro Ucan
+]
+.date[
+### 2022-09-18
+]
+
+---
+
+
+
+
+
+
+
+# Objetivos:
+
+ * Conocer la geometría básica del espacio euclidiano de dimensión 3. &lt;br/&gt;&lt;br/&gt;
+ * Aplicar los conceptos básicos para determinar propiedades geométricas en puntos, rectas y planos. &lt;br/&gt;&lt;br/&gt;
+ * Aprender a parametrizar rectas y planos. &lt;br/&gt;&lt;br/&gt;
+ * Conocer las principales superficies en `\(\mathbb{R}^3.\)`
+ 
+---
+# El espacio `\(\mathbb{R}^3.\)`
+
+&gt; __Definición:__ Se conoce como el __espacio euclidiano__ de dimensión tres al conjunto de ternas ordenadas de números reales `\((x,y,z)\)` y se denota por `\(\mathbb{R}^3.\)`
+
+&lt;br/&gt;&lt;br/&gt;
+
+Usualmente este espacio tiene una representación gráfica como tres rectas perpendiculares que se intersectan en el punto `\((0,0,0)\)` que se conoce como __origen.__
+
+---
+## Los octantes
+
+&gt; __Definición:__ Se conoce como octante al conjunto de puntos en `\(\mathbb{R}^3\)` que cumplen ciertas desigualdades, por ejemplo: `$$x\geq 0, \,y\geq 0\mbox{ y }z\geq 0.$$`
+En representación gráfica, son los espacios acotados por los planos que pasan por los ejes coordenados.
+
+---
+### Ejemplo:
+
+&gt; Describa el espacio de puntos que satisfacen las ecuaciones: `$$y=3 \mbox{ y } x=0,z=2.$$`
+
+
+---
+## ¿Cómo medir distancias en `\(\mathbb{R}^3\)`?
+
+&gt; __Definición:__ la distancia entre los puntos `\((x_1,y_1,z_1)\)` y `\((x_2,y_2,z_2)\)` se define como el valor `$$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.$$` Usualmente se denota como `\(d(P_1,P_2)\)` o `\(|P_1 P_2|.\)`
+
+__Ejemplo:__ Calcule la distancia entre los puntos `\(P_1=(1,1,2)\)` y `\(P_2=(2,1,0).\)`
+
+`$$d(P_1,P_2)=\sqrt{(1-2)^2+(1-1)^2+(2-0)^2}=\sqrt{(-1)^2+(0)^2+(2)^2}=\sqrt{5}.$$`
+
+---
+### Ejemplo: la esfera.
+
+&gt; __Definición:__ la esfera en `\(\mathbb{R}^3\)` se define como el conjunto de puntos de `\(\mathbb{R}^3\)` que se encuentran a la misma distancia de un mismo punto llamado centro. &lt;br/&gt;&lt;br/&gt;
+Esta propiedad permite que se pueda describir como la ecuación `$$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=a^2$$` dónde `\(c=(x_0,y_0,z_0)\)` es el centro y `\(a\)` es el radio.
+
+---
+### Ejemplo:
+
+&gt; Describe en su ecuación estándar la siguiente esfera: `$$x^2+y^2+z^2+3z-4z+1=0.$$`
+
+Para realizar esto necesitamos completar los binomios en `\(x\)` y `\(z\)` a un trinomio cuadrado perfecto. 
+`$$\left(x^2+3x+\left(\frac{3}{2}\right)^2\right)+y^2+\left(z^2-4z+\left(\frac{-4}{2}\right)^2\right)=-1+\left(\frac{3}{2}\right)^2+\left(\frac{-4}{2}\right)$$`
+`$$\left(x+\frac{3}{2}\right)^2+y^2+(z-2)^2=\frac{21}{4}$$`
+
+---
+# Parametrizaciones
+
+## La recta
+&gt; __Definición:__ Para parametrizar una recta necesitamos un punto `\(P\)` que pertenezca a la recta y una dirección `\(v,\)` y escribimos `$$l(t)=P+tv$$` la parametrización de la recta. 
+
+__Ejemplo:__ Escriba la parametrización de la recta que pasa por los puntos `\((1,1,1)\)` y `\((1,2,0).\)`
+
+---
+## El plano.
+
+&gt; __Definición:__ para parametrizar un plano necesitamo un punto `\(P\)` que pertenezca al plano y dos direcciones `\(u\)` y `\(v,\)` y escribimos `$$p(s,t)=P+tu+sv$$` como la parametrización del plano.
+
+__Ejemplo:__ Escriba la parametrización del plano que contiene a los puntos `\((0,0,0),\)` `\((1,1,0)\)` y `\((0,1,1).\)`
+
+---
+## El vector normal a un plano
+
+&gt; El plano que pasa por `\(P=(x_0,y_0,z_0)\)` con vector normal `\(\vec{n}=A\mathbf{i}+B\mathbf{j}+C\mathbf{k}\)` está dada por los puntos que satisfacen la ecuación `$$A(x-x_0)+B(y-y_0)+C(z-z_0)=0.$$`
+
+---
+### Ejemplo:
+
+&gt; Encuentra la ecuación del plano que pasa por `\(P=(-3,0,7)\)` y perpendicular `\(\vec{n}=5\mathbf{i}+2\mathbf{j}-\mathbf{k}.\)`
+
+---
+# Cilindros
+
+&gt; __Definición:__ un cilindro en `\(\mathbf{R}^3\)` es una superficie dada por rectas paralelas que pasa por un punto de una curva generadora.
+
+__Ejemplo:__ Considere la ecuación `\(y=x^2.\)` 
+
+---
+
+__Ejemplo:__ Considere la ecuación `\(x^2+4z^2=4.\)`
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+
+__Ejemplo:__ Considere la ecuación `\(y^2-z^2=1.\)`
+
+---
+# Superficies Especiales
+
+## El elipsoide
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1.$$`
+
+## El paraboloide elíptico
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{z}{c}.$$`
+
+
+---
+
+## El cono elíptico
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0.$$`
+
+## Hiperboloide de una hoja
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.$$`
+
+
+---
+## Hiperboloide de dos hojas
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.$$`
+
+## El paraboloide hiperbólico
+
+Es el conjunto de puntos que satisfacen la ecuación `$$\frac{x^2}{a^2}-\frac{y^2}{b^2}=\frac{z}{c}.$$`
+
+---
+# Actividad 
+
+Realiza una gráfica de cada una de las superficies y reflexiona que puedes decir de ellas. 
+
+Preguntas clave:
+
+1. ¿Qué tipo de curvas salen cuando cortamos la superficie horizontalmente?
+
+1. ¿Qué tipo de curvas salen cuando cortamos la superficie verticalmente?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

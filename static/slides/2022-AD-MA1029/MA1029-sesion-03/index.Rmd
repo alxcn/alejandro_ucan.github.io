@@ -1,0 +1,86 @@
+---
+title: "Optimización con Restricciones"
+subtitle: "Sesión 02"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+* Conocer las condiciones necesarias y suficientes para la existencia de valores extremos en problemas con restricción. <br/><br/>
+ * Encontrar estos valores mediante el método de los multiplicadores de Lagrange.
+ 
+---
+# ¿Optimización con restricciones?
+
+> __Ejemplo:__ Una caja rectangular sin una caja sin tapa hecha con $12m^2$ de cartón. Encuentre el volumen máximo de la caja.
+
+<br/>
+Notemos que tenemos una restricciones de las variables y es que satisfagan $$A_{sup}=2xz+2y<+xy=12.$$
+
+---
+# Intuitivamente
+
+Queremos encontrar los valores extremos de una función $f(x,y)$ de tal manera que las variables cumplan una restricción que pueda expresarse como una curva de nivel de una función $g(x,y).$ <br/><br/>
+
+Queremos encontrar los $(x,y)$ tal que $$f(x,y)\mbox{ tiene un valor extremo}$$ $$g(x,y)=k.$$
+
+---
+## Visualmente esto se ve como
+
+
+---
+## El mutiplicador
+
+> __Definición:__ Dada las condiciones del dibujo anterior, diremos que $\lambda$ es un __multiplicador de Lagrange__ si satisface que $$\nabla f(x_0,y_0,z_0)=\lambda \nabla g(x_0,y_0,z_0).$$
+
+---
+# El método de Multiplicadores de Lagrange.
+
+> Para encontrar los valores extremos de $f(x,y,z)$ sujeto a la restricción $g(x,y,z)=k,$ suponiendo que $\nabla g\neq 0.$ <br/><br/>
+  * Encontrar los valores $x,y,z$ y $\lambda$ para los que se cumpla $$\nabla f(x,y,z)=\lambda \nabla g(x,y,z)$$ $$g(x,y,z)=k.$$
+  * Evalua $f$ en estos puntos, el mayor de estos números es al máximo y el menor el mínimo. 
+  
+---
+# El ejemplo incial
+
+La función volumen es $V(x,y,z)=xyz$ y la función restricción es $g(x,y,z)=2xz+2yz+xy.$ 
+
+Utilizando el método de los multiplicadores de Lagrange se debe cumplir que: $V_x=\lambda g_x,\, V_y=\lambda g_y,\,  V_z=\lambda g_z,$ y $g(x,y,z)=12.$
+
