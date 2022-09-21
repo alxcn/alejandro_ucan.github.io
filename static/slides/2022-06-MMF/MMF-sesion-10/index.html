@@ -6,7 +6,7 @@
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-09-21" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a4263120fe1b4685821aea08aeebe547","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x2250a99c623458db48c39a86478f897","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -92,6 +92,8 @@ top:2em;right:2em;
 
   * Está definida en todo `\(\mathbb{C}.\)` &lt;br/&gt;
   * `\(f(x+i0)=e^x\cos(0)+ie^x\sin(0)=e^x 1=e^x.\)` &lt;br/&gt;
+  
+  __Ejemplo:__ `\(\exp i\pi=e^0\cos(\pi)+ie^0\sin(\pi)=1.\)` (La ecuación de Euler)
 ---
 ## Algunas convenciones y datos interesantes.
 
@@ -113,6 +115,68 @@ top:2em;right:2em;
 
 1. Dado que las funciones `\(\sin\)` y `\(\cos\)` son periódicas (con periódo `\(2\pi\)`) entonces `\(\mbox{exp }z\)` es una función periódica en `\(\mathbb{C}.\)`
 
+---
+# Algunas propiedades de la exponencial.
+
+__Reto:__ prueba que la exponecial compleja satisface las siguientes propiedades: 
+   
+ `\(\mbox{exp}(z_1+z_2)=(\mbox{exp }z_1)(\mbox{exp }z_2),\)` y 
+ `\(\frac{\exp z_1}{\exp z_2}=\exp(z_1-z_2)\)`
+
+---
+# Funciones Trigonométricas:
+
+&gt; De la definición de la exponencial tenemos `\(e^{ix}=cos x+i\sin x\)` y `\(e^{-ix}=\cos x-i\sin x,\)` para cualquier real `\(x.\)` Entonces podemos decir: `$$\sin x=\frac{e^{ix}-e^{-ix}}{2i}\quad \mbox{y}\quad \cos x=\frac{e^{ix}+e^{-ix}}{2}.$$`
+
+De lo anterior podemos definir el __seno__ y el __coseno__ complejos con las expresiones `$$\sin z=\frac{e^{iz}-e^{-iz}}{2i}\quad \mbox{y}\quad \cos z=\frac{e^{iz}+e^{-iz}}{2}.$$`
+
+---
+## Propiedades de las funciones trigonométricas
+
+1. Son funciones periódicas, de período `\(2\pi.\)` &lt;br/&gt;&lt;br/&gt;
+
+1. `\(\sin^2(z)+\cos^2(z)=1.\)` &lt;br/&gt;&lt;br/&gt;
+
+1. `\(\sin(z_1+z_2)=\sin z_1 \cos z_2 +\cos z_1 \sin z_2.\)` &lt;br/&gt;&lt;br/&gt;
+
+1. `\(\sin(-z)=-\sin(z)\)` y `\(\cos(-z)=\cos(z).\)` &lt;br/&gt;
+
+1. `\(\sin\left(\frac{\pi}{2}-z\right)=\cos(z).\)` &lt;br/&gt;
+
+---
+# La función Logaritmo.
+
+&gt; Anteriormente mencionamos que una propiedad de la función `\(\exp z\)` es que tiene una función inversa, esta función inversa es la función logaritmo complejo, denotada por `\(\log z.\)`
+
+La función logaritmo se expresa para `\(z=r\cos\theta+ir\sin\theta\)` como: `$$\log z=\ln r +i\theta.$$`
+
+Dado que las función `\(\exp z\)` es una función periódica, la función `\(\log z\)` es una función multivaluada cuyo dominio es `\(\mathbb{C}\setminus\{0\}.\)`
+---
+## Las ramas y la multivaluación.
+
+Consideremos a `\(\Theta\)` como el valor principal del argumento de un complejo, es decir, `\(-\pi &lt; \Theta \leq \pi,\)` entonces la expresión del logaritmo se escribe: `$$\log z=\ln r +i (\Theta +2n\pi)$$` donde `\(n\)` es cualquier entero. 
+
+__Ejemplo:__ `\(\log i.\)` Recordemos que `\(r=|i|=1\)` y `\(\arg(i)=\pi/2.\)` Entonces todos los valores de `\(\log i\)` son `$$\ln(1)+i\left(\frac{\pi}{2}+2\pi n\right)=i\left(\frac{\pi+4n\pi}{2}\right)=\left\{\cdots,i\frac{-3\pi}{2},i\frac{\pi}{2},i\frac{5\pi}{2},\cdots\right\}.$$`
+
+
+_Nota:_ al valor de `\(\log z\)` cuando `\(n=0\)` se conoce _valor principal_.
+---
+## Algunas propiedades del logaritmo.
+
+1. `\(\exp \log z=z=\log\exp z.\)` &lt;br/&gt;&lt;br/&gt;
+
+1. `\(\log (z_1 z_2)=\log z_1 +\log z_2.\)` &lt;br/&gt;&lt;br/&gt;
+
+1. `\(\log \frac{z_1}{z_2}=\log z_1 -\log z_2.\)`
+
+---
+# Potencias complejas
+
+&gt; Dados `\(z\)` y `\(w\)` complejos, se define `\(z^w\)` como el complejo `$$\exp\left(w\log z\right).$$`
+
+__Ejemplo:__ Encuentre el valor de `\(i^i.\)` 
+
+El valor principal de `\(\log i\)` es  `\(i\pi/2,\)` entonces `$$i\log i=i^2\pi/2=-\pi 2.$$` Por lo que `$$i^i=\exp\left(\frac{-\pi}{2}\right)$$` es decir, `\(i^i\)` es un número real.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

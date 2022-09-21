@@ -10,9 +10,9 @@ draft: false
 
 En la Sesión 10 trabajaremos con los objetivos: 
 
- * Conocer la definición de derivada (compleja). <br/><br/>
- * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
- * Aprender las condiciones para que una función sea holomorfa. <br/><br/>
+ * Definir las versiones complejas de: exponencial, coseno, seno y logaritmo. <br/><br/>
+ * Mostrar las principales propiedades de las versiones complejas de estas funciones. <br/><br/>
+ 
  
 El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-10).
 

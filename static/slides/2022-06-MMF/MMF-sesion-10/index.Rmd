@@ -64,6 +64,8 @@ xaringanExtra::use_logo(
 
   * Está definida en todo $\mathbb{C}.$ <br/>
   * $f(x+i0)=e^x\cos(0)+ie^x\sin(0)=e^x 1=e^x.$ <br/>
+  
+  __Ejemplo:__ $\exp i\pi=e^0\cos(\pi)+ie^0\sin(\pi)=1.$ (La ecuación de Euler)
 ---
 ## Algunas convenciones y datos interesantes.
 
@@ -88,11 +90,62 @@ xaringanExtra::use_logo(
 ---
 # Algunas propiedades de la exponencial.
 
-__Reto:__ prueba que la exponcial compleja satisface las siguientes propiedades: 
-    * $\mbox{exp}(z_1+z_2)=(\mbox{exp }z_1)(\mbox{exp }z_2),$ y 
-    * $\frac{\exp z_1}{\exp z_2}=\exp(z_1-z_2)$
+__Reto:__ prueba que la exponecial compleja satisface las siguientes propiedades: 
+   
+ $\mbox{exp}(z_1+z_2)=(\mbox{exp }z_1)(\mbox{exp }z_2),$ y 
+ $\frac{\exp z_1}{\exp z_2}=\exp(z_1-z_2)$
 
 ---
 # Funciones Trigonométricas:
 
-> De la definición de la exponencial tenemos $e^{ix}=cos
+> De la definición de la exponencial tenemos $e^{ix}=cos x+i\sin x$ y $e^{-ix}=\cos x-i\sin x,$ para cualquier real $x.$ Entonces podemos decir: $$\sin x=\frac{e^{ix}-e^{-ix}}{2i}\quad \mbox{y}\quad \cos x=\frac{e^{ix}+e^{-ix}}{2}.$$
+
+De lo anterior podemos definir el __seno__ y el __coseno__ complejos con las expresiones $$\sin z=\frac{e^{iz}-e^{-iz}}{2i}\quad \mbox{y}\quad \cos z=\frac{e^{iz}+e^{-iz}}{2}.$$
+
+---
+## Propiedades de las funciones trigonométricas
+
+1. Son funciones periódicas, de período $2\pi.$ <br/><br/>
+
+1. $\sin^2(z)+\cos^2(z)=1.$ <br/><br/>
+
+1. $\sin(z_1+z_2)=\sin z_1 \cos z_2 +\cos z_1 \sin z_2.$ <br/><br/>
+
+1. $\sin(-z)=-\sin(z)$ y $\cos(-z)=\cos(z).$ <br/>
+
+1. $\sin\left(\frac{\pi}{2}-z\right)=\cos(z).$ <br/>
+
+---
+# La función Logaritmo.
+
+> Anteriormente mencionamos que una propiedad de la función $\exp z$ es que tiene una función inversa, esta función inversa es la función logaritmo complejo, denotada por $\log z.$
+
+La función logaritmo se expresa para $z=r\cos\theta+ir\sin\theta$ como: $$\log z=\ln r +i\theta.$$
+
+Dado que las función $\exp z$ es una función periódica, la función $\log z$ es una función multivaluada cuyo dominio es $\mathbb{C}\setminus\{0\}.$
+---
+## Las ramas y la multivaluación.
+
+Consideremos a $\Theta$ como el valor principal del argumento de un complejo, es decir, $-\pi < \Theta \leq \pi,$ entonces la expresión del logaritmo se escribe: $$\log z=\ln r +i (\Theta +2n\pi)$$ donde $n$ es cualquier entero. 
+
+__Ejemplo:__ $\log i.$ Recordemos que $r=|i|=1$ y $\arg(i)=\pi/2.$ Entonces todos los valores de $\log i$ son $$\ln(1)+i\left(\frac{\pi}{2}+2\pi n\right)=i\left(\frac{\pi+4n\pi}{2}\right)=\left\{\cdots,i\frac{-3\pi}{2},i\frac{\pi}{2},i\frac{5\pi}{2},\cdots\right\}.$$
+
+
+_Nota:_ al valor de $\log z$ cuando $n=0$ se conoce _valor principal_.
+---
+## Algunas propiedades del logaritmo.
+
+1. $\exp \log z=z=\log\exp z.$ <br/><br/>
+
+1. $\log (z_1 z_2)=\log z_1 +\log z_2.$ <br/><br/>
+
+1. $\log \frac{z_1}{z_2}=\log z_1 -\log z_2.$
+
+---
+# Potencias complejas
+
+> Dados $z$ y $w$ complejos, se define $z^w$ como el complejo $$\exp\left(w\log z\right).$$
+
+__Ejemplo:__ Encuentre el valor de $i^i.$ 
+
+El valor principal de $\log i$ es  $i\pi/2,$ entonces $$i\log i=i^2\pi/2=-\pi 2.$$ Por lo que $$i^i=\exp\left(\frac{-\pi}{2}\right)$$ es decir, $i^i$ es un número real.
