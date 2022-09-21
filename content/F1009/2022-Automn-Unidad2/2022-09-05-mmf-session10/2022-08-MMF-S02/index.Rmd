@@ -1,8 +1,8 @@
 ---
-title: "Sesión 10: Derivación compleja."
+title: "Sesión 10: Funciones Elementales."
 weight: 11
 subtitle: ""
-excerpt: "Derivadas"
+excerpt: "Exponencial, Trigonométricas, Logaritmo y Potancias complejas"
 date: '`r Sys.Date()`'
 slug: MMF-session-10
 draft: false
