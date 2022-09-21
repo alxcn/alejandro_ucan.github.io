@@ -85,3 +85,14 @@ xaringanExtra::use_logo(
 
 1. Dado que las funciones $\sin$ y $\cos$ son periódicas (con periódo $2\pi$) entonces $\mbox{exp }z$ es una función periódica en $\mathbb{C}.$
 
+---
+# Algunas propiedades de la exponencial.
+
+__Reto:__ prueba que la exponcial compleja satisface las siguientes propiedades: 
+    * $\mbox{exp}(z_1+z_2)=(\mbox{exp }z_1)(\mbox{exp }z_2),$ y 
+    * $\frac{\exp z_1}{\exp z_2}=\exp(z_1-z_2)$
+
+---
+# Funciones Trigonométricas:
+
+> De la definición de la exponencial tenemos $e^{ix}=cos
