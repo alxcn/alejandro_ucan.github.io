@@ -1,5 +1,5 @@
 ---
-title: "Derivación compleja"
+title: "Funciones Elementales"
 subtitle: "Sesión 10"
 author: 
   - "Alejandro Ucan"
@@ -50,87 +50,38 @@ xaringanExtra::use_logo(
 ```
 # Objetivos:
 
- * Conocer la definición de derivada (compleja). <br/><br/>
- * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
- * Aprender las condiciones para que una función sea holomorfa. <br/><br/>
+ * Definir las versiones complejas de: exponencial, coseno, seno y logaritmo. <br/><br/>
+ * Mostrar las principales propiedades de las versiones complejas de estas funciones. <br/><br/>
+ 
+ 
+ ---
+ # La función exponencial. 
+ 
+ > Queremos una función $f:\mathbb{C}\to \mathbb{C}$ tal que cuando nos restringimos a los números reales ($z=x+i0$) sea la función exponencial que conocemos, y que además que su derivada sea igual a la función, es decir, $$f(x+i0)=e^x\quad\mbox{y}\quad f'(z)=f(z).$$
+ 
+ Consideremos la función compleja $$f(x+iy)=e^x\cos(y)+ie^x\sin(y).$$ Notemos que
+:
 
+  * Está definida en todo $\mathbb{C}.$ <br/>
+  * $f(x+i0)=e^x\cos(0)+ie^x\sin(0)=e^x 1=e^x.$ <br/>
 ---
-# Derivación (compleja)
+## Algunas convenciones y datos interesantes.
 
-> Sea $f$ una función y $z_0$ un punto interior de su dominio. Definimos la _derivada_ de $f$ en $z_0,$ como el límite: $$\frac{d\,f}{dz}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.$$ Si el límite existe, entonces diremos que $f$ es _diferenciable_ en $z_0.$
+1. Convención: cuando evaluamos la parte imaginaria del complejo en las funciones seno y coseno, asumimos que son radianes.<br/><br/>
 
-__Ejemplo:__ Supongamos que $f(z)=z^2.$ Veamos que $f$ es diferenciable en todo $\mathbb{C}.$ Escribiendo $\Delta z= z_0-z$ y $\Delta w=f(z+\Delta z)-f(z),$ notemos que $$f'(z)=\lim_{\Delta z\to 0}\frac{\Delta w}{\Delta z}=\lim_{\Delta z\to 0}\frac{(z+\Delta z)^2-z^2}{\Delta z}=\lim_{\Delta z\to 0}(2z+\Delta z)=2z.$$
+1. Cuando evaluamos la función anterior en $z=0+i\theta$ obtenemos $$f(0+i\theta)=\cos(\theta)+i\sin(\theta)=e^{i\theta}$$. <br/>
 
+1. Convención: la función anterior se llama __exponencial compleja__ y se denota por $$\mbox{exp}z$$ en lugar $e^z.$
+ 
+ 
 ---
-## Continuidad no implica diferenciabilidad.
+## Propiedades de la exponencial.
 
-__Ejemplo:__ ¿Qué pasa con la función $f(z)=|z|^2$ en $z=0$? ¿Es diferenciable? ¿Es diferenciable en $z\neq 0$?
+1. $|\mbox{exp }z|=e^{\mbox{Re}(z)}$ y $\mbox{arg}(\mbox{exp }z)=\mbox{Im}(z).$ <br/><br/>
 
-$$ \frac{\Delta w}{\Delta z}=\frac{(z+\Delta z)(\overline{z}+\overline{\Delta z})-z\overline{z}}{\Delta z}=\overline{z}+\overline{\Delta z}+z\frac{\overline{\Delta z}}{\Delta z},$$
-  * Cuando $z=0,$ $f'(0)=0.$ <br/><br/>
-  * Cuando $z\neq 0,$ la derivada no existe.
-      * Si $z\to 0$ por valores reales $\frac{\Delta w}{\Delta z}=z+\overline{z}.$ <br/>
-      * Si $z\to 0$ por valores imaginarios, $\frac{\Delta w}{\Delta z}=\overline{z}-z.$
----
-## Reglas de Derivación:
+1. Para cualquier número complejo $w=r\cos(\phi)+ir\sin(\phi),$ se el complejo $z$ tal que $\mbox{exp }z=w$ es $$z=\ln(r)+i\phi.$$ <br/>
 
-> __Teorema:__ Supongamos que $f$ y $g$ son funciones diferenciables, entonces: <br/>
-  * $\frac{d}{dz}c=0$ donde $c\in \mathbb{C}.$ <br/>
-  * $\frac{d}{dz}[c f(z)]= c\frac{df}{dz}.$ <br/>
-  * $\frac{d}{dz}[f(z)+g(z)]=\frac{df}{dz}+\frac{dg}{dz}.$ <br/>
-  * $\frac{d}{dz}[f(z)g(z)]=g\cdot\frac{df}{z}+f\cdot\frac{dg}{dz}.$ <br/>
-  * Si $g(z)\neq 0$, $\frac{d}{dz}\left[\frac{f(z)}{g(z)}\right]=\frac{g(z)f'(z)-f(z)g'(z)}{[g(z)]^2}.$ <br/>
-  * Para cada $n\in \mathbb{N},$ $\frac{d}{dz}z^n=n z^{n-1}.$ <br/>
-  * $\frac{d}{dz}[f(g(z))]=f'(g(z))\cdot g'(z).$
-  
----
-## Reglas de Derivación:
+1. Dado que $e^x\neq 0$ y $\cos(\cdot)$ y $\sin(\cdot)$ no son simultaneamente cero, entonces $$\mbox{exp }z\neq 0.$$ Lo cual implica que el __rango__ de la función compleja $\mbox{exp}$ es $\mathbb{C}\setminus\{0\}.$ <br/><br/>
 
-> __Ejemplo:__ Calcule la derivada de la función $f(z)=(2z^2+i)^5.$
+1. Dado que las funciones $\sin$ y $\cos$ son periódicas (con periódo $2\pi$) entonces $\mbox{exp }z$ es una función periódica en $\mathbb{C}.$
 
----
-# Ecuaciones de Cauchy-Riemann
-
-Supongamos que localmente, $$f(x+iy)=u(x,y)+iv(x,y).$$ Entonces, $\Delta z=\Delta x+i\Delta y,$ y la el cociente de incrementos se ve $$\frac{f(z+\Delta z)-f(z)}{\Delta z}=\frac{u(x+\Delta x,y+\Delta y)-u(x,y)+i[v(x+\Delta x,y+\Delta y)-v(x,y)]}{\Delta x+i \Delta y}$$
-
-* Si tomo la dirección real, $\Delta z=\Delta x+i0,$ entonces $$f'(z)=\frac{\partial}{\partial x}u(x,y)+ i \frac{\partial}{\partial x}v(x,y).$$
-
-* Si tomo la dirección imaginaria, $\Delta z= 0 +i\Delta y,$ entonces $$f'(z)=\frac{\partial }{\partial y}v(x,y)-i\frac{\partial }{\partial y}u(x,y).$$
-
----
-# Ecuaciones de Cauchy-Riemann
-
-> De lo anterior, si la función es diferenciable ambas expresiones deben ser las mismas (por definición de existencia del límite). Así que se cumple $$\frac{\partial u}{\partial x}(x,y) =\frac{\partial v }{\partial y}(x,y) \mbox{ y } \frac{\partial v}{\partial x}(x,y)=-\frac{\partial u}{\partial y}(x,y).$$ <br/><br/> Ecuaciones conocidas como __Ecuaciones de Cauchy-Riemann.__
-
----
-## Condiciones necesarias y suficientes de diferenciabilidad
-
-> __Teorema:__ Supongamos que $f(x+iy)=u(x,y)+iv(x,y)$ en una vecindad de $z_0.$ Entonces se cumple que:
-* Si $f'(z_0)$ existe, entonces las derivadas parciales de $u$ y $v$ satisfacen las ecuaciones de Cauchy-Riemann. <br/><br/>
-* Si las derivadas parciales de $u$ y $v$ existen y son continuas en $z_0,$ y satisfacen las ecuaciones de Cauchy-Riemann, entonces $f'(z_0)$ existe.
-
----
-## Condiciones necesarias y suficientes.
-
-> __Ejemplo:__ recordemos la función $f(z)=|z|^2.$ En este caso $|x+iy|^2=x^2+y^2+i0,$ por lo que $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ Las ecuaciones de Cauchy-Riemann me dicen $$2x=0\mbox{ y }2y=0$$ que se satisfacen unicamente cuando $x=y=0.$ <br/><br/>
-Esta es otra manera de demostrar que $f$ no es diferenciable en $z\neq 0.$
-
----
-# Funciones Holomorfas
-
-> __Definición:__ Una función $f$ es _holomorfa_ en $z_0$ si su derivada existe en una vecindad de $z_0$ y no solo en $z_0,$ y es holomorfa en una región $R$ si lo es para cada uno de los puntos de $R.$
-
-__Contraejemplo:__ La función $f(z)=|z|^2$ no es holomorfa pues $f'$ sólo existe en $z=0.$
-
-<br/><br/>
-
-__Ejemplo:__ Todo polinomio es holomorfo en cualquier region de $\mathbb{C}.$ En particular para todo $\mathbb{C},$ por lo que se dice que los polinomios son funciones _enteras._
-
----
-## Singularidades
-
-> __Definición:__ Sea $f$ una función y $z_0$ un punto, decimos que $z_0$ es una _singularidad_ de $f,$ si $f$ no es holomorfa en $z_0$ pero si en cualquier punto de una vecindad de $z_0.$
-
-__Ejemplo:__ Las funciones $f(z)=z^{-n}$ tienen una singularidad en $z=0.$ <br/><br/>
-
-__Contraejemplo:__ La función $f(z)=|z|^2$ no tiene singularidades.
