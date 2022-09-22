@@ -84,3 +84,37 @@ La función volumen es $V(x,y,z)=xyz$ y la función restricción es $g(x,y,z)=2x
 
 Utilizando el método de los multiplicadores de Lagrange se debe cumplir que: $V_x=\lambda g_x,\, V_y=\lambda g_y,\,  V_z=\lambda g_z,$ y $g(x,y,z)=12.$
 
+De lo anterior tenemos que $yz=\lambda (2z+y),$ $xz=\lambda(2z+x),$ $xy=\lambda(2x+2y),$ y $2xz+2yz+xy=12.$ __Este es el sistema que tenemos que encontrar.
+
+---
+# Continuación ejemplo inicial
+
+Si multiplicamos las primeras tres ecuaciones por la variable que nos falta obtenemos que $$xyz=\lambda(2xz+xy)=\lambda(2zy+xy)=\lambda(2xz+2yz).$$
+
+De aquí podemos decir que $\lambda\neq 0,$ por que si lo fuera alguna medida sería cero lo cual no es posible. Cómo $\lambda \neq 0,$ entonces $$2xz+xy=2zy+xy,$$ lo cual implica que $x=y.$ 
+
+Así mismo podemos decir que $$2yz+xy=2xz+2yz,$$ lo cual implica que $2z=y=x.$ Sustituyendo esto último en la última ecuación obtenemos que $12z^2=12.$ Por lo que $z=1,x=2,y=2.$s
+
+---
+# Ejemplo 2:
+
+> Calcule los valores extremos de la función $f(x,y)=5x^2+6y^2-xy$ restringida a $x+2y=24.$
+
+
+---
+# Ejemplo 3:
+
+> Encuentre los valores extremos de la función $f(x,y,z)=2x^2+y^2+3z^2$ bajo la restrincción  $2x-3y-4z=49.$
+
+
+---
+# Ejercicio 1:
+
+> La función de producción de Cobb-Douglas para una producción está dada por $f(x,y)=100x^{3/4}y^{1/4}.$ Dónde $x$ son las unidades de producción (a 150mxn por unidad) y $y$ son las unidades de capital (a 250mxn por unidad). Si nuestras unidades de producción y capital están restringidas a 50000mxn. Encuentra la máxima producción para esta manufactura.
+
+---
+# Ejercicio 2:
+
+> Un granjero tiene 1000 hectáreas de tierra para parcelas. El total de utilidad por unidad de parcela son 10mxn y 8mxn respectivamente. Si las funciones de producción sde cada parcela están dadas por $f_1(x)=x^{0.06}$ y $f_2(y)=x^{0.8}.$ Maximice la utilidad total de cada parcela. 
+
+
