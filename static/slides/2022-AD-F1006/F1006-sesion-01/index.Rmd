@@ -55,12 +55,11 @@ xaringanExtra::use_scribble()
 
 > Note that even if $h$ diminish, the _rate of change_ it is not constant. This is true because the falling _velocity_ is not constant. Why?
 
----
-# Problematic, a graphic representation.
 
 ---
 # The mean velocity.
 
+<iframe scrolling="no" title="Velocity as Derivative of a Curve" src="https://www.geogebra.org/material/iframe/id/hgzursr9/width/1274/height/616/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1200px" height="450px" style="border:0px;"> </iframe>
 
 ---
 # Computing the mean velocity.
@@ -71,6 +70,7 @@ xaringanExtra::use_scribble()
 ---
 # Instant velocity.
 
+<iframe scrolling="no" title="Velocity as Derivative of a Curve" src="https://www.geogebra.org/material/iframe/id/hgzursr9/width/1274/height/616/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1200px" height="450px" style="border:0px;"> </iframe>
 
 ---
 # Mathematical formulation for Instant velocity.
@@ -110,6 +110,7 @@ __Example:__ If $f(x)=x^4$ then $f'(x)=4x^{4-1}=4x^3.$
 # Excercise:
 
 > Find the derivative of the following function $f(x)=10x^5-5x^4+1.$
+
 ---
 # The vectorial version.
 
@@ -121,6 +122,11 @@ In this curve, we think that the $x-$axis correspond to tiem and the $y-$axis to
 
 
 > Well, we can translate the velocity (derivative) of the body using vectors. The derivative will be the derivative of each component of the displacement vector respect to time. $$\vec{v}(t)=\frac{d t}{dt}\mathbf{i}+\frac{d(500-4.9t^2)}{dt}\mathbf{j}=\mathbf{i}+-9.8t\mathbf{j}.$$
+
+---
+# A geometric view of the vectorial velocity
+
+<iframe scrolling="no" title="Velocity as Derivative of a Curve" src="https://www.geogebra.org/material/iframe/id/hgzursr9/width/1274/height/616/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1200px" height="450px" style="border:0px;"> </iframe>
 
 ---
 # Example:
