@@ -4,9 +4,9 @@
     <title>Mean and Instant Velocity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-09-17" />
+    <meta name="date" content="2022-09-22" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b5d3b5dee8be4233a7307ea2d8d0f0de","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x747be7445ee49958b30235d3f89c5a1","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-09-17
+### 2022-09-22
 ]
 
 ---
@@ -80,8 +80,37 @@ class: center, middle, inverse, title-slide
 
 If we reduce the time passed to cero (in the limit), we obtain the instant velocity.
 
-`$$v=\limit_{\Delta t\to 0}\overline{v}=\limit_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$`
+`$$v=\lim_{\Delta t\to 0}\overline{v}=\lim_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$`
+---
+# How to compute a derivative as a limit.
 
+&gt; A car is moving on a straight line, if we know that its displacement is given by the function `\(f(x)=3x+2.\)` Compute the instant velocity.
+
+
+---
+# Excercise
+
+&gt; A bird is flying following a straight direction. If we know that the height of the bird is given by the function `\(f(x)=1-3x^2\)` compute the instant __rate of change__ of the height.
+
+---
+# Recall
+
+Recall that there are some formulas that ease the derivative computations. 
+
+&gt; __Theorem:__ The derivative of the function `\(f(x)=x^n\)` is given by `$$\frac{d f}{dx}=nx^{n-1}.$$` And also, for a general functions `\(f\)` and `\(g,\)` and real numbers `\(c,\)` we have that `$$\frac{d(f+g)}{dx}=\frac{df}{dx}+\frac{dg}{dx}$$` `$$\frac{d(cf)}{dx}=c\frac{df}{dx}.$$`
+
+__Example:__ If `\(f(x)=x^4\)` then `\(f'(x)=4x^{4-1}=4x^3.\)`
+
+---
+# Example:
+
+&gt; Compute the derivative of the function `\(f(x)=3x^2+2x-1.\)`
+
+
+---
+# Excercise:
+
+&gt; Find the derivative of the following function `\(f(x)=10x^5-5x^4+1.\)`
 ---
 # The vectorial version.
 
@@ -95,6 +124,14 @@ In this curve, we think that the `\(x-\)`axis correspond to tiem and the `\(y-\)
 &gt; Well, we can translate the velocity (derivative) of the body using vectors. The derivative will be the derivative of each component of the displacement vector respect to time. `$$\vec{v}(t)=\frac{d t}{dt}\mathbf{i}+\frac{d(500-4.9t^2)}{dt}\mathbf{j}=\mathbf{i}+-9.8t\mathbf{j}.$$`
 
 ---
+# Example:
+
+&gt; Find the expression for the vectorial velocity of a car whose displacement (in vectors) is given by the function `$$f(t)=t\mathbf{i}+(3t-1)\mathbf{j}.$$`
+
+---
+# Exercise:
+
+&gt; Find the expression for the vectorial velocity of a bird whose displacement (in vectors) is given by the function `$$f(t)=t\mathbf{i}+(4t^3-3t^2)\mathbf{j}.$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

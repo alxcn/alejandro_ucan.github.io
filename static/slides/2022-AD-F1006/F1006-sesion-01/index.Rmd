@@ -79,8 +79,37 @@ xaringanExtra::use_scribble()
 
 If we reduce the time passed to cero (in the limit), we obtain the instant velocity.
 
-$$v=\limit_{\Delta t\to 0}\overline{v}=\limit_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$
+$$v=\lim_{\Delta t\to 0}\overline{v}=\lim_{\Delta t\to 0}\frac{\Delta h}{\Delta t}=\frac{d h}{dt}.$$
+---
+# How to compute a derivative as a limit.
 
+> A car is moving on a straight line, if we know that its displacement is given by the function $f(x)=3x+2.$ Compute the instant velocity.
+
+
+---
+# Excercise
+
+> A bird is flying following a straight direction. If we know that the height of the bird is given by the function $f(x)=1-3x^2$ compute the instant __rate of change__ of the height.
+
+---
+# Recall
+
+Recall that there are some formulas that ease the derivative computations. 
+
+> __Theorem:__ The derivative of the function $f(x)=x^n$ is given by $$\frac{d f}{dx}=nx^{n-1}.$$ And also, for a general functions $f$ and $g,$ and real numbers $c,$ we have that $$\frac{d(f+g)}{dx}=\frac{df}{dx}+\frac{dg}{dx}$$ $$\frac{d(cf)}{dx}=c\frac{df}{dx}.$$
+
+__Example:__ If $f(x)=x^4$ then $f'(x)=4x^{4-1}=4x^3.$
+
+---
+# Example:
+
+> Compute the derivative of the function $f(x)=3x^2+2x-1.$
+
+
+---
+# Excercise:
+
+> Find the derivative of the following function $f(x)=10x^5-5x^4+1.$
 ---
 # The vectorial version.
 
@@ -94,3 +123,11 @@ In this curve, we think that the $x-$axis correspond to tiem and the $y-$axis to
 > Well, we can translate the velocity (derivative) of the body using vectors. The derivative will be the derivative of each component of the displacement vector respect to time. $$\vec{v}(t)=\frac{d t}{dt}\mathbf{i}+\frac{d(500-4.9t^2)}{dt}\mathbf{j}=\mathbf{i}+-9.8t\mathbf{j}.$$
 
 ---
+# Example:
+
+> Find the expression for the vectorial velocity of a car whose displacement (in vectors) is given by the function $$f(t)=t\mathbf{i}+(3t-1)\mathbf{j}.$$
+
+---
+# Exercise:
+
+> Find the expression for the vectorial velocity of a bird whose displacement (in vectors) is given by the function $$f(t)=t\mathbf{i}+(4t^3-3t^2)\mathbf{j}.$$
