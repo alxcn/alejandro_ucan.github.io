@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Límites al infinito</title>
+    <title>Integrales Multiples parte II</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-09-15" />
+    <meta name="date" content="2022-09-25" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xedc818606004f5dba1cfd5a932ae2f2","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa5eaea5bfab415eaed7ef65ba1d9064","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -16,23 +16,22 @@
     <script src="index_files/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
-    {{ template "_internal/google_analytics.html" . }}
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Límites al infinito
+# Integrales Multiples parte II
 ]
 .subtitle[
-## Sesión 15
+## Sesión 04
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-09-15
+### 2022-09-25
 ]
 
 ---
@@ -45,139 +44,81 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
- * Comprender el significa de tender a infinito. &lt;br/&gt; &lt;br/&gt;
- * Calcular un límite al infinito. &lt;br/&gt; &lt;br/&gt;
- * Determinar cuando un límite es al infinito. &lt;br/&gt;&lt;br/&gt;
- * Conocer la definición de asíntota horizontal. &lt;br/&gt;&lt;br/&gt;
- * Calcular las asíntotas horizontales de una función.
+ * Realizar cambios de orden en integrales generales. &lt;br/&gt;&lt;br/&gt;
+ * Conocer las aplicaciones generales de la integral. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Comportamientos extremos.
+# Ejemplo: 
 
-Hasta ahora, hemos usado los límites para comprender el comportamiento de una función cerca de un valor específico. 
-&lt;br/&gt;&lt;br/&gt;
+&gt; Cambiemos el orden de integración en la integral `$$\int_0^2\int_{x^2}^{2x}4x+2 dydx.$$`
 
-¿Podemos utilizar los límites para estudiar el comportamiento de funciones cuando los valores crecen o decrecen muchísimo?
 
 ---
-# Comportamientos extremos.
+# Ejercicio:
 
-Supongamos que tenemos la función `\(f(x)=2,\)` una función constante. 
+&gt; Invierte el orden de integración en la siguiente integral `$$\int_0^1\int_{0}^{\sqrt{1-x^2}}x dydx.$$`
 
-.pull-left[
-
-Valores muy grandes (positivos)
-
-|     x| f(x)|
-|-----:|----:|
-| 1e+01|    2|
-| 1e+02|    2|
-| 1e+03|    2|
-| 1e+04|    2|
-| 1e+06|    2|
-| 1e+08|    2|
-
-$$ \lim_{x\to +\infty}f(x)=2$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-
-|      x| f(x)|
-|------:|----:|
-| -1e+01|    2|
-| -1e+02|    2|
-| -1e+03|    2|
-| -1e+04|    2|
-| -1e+06|    2|
-| -1e+08|    2|
-`$$\lim_{x\to -\infty}f(x)=2.$$`
-]
 
 ---
-# Ejemplo 2:
+# Otras propiedades de la integral
 
-Veamos que pasa en el infinito para `\(f(x)=\frac{1}{x}.\)`
-
-.pull-left[
-
-Valores muy grandes (positivos)
-
-|     x|  f(x)|
-|-----:|-----:|
-| 1e+01| 1e-01|
-| 1e+03| 1e-03|
-| 1e+05| 1e-05|
-
-$$ \lim_{x\to +\infty}f(x)=0$$
-]
-
-.pull-left[
-
-Valores muy grandes (negativos)
-
-|      x|   f(x)|
-|------:|------:|
-| -1e+01| -1e-01|
-| -1e+03| -1e-03|
-| -1e+05| -1e-05|
-`$$\lim_{x\to -\infty}f(x)=0.$$`
-]
+1. __Dominación:__ 
+  * Si `\(f(x,y)\leq 0\)` entonces `$$\int\int_{R} f(x,y)dA \leq 0.$$`
+  * Si `\(f(x,y)\leq g(x,y)\)` en una región `\(R\)` entonces `$$\int\int_{R}f dA \leq \int\int_R g dA.$$`
+  
+1. __Aditividad (en regiones):__ Supongamos que `\(R\)` se puede expresar como la unión de dos regiones disjuntas simples `\(R_1\)` y `\(R_2,\)` entonces `$$\int\int_R f dA =\int\int_{R_1}f dA + \int\int_{R_2} f dA.$$`
 
 ---
-# Límites al Infinito
+# Área de una región:
 
-&gt; Tenemos el siguiente comportamiento para las siguientes funciones:
-&lt;br/&gt;&lt;br/&gt;
-1. Para cualquier función constante `\(f(x)=k,\)` siempre se cumple que `$$\lim_{x\to -\infty}f(x)=k=\lim_{x\to \infty}f(x).$$`
-&lt;br/&gt;
-2. Para cualquier función de la forma `\(f(x)=\frac{a}{x^n}\)` donde `\(a\)` es positivo y `\(n\)` es un natural. Siempre se cumple que:
-`$$\lim_{x\to -\infty}f(x)=0=\lim_{x\to \infty}f(x).$$`
+&gt; __Definición:__ el área de una región plana `\(R\)` en `\(\mathbb{R}^2\)` está dada por la integral `$$\int\int_{R}dA.$$`
+
+__Ejemplo:__ Calcular el área de la región acotada por las rectas `\(y=x\)` y `\(y=x^2.\)`
+
 
 ---
-# ¿Cómo calculo el límite al infinito de una función que no es de los tipos precedentes?
+# Ejercicio:
 
-Encuentre el valor del siguiente límite: $$ \lim_{x\to +\infty}\frac{4x+14}{2x-17}.$$
-&lt;br/&gt;
-1. Primero vamos a modificar la función dividiendo en ambos lados de la fracción por `\(x\)` a la potencia más grande que aparezca en la función.
+&gt; Encuentre el área de la región acotada por la parábola `\(y=x^2\)` y `\(y=x+2.\)`
 
-`$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=\lim_{x\to +\infty}=\frac{\frac{4x}{x}+\frac{14}{x}}{\frac{2x}{x}-\frac{17}{x}}= \lim_{x\to+\infty}\frac{4+\frac{14}{x}}{2-\frac{17}{x}}.$$`
----
-# Continuación.
-
-2. Ya que haya divido, distribuyo el límite en cada parte de la fracción y en cada término.
-
-`$$=\displaystyle{\frac{\lim_{x\to +\infty}4+\lim_{x\to +\infty}\frac{14}{x}}{\lim_{x\to +\infty}2-\lim_{x\to +\infty}\frac{17}{x}}}=\frac{4+0}{2-0}=2$$`
-3. Entonces `$$\lim_{x\to +\infty}\frac{4x+14}{2x-17}=2.$$`
 
 ---
-Ejemplo 3:
+# El valor promedio
 
-Encuentra el valor del siguiente límite al infinito:
-$$ \lim_{x\to -\infty} \frac{5-4x-9x^2}{3x^2+8x-12}.$$
+&gt; __Definción:__ el valor promedio de una función sobre una región `\(R\)` se define como la integral `$$prom(f,R)=\frac{\int\int_{R}fdA}{\int\int_{R}dA}.$$`
 
-&gt;Solución:
+__Ejemplo:__ Calcule el valor promedio de la función `\(f(x,y)=x\cos(xy)\)` en el rectángulo $0\leq x\leq \pi $ y `\(0\leq y\leq 1.\)`
 
-`$$\lim_{x\to -\infty}=\frac{5-4x-9x^2}{3x^2+8x-12}=\lim_{x\to -\infty}\frac{\frac{5}{x^2}-\frac{4}{x}-9}{3+\frac{8}{x}-\frac{12}{x^2}}=\frac{0-0-9}{3+0-0}=-3.$$`
 
 ---
-# Asíntotas Horizontales
+# Ejercicio: 
 
-&gt; Si `\(f(x)\)` es una función tal que `$$\lim_{x\to -\infty}f(x)=a \mbox{ y } \lim_{x\to \infty}f(x)=b$$` entonces, las asíntotas horizontales de `\(f(x)\)` son las rectas `\(y=a\)` y `\(y=b.\)`
+&gt; La siguiente función muestra la distribución de las edades en años de una escuela donde `\(x\)` representa el número de hombre y `\(y\)` el de mujeres, `\(f(x,y)=xy+x^2+y^3,\)` si sabemos que hay `\(0&lt;x&lt;10\)` y `\(0&lt;y&lt;5.\)` Calcule el valor promedio de la edad.
 
-
-## Ejemplo: 
-Calcule las asíntotas verticales para la función `$$f(x)=\frac{4x^3+5x-7}{1+4x^3}.$$`
-
-
-`$$\lim_{x\to +\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to +\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
 ---
-## Continuación:
+# Masa y Centro de Masa
 
-`$$\lim_{x\to -\infty}\frac{4x^3+5x-7}{1+4x^3}=\lim_{x\to -\infty}\frac{\frac{4x^3}{x^3}+\frac{5x}{x^3}-\frac{7}{x^3}}{\frac{1}{x^3}+\frac{4x^3}{x^3}}=\frac{4+0-0}{0+4}=1.$$`
+&gt; __Definición:__ Supongamos que tenemos una región `\(R\)` cuya distribución de densidades está dada por la función `\(\delta(x,y),\)` entonces &lt;br/&gt;&lt;br/&gt;
+1. La masa del objeto se define como `$$\int\int_R \delta(x,y)dA.$$` &lt;br/&gt;
+1. Los momento de masa son: `$$M_x=\int\int_R y\delta(x,y)dA \mbox{ y } M_y=\int\int_R x\delta(x,y)dA.$$` &lt;br/&gt;
+1. El centroide de masa estará dado por `$$\left(\frac{M_x}{M},\frac{M_y}{M}\right).$$`
 
-&lt;iframe src="https://www.geogebra.org/graphing/mt4bdun7?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+---
+# Ejercicio:
+
+&gt; En el triángulo acotado por la región `\(0\leq x\leq 1\)` y `\(0\leq y \leq 2x\)` tenemos una distribución de densidades dada por `\(\delta(x,y)=6x+6y+6.\)` Calcula la masa y el centro de masa.
+
+
+---
+# El área de una superficie:
+
+&gt; __Definición:__ Supongamos que tenemos una superficie dada por `\(z=f(x,y)\)` en una región `\(R,\)` entonces su área va a estar dada por `$$\int\int_R \sqrt{f_x^2+f_y^2+1}dA.$$`
+
+---
+# Ejercicio:
+
+&gt; Calcule el área del paraboloide `\(x^2+y^2-z=0\)` cortado por el plano `\(z=4.\)`
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,6 +1,6 @@
 ---
-title: "El espacio euclidiano de dimensión 3"
-subtitle: "Sesión 01"  
+title: "Optimización con Restricciones"
+subtitle: "Sesión 02"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,135 +43,78 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Conocer la geometría básica del espacio euclidiano de dimensión 3. <br/><br/>
- * Aplicar los conceptos básicos para determinar propiedades geométricas en puntos, rectas y planos. <br/><br/>
- * Aprender a parametrizar rectas y planos. <br/><br/>
- * Conocer las principales superficies en $\mathbb{R}^3.$
+* Conocer las condiciones necesarias y suficientes para la existencia de valores extremos en problemas con restricción. <br/><br/>
+ * Encontrar estos valores mediante el método de los multiplicadores de Lagrange.
  
 ---
-# El espacio $\mathbb{R}^3.$
+# ¿Optimización con restricciones?
 
-> __Definición:__ Se conoce como el __espacio euclidiano__ de dimensión tres al conjunto de ternas ordenadas de números reales $(x,y,z)$ y se denota por $\mathbb{R}^3.$
+> __Ejemplo:__ Una caja rectangular sin una caja sin tapa hecha con $12m^2$ de cartón. Encuentre el volumen máximo de la caja.
 
-<br/><br/>
-
-Usualmente este espacio tiene una representación gráfica como tres rectas perpendiculares que se intersectan en el punto $(0,0,0)$ que se conoce como __origen.__
-
----
-## Los octantes
-
-> __Definición:__ Se conoce como octante al conjunto de puntos en $\mathbb{R}^3$ que cumplen ciertas desigualdades, por ejemplo: $$x\geq 0, \,y\geq 0\mbox{ y }z\geq 0.$$
-En representación gráfica, son los espacios acotados por los planos que pasan por los ejes coordenados.
+<br/>
+Notemos que tenemos una restricciones de las variables y es que satisfagan $$A_{sup}=2xz+2y<+xy=12.$$
 
 ---
-### Ejemplo:
+# Intuitivamente
 
-> Describa el espacio de puntos que satisfacen las ecuaciones: $$y=3 \mbox{ y } x=0,z=2.$$
+Queremos encontrar los valores extremos de una función $f(x,y)$ de tal manera que las variables cumplan una restricción que pueda expresarse como una curva de nivel de una función $g(x,y).$ <br/><br/>
+
+Queremos encontrar los $(x,y)$ tal que $$f(x,y)\mbox{ tiene un valor extremo}$$ $$g(x,y)=k.$$
+
+---
+## Visualmente esto se ve como
 
 
 ---
-## ¿Cómo medir distancias en $\mathbb{R}^3$?
+## El mutiplicador
 
-> __Definición:__ la distancia entre los puntos $(x_1,y_1,z_1)$ y $(x_2,y_2,z_2)$ se define como el valor $$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.$$ Usualmente se denota como $d(P_1,P_2)$ o $|P_1 P_2|.$
-
-__Ejemplo:__ Calcule la distancia entre los puntos $P_1=(1,1,2)$ y $P_2=(2,1,0).$
-
-$$d(P_1,P_2)=\sqrt{(1-2)^2+(1-1)^2+(2-0)^2}=\sqrt{(-1)^2+(0)^2+(2)^2}=\sqrt{5}.$$
+> __Definición:__ Dada las condiciones del dibujo anterior, diremos que $\lambda$ es un __multiplicador de Lagrange__ si satisface que $$\nabla f(x_0,y_0,z_0)=\lambda \nabla g(x_0,y_0,z_0).$$
 
 ---
-### Ejemplo: la esfera.
+# El método de Multiplicadores de Lagrange.
 
-> __Definición:__ la esfera en $\mathbb{R}^3$ se define como el conjunto de puntos de $\mathbb{R}^3$ que se encuentran a la misma distancia de un mismo punto llamado centro. <br/><br/>
-Esta propiedad permite que se pueda describir como la ecuación $$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=a^2$$ dónde $c=(x_0,y_0,z_0)$ es el centro y $a$ es el radio.
+> Para encontrar los valores extremos de $f(x,y,z)$ sujeto a la restricción $g(x,y,z)=k,$ suponiendo que $\nabla g\neq 0.$ <br/><br/>
+  * Encontrar los valores $x,y,z$ y $\lambda$ para los que se cumpla $$\nabla f(x,y,z)=\lambda \nabla g(x,y,z)$$ $$g(x,y,z)=k.$$
+  * Evalua $f$ en estos puntos, el mayor de estos números es al máximo y el menor el mínimo. 
+  
+---
+# El ejemplo incial
+
+La función volumen es $V(x,y,z)=xyz$ y la función restricción es $g(x,y,z)=2xz+2yz+xy.$ 
+
+Utilizando el método de los multiplicadores de Lagrange se debe cumplir que: $V_x=\lambda g_x,\, V_y=\lambda g_y,\,  V_z=\lambda g_z,$ y $g(x,y,z)=12.$
+
+De lo anterior tenemos que $yz=\lambda (2z+y),$ $xz=\lambda(2z+x),$ $xy=\lambda(2x+2y),$ y $2xz+2yz+xy=12.$ __Este es el sistema que tenemos que encontrar.
 
 ---
-### Ejemplo:
+# Continuación ejemplo inicial
 
-> Describe en su ecuación estándar la siguiente esfera: $$x^2+y^2+z^2+3z-4z+1=0.$$
+Si multiplicamos las primeras tres ecuaciones por la variable que nos falta obtenemos que $$xyz=\lambda(2xz+xy)=\lambda(2zy+xy)=\lambda(2xz+2yz).$$
 
-Para realizar esto necesitamos completar los binomios en $x$ y $z$ a un trinomio cuadrado perfecto. 
-$$\left(x^2+3x+\left(\frac{3}{2}\right)^2\right)+y^2+\left(z^2-4z+\left(\frac{-4}{2}\right)^2\right)=-1+\left(\frac{3}{2}\right)^2+\left(\frac{-4}{2}\right)$$
-$$\left(x+\frac{3}{2}\right)^2+y^2+(z-2)^2=\frac{21}{4}$$
+De aquí podemos decir que $\lambda\neq 0,$ por que si lo fuera alguna medida sería cero lo cual no es posible. Cómo $\lambda \neq 0,$ entonces $$2xz+xy=2zy+xy,$$ lo cual implica que $x=y.$ 
 
----
-# Parametrizaciones
-
-## La recta
-> __Definición:__ Para parametrizar una recta necesitamos un punto $P$ que pertenezca a la recta y una dirección $v,$ y escribimos $$l(t)=P+tv$$ la parametrización de la recta. 
-
-__Ejemplo:__ Escriba la parametrización de la recta que pasa por los puntos $(1,1,1)$ y $(1,2,0).$
+Así mismo podemos decir que $$2yz+xy=2xz+2yz,$$ lo cual implica que $2z=y=x.$ Sustituyendo esto último en la última ecuación obtenemos que $12z^2=12.$ Por lo que $z=1,x=2,y=2.$s
 
 ---
-## El plano.
+# Ejemplo 2:
 
-> __Definición:__ para parametrizar un plano necesitamo un punto $P$ que pertenezca al plano y dos direcciones $u$ y $v,$ y escribimos $$p(s,t)=P+tu+sv$$ como la parametrización del plano.
-
-__Ejemplo:__ Escriba la parametrización del plano que contiene a los puntos $(0,0,0),$ $(1,1,0)$ y $(0,1,1).$
-
----
-## El vector normal a un plano
-
-> El plano que pasa por $P=(x_0,y_0,z_0)$ con vector normal $\vec{n}=A\mathbf{i}+B\mathbf{j}+C\mathbf{k}$ está dada por los puntos que satisfacen la ecuación $$A(x-x_0)+B(y-y_0)+C(z-z_0)=0.$$
-
----
-### Ejemplo:
-
-> Encuentra la ecuación del plano que pasa por $P=(-3,0,7)$ y perpendicular $\vec{n}=5\mathbf{i}+2\mathbf{j}-\mathbf{k}.$
-
----
-# Cilindros
-
-> __Definición:__ un cilindro en $\mathbf{R}^3$ es una superficie dada por rectas paralelas que pasa por un punto de una curva generadora.
-
-__Ejemplo:__ Considere la ecuación $y=x^2.$ 
-
----
-
-__Ejemplo:__ Considere la ecuación $x^2+4z^2=4.$
-
-<br/><br/><br/><br/>
-
-__Ejemplo:__ Considere la ecuación $y^2-z^2=1.$
-
----
-# Superficies Especiales
-
-## El elipsoide
-
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1.$$
-
-## El paraboloide elíptico
-
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{z}{c}.$$
+> Calcule los valores extremos de la función $f(x,y)=5x^2+6y^2-xy$ restringida a $x+2y=24.$
 
 
 ---
+# Ejemplo 3:
 
-## El cono elíptico
-
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0.$$
-
-## Hiperboloide de una hoja
-
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.$$
+> Encuentre los valores extremos de la función $f(x,y,z)=2x^2+y^2+3z^2$ bajo la restrincción  $2x-3y-4z=49.$
 
 
 ---
-## Hiperboloide de dos hojas
+# Ejercicio 1:
 
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.$$
-
-## El paraboloide hiperbólico
-
-Es el conjunto de puntos que satisfacen la ecuación $$\frac{x^2}{a^2}-\frac{y^2}{b^2}=\frac{z}{c}.$$
+> La función de producción de Cobb-Douglas para una producción está dada por $f(x,y)=100x^{3/4}y^{1/4}.$ Dónde $x$ son las unidades de producción (a 150mxn por unidad) y $y$ son las unidades de capital (a 250mxn por unidad). Si nuestras unidades de producción y capital están restringidas a 50000mxn. Encuentra la máxima producción para esta manufactura.
 
 ---
-# Actividad 
+# Ejercicio 2:
 
-Realiza una gráfica de cada una de las superficies y reflexiona que puedes decir de ellas. 
+> Un granjero tiene 1000 hectáreas de tierra para parcelas. El total de utilidad por unidad de parcela son 10mxn y 8mxn respectivamente. Si las funciones de producción sde cada parcela están dadas por $f_1(x)=x^{0.06}$ y $f_2(y)=x^{0.8}.$ Maximice la utilidad total de cada parcela. 
 
-Preguntas clave:
 
-1. ¿Qué tipo de curvas salen cuando cortamos la superficie horizontalmente?
-
-1. ¿Qué tipo de curvas salen cuando cortamos la superficie verticalmente?

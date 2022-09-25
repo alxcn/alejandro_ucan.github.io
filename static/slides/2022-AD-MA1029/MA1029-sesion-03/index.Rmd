@@ -1,6 +1,6 @@
 ---
-title: "Optimización con Restricciones"
-subtitle: "Sesión 02"  
+title: "Integrales Multiples"
+subtitle: "Sesión 03"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -18,13 +18,13 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
-  cache = FALSE,
-  echo = FALSE,
-  message = FALSE, 
-  warning = FALSE,
-  hiline = TRUE
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
 )
 ```
 
@@ -43,78 +43,83 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
-* Conocer las condiciones necesarias y suficientes para la existencia de valores extremos en problemas con restricción. <br/><br/>
- * Encontrar estos valores mediante el método de los multiplicadores de Lagrange.
- 
----
-# ¿Optimización con restricciones?
-
-> __Ejemplo:__ Una caja rectangular sin una caja sin tapa hecha con $12m^2$ de cartón. Encuentre el volumen máximo de la caja.
-
-<br/>
-Notemos que tenemos una restricciones de las variables y es que satisfagan $$A_{sup}=2xz+2y<+xy=12.$$
+ * Utilizar el concepto de integral multiple para calcular volúmenes y áreas. <br/><br/>
+ * Utilizar el teorema de Fubini para calcular integrales multiples como integrales iteradas. <br/><br/>
 
 ---
-# Intuitivamente
+# Partición de un rectángulo y Sumas de Riemann.
 
-Queremos encontrar los valores extremos de una función $f(x,y)$ de tal manera que las variables cumplan una restricción que pueda expresarse como una curva de nivel de una función $g(x,y).$ <br/><br/>
-
-Queremos encontrar los $(x,y)$ tal que $$f(x,y)\mbox{ tiene un valor extremo}$$ $$g(x,y)=k.$$
-
----
-## Visualmente esto se ve como
+Supongamos que tenemos una _región_ rectangular $R$ en $\mathbb{R}^2,$ acotada por $a\leq x\leq b$ y $c\leq y\leq d.$ Una __partición__ es una _malla_ formada por los pares de puntos $(x_i,y_j)$ tales que $$x_{i+1}-x_i=\frac{b-a}{n}\quad\mbox{y}\quad y_{j+1}-y_j=\frac{c-d}{m}.$$
 
 
 ---
-## El mutiplicador
+# Partición de un rectángulo y Sumas de Riemann.
 
-> __Definición:__ Dada las condiciones del dibujo anterior, diremos que $\lambda$ es un __multiplicador de Lagrange__ si satisface que $$\nabla f(x_0,y_0,z_0)=\lambda \nabla g(x_0,y_0,z_0).$$
-
----
-# El método de Multiplicadores de Lagrange.
-
-> Para encontrar los valores extremos de $f(x,y,z)$ sujeto a la restricción $g(x,y,z)=k,$ suponiendo que $\nabla g\neq 0.$ <br/><br/>
-  * Encontrar los valores $x,y,z$ y $\lambda$ para los que se cumpla $$\nabla f(x,y,z)=\lambda \nabla g(x,y,z)$$ $$g(x,y,z)=k.$$
-  * Evalua $f$ en estos puntos, el mayor de estos números es al máximo y el menor el mínimo. 
-  
----
-# El ejemplo incial
-
-La función volumen es $V(x,y,z)=xyz$ y la función restricción es $g(x,y,z)=2xz+2yz+xy.$ 
-
-Utilizando el método de los multiplicadores de Lagrange se debe cumplir que: $V_x=\lambda g_x,\, V_y=\lambda g_y,\,  V_z=\lambda g_z,$ y $g(x,y,z)=12.$
-
-De lo anterior tenemos que $yz=\lambda (2z+y),$ $xz=\lambda(2z+x),$ $xy=\lambda(2x+2y),$ y $2xz+2yz+xy=12.$ __Este es el sistema que tenemos que encontrar.
+> Si $f:\mathbb{R}^2\to \mathbb{R}$ es una función continua y acotada en la región rectangular $R,$ entonces la suma $$\sum_{i=1}^{n} \sum_{j=1}^m f(x_i,y_j) \Delta x \Delta y$$ _aproxima_ el volumen bajo la superficie (gráfica de la función).
 
 ---
-# Continuación ejemplo inicial
+# Refinando Sumas de Riemann
 
-Si multiplicamos las primeras tres ecuaciones por la variable que nos falta obtenemos que $$xyz=\lambda(2xz+xy)=\lambda(2zy+xy)=\lambda(2xz+2yz).$$
-
-De aquí podemos decir que $\lambda\neq 0,$ por que si lo fuera alguna medida sería cero lo cual no es posible. Cómo $\lambda \neq 0,$ entonces $$2xz+xy=2zy+xy,$$ lo cual implica que $x=y.$ 
-
-Así mismo podemos decir que $$2yz+xy=2xz+2yz,$$ lo cual implica que $2z=y=x.$ Sustituyendo esto último en la última ecuación obtenemos que $12z^2=12.$ Por lo que $z=1,x=2,y=2.$s
+![Sumas](refriemannsums.png)
 
 ---
-# Ejemplo 2:
+# La integral doble
 
-> Calcule los valores extremos de la función $f(x,y)=5x^2+6y^2-xy$ restringida a $x+2y=24.$
+> Mientras más refinamos nuestra partición, nuestra aproximación del volumen mejora. Por lo que _en el límite_ de refinamientos obtenemos el volumen. <br/><br/>
+La _integral doble_ se conoce de $f(x,y)$ en la región $R$ se denota como $\int_{R}f\, dA,$ y define como el límite: $${\int\!\int}_R f(x,y)dA =\lim_{(n,m)\to (0,0)} \sum_{i=1}^{n} \sum_{j=1}^m f(x_i,y_j) \Delta x \Delta y.$$
 
+
+---
+# Propiedades de la integral doble
+
+> __Teorema:__ Cualquier función continua definida en un rectángulo es integrable. <br/>
+
+> __Teorema:__ La integral doble es lineal, es decir, si $f$ y $g$ son funciones continuas sobre una región $R,$ entonces: $$\int_R (kf+lg)\,dA=k\int_R f\,dA+l\int_R g\,dA.$$ <br/>
+
+
+---
+# ¿Cómo calculo integrales dobles sin utilizar sumas y límites?
+
+> __Teorema (de Fubini):__ Si $f(x,y)$ es una función integrable en la región $R=[a,b]\times[c,d],$ entonces la integral $\int_R f\,dA$ coincide con la cantidad: $$\int_c^d \left[ \int_a^b f(x,y)dx \right]dy=\int_a^b \left[ \int_c^d f(x,y)dy \right]dx.$$
+
+---
+# Ejemplo 1:
+
+Calcula la integral de la función $f(x,y)=x^2+yx$ en el rectángulo $R=[0,1]\times[0,1].$
+
+
+---
+# Ejemplo 2: 
+
+Calcula la integral de la función $f(x,y)=x^3y-12xy$ en el rectángulo $R=[-2,1]\times[0,1].$
+
+
+---
+# ¿Siempre integraremos en rectángulos?
+
+> __Definición:__ Una región elemental en $\mathbb{R}^2$ es una región del plano que es $x-$simple y $y-$simple. <br/>
+  * Una región en $\mathbb{R}^2$ es $y-$simple si se puede escribir como $$a\leq x\leq b \quad \mbox{y} \quad \phi_1(x)\leq y \leq \phi_2(x).$$ <br/><br/>
+  * Una región en $\mathbb{R}^2$ es $x-$simple si se puede escribir como $$c \leq y \leq d \quad \mbox{y} \quad \psi_1(y)\leq x\leq \psi_2(y).$$
+
+---
+# El Teorema de Fubini más general.
+
+Podemos usar propiedades de integrales de una variable, y finalmente nuestra integral doble se expresa de la manera:
+
+> __Teorema:__ Si $D$ es una región simple y $f$ es integrable en $D,$ entonces $$\int_D f\,dA = \int_a^b \int_{\phi_1(x)}^{\phi_2(x)} f(x,y)dydx.$$
 
 ---
 # Ejemplo 3:
 
-> Encuentre los valores extremos de la función $f(x,y,z)=2x^2+y^2+3z^2$ bajo la restrincción  $2x-3y-4z=49.$
+Calcule el valor de la integral de $f(x,y)=\sqrt{\frac{x}{y}}$ en la región $R$ acotada entre $0\leq x \leq 1$ y $x^2\leq y \leq x.$
 
 
 ---
-# Ejercicio 1:
+# Ejemplo 4: 
 
-> La función de producción de Cobb-Douglas para una producción está dada por $f(x,y)=100x^{3/4}y^{1/4}.$ Dónde $x$ son las unidades de producción (a 150mxn por unidad) y $y$ son las unidades de capital (a 250mxn por unidad). Si nuestras unidades de producción y capital están restringidas a 50000mxn. Encuentra la máxima producción para esta manufactura.
+Encuentre el volumen del prisma cuya base se encuentra en el plano $xy$ acotado por el eje $x$ y las rectas $y=x$ y $x=1,$ y cuya tapa pertenece al plano $$z=f(x,y)=3-x-y.$$
 
 ---
-# Ejercicio 2:
+# Ejercicio:
 
-> Un granjero tiene 1000 hectáreas de tierra para parcelas. El total de utilidad por unidad de parcela son 10mxn y 8mxn respectivamente. Si las funciones de producción sde cada parcela están dadas por $f_1(x)=x^{0.06}$ y $f_2(y)=x^{0.8}.$ Maximice la utilidad total de cada parcela. 
-
-
+Encuentra el volumen acotado por el plano $xy$ y la función $f(x,y)=16-x^2-y^2,$ sobre la región $R$ dada por las curvas $y=2\sqrt{x},$ $y=4x-2$ y el eje $x.$
