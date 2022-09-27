@@ -1,11 +1,13 @@
 ---
 title: "Antes de las series de Fourier"
 weight: 12
-subtitle: ""
-excerpt: "Algunas propiedades de funciones trigonométricas y periódicas para antes de Series de Fourier"
-date: '2022-09-26'
-slug: MMF-session-blog1
-draft: false
+date: "2022-09-27"
+output: pdf_document
+subtitle: ''
+slug: "MMF-session-blog1"
+draft: no
+excerpt: Algunas propiedades de funciones trigonométricas y periódicas para antes
+  de Series de Fourier
 ---
 
 
@@ -58,14 +60,17 @@ Figure 2: A nice image.
 <div id="series-infinitas" class="section level1">
 <h1>Series Infinitas</h1>
 <p><strong>Definición:</strong> una <strong>serie infinita</strong> es una suma “infinita” de números reales, es decir, <span class="math display">\[a_1+a_2+a_3+\cdots+a_n+\cdots,\]</span> y denotaremos por <span class="math display">\[\sum_{i=1}^\infty a_n\]</span> al resultado de esta suma cuando sea un número real.</p>
-<p><strong>Definición:</strong> dada una serie <span class="math inline">\(\sum a_n\)</span> decimos que la <strong>suma parcial</strong> <span class="math inline">\(s_n\)</span> es el número real <span class="math display">\[s_n=a_1+a_2+\cdots+a_n.\]</span>
-Si la <strong>sucesión</strong> de números reales <span class="math inline">\(\{s_n\}_{n=1}^\infty\)</span> converge diremos que la serie es convergente, de lo contrario que es una serie divergente.</p>
+<p><strong>Definición:</strong> dada una serie <span class="math inline">\(\sum a_n\)</span> decimos que la <strong>suma parcial</strong> <span class="math inline">\(s_n\)</span> es el número real <span class="math display">\[s_n=a_1+a_2+\cdots+a_n.\]</span> Si la <strong>sucesión</strong> de números reales <span class="math inline">\(\{s_n\}_{n=1}^\infty\)</span> converge diremos que la serie es convergente, de lo contrario que es una serie divergente.</p>
 <p><strong>Ejemplo:</strong> la serie <span class="math inline">\(\sum_{n=1}^\infty 1\)</span> es una serie divergente por que <span class="math inline">\(s_n=n\)</span> para cada <span class="math inline">\(n,\)</span> y este número crece desmesuradamente.</p>
 <p><strong>Ejemplo:</strong> la serie <span class="math inline">\(\sum_{i=1}^\infty (1/2)^n\)</span> es convergente.</p>
 <p><strong>Teorema:</strong> Si una serie <span class="math inline">\(\sum a_n\)</span> converge, entonces <span class="math inline">\(\lim_{n\to \infty}a_n=0.\)</span></p>
 <p>Notemos que si el límite de los terminos tiende a cero, esto no implica que la serie converja.</p>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> son dos series convergentes. Entonces
-* <span class="math inline">\(\sum c a_n = c\sum a_n\)</span> para <span class="math inline">\(c\)</span> una constante.
-* <span class="math inline">\(\sum (a_n+b_n)=\sum a_n +\sum b_n.\)</span>
-* <span class="math inline">\(\sum (a_n -b_n)=\sum a_n -\sum b_n.\)</span></p>
+<p><strong>Teorema:</strong> Si <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span> son dos series convergentes. Entonces * <span class="math inline">\(\sum c a_n = c\sum a_n\)</span> para <span class="math inline">\(c\)</span> una constante. * <span class="math inline">\(\sum (a_n+b_n)=\sum a_n +\sum b_n.\)</span> * <span class="math inline">\(\sum (a_n -b_n)=\sum a_n -\sum b_n.\)</span></p>
+<div id="series-de-funciones" class="section level2">
+<h2>Series de Funciones</h2>
+<p><strong>Ejemplo:</strong> Consideremos las siguientes funciones <span class="math display">\[f_n(x)=\sqrt{x^2+\frac{1}{n}}\]</span> definida para cada natural <span class="math inline">\(n.\)</span> Estas funciones están bien definidas como funciones de <span class="math inline">\(\mathbb{R}\to \mathbb{R},\)</span> y continuas. Notemos que mientras más grande esté el natural <span class="math inline">\(n,\)</span> el número <span class="math inline">\(\frac{1}{n}\)</span> se aproxima cada vez a <span class="math inline">\(0.\)</span> Por lo tanto podemos pensar que la <em>sucesión de funciones</em> “converge” (se aproxima) a la función <span class="math display">\[f(x)=\sqrt{x^2}=|x|.\]</span></p>
+<p><strong>Definición:</strong> Una serie de funciones es una suma infinita de funciones que se denota por <span class="math display">\[\sum_{i=0}^\infty c_i f_i.\]</span></p>
+<p>Estas series sirven para aproximar funciones en terminos de otras más simples. Hemos visto estas series por ejemplo en cálculo, cuando aproximabamos mediante el <strong>Polinomio de Taylor:</strong></p>
+<p><span class="math inline">\(f(x+x_0)=f(x_0)+f&#39;(x_0)(x-x_0)+f&#39;&#39;(x_0)\frac{(x-x_0)^2}{2}+f&#39;&#39;&#39;(x_0)\frac{(x-x_0)^3}{6}+\cdots=f(x_0)+\sum_{i=1}^\infty f^{(n)}\frac{(x-x_0)^n}{n!}.\)</span></p>
+</div>
 </div>
