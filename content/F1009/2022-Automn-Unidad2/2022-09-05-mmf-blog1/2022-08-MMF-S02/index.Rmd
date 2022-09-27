@@ -1,0 +1,48 @@
+---
+title: "Antes de las series de Fourier"
+weight: 12
+subtitle: ""
+excerpt: "Algunas propiedades de funciones trigonométricas y periódicas para antes de Series de Fourier"
+date: '`r Sys.Date()`'
+slug: MMF-session-blog1
+draft: false
+---
+
+## La función Coseno:
+
+La función $f(x)=\cos(x)$ es una función __par__, con eje de simetría el eje $y,$ es decir, $$\cos(-x)=\cos(x)$$ lo cual implica que $$\int_{-\pi}^{\pi}\cos(t)dt =0.$$
+
+![Área bajo coseno](https://www.intmath.com/fourier-series/svg/svgphp-revision-helpful-s0.svg)
+
+## La función Seno:
+
+La función $f(x)=\cos(x)$ es una función __impar__, con simetría en el origen, es decir, $$\sin(-x)=-\sin(x)$$ lo cual implica que $$\int_{-\pi}^{\pi}\sin(t)dt =0.$$
+
+![Área bajo Seno](https://www.intmath.com/fourier-series/svg/svgphp-revision-helpful-s1.svg)
+
+## Multiplos de $\pi$ para el Seno y el Coseno
+
+* $\sin(n\pi)=0$ para cada $n$ entero.
+* $\sin\left(\frac{(2n-1)\pi}{2}\right)=(-1)^{n+1}$ para cualquier entero $n.$
+* $\cos(n\pi)=(-1)^n$ para cualquier entero $n.$
+* $\cos\left(\frac{2(n-1)\pi}{2}\right)=0$ para todo entero $n.$
+
+# Funciones Periódicas
+
+__Definición:__ Una función $f(t)$ se dice que es periódica de _período_ $p>0$ si se cumple que $$f(t+p)=f(t).$$
+
+_Nota:_ El período es el valor mínimo para que $f$ obtenga dos valores repetidos.
+
+__Ejemplo:__ Las funciones $\sin(\cdot)$ y $\cos(\cdot)$ son períodicas de periódo $2\pi.$
+
+__Ejemplo:__ consideremos la función $f(t)=tt$ para $-1\leq t <1$ y $f(t)=f(t+1).$ De la definición obtenemos que $f$ es una función periódica. Esta función se conoce como __saw-tooth__ waveform.
+
+```{r, echo=FALSE, out.width="50%", fig.cap="Una función saw-tooth."}
+knitr::include_graphics("sweattooth.png")
+```
+
+__Ejemplo:__  consideremos la función $f(t)=-3$ para $-1\leq t <1$, $f(t)=3$ para $1\leq t <3$ y $f(t)=f(t+4).$ De la definición obtenemos que $f$ es una función periódica. Esta función se conoce como __square wave__.
+
+```{r, echo=FALSE, out.width="50%", fig.cap="A nice image."}
+knitr::include_graphics("squaredwave.png")
+```

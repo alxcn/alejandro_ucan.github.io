@@ -1,0 +1,57 @@
+---
+title: "Antes de las series de Fourier"
+weight: 12
+subtitle: ""
+excerpt: "Algunas propiedades de funciones trigonométricas y periódicas para antes de Series de Fourier"
+date: '2022-09-26'
+slug: MMF-session-blog1
+draft: false
+---
+
+
+
+<div id="la-función-coseno" class="section level2">
+<h2>La función Coseno:</h2>
+<p>La función <span class="math inline">\(f(x)=\cos(x)\)</span> es una función <strong>par</strong>, con eje de simetría el eje <span class="math inline">\(y,\)</span> es decir, <span class="math display">\[\cos(-x)=\cos(x)\]</span> lo cual implica que <span class="math display">\[\int_{-\pi}^{\pi}\cos(t)dt =0.\]</span></p>
+<div class="figure">
+<img src="https://www.intmath.com/fourier-series/svg/svgphp-revision-helpful-s0.svg" alt="" />
+<p class="caption">Área bajo coseno</p>
+</div>
+</div>
+<div id="la-función-seno" class="section level2">
+<h2>La función Seno:</h2>
+<p>La función <span class="math inline">\(f(x)=\cos(x)\)</span> es una función <strong>impar</strong>, con simetría en el origen, es decir, <span class="math display">\[\sin(-x)=-\sin(x)\]</span> lo cual implica que <span class="math display">\[\int_{-\pi}^{\pi}\sin(t)dt =0.\]</span></p>
+<div class="figure">
+<img src="https://www.intmath.com/fourier-series/svg/svgphp-revision-helpful-s1.svg" alt="" />
+<p class="caption">Área bajo Seno</p>
+</div>
+</div>
+<div id="multiplos-de-pi-para-el-seno-y-el-coseno" class="section level2">
+<h2>Multiplos de <span class="math inline">\(\pi\)</span> para el Seno y el Coseno</h2>
+<ul>
+<li><span class="math inline">\(\sin(n\pi)=0\)</span> para cada <span class="math inline">\(n\)</span> entero.</li>
+<li><span class="math inline">\(\sin\left(\frac{(2n-1)\pi}{2}\right)=(-1)^{n+1}\)</span> para cualquier entero <span class="math inline">\(n.\)</span></li>
+<li><span class="math inline">\(\cos(n\pi)=(-1)^n\)</span> para cualquier entero <span class="math inline">\(n.\)</span></li>
+<li><span class="math inline">\(\cos\left(\frac{2(n-1)\pi}{2}\right)=0\)</span> para todo entero <span class="math inline">\(n.\)</span></li>
+</ul>
+</div>
+<div id="funciones-periódicas" class="section level1">
+<h1>Funciones Periódicas</h1>
+<p><strong>Definición:</strong> Una función <span class="math inline">\(f(t)\)</span> se dice que es periódica de <em>período</em> <span class="math inline">\(p&gt;0\)</span> si se cumple que <span class="math display">\[f(t+p)=f(t).\]</span></p>
+<p><em>Nota:</em> El período es el valor mínimo para que <span class="math inline">\(f\)</span> obtenga dos valores repetidos.</p>
+<p><strong>Ejemplo:</strong> Las funciones <span class="math inline">\(\sin(\cdot)\)</span> y <span class="math inline">\(\cos(\cdot)\)</span> son períodicas de periódo <span class="math inline">\(2\pi.\)</span></p>
+<p><strong>Ejemplo:</strong> consideremos la función <span class="math inline">\(f(t)=tt\)</span> para <span class="math inline">\(-1\leq t &lt;1\)</span> y <span class="math inline">\(f(t)=f(t+1).\)</span> De la definición obtenemos que <span class="math inline">\(f\)</span> es una función periódica. Esta función se conoce como <strong>saw-tooth</strong> waveform.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="sweattooth.png" alt="Una función saw-tooth." width="50%" />
+<p class="caption">
+Figure 1: Una función saw-tooth.
+</p>
+</div>
+<p><strong>Ejemplo:</strong> consideremos la función <span class="math inline">\(f(t)=-3\)</span> para <span class="math inline">\(-1\leq t &lt;1\)</span>, <span class="math inline">\(f(t)=3\)</span> para <span class="math inline">\(1\leq t &lt;3\)</span> y <span class="math inline">\(f(t)=f(t+4).\)</span> De la definición obtenemos que <span class="math inline">\(f\)</span> es una función periódica. Esta función se conoce como <strong>square wave</strong>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="squaredwave.png" alt="A nice image." width="50%" />
+<p class="caption">
+Figure 2: A nice image.
+</p>
+</div>
+</div>
