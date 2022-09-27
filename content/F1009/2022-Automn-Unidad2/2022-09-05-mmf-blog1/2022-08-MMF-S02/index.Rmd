@@ -46,3 +46,23 @@ __Ejemplo:__  consideremos la función $f(t)=-3$ para $-1\leq t <1$, $f(t)=3$ pa
 ```{r, echo=FALSE, out.width="50%", fig.cap="A nice image."}
 knitr::include_graphics("squaredwave.png")
 ```
+
+# Series Infinitas
+
+__Definición:__ una __serie infinita__ es una suma "infinita" de números reales, es decir, $$a_1+a_2+a_3+\cdots+a_n+\cdots,$$ y denotaremos por $$\sum_{i=1}^\infty a_n$$ al resultado de esta suma cuando sea un número real.
+
+__Definición:__ dada una serie $\sum a_n$ decimos que la __suma parcial__ $s_n$ es el número real $$s_n=a_1+a_2+\cdots+a_n.$$
+Si la __sucesión__ de números reales $\{s_n\}_{n=1}^\infty$ converge diremos que la serie es convergente, de lo contrario que es una serie divergente.
+
+__Ejemplo:__ la serie $\sum_{n=1}^\infty 1$ es una serie divergente por que $s_n=n$ para cada $n,$ y este número crece desmesuradamente.
+
+__Ejemplo:__ la serie $\sum_{i=1}^\infty (1/2)^n$ es convergente.
+
+__Teorema:__ Si una serie $\sum a_n$ converge, entonces $\lim_{n\to \infty}a_n=0.$
+
+Notemos que si el límite de los terminos tiende a cero, esto no implica que la serie converja.
+
+__Teorema:__ Si $\sum a_n$ y $\sum b_n$ son dos series convergentes. Entonces 
+  * $\sum c a_n = c\sum a_n$ para $c$ una constante.
+  * $\sum (a_n+b_n)=\sum a_n +\sum b_n.$
+  * $\sum (a_n -b_n)=\sum a_n -\sum b_n.$
