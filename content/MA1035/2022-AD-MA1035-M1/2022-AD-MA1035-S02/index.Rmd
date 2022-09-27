@@ -4,7 +4,7 @@ weight: 2
 subtitle: "EDOs"
 excerpt: "Solución de EDOs lineales no homogéneas mediante el método de variación de parámetros."
 date: '`r Sys.Date()`'
-slug: 2022-AD-MA1035
+slug: MA1035-session-02
 draft: false
 ---
 
