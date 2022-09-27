@@ -1,6 +1,6 @@
 ---
-title: "Derivación compleja"
-subtitle: "Sesión 10"
+title: "Series de Fourier p. I"
+subtitle: "Sesión 11"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -50,131 +50,95 @@ xaringanExtra::use_logo(
 ```
 # Objetivos:
 
- * Introducir los conceptos de regiones en el plano complejo. <br/> <br/>
- * Entender la compactificación en un punto del plano complejo. <br/> <br/>
- * Introducir el concepto de función de variable compleja. <br/><br/>
- * Entender los límites y continuidad en el plano complejo.
+ * Motivar el estudio de las series de Fourier. <br/><br/>
+ * Definir el conjunto de funciones que aproximan y a las que aproximamos. <br/><br/>
+ * Definir las propiedades de ortoganilidad y los coeficientes de aproximación. <br/><br/>
+ 
 ---
-# Regiones del Plano complejo (Topología del plano complejo)
+ #Motivación
+ 
+ ## Señales
 
-> __Definición:__ la distancia entre los complejos $z_1=a+bi$ y $z_2=c+di$ está dada por la expresión $$|z_1-z_2|=\sqrt{(a-c)^2+(b-d)^2}.$$
-
-### Algunas propiedades de la distancia:
-
-  * $|z_1-z_2|=|z_2-z_1|.$ <br/>
-  * $|z_1+z_2|\leq |z_1|+|z_2|.$ <br/>
-  
-> __Definición:__ una $\varepsilon-$vecindad de $z_0$ es simplemente el conjunto de complejos que se encuentran a distancia a lo más $\varepsilon$ del centro $z_0,$ en notación esto es: $$|z - z_0|<\varepsilon.$$
-
----
-## Clasificación de puntos.
-
-> __Definición:__ dado un conjunto $S$ en nuestro plano complejo, un punto $z$ se dice que es: <br/><br/>
-  * _interior_ si podemos construir una vecindad de $z$ donde todos los puntos sean de $S.$ <br/><br/>
-  * _exterior_ si podemos construir una vecindad de $z$ donde todos los puntos no pertenezcan a $S.$ <br/><br/>
-  * _frontera_ si para toda vecindad de $z$ esta contiene puntos de $S$ y puntos que no pertenecen a $S.$ <br/><br/>
-  Denotaremos por $\mbox{int}(S)$ al conjunto de puntos interiores, $\mbox{ext}(S)$ al conjunto de puntos exteriores, y por $\partial S$ el conjunto de puntos frontera.
-  
----
-## Abiertos, cerrados y otras propiedades:
-
-> __Definición:__ Un conjunto $S$ del plano complejo se dice que es: <br/><br/>
-  * _abierto_ si sólo contiene puntos interiores. <br/><br/>
-  * _cerrado_ si todos sus puntos frontera pertenecen al conjunto. <br/><br/>
-Denotaremos por $\overline{S}$ al conjunto que resulta de unir $S$ con sus puntos frontera $\partial S,$ y se le llama _cerradura._
-
-<br/>
-> __Definición:__ Un conjunto abiero $S$ en $\mathbb{C}$ se dice que es _conexo_ si cualquier par de puntos los puedo unir por un camino de rectas contenido enteramente en $S.$ <br/>
-Un conjunto $S$ es _acotado_ si existe un círculo de radio $R$ que contiene al conjunto $S.$ Si no existe tal circulo, entonces diremos que $S$ es _no acotado._
-
----
-# Compactificación a un punto de $\mathbb{C}.$
-
-
----
-# Funciones de (una) variable compleja.
-
-> __Definición:__ Sea $S$ un conjunto de los número complejos. Una _función_ definida en $S$ es una regla que asigna a cada $z\in S$ un número complejo $w.$ Denotaremos por $$w=f(z)$$ a esta regla de asignación. <br/><br/>
-En general pediremos que $S$ sea un _dominio_ (conjunto abierto y conexo).
-
-__Example:__ Consideremos la función $f(z)=\frac{1}{z},$ la función que asigna a cada complejo $z$ su inverso multiplicativo $1/z.$ <br/><br/>
-
-Podemos definirla en el dominio $\mbox{Im} z>1$ o en el dominio $z\neq 0.$
-
----
-## ¿Funciones multivariadas?
-
-Recordemos que para que una expresión sea llamado función, necesitamos que para cada $z$ debe haber un solo valor de la expresión. En caso que esto no se cumpla, decimos que la regla de asignación define una _función multivaluada_. 
-
-<br/><br/>
-__Ejemplo:__ Las funciones raíz $f(z)=z^{1/k},$ es una función multivaluada dado que para cada complejo $z$ existen $k$ raíces que satisfacen $w^k=z.$
-<br/><br/>
-
-En estos casos podemos tomar regiones tales que la función multivaluada, se convierta a una univaluada (función usual).
-
-### Función significa función univaluada.
----
-## Funciones componente.
-
-> Si $f$ es una función compleja, entonces para cada $z$ tenemos que $w=f(z)$ es un complejo, por lo que se puede escribir como su parte real y su parte imaginaria o lo que es lo mismo $$f(z)=u(\mbox{Re}z,\mbox{Im}z)+iv(\mbox{Re}z,\mbox{Im}z)$$ donde $u$ y $v$ podemos pensarlo como funciones $\mathbb{R}^2\to \mathbb{R}.$
-
-__Ejemplo:__ Sea $f(z)=z^2=(x+iy)^2=x^2-y^2+2ixy,$ entonces: <br/><br/>
-
-  * $\mbox{Re}(f)(z)=u(z)=x^2-y^2.$ <br/><br/>
-  * $\mbox{Im}(f)(z)=v(z)=2xy.$
-  
----
-## Funciones componente.
-
-__Ejemplo:__ Sea $f(z)=z*\overline{z},$ ¿quiénes son sus funciones componentes?
-
-
-$$ z\overline{z}=(x+iy)(x-iy)=x^2+y^2+i0.$$ Entonces las funciones componente son $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ 
-
-> En estos casos cuando la componente $v$ sea identicamente cero, diremos que la función es _real-valuada_ de _variable compleja_.
-
----
-# ¿Cómo visualizar mis funciones?
-
-> Informalmente hablando, podemos pensar que nuestras funciones complejas son funciones de $\mathbb{R}^4$ en \mathbb{R}^4,$ lo cual dificulta observarlas gráficamente. <br/><br/>
-Para esto utilizaremos algo llamado _mapeo_ o _transformación_ de un dominio en otro. 
-
-__Ejemplo:__ Grafique $f(z)=|z|-i\mbox{Im}(z).$
-
----
-# Cálculo en variable compleja. 
-
-## Límites
-
-> Sea $f$ una función de variable compleja definida en un dominio $S.$ Diremos que $w_0\in D$ es el límite de $f$ cuando $z$ tiende a $z_0$ si para toda vecindad $V$ de $w_0,$ existe una vecindad $U$ de $z_0,$ tal que $f(U)\subset V.$
-
-<br/><br/>
-> __Teorema:__ Supongamos que $f(x+iy)=u(x,y)+iv(x,y),$ $z_0=x_0+iy_0$ y $w_0=u_0+iv_0.$ Entonces $\displaystyle{\lim_{z\to z_0}f(z)=w_0}$ si y sólo si:
-   $$\displaystyle{\lim_{(x,y)\to(x_0,y_0)}u(x,y)=u_0} \quad \mbox{ y } \quad \displaystyle{\lim_{(x,y)\to(x_0,y_0)}v(x,y)=v_0}.$$
-  
----
-__Ejemplo:__
-
-* Calcule el límite de $f(z)=(z^2+1)^{-1}$ cuando $z\to 0.$ 
-
----
-
-## Límites
-
-> __Teorema:__ Supongamos que se cumple que $\displaystyle{\lim_{z\to z_0}f(z)=w_0}$ y $\displaystyle{\lim_{z\to z_0}g(z)=W_0}.$ Entonces, se cumple:<br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}(f(z)+g(z))=w_0+W_0},$ <br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}(f(z)g(z))=w_0W_0}$ y  <br/><br/>
-  * si $W_0\neq 0,$ entonces $\displaystyle{\lim_{z\to z_0}(f(z)/g(z))=w_0/W_0}.$
-  
----
-## Continuidad
-
-> __Definición:__ Una función de variable compleja es continua en un punto $z_0$ si se cumplen las siguientes tres afirmaciones:
-  * $\displaystyle{\lim_{z\to z_0}f(z)}$ existe, <br/><br/>
-  * $f(z_0)$ existe y <br/><br/>
-  * $\displaystyle{\lim_{z\to z_0}f(z)=f(z_0)}.$
+> Nos motivaremos por el estudio de las _señales:_
+  * Intensidad de una corriente electrica.
+  * Diferencia de potencial entre dos puntos en un circuito.
+  * Posición de un objeto (respecto al tiempo o al espacio).
+  * Escala de grises de una imagen.
+  * Componentes de un campo vectorial.
+  * Un Sonido.
   
 <br/><br/>
+> Definición: una señal puede ser análoga (si su variable es continua) o discreta (si su variable es un conjunto de puntos disjuntos).
 
-__Contraejemplo:__ la función $f(z)=z^{-1}$ es una función discontinua en $0.$
+---
+## Sistema de Tranmisición
 
+
+
+---
+## Ejemplo de un Sistema:
+
+
+
+---
+ # El espacio de funciones periódicas.
+ 
+ > Consideremos las funciones $\varepsilon:\mathbb{R}\to \mathbb{C}$ dadas por 
+ $$\varepsilon_n(t)=\exp\left(2i\pi n\frac{t}{a}\right).$$
+<br/><br/> Estas funciones son periódicas $$\varepsilon(t+a)=\exp\left(\frac{2i\pi n (t+a)}{a}\right)=\exp\left(\frac{2i\pi n t}{a}+2i\pi n\right)=\exp\left(\frac{2i\pi n t}{a}\right)\exp\left(2i\pi n\right)=\exp\left(\frac{2i\pi n t}{a}\right)$$
+
+---
+## Polynomios Trigonométricos 
+
+> Entonces cualquier combinación lineal (con coeficientes complejos) de las funciones anteriores me va a dar una función periódica de periodo $a.$
+
+$$p(t)=\sum_{j=1}^n c_j \varepsilon_j(t).$$
+
+> __Definción:__ Un polinomio trigonométrico es una función $p(t):\mathbb{R}\to \mathbb{C}$ definida por la suma: $$p(t)=\sum_{j=-n}^n c_j \varepsilon_j(t).$$
+
+---
+## Representación visual de los polinomios trigonométricos
+
+<iframe src="https://www.desmos.com/calculator/wbgk95zmoq?embed" width="1200" height="450" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+---
+## Representación Real
+
+> Notemos que $\overline{\varepsilon_n(t)}=\varepsilon_{-n}(t),$ por lo que el polinomio trigonométrico es simplemente: $$p(t)=a_0+\sum_{j=1}^n\left(a_n cos\left(\frac{2\pi nt}{a}\right)+b_n\sin\left(\frac{2\pi n t}{a}\right)\right)$$
+con $n\leq 0$ y $$a_n=c_n+c_{-n}\mbox{ y } b_n=i(c_n-c_{-n})$$
+
+
+---
+## Ortogonalidad 
+
+> __Lema:__ Para las funciones $\varepsilon_n(t)$ se cumple que $$\int_0^a \varepsilon_n(t)\overline{\varepsilon_n(t)}dt=a\delta_{nm}.$$
+
+Si consideramos el conjunto de polinomios trigonométricos de grado menor o igual a $N$ y lo denotamos por $T_N,$ y este es un espacio vectorial (complejo) con producto interno $$(p,q)=\int_0^a p(t)\overline{q(t)}dt.$$
+
+Lo anterior implica que $\{\varepsilon_n(t)\}_{j=-N}^N$ es una base ortogonal del espacio vectorial $T_N.$
+
+---
+## ¿Cómo se expresa un polinomio trigonométrico en la base?
+
+> Sabemos que calculando la proyección a la base podemos calcular su coeficiente en la combinación lineal, es decir, $$c_n=\frac{(p,\varepsilon_n)}{a}=\frac{1}{a}\int_0^a p(t)\exp\left(\frac{2\pi i n t}{a}\right)dt$$
+Conocidos como __coeficientes de Fourier.__
+
+$$a_n=\frac{2}{a}\int_0^a p(t)\cos\left(\frac{2n\pi t}{a}\right)dt \mbox{ y }b_n=\frac{2}{a}\int_0^a p(t)\sin\left(\frac{2n\pi t}{a}\right)dt$$
+
+
+---
+## Algunas condiciones en los coeficientes.
+
+> Si el polinomio trigonométrico es:
+  * Par entonces $c_{-n}=c_n$ y $b_n=0$ para todo $n\in \mathbb{Z}.$ <br/><br/>
+  * Impar entonces $c_{-n}=-c_n$ y $a_n=0$ para todo $n\in\mathbb{Z}.$
+  
+---
+## Igualdad de Parseval
+
+> __Lema:__ Si $p(t)$ es un polinomio trigonométrico de grado $\leq N$ entonces se cumple que $$\frac{1}{a}\int_0^a|p(t)|^2dt =\sum_{m=-N}^N |c_n|^2.$$
+
+---
+## Ejemplo (Calculo de los coeficientes de Fourier)
+
+> Consideremos la función $f(t)=3t$ para $-1\leq t <1$ y $f(t+2)=f(t).$ Calcule los coeficientes en $T_N.$
