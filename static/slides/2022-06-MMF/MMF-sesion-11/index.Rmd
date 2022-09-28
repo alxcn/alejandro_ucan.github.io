@@ -73,7 +73,9 @@ xaringanExtra::use_logo(
 ---
 ## Sistema de Tranmisición
 
-
+```{r, echo=FALSE, out.width="150%"}
+knitr::include_graphics("https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/io-io1_2.gif")
+```
 
 ---
 ## Ejemplo de un Sistema:
