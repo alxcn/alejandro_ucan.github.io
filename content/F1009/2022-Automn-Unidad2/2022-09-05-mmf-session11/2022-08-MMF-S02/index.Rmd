@@ -1,0 +1,22 @@
+---
+title: "Sesión 11: Series de Fourier P. I."
+weight: 11
+subtitle: ""
+excerpt: "Definiremos el espacio donde trabajaremos las series de Fourier así como sus componentes (coeficientes de Fourier), que son las bases para antes de hablar de aproximaciones."
+date: '`r Sys.Date()`'
+slug: MMF-session-11
+draft: false
+---
+
+En la Sesión 11 trabajaremos con los objetivos: 
+
+ * Motivar el estudio de las series de Fourier. <br/><br/>
+ * Definir el conjunto de funciones que aproximan y a las que aproximamos. <br/><br/>
+ * Definir las propiedades de ortoganilidad y los coeficientes de aproximación. <br/><br/>
+ 
+ 
+El contenido para la **Sesión 11** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-11).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-11", ratio = "4:3")
+```
