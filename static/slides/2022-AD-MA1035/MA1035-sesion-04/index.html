@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDO Lineales No homogéneas</title>
+    <title>EDO Lineales de Orden Superior No homogéneas</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-09-26" />
+    <meta name="date" content="2022-09-28" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ac7f41fd23b0424cb29e492eae56410c","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x8488a531b1e46ada790198903e5c092","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# EDO Lineales No homogéneas
+# EDO Lineales de Orden Superior No homogéneas
 ]
 .subtitle[
-## Sesión 02
+## Sesión 04
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-09-26
+### 2022-09-28
 ]
 
 ---
@@ -78,89 +78,75 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Conocer la forma genérica de una EDO lineal &lt;br/&gt;&lt;br/&gt;
-* Aprender otras problematicas que modela una EDO lineal. &lt;br/&gt;&lt;br/&gt;
-* Resolver EDO lineales no homogéneas. &lt;br/&gt;&lt;br/&gt;
-* Aprender el método de variación de parámetros. &lt;br/&gt;&lt;br/&gt;
+* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. &lt;br/&gt;&lt;br/&gt;
+* Resolver EDO lineales no homogéneas de orden superior. &lt;br/&gt;&lt;br/&gt;
+* Aprender el método de coeficientes indeterminados. &lt;br/&gt;&lt;br/&gt;
 
 
 ---
-# EDO lineal.
+# EDO lineal de orden superior no homogénea
 
-&gt; La forma genérica de una EDO lineal es `$$a_1(x)y'+a_0(x)y+g(x)=0,$$` donde `\(a_0(x)\)` y `\(a_1(x)\)` son los coeficientes. &lt;br/&gt;&lt;br/&gt;
-Si `\(g(x)=0,\)` entonces la EDO se dice __homogénea__, de lo contrario es __no homogénea.__
-
-__Por ejemplo:__ `\(xy'-4y-x^6e^x=0.\)`
+&gt; Recordemos que una EDO lineal de orden superior no homogénea es de la forma `$$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2y''+a_1y'+a_0y=g(x),$$` por el momento supondremos que nuestros coeficientes son constantes. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt; 
+En el caso de EDO líneales no homogéneas de primer orden, tenemos que la solución general se forma mediante `$$y_p+y_h.$$` &lt;br/&gt;&lt;br/&gt; En el caso de orden superior no es la excepción. 
 
 ---
-## ¿Cómo es la solución de EDO lineal?
+## Algunas consideraciones:
 
-&gt; Podemos escribir la ecuación generica como sigue `$$y'+P(x)y=f(x).$$` Queremos una solución en un intervalo `\(I\)` donde `\(P(x)\)` y `\(f(x)\)` sean funciones continuas. &lt;br/&gt;&lt;br/&gt;
-Si `\(y_h\)` es una solución a la versión homogénea de la EDO anterior y `\(y_p\)` es una solución particular de la ecuación. Entonces `$$y_h+y_p$$` es una solución de la ecuación no homogenea.
+&gt; Notemos que la función `\(g(x)\)` puede ser cualquier tipo de función, pero nos centraremos (restringiremos) a los siguientes tipos de funciones que puede aceptar `\(g(x):\)` &lt;br/&gt;&lt;br/&gt;
+  * Polinomios (dentro los cuales se encuentran las constantes) `$$g(x)=c_0+c_1x+c_2x^2+\cdots+c_nx^n.$$`
+  * Exponenciales: `$$g(x)=e^{cx}$$`
+  * Senos o Cosenos: `$$g(x)=\sin(cx)\mbox{ o } g(x)=\cos(cx).$$`
+  * Combinaciones de estas (producto y/o sumas):
+  
+  __Ejemplos:__ `\(g(x)=10,\)` `\(g(x)=15x-6+8e^{-x}\)` o `\(g(x)=xe^x \sin(x)+(3x^2-1)e^{-4x}.\)`
+  
+---
+# Método de Coeficientes Indeterminados:
 
-__Reto:__ comprueba esto de manera genérica.
+El método se aplica para EDOs lineales no homogeneas con:
+* _coeficientes constantes,_
+* `\(g(x)\)` como en la lista anterior.
+
+La idea detrás del método: 
+
+" Las derivadas de funciones `\(g(x)\)` como en la lista anterior, de nuevo son funciones en la lista, es decir, son sumas y/o productos de polinomios, senos, cosenos y/o exponenciales"
 
 ---
-## Soluciones de EDO lineales no homogéneas.
+## Ejemplo 1:
 
-&gt; __Variación de Paramétros:__ la idea es encontrar una solución de la forma `\(y_p=u(x)y_1(x)\)` donde `\(y_1\)` es la solución de la versión homogénea de la EDO. &lt;br/&gt;&lt;br/&gt;
-Método:
-  1. Escribir la EDO de la forma: `$$y'+P(x)y=f(x).$$`
-  1. Identifica `\(P(x)\)` y calcula el _factor integrador_ `$$e^{\int P(x)dx}.$$`
-  1. Multiplica en la EDO por el factor integrador. Esto modifica a la ecuación a la forma `$$\frac{d}{dx}\left[e^{\int P(x)dx} y\right]= e^{\int P(x)dx}f(x).$$` 
-  1. Integra ambos lados y simplifica.
+&gt; Encuentre la solución de la EDO `$$y''+4y'-2y=2x^2-3x+6.$$`
 
----
-### Ejemplo 1 (EDO lineal homogénea)
+1. Primero resolvemos la versión homogénea de la EDO. `$$y_h=c_1e^{(-2-\sqrt{6})x}+c_2e^{(-2+\sqrt{6})x}.$$`
 
-&gt; Resuelva `\(y'-3y=0.\)`
+1. Cómo `\(g(x)\)` es un polinomio de grado dos, entonces la solución particular al menos podría ser un polinomio de grado dos (igual), supongamos que es `$$y_p=Ax^2+Bx+C.$$`
 
-1. Ya se encuentra en la forma estándar.
-
-1. `\(P(x)=-3,\)` por lo que el factor integrador es `$$e^{\int -3dx}=e^{-3x}.$$`
-
-1. Multiplicamos y nuestra ecuación se reduce a `$$\frac{d}{dx}\left[e^{-3x}y\right]=0.$$`
-
-1. Integramos y despejamos: `$$e^{-3x}y=c\Rightarrow y=c e^{3x}.$$`
+1. Sustituyendo `\(y_p\)` en la EDO lineal: `\(y_p'=2Ax+B\)` y `\(y_p''=2A\)` entonces `$$2A+8Ax+4B-2Ax^2-2Bx-2C=2x^2-3x+6.$$`
 
 ---
-### Ejemplo 2 (EDO lineal no homogénea)
+## Ejemplo 1:
 
-&gt; Resuelva la ecuación `\(y'-2y=6.\)`
+1. Por teoría de polinomios, los coeficientes deben ser iguales, es decir:
+`$$-2A=2$$` `$$8A-2B=-3$$` `$$2A+4B-2C=6$$`
 
-1. Ya se encuentra en la forma estándar.
+1. Resolvemos este sistema: &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
 
-1. `\(P(x)=-2,\)` por lo que el factor integrador es `$$e^{\int -2dx}=e^{-2x}.$$`
-
-1. Multiplicamos y nuestra ecuación se reduce a `$$\frac{d}{dx}\left[e^{-2x}y\right]=6e^{-2x}.$$`
-
-1. Integramos y despejamos: `$$e^{-2x}y=-3e^{-2x}+c\Rightarrow y=-3+ce^{-2x}.$$`
+1. Entonces `\(y_p=-x^2-\frac{5}{2}x-9.\)`
 
 ---
-### Ejemplo 3 (No homogénea)
+## Ejemplo 2:
 
-&gt; Resuelva la ecuación `\(y'-2xy=2.\)` 
+&gt; Encuentra la solución `\(y''-y'+y=2\sin(3x).\)`
 
-Notemos que nuestro factor integrador es: `$$e^{\int -2xdx}=e^{-x^2}.$$` Esto implica que debemos integrar `$$\int 2e^{-x^2}.$$`
+Primero calculemos la solución particular. Cómo la `\(g(x)=2\sin(3x)\)` entonces la solución que debe cumplir derivadas entonces tenemos que pensar que esta solución debe contener senos y cosenos. Así:
 
-Esta integral no tiene solución explícita, pero se puede expresar como la integral definida `$$\int_0^x e^{-t^2}dt.$$` También denotada por `\(\frac{1}{2}\sqrt{\pi} erf(x).\)`
-
----
-# Caída No libre
-
-&gt; Consideremos un cuerpo que está cayendo pero el medio en donde cae presenta una resistencia (digamos el aire). Si la velocidad con la caé el cuerpo está dada por `\(v(t)\)` entonces satisface la EDO lineal no homogénea: `$$mv'+\beta v=mg,$$` dónde `\(m\)` es la masa del objeto, `\(\beta\)` es la constante de resistencia, y `\(g\)` es la fuerza de gravedad. 
+`$$y_p=A\cos(3x)+B\sin(3x)$$`
 
 ---
-## La solución de la caída no libre.
+## Ejemplo 3:
 
-Usando __variación de parametros__ podemos resolver esta EDO, veamos.
+&gt; Encuentra la solución `\(y''-2y'-3y=4x-5+6xe^{2x}.\)`
 
-1. `\(P(x)=\beta/m,\)` `\(f(x)=g\)` y factor integrador es: `$$e^{\frac{\beta t}{m}}.$$`
-
-1. Multiplicando el factor y transformado la ecuación obtenemos: `$$\frac{d}{dt}\left[e^{\frac{\beta t}{m}}v\right]=ge^{\frac{\beta t}{m}}.$$`
-
-1. Realizando la integral y simplicando obtenemos: `$$v(t)=\frac{mg}{\beta}+ce^{-\frac{\beta t}{m}}.$$`
-
+En este caso la solución particular debe contener un polinomio y una exponencial. `$$y_p=Ax+B+Cxe^{2x}+Ee^{2x}.$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

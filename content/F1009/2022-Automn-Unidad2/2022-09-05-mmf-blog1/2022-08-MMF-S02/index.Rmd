@@ -9,6 +9,18 @@ draft: no
 excerpt: Algunas propiedades de funciones trigonométricas y periódicas para antes
   de Series de Fourier
 ---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
+)
+```
 
 ## La función Coseno:
 
