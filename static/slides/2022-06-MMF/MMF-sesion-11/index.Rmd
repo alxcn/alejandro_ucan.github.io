@@ -106,7 +106,7 @@ $$p(t)=\sum_{j=1}^n c_j \varepsilon_j(t).$$
 ---
 ## Representación Real
 
-> Notemos que $\overline{\varepsilon_n(t)}=\varepsilon_{-n}(t),$ por lo que el polinomio trigonométrico es simplemente: $$p(t)=a_0+\sum_{j=1}^n\left(a_n cos\left(\frac{2\pi nt}{a}\right)+b_n\sin\left(\frac{2\pi n t}{a}\right)\right)$$
+> Notemos que $\overline{\varepsilon_n(t)}=\varepsilon_{-n}(t),$ por lo que el polinomio trigonométrico es simplemente: $$p(t)=a_0+\sum_{j=1}^n\left(a_n cos\left(\frac{2\pi nt}{a}\right)+b_ni\sin\left(\frac{2\pi n t}{a}\right)\right)$$
 con $n\leq 0$ y $$a_n=c_n+c_{-n}\mbox{ y } b_n=i(c_n-c_{-n})$$
 
 

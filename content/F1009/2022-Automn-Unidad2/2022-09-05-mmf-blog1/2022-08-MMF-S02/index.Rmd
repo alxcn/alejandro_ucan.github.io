@@ -2,13 +2,18 @@
 title: "Antes de las series de Fourier"
 weight: 12
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
 subtitle: ''
 slug: "MMF-session-blog1"
 draft: no
 excerpt: Algunas propiedades de funciones trigonométricas y periódicas para antes
   de Series de Fourier
 ---
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
