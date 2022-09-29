@@ -4,7 +4,7 @@ weight: 3
 subtitle: "Las bases de la integración multiple"
 excerpt: " "
 date: '`r Sys.Date()`'
-slug: 2022-AD-MA1029
+slug: MA1029-sesion-03
 draft: false
 ---
 
