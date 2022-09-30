@@ -119,3 +119,31 @@ $$y_p=A\cos(3x)+B\sin(3x)$$
 > Encuentra la solución $y''-2y'-3y=4x-5+6xe^{2x}.$
 
 En este caso la solución particular debe contener un polinomio y una exponencial. $$y_p=Ax+B+Cxe^{2x}+Ee^{2x}.$$
+
+---
+## Un error en la matrix:
+
+> Encuentra la solución de $$y''-5y'+4y=8e^x.$$ Verifica con el método de coeficientes indeterminados. ¿Qué sucede? ¿La solución particular funciona? ¿Ahora intenta con la forma particulas $y_p=A x e^x$. ¿Por qué sucede esto?
+
+
+---
+# ¿Cómo decidir que función modelo utilizar?
+
+```{r, echo=FALSE, out.width="60%", fig.cap="Funciones Modelo"}
+knitr::include_graphics("tablafuncionesmodelo.jpg")
+```
+
+---
+# Actividad en Clase: 
+
+Encuentra la solución a las siguientes EDOs lineales de orden superior no homogéneas. <br/><br/>
+ 
+* $y''+3y'+2y=6$ 
+
+* $y''-10y'+25y=30x+3$
+
+* $\frac{1}{4}y''+y'+y=x^2-2x$
+
+* $y''-8y'+20y=100x^2-26xe^x$
+
+* $4y''-4y'-3y=\cos(2x)$
