@@ -1,0 +1,22 @@
+---
+title: "Sesión 12: Series de Fourier P. II."
+weight: 13
+subtitle: ""
+excerpt: "Definiremos la aproximación de Fourier para una función periódica general mediante una serie de senos y cosenos."
+date: '`r Sys.Date()`'
+slug: MMF-session-12
+draft: false
+---
+
+En la Sesión 12 trabajaremos con los objetivos: 
+
+* Definir lo que entendemos por aproximación a una función periódica. <br/><br/>
+ * Enunciar el teorema de aproximación de Fourier mediante series. <br/><br/>
+ * Enunciar propiedades de los coeficientes de la aproximación.
+ 
+ 
+El contenido para la **Sesión 12** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-12).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-12", ratio = "4:3")
+```
