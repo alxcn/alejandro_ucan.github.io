@@ -93,6 +93,10 @@ Si $p(t)=\sum_{j=-N}^Nk_j\varepsilon_j(t),$ y $c_j$ son los coeficientes de Four
 
 > Consideremos la función periódica $f(t)=1$ si $0\leq t<\pi,$ $f(t)=-1$ si $\pi\leq t < 2\pi$ y $f(t+2\pi)=f(t).$
 
+---
+# Ejemplo:
+
+<iframe src="https://www.wolframcloud.com/obj/alejandroucan-puc/Published/SerieFourierEjemploClase.nb?_embed=iframe" width="1200" height="450"></iframe>
 
 ---
 # El teorema de Aproximación de Fourier
