@@ -72,7 +72,7 @@ xaringanExtra::use_logo(
 ---
 # El espacio $L_p^2(0,a)$
 
-> Es importante mencionar, que pensaremos que en este espacio dos funciones representan la misma si sólo se diferencian en un número finito de puntos, o lo que es equivalente $$\int_0^a|f(t)-g(t)|dt=0.$$ Esto implica que si $$\int_0^a|f(t)|dt=0 \Rightarrow f=0.$$
+> Es importante mencionar, que pensaremos que en este espacio dos funciones representan la misma si sólo se diferencian en un número finito de puntos, o lo que es equivalente $$\int_0^a|f(t)-g(t)|^2dt=0.$$ Esto implica que si $$\int_0^a|f(t)|^2dt=0 \Rightarrow f=0.$$
 
 ---
 # Nuestro objetivo
@@ -97,7 +97,7 @@ Si $p(t)=\sum_{j=-N}^Nk_j\varepsilon_j(t),$ y $c_j$ son los coeficientes de Four
 ---
 # El teorema de Aproximación de Fourier
 
-> __Teorema:__ Para $f\in L_p^2(0,a)$ y $f_N$ su mejor aproximación en $T_N$ tenemos que $$f_N\to f$$ as $n\to \infty$ o equivalentemente $$\int_0^a |f(t)-f_N(t)|dt =0 \mbox{ cuando } n\to \infty.$$
+> __Teorema:__ Para $f\in L_p^2(0,a)$ y $f_N$ su mejor aproximación en $T_N$ tenemos que $$f_N\to f$$ as $n\to \infty$ o equivalentemente $$\int_0^a |f(t)-f_N(t)|^2dt =0 \mbox{ cuando } n\to \infty.$$
 
 ---
 ## Implicaciones del Teorema

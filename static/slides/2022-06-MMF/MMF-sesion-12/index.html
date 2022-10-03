@@ -4,9 +4,9 @@
     <title>Series de Fourier p. II</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-02" />
+    <meta name="date" content="2022-10-03" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa9bbc454ef140d5857a8df6865605f1","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa147c93b7cb4fb2b59e3962a7bec08e","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-02
+### 2022-10-03
 ]
 
 ---
@@ -100,7 +100,7 @@ top:2em;right:2em;
 ---
 # El espacio `\(L_p^2(0,a)\)`
 
-&gt; Es importante mencionar, que pensaremos que en este espacio dos funciones representan la misma si sólo se diferencian en un número finito de puntos, o lo que es equivalente `$$\int_0^a|f(t)-g(t)|dt=0.$$` Esto implica que si `$$\int_0^a|f(t)|dt=0 \Rightarrow f=0.$$`
+&gt; Es importante mencionar, que pensaremos que en este espacio dos funciones representan la misma si sólo se diferencian en un número finito de puntos, o lo que es equivalente `$$\int_0^a|f(t)-g(t)|^2dt=0.$$` Esto implica que si `$$\int_0^a|f(t)|^2dt=0 \Rightarrow f=0.$$`
 
 ---
 # Nuestro objetivo
@@ -125,7 +125,7 @@ Si `\(p(t)=\sum_{j=-N}^Nk_j\varepsilon_j(t),\)` y `\(c_j\)` son los coeficientes
 ---
 # El teorema de Aproximación de Fourier
 
-&gt; __Teorema:__ Para `\(f\in L_p^2(0,a)\)` y `\(f_N\)` su mejor aproximación en `\(T_N\)` tenemos que `$$f_N\to f$$` as `\(n\to \infty\)` o equivalentemente `$$\int_0^a |f(t)-f_N(t)|dt =0 \mbox{ cuando } n\to \infty.$$`
+&gt; __Teorema:__ Para `\(f\in L_p^2(0,a)\)` y `\(f_N\)` su mejor aproximación en `\(T_N\)` tenemos que `$$f_N\to f$$` as `\(n\to \infty\)` o equivalentemente `$$\int_0^a |f(t)-f_N(t)|^2dt =0 \mbox{ cuando } n\to \infty.$$`
 
 ---
 ## Implicaciones del Teorema
