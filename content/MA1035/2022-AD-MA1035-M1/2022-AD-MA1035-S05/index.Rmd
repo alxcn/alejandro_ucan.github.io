@@ -1,0 +1,20 @@
+---
+title: "S05: Modelando con EDOs lineales de orden superior no homogeneas"
+weight: 5
+subtitle: ""
+excerpt: "Modelación con EDOs lineales de orden superior p. 2"
+date: '`r Sys.Date()`'
+slug: MA1035-session-05
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
+
+El contenido para la **Sesión 05** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-05).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-05", ratio = "4:3")
+```
+
