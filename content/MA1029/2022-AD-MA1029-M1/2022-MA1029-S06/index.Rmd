@@ -1,0 +1,21 @@
+---
+title: "S06: Integrales Triples"
+weight: 6
+subtitle: ""
+excerpt: "Definiremos el concepto de una integral triple"
+date: '`r Sys.Date()`'
+slug: MA1029-sesion-06
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+ * Conocer la diferencial de volumen. <br/><br/>
+ * Definir la integral en $\mathbb{R}^3$. <br/><br/>
+ * Calcular integrales triples en regiones elementales.
+
+El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-06).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-06", ratio = "4:3")
+```

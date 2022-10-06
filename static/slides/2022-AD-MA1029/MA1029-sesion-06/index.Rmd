@@ -43,9 +43,9 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Conocer la definición de coordenadas polares. <br/><br/>
- * Establecer las identidades de cambio de coordenadas. <br/><br/>
- * Mostrar como se afecta la integral en este nuevo sistema de coordenadas.
+ * Conocer la diferencial de volumen. <br/><br/>
+ * Definir la integral en $\mathbb{R}^3$. <br/><br/>
+ * Calcular integrales triples en regiones elementales.
 
 
 ---
