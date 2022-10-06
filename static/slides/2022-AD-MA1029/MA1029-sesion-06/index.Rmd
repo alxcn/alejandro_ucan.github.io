@@ -1,6 +1,6 @@
 ---
-title: "Coordenadas Polares"
-subtitle: "Sesión 05"
+title: "Integrales Triples"
+subtitle: "Sesión 06"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
