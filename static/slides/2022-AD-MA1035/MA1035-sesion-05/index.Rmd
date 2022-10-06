@@ -1,5 +1,5 @@
 ---
-title: "Modelando con EDOs lineales de orden superior no homogeneas"
+title: "Modelando con EDOs lineales de orden superior no homogéneas"
 subtitle: "Sesión 05"  
 author: 
   - "Alejandro Ucan"
@@ -117,3 +117,24 @@ __Caso 3:__ $\lambda^2-\omega^2=0,$ nuestro sistema está _criticamente amortigu
 ### Ejemplo:
 
 > Resuelva el siguiente PVI $$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$ con $x(0)=\frac{1}{2}$ y $x'(0)=0.$
+
+---
+# Circuito LRC
+
+> Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si $q(t)$ mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. $$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$
+
+---
+## Ejemplo:
+
+> Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que $L=0.25$ henry, $R=10$ ohms, y $C=0.001$ farad. Así mismo $E(t)=0$ y $q(0)=q_0$ coulumbs y $q'(0)=0.$
+
+---
+# Actividad:
+
+1. Una masa con peso (fuerza) 16lbs estira un resorte $8/3$fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de $1/2$ la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a $f(t)=10\cos(3t).$
+
+2. Encuentre la solución general de la carga en un circuito LRC cuando $L=1h,\, R=2\Omega,\,C=0.25f$ y $E(t)=50\cos(t) V.$
+
+3. Un peso de 2kg esta en el extremo de un resorte con constante $32 N/m.$ Si empiexa en $t=0,$ una fuerza externa igual a $f(t)=68e^{-2t}\cos(4t)$ se aplica al sistema. Encuentre la función que modela el desplazamiento.
+
+4. Encuentre la función que modela la carga del capacitor en un circuito LRC si $L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c$ y $q'(0)=0 A.$
