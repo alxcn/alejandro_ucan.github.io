@@ -1,0 +1,22 @@
+---
+title: "S07: Coordenadas Cilindricas"
+weight: 7
+subtitle: ""
+excerpt: "Definiremos las coordenadas cilindricas y realizaremos el calculo de integrales triples usando estos cambios"
+date: '`r Sys.Date()`'
+slug: MA1029-sesion-07
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+ * Definir el sistema de coordenadas cilíndrico. <br/><br/>
+ * Determinar el diferencial de volumen en coordenadas cilíndricas. <br/><br/>
+ * Calcular integrales triples en coordenadas cilíndricas.
+
+
+El contenido para la **Sesión 07** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-07).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-07", ratio = "4:3")
+```
