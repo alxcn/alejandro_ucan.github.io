@@ -1,0 +1,22 @@
+---
+title: "Sesión 14: Transformada de Fourier."
+weight: 15
+subtitle: ""
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: MMF-session-14
+draft: false
+---
+
+En la Sesión 14 trabajaremos con los objetivos: 
+
+ * Definir la problematica: expandir el tipo de señales. <br/><br/>
+ * Definir la transformada de Fourier como solución a esta problemática. <br/><br/>
+ * Calcular transformadas de Fourier.
+ 
+ 
+El contenido para la **Sesión 14** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-14).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-14", ratio = "4:3")
+```
