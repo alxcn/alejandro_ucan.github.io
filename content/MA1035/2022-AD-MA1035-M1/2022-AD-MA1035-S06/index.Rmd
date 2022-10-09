@@ -1,0 +1,22 @@
+---
+title: "S06: Sistemas de Ecuaciones Diferenciales"
+weight: 6
+subtitle: ""
+excerpt: "Introducción a los sistemas de ecuaciones diferenciales"
+date: '`r Sys.Date()`'
+slug: MA1035-session-06
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+* Conocer diferentes problematicas que involucran sistemas de EDOs. <br/><br/>
+* Conocer la forma matricial de un sistema de EDOs. <br/><br/>
+* Estudiar la solución (vector de funciones) de un sistema. 
+
+El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-06).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-05", ratio = "4:3")
+```
+
