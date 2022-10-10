@@ -4,9 +4,9 @@
     <title>Transformada de Fourier</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-08" />
+    <meta name="date" content="2022-10-10" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xeeaaf987d034f0f9ced0c261f6b1a59","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xcabd3e684954b60a4f8029c5df13249","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-08
+### 2022-10-10
 ]
 
 ---
@@ -91,7 +91,7 @@ top:2em;right:2em;
 ---
 # Idea intuitiva:
 
-&gt; Imaginemos que hacemos tomamos funciones periódicas cuyo periodo tiende a cero (cada vez más pequeño). Esto implicaria que nuestra suma se hace cada vez más __fina.__
+&gt; Imaginemos que hacemos tomamos funciones periódicas cuyo periodo tiende a infinito (cada vez más pequeño). Esto implicaria que nuestra suma se hace cada vez más __fina.__
 `$$\sum_{j=-\infty}^\infty \to \int_{-\infty}^\infty.$$`
 
 ---
@@ -118,7 +118,7 @@ top:2em;right:2em;
 Por definición tenemos que calcular: `$$\mathscr{F}(f)(\alpha)=\int_{-\infty}^\infty f(x)\exp(-2i\pi \alpha x)dx$$`
 
 Por el tipo de función, solamente sobrevive la integral `$$\int_{-1}^1 \exp(-2i\pi \alpha x)dx=\int_{-1}^1\cos(2\pi x \alpha) -i \sin(2\pi \alpha x) dx=\int_{-1}^1\cos(2\pi \alpha x)dx-i\int_{-1}^1\sin(2\pi \alpha x)dx$$`
-`$$=\frac{\sin(\pi\alpha )}{\pi\alpha}$$`
+`$$=\frac{\sin(2\pi\alpha )}{\pi\alpha}$$`
 
 La tranformada de `\(f(x)\)` es la función `\(g(\alpha)=\frac{\sin(2\pi\alpha)}{\pi\alpha}.\)`
 
@@ -134,14 +134,14 @@ La tranformada de `\(f(x)\)` es la función `\(g(\alpha)=\frac{\sin(2\pi\alpha)}
 &gt; Calcula la transformada de Fourier para la función `\(f(x)=1\)` para `\(-a\leq x\leq a\)` y `\(f(x)=0\)` de lo contrario.
 
 `$$\int_{-a}^a \exp(-2i\pi \alpha x)dx=\int_{-a}^a\cos(2\pi \alpha x)dx-i\int_{-a}^a\sin(2\pi \alpha x)dx$$`
-`$$=\frac{\sin(\pi\alpha a)}{\pi\alpha}$$`
+`$$=\frac{\sin(2\pi\alpha a)}{\pi\alpha}$$`
 &gt; ¿Cómo se vería esta transformada para la función definida en `\([a,b]\)`?
 
 ---
 # Propiedades de la transformada de Fourier
 
 &gt; __Proposición:__ Sea `\(f\)` una función integrable, entonces se cumple: &lt;br/&gt;&lt;br/&gt;
-  * `\(\mathscr{F}^{-1}(f)=\mathscr{F}^{-1}(\overline{f}).\)` &lt;br/&gt;&lt;br/&gt;
+* \overline{$\mathscr{F}^{-1}(f)}=\mathscr{F}^{-1}(\overline{f}).$ &lt;br/&gt;&lt;br/&gt;
   * `\(\mathscr{F}(f)(-\alpha)=\mathscr{F}(f_\sigma)\)` dónde `\(f_\sigma(x)=f(-x).\)` &lt;br/&gt;&lt;br/&gt;
   * Si `\(f(x)\)` es par (impar) entonces `\(g(\alpha)\)` es par (impar).  &lt;br/&gt;&lt;br/&gt;
   * Si `\(f(x)\)` es real y par (real e impar) entonces `\(g(\alpha)\)` es real y real (imaginaria e impar).
