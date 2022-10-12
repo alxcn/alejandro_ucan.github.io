@@ -1,0 +1,22 @@
+---
+title: "Sesión 15: Convolución y Transformada de Laplace."
+weight: 16
+subtitle: ""
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: MMF-session-15
+draft: false
+---
+
+En la Sesión 14 trabajaremos con los objetivos: 
+
+ * Introducir el espacio de funciones de decrecimiento rápido. <br/><br/>
+ * Definir la convolución de dos funciones. <br/><br/>
+ * Introducir el concepto de Transformada Integral. <br/><br/>
+ * Introducir el concepto de Transformada de Laplace.
+ 
+El contenido para la **Sesión 15** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-15).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-15", ratio = "4:3")
+```
