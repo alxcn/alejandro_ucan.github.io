@@ -1,6 +1,6 @@
 ---
-title: "Derivación compleja"
-subtitle: "Sesión 10"
+title: "Diferenciación compleja"
+subtitle: "Sesión 17"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -52,10 +52,17 @@ xaringanExtra::use_logo(
 
  * Conocer la definición de derivada (compleja). <br/><br/>
  * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
- * Aprender las condiciones para que una función sea holomorfa. <br/><br/>
+ * Definir la propiedad de holomorficidad en las funciones y otras propiedades relacionadas a la derivación compleja. <br/><br/>
 
 ---
-# Derivación (compleja)
+# Recordemos
+
+> __Definición:__ Una función compleja es una regla de asignación $f$ definida en un dominio $D$ y uni-valuada (en caso que existan multiples valores tomaremos el de la rama principal). Más aún, existen dos funciones reales $u(x,y)$ y $v(x,y)$ tales que $$f(x+iy)=u(x,y)+iv(x,y).$$
+<br/><br/>
+__Definición:__ Dada una función compleja $f=u+iv,$ diremos que el límite de $f$ cuando $z=x+iy$ tiende a $z_0=x_0+iy_0$ es $L=x_L+iy_L,$ $$\lim_{z\to z_0}f=L$$ si y sólo si $$\lim_{(x,y)\to(x_0,y_0)}u=x_L\mbox{ y }\lim_{(x,y)\to(x_0,y_0)}v=y_L.$$<br/><br/> Diremos además que la función es continua si además $x_L=u(x_0,y_0)$ y $y_L=v(x_0,y_0).$
+
+---
+# Diferenciación (compleja)
 
 > Sea $f$ una función y $z_0$ un punto interior de su dominio. Definimos la _derivada_ de $f$ en $z_0,$ como el límite: $$\frac{d\,f}{dz}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.$$ Si el límite existe, entonces diremos que $f$ es _diferenciable_ en $z_0.$
 
@@ -86,7 +93,12 @@ $$ \frac{\Delta w}{\Delta z}=\frac{(z+\Delta z)(\overline{z}+\overline{\Delta z}
 ---
 ## Reglas de Derivación:
 
-> __Ejemplo:__ Calcule la derivada de la función $f(z)=(2z^2+i)^5.$
+> __Ejemplo:__ Calcule la derivada de las siguientes funciónes:
+  * $f(z)=3z^2+3z-2+i,$
+  * $f(z)=(z-2)(3iz^2+2+i),$
+  * $f(z)=\frac{3z+i}{-2z-1-i},$
+  * $f(z)=(2z^2+i)^5.$
+  
 
 ---
 # Ecuaciones de Cauchy-Riemann
@@ -100,7 +112,7 @@ Supongamos que localmente, $$f(x+iy)=u(x,y)+iv(x,y).$$ Entonces, $\Delta z=\Delt
 ---
 # Ecuaciones de Cauchy-Riemann
 
-> De lo anterior, si la función es diferenciable ambas expresiones deben ser las mismas (por definición de existencia del límite). Así que se cumple $$\frac{\partial u}{\partial x}(x,y) =\frac{\partial v }{\partial y}(x,y) \mbox{ y } \frac{\partial v}{\partial x}(x,y)=-\frac{\partial u}{\partial y}(x,y).$$ <br/><br/> Ecuaciones conocidas como __Ecuaciones de Cauchy-Riemann.__
+> De lo anterior, si la función es diferenciable ambas expresiones deben ser las mismas (por la unicidad del límite). Así que se cumple $$\frac{\partial u}{\partial x}(x,y) =\frac{\partial v }{\partial y}(x,y) \mbox{ y } \frac{\partial v}{\partial x}(x,y)=-\frac{\partial u}{\partial y}(x,y).$$ <br/><br/> Ecuaciones conocidas como __Ecuaciones de Cauchy-Riemann.__
 
 ---
 ## Condiciones necesarias y suficientes de diferenciabilidad
@@ -110,10 +122,21 @@ Supongamos que localmente, $$f(x+iy)=u(x,y)+iv(x,y).$$ Entonces, $\Delta z=\Delt
 * Si las derivadas parciales de $u$ y $v$ existen y son continuas en $z_0,$ y satisfacen las ecuaciones de Cauchy-Riemann, entonces $f'(z_0)$ existe.
 
 ---
-## Condiciones necesarias y suficientes.
+### Ejemplos:
 
-> __Ejemplo:__ recordemos la función $f(z)=|z|^2.$ En este caso $|x+iy|^2=x^2+y^2+i0,$ por lo que $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ Las ecuaciones de Cauchy-Riemann me dicen $$2x=0\mbox{ y }2y=0$$ que se satisfacen unicamente cuando $x=y=0.$ <br/><br/>
+> Recordemos la función $f(z)=|z|^2.$ En este caso $|x+iy|^2=x^2+y^2+i0,$ por lo que $u(x,y)=x^2+y^2$ y $v(x,y)=0.$ Las ecuaciones de Cauchy-Riemann me dicen $$2x=0\mbox{ y }2y=0$$ que se satisfacen unicamente cuando $x=y=0.$ <br/><br/>
 Esta es otra manera de demostrar que $f$ no es diferenciable en $z\neq 0.$
+<br/><br/><br/>
+Considere la función $f(z)=\exp(z).$ ¿Para que dóminio de $f$ se cumplen las ecuaciones de Cauchy-Riemann? ¿La exponencial es diferenciable?
+
+---
+### Ejemplo:
+
+> Compruebe que las siguientes funciones no son diferenciables:
+  * $f(z)=\overline{z}.$
+  * $f(z)=z-\overline{z}.$
+  * $f(z)=2x+ixy^2.$
+  * $f(z)=e^xe^{iy}.$
 
 ---
 # Funciones Holomorfas
@@ -127,10 +150,20 @@ __Contraejemplo:__ La función $f(z)=|z|^2$ no es holomorfa pues $f'$ sólo exis
 __Ejemplo:__ Todo polinomio es holomorfo en cualquier region de $\mathbb{C}.$ En particular para todo $\mathbb{C},$ por lo que se dice que los polinomios son funciones _enteras._
 
 ---
-## Singularidades
+### Ejemplo:
 
-> __Definición:__ Sea $f$ una función y $z_0$ un punto, decimos que $z_0$ es una _singularidad_ de $f,$ si $f$ no es holomorfa en $z_0$ pero si en cualquier punto de una vecindad de $z_0.$
+> Compruebe que la función $f\left(re^{i\theta}\right)=\sqrt{r}e^{\frac{i\theta}{2}},$ es holomorfa para $r>0$ y $-\pi<\theta<\pi.$
 
-__Ejemplo:__ Las funciones $f(z)=z^{-n}$ tienen una singularidad en $z=0.$ <br/><br/>
+---
+## Derivadas de Funciones Elementales:
 
-__Contraejemplo:__ La función $f(z)=|z|^2$ no tiene singularidades.
+> Recordemos las funciones elementales: exponencial, seno, cose y logaritmos complejos. A continuación introduciremos las reglas de derivación compleja.
+<br/><br/>
+  * $\frac{d \exp(z)}{dz}=\exp(z)$
+  * $\frac{d \sin(z)}{dz}=\cos(z)$
+  * $\frac{d\cos(z)}{dz}=-\sin(z)$
+  * $\frac{d\log(z)}{dz}=\frac{1}{z}$
+  * $\frac{d w^z}{dz}=w^z\log(w)$
+  
+<br/><br/>
+ __Ejemplo:__ Use las reglas anteriores para calcular la derivada de $\tan(z).$
