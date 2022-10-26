@@ -50,9 +50,9 @@ xaringanExtra::use_logo(
 ```
 # Objetivos:
 
- * Conocer la definición de derivada (compleja). <br/><br/>
- * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
- * Definir la propiedad de holomorficidad en las funciones y otras propiedades relacionadas a la derivación compleja. <br/><br/>
+ * Conocer la definición de la integral (compleja). <br/><br/>
+ * Deducir el teorema de Cauchy-Goursat. <br/><br/>
+ * Introducir la formúla de Cauchy para el calculo de integrales. <br/><br/>
 
 ---
 # Recordemos
