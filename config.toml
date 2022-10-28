@@ -154,14 +154,14 @@ enableEmoji = true
     url = "/ma1035/"
     weight = 8
   [[menu.header]]
-    name = "F1006"
-    title = "Modelación del movimiento en ingeniería"
-    url = "/f1006/"
+    name = "F1017B"
+    title = "Sistemas Electromagnéticos"
+    url = "/f1017/"
     weight = 7
   [[menu.header]]
-    name = "MA1029"
-    title = "Modelación matemática intermedia"
-    url = "/ma1029/"
+    name = "MA1002B"
+    title = "Modelación de sistemas con Ecuaciones Diferenciales"
+    url = "/ma1002/"
     weight = 9    
 
 # see https://gohugo.io/about/hugo-and-gdpr/    

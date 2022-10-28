@@ -1,0 +1,29 @@
+---
+title: "S1: Métodos númericos para la solución de Sistemas de EDOS"
+weight: 1
+date: "2022-10-26"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+subtitle: ''
+slug: "2022AD-MA1002-blog1"
+draft: no
+excerpt: Presentación de los métodos númericos de Euler, Euler modificado y Runge-Kutta para la solución de Euler en el lenguaje de R.
+---
+
+
+
+<div id="método-de-euler" class="section level1">
+<h1>Método de Euler</h1>
+<p>La siguiente rutina sirve para aplicar el método de Euler para aproximar la solución de un sistema de EDOs.</p>
+<p>Recordemos que nosotros que nuestro problema de la vida real se modela con un sistema de ecuaciones de la forma: <span class="math display">\[\begin{array}{ccc} x&#39;(t) &amp; = &amp; f_1(t,x(t),y(t)) \\ y&#39;(t) &amp; = &amp; f_2(t,x(t),y(t)) \end{array} \]</span> con valores iniciales <span class="math inline">\(x(0)=x_0\)</span> y <span class="math inline">\(y(0)=y_0.\)</span></p>
+<p><em>Nota:</em> Cabe mencionar que podemos tener más de dos ecuaciones con más funciones incógnita.</p>
+<div id="la-idea-del-método" class="section level2">
+<h2>La idea del método:</h2>
+<p>Recordemos que el método de Euler se basa en la aproximación de una función mediante el <em>polinomio de Taylor</em> de orden 1, es decir, <span class="math display">\[f(t+h)=f(t)+hf&#39;(t) + E(t,h)\]</span> donde <span class="math inline">\(E(t,h)\)</span> es un error. Debido a que sabemos que nuestra función deseada satisface la ecuación diferencial <span class="math display">\[ x&#39;(t) =  f_1(t,x(t),y(t))\]</span> podemos sustituir esto en la fórmula del polinomio de Taylor y obtener una aproximación a través de la función multivaluada <span class="math inline">\(f_1(t,x,y).\)</span></p>
+<p>Así, lo anterior, implica que si queremos conocer el valor de la solución cerca de nuestras condiciones iniciales, podemos utilizar la expresión: <span class="math display">\[x(t+h)=x(t)+hf_1(t,x(t),y(t)).\]</span>
+<span class="math display">\[y(t+h)=y(t)+hf_2(t,x(t),y(t)).\]</span></p>
+</div>
+</div>

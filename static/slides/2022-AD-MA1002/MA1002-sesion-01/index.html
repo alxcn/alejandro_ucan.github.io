@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Diferenciación compleja</title>
+    <title>Ecuaciones Diferenciales Ordinarias y Modelación</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-10-26" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xf85057b2ae94082a5a9d28b76aaa26f","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c93ff0e63be44cdeb85512ee9aaaec16","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Diferenciación compleja
+# Ecuaciones Diferenciales Ordinarias y Modelación
 ]
 .subtitle[
-## Sesión 17
+## Sesión 01
 ]
 .author[
 ### Alejandro Ucan
@@ -76,125 +76,122 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos:
+# Objetivos de la Sesión
 
- * Conocer la definición de derivada (compleja). &lt;br/&gt;&lt;br/&gt;
- * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. &lt;br/&gt;&lt;br/&gt;
- * Definir la propiedad de holomorficidad en las funciones y otras propiedades relacionadas a la derivación compleja. &lt;br/&gt;&lt;br/&gt;
-
----
-# Recordemos
-
-&gt; __Definición:__ Una función compleja es una regla de asignación `\(f\)` definida en un dominio `\(D\)` y uni-valuada (en caso que existan multiples valores tomaremos el de la rama principal). Más aún, existen dos funciones reales `\(u(x,y)\)` y `\(v(x,y)\)` tales que `$$f(x+iy)=u(x,y)+iv(x,y).$$`
-&lt;br/&gt;&lt;br/&gt;
-__Definición:__ Dada una función compleja `\(f=u+iv,\)` diremos que el límite de `\(f\)` cuando `\(z=x+iy\)` tiende a `\(z_0=x_0+iy_0\)` es `\(L=x_L+iy_L,\)` `$$\lim_{z\to z_0}f=L$$` si y sólo si `$$\lim_{(x,y)\to(x_0,y_0)}u=x_L\mbox{ y }\lim_{(x,y)\to(x_0,y_0)}v=y_L.$$`&lt;br/&gt;&lt;br/&gt; Diremos además que la función es continua si además `\(x_L=u(x_0,y_0)\)` y `\(y_L=v(x_0,y_0).\)`
+* Conocer la definición de EDO y sus clasificaciones. &lt;br/&gt;&lt;br/&gt;
+* Conocer el concepto de familia solución. &lt;br/&gt;&lt;br/&gt;
+* Aplicar el método de separación de variables. &lt;br/&gt;&lt;br/&gt;
+* Modelar mediante EDOS lineales de primer orden. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Diferenciación (compleja)
+# ¿Qué es una EDO?
 
-&gt; Sea `\(f\)` una función y `\(z_0\)` un punto interior de su dominio. Definimos la _derivada_ de `\(f\)` en `\(z_0,\)` como el límite: `$$\frac{d\,f}{dz}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.$$` Si el límite existe, entonces diremos que `\(f\)` es _diferenciable_ en `\(z_0.\)`
+&gt; __Definición:__ Una _Ecuación Diferencial_ es una ecuación que contiene derivadas o funciones incognitas respecto a una o mas variables independientes. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+Diremos que una ecuación diferencial es _ordinaria_ si las funciones derivada se consideran de una varibale, y _parciales_ si las funciones derivada son de varias variables.
 
-__Ejemplo:__ Supongamos que `\(f(z)=z^2.\)` Veamos que `\(f\)` es diferenciable en todo `\(\mathbb{C}.\)` Escribiendo `\(\Delta z= z_0-z\)` y `\(\Delta w=f(z+\Delta z)-f(z),\)` notemos que `$$f'(z)=\lim_{\Delta z\to 0}\frac{\Delta w}{\Delta z}=\lim_{\Delta z\to 0}\frac{(z+\Delta z)^2-z^2}{\Delta z}=\lim_{\Delta z\to 0}(2z+\Delta z)=2z.$$`
-
----
-## Continuidad no implica diferenciabilidad.
-
-__Ejemplo:__ ¿Qué pasa con la función `\(f(z)=|z|^2\)` en `\(z=0\)`? ¿Es diferenciable? ¿Es diferenciable en `\(z\neq 0\)`?
-
-$$ \frac{\Delta w}{\Delta z}=\frac{(z+\Delta z)(\overline{z}+\overline{\Delta z})-z\overline{z}}{\Delta z}=\overline{z}+\overline{\Delta z}+z\frac{\overline{\Delta z}}{\Delta z},$$
-  * Cuando `\(z=0,\)` `\(f'(0)=0.\)` &lt;br/&gt;&lt;br/&gt;
-  * Cuando `\(z\neq 0,\)` la derivada no existe.
-      * Si `\(z\to 0\)` por valores reales `\(\frac{\Delta w}{\Delta z}=z+\overline{z}.\)` &lt;br/&gt;
-      * Si `\(z\to 0\)` por valores imaginarios, `\(\frac{\Delta w}{\Delta z}=\overline{z}-z.\)`
----
-## Reglas de Derivación:
-
-&gt; __Teorema:__ Supongamos que `\(f\)` y `\(g\)` son funciones diferenciables, entonces: &lt;br/&gt;
-  * `\(\frac{d}{dz}c=0\)` donde `\(c\in \mathbb{C}.\)` &lt;br/&gt;
-  * `\(\frac{d}{dz}[c f(z)]= c\frac{df}{dz}.\)` &lt;br/&gt;
-  * `\(\frac{d}{dz}[f(z)+g(z)]=\frac{df}{dz}+\frac{dg}{dz}.\)` &lt;br/&gt;
-  * `\(\frac{d}{dz}[f(z)g(z)]=g\cdot\frac{df}{z}+f\cdot\frac{dg}{dz}.\)` &lt;br/&gt;
-  * Si `\(g(z)\neq 0\)`, `\(\frac{d}{dz}\left[\frac{f(z)}{g(z)}\right]=\frac{g(z)f'(z)-f(z)g'(z)}{[g(z)]^2}.\)` &lt;br/&gt;
-  * Para cada `\(n\in \mathbb{N},\)` `\(\frac{d}{dz}z^n=n z^{n-1}.\)` &lt;br/&gt;
-  * `\(\frac{d}{dz}[f(g(z))]=f'(g(z))\cdot g'(z).\)`
+__Ejemplos:__
+  * `\(\frac{dy}{dx}+5y=e^x,\)` `\(\frac{d^2y}{dx^2}-\frac{dy}{dx}+6y=0\)` ó `\(\frac{dx}{dt}+\frac{dy}{dt}=2x+y.\)` &lt;br/&gt;&lt;br/&gt;
+  
+  * `\(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0\)` `\(\frac{\partial u}{\partial y}=-\frac{\partial u}{\partial x}.\)`
   
 ---
-## Reglas de Derivación:
+## Clasificación de las EDO.
 
-&gt; __Ejemplo:__ Calcule la derivada de las siguientes funciónes:
-  * `\(f(z)=3z^2+3z-2+i,\)`
-  * `\(f(z)=(z-2)(3iz^2+2+i),\)`
-  * `\(f(z)=\frac{3z+i}{-2z-1-i},\)`
-  * `\(f(z)=(2z^2+i)^5.\)`
-  
+&gt; Las EDO se pueden clasificar mediante:
+  * El orden de la derivada: &lt;br/&gt;&lt;br/&gt;
+    * Primer orden: `\(y'=y,\)` o `\(y'sin(x)=y.\)` &lt;br/&gt;
+    * Segundo, tercer, y así consecutivamente involucran derivadas de ese orden. &lt;br/&gt;&lt;br/&gt;
+  * Linealidad:
+    * Lineal: la función `\(y\)` y sus derivadas se encuentran a la potencia 1, y los coeficientes solo dependen de `\(x.\)`  `$$y''+y'+6=0.$$`
+    * No lineal: alguna función `\(y\)` o sus derivadas se encuentra a potencia mayor a 1, o los coeficientes pueden depender de `\(x\)` y `\(y\)` o sus derivadas. `$$(1-y)y'+2y=e^x,$$` `$$(y'')^3+sin(y)=0.$$`
+    
+---
+## Solución de una EDO.
+
+&gt; __Definición:__ Decimos que `\(f\)` es una función definida en cierto intervalo `\(I,\)` con derivadas continuas en `\(I\)` (tantas derivadas como el orden de la ecuación) es una solución de una ecuación diferencial si cuando sustituimos la función obtenemos una identidad.
+
+__Ejemplo:__ La función `\(f(x)=e^x\)` definida en `\(\mathbb{R},\)` es una solución de la EDO `$$y'-y=0.$$` Veamos, `\(f'(x)=e^x\)` y si `\(y=f(x),\)` entonces `$$y'-y=e^x-e^x=0.$$`
 
 ---
-# Ecuaciones de Cauchy-Riemann
+## Curva Solución
 
-Supongamos que localmente, `$$f(x+iy)=u(x,y)+iv(x,y).$$` Entonces, `\(\Delta z=\Delta x+i\Delta y,\)` y la el cociente de incrementos se ve `$$\frac{f(z+\Delta z)-f(z)}{\Delta z}=\frac{u(x+\Delta x,y+\Delta y)-u(x,y)+i[v(x+\Delta x,y+\Delta y)-v(x,y)]}{\Delta x+i \Delta y}$$`
+&gt; __Definicón:__ la gráfica de una función solución a una EDO se conoce como curva solución, notemos que la curva solución puede diferir de la gráfica de la función dado que la curva solución __depende del intervalo de definición de la solución.__
 
-* Si tomo la dirección real, `\(\Delta z=\Delta x+i0,\)` entonces `$$f'(z)=\frac{\partial}{\partial x}u(x,y)+ i \frac{\partial}{\partial x}v(x,y).$$`
-
-* Si tomo la dirección imaginaria, `\(\Delta z= 0 +i\Delta y,\)` entonces `$$f'(z)=\frac{\partial }{\partial y}v(x,y)-i\frac{\partial }{\partial y}u(x,y).$$`
+__Ejemplo:__ Consideremos la ecuación `\(xy'+y=0.\)` La función `\(y=f(x)=1/x\)` es una solución, pero recordemos que `\(f(x)\)` no es diferenciable en `\(x=0,\)` por lo que debemos definir que intervalo tomaremos, si `\((-\infty,0)\)` o `\((0,\infty).\)` 
 
 ---
-# Ecuaciones de Cauchy-Riemann
+### Soluciones implícitas.
 
-&gt; De lo anterior, si la función es diferenciable ambas expresiones deben ser las mismas (por la unicidad del límite). Así que se cumple `$$\frac{\partial u}{\partial x}(x,y) =\frac{\partial v }{\partial y}(x,y) \mbox{ y } \frac{\partial v}{\partial x}(x,y)=-\frac{\partial u}{\partial y}(x,y).$$` &lt;br/&gt;&lt;br/&gt; Ecuaciones conocidas como __Ecuaciones de Cauchy-Riemann.__
+&gt; __Definición:__ A veces las EDO pueden satisfacerse por una relación `\(G(x,y)\)` (ecuación que involucra `\(x\)` y `\(y\)`), pero siempre con la premisa que hay una función que satisface esta relación que se comportará como la solución de la EDO.
 
----
-## Condiciones necesarias y suficientes de diferenciabilidad
-
-&gt; __Teorema:__ Supongamos que `\(f(x+iy)=u(x,y)+iv(x,y)\)` en una vecindad de `\(z_0.\)` Entonces se cumple que:
-* Si `\(f'(z_0)\)` existe, entonces las derivadas parciales de `\(u\)` y `\(v\)` satisfacen las ecuaciones de Cauchy-Riemann. &lt;br/&gt;&lt;br/&gt;
-* Si las derivadas parciales de `\(u\)` y `\(v\)` existen y son continuas en `\(z_0,\)` y satisfacen las ecuaciones de Cauchy-Riemann, entonces `\(f'(z_0)\)` existe.
+__Ejemplo:__ La relación `\(x^2+y^2=k^2\)` es una solución de la ecuación `\(yy'+x=0.\)` Y las funciones asociadas son `\(f(x)=\sqrt{k^2-x^2}\)` y `\(f(x)=-\sqrt{k^2-x^2}\)` en sus respectivos intervalos de definición.
 
 ---
-### Ejemplos:
+# Técnicas para resolver EDOs
 
-&gt; Recordemos la función `\(f(z)=|z|^2.\)` En este caso `\(|x+iy|^2=x^2+y^2+i0,\)` por lo que `\(u(x,y)=x^2+y^2\)` y `\(v(x,y)=0.\)` Las ecuaciones de Cauchy-Riemann me dicen `$$2x=0\mbox{ y }2y=0$$` que se satisfacen unicamente cuando `\(x=y=0.\)` &lt;br/&gt;&lt;br/&gt;
-Esta es otra manera de demostrar que `\(f\)` no es diferenciable en `\(z\neq 0.\)`
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-Considere la función `\(f(z)=\exp(z).\)` ¿Para que dóminio de `\(f\)` se cumplen las ecuaciones de Cauchy-Riemann? ¿La exponencial es diferenciable?
+&gt; __Definición:__ Una EDO se dice que es una ecuación __separable__ o acepta __separación de variables__ si es de la forma `$$y'=g(x)h(y).$$`
 
----
-### Ejemplo:
+__Ejemplo:__ Consideremos la EDO `\(y'=1+e^{2x}.\)` &lt;br/&gt;&lt;br/&gt;
 
-&gt; Compruebe que las siguientes funciones no son diferenciables:
-  * `\(f(z)=\overline{z}.\)`
-  * `\(f(z)=z-\overline{z}.\)`
-  * `\(f(z)=2x+ixy^2.\)`
-  * `\(f(z)=e^xe^{iy}.\)`
+Notemos que si realizamos la antideravada `$$\int 1+e^{2x}dx=x+\frac{e^{2x}}{2}+c$$` es una solución para la ecuación diferencial para cada constante `\(c.\)`
 
 ---
-# Funciones Holomorfas
+## ¿Cómo utilizo el método?
 
-&gt; __Definición:__ Una función `\(f\)` es _holomorfa_ en `\(z_0\)` si su derivada existe en una vecindad de `\(z_0\)` y no solo en `\(z_0,\)` y es holomorfa en una región `\(R\)` si lo es para cada uno de los puntos de `\(R.\)`
+&gt; Si tenemos una EDO que es separable `$$\frac{dy}{dx}=g(x)h(y).$$`
+  * Separamos las variables `\(y\)` y `\(x\)` en un lado de la ecuación. `$$p(y)\frac{dy}{dx}=g(x),\quad\mbox{donde }p(y)=\frac{1}{h(y)}.$$`
+  * Separamos nuestras diferenciales como si fuera una "fracción",
+`$$p(y)dy=g(x)dx$$`
+  * Integramos cada lado de la ecuación, `$$\int p(y)dy =\int g(x)dx.$$`
+  * Las antiderivadas formaran una _relación_ que fungirá de solución.
 
-__Contraejemplo:__ La función `\(f(z)=|z|^2\)` no es holomorfa pues `\(f'\)` sólo existe en `\(z=0.\)`
+---
+### Ejemplo del método.
+
+&gt; Resuelva la EDO `\((1+x)\frac{dy}{dx}-y=0.\)`
+
+---
+### Ejemplo del método.
+
+&gt; Resuelva la EDO `\(\frac{dy}{dx}=e^{3x+2y}.\)`
+
+---
+# Modelos Lineales: Crecimiento y Decaimiento
+
+&gt; En una rebanada de pan sabemos que se encuentran una comunidad de bacterias. Si sabemos que la razón de crecimiento de de esta comunidad es de 3/2 el número de la población. ¿Hay una función que describa la cantidad de bacterias en el tiempo determinado?
 
 &lt;br/&gt;&lt;br/&gt;
 
-__Ejemplo:__ Todo polinomio es holomorfo en cualquier region de `\(\mathbb{C}.\)` En particular para todo `\(\mathbb{C},\)` por lo que se dice que los polinomios son funciones _enteras._
+Cuando una _razón de cambio_ es __proporcional__ a la población obtenemos una EDO lineal dada por `$$\frac{dx}{dt}=kx$$` donde la población `\(x(t)\)` depende del tiempo `\(t.\)`
 
 ---
-### Ejemplo:
+## Esta ecuación es separable.
 
-&gt; Compruebe que la función `\(f\left(re^{i\theta}\right)=\sqrt{r}e^{\frac{i\theta}{2}},\)` es holomorfa para `\(r&gt;0\)` y `\(-\pi&lt;\theta&lt;\pi.\)`
+Notemos que la EDO anterior es separable, y que todas las soluciones son similares, es decir, toda solución pertenece a la familia `$$x(t)=ce^{kt}.$$`
+
+*Reto:* Utiliza separación de variables para resolver la ecuación modelo y llegar a la familia solución.
+
+&gt; Usualmente un problema de modelación nos da información necesaria para delimitar el problema, conocido como __condición inicial__. Esta información nos permite transformar nuestra EDO en algo conocido como __problema de valor inicial__.
 
 ---
-## Derivadas de Funciones Elementales:
+## Problemas de valores iniciales y soluciones.
 
-&gt; Recordemos las funciones elementales: exponencial, seno, cose y logaritmos complejos. A continuación introduciremos las reglas de derivación compleja.
-&lt;br/&gt;&lt;br/&gt;
-  * `\(\frac{d \exp(z)}{dz}=\exp(z)\)`
-  * `\(\frac{d \sin(z)}{dz}=\cos(z)\)`
-  * `\(\frac{d\cos(z)}{dz}=-\sin(z)\)`
-  * `\(\frac{d\log(z)}{dz}=\frac{1}{z}\)`
-  * `\(\frac{d w^z}{dz}=w^z\log(w)\)`
-  
-&lt;br/&gt;&lt;br/&gt;
- __Ejemplo:__ Use las reglas anteriores para calcular la derivada de `\(\tan(z).\)`
+&gt; __Definición:__ Un __problema de valor inicial__ se conforma de una EDO más una condición que debe satisfacer la solución. 
+
+
+#### Nota: la condición inicial permite que la solución que encontremos sea __única__, para la EDO y la condición inicial.
+
+&gt; En una rebanada de pan sabemos que se encuentran una comunidad de bacterias. Si sabemos que la razón de crecimiento de de esta comunidad es de 3/2 el número de la población. ¿Qué función modela la población de bacterias _si se sabe que al inicio de nuestra observación_ había __500 mil bacterias__?
+
+---
+### Problemas de Temperatura
+
+#### Ley de Newton para el enfriamento/calentamiento.
+
+&gt; La razón de cambio de la temperatura que experimenta un cuerpo es proporcional a la diferencia entre la temperatura del cuerpo y la temperatura de medio en el que se encuentra. $$ \frac{dT}{dt}=k(T-T_m).$$
+
+
+__Ejemplo:__ La temperatura de unos chilaquiles Tec recien servidos es de `\(90^\circ C.\)` Si la temperatura en la cafetería es de `\(22^\circ C.\)` Si despues de 2 minutos la temperatura de mis chilaquiles es de `\(80^\circ C.\)` ¿Qué función modela la temperatura de mis chilaquiles?
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
