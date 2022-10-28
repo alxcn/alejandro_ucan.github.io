@@ -1,23 +1,22 @@
 ---
-title: "S01: Ecuaciones Diferenciales Ordinarias y Modelación"
-weight: 1
-subtitle: "EDOs"
-excerpt: "Primera sesión de la UF"
+title: "S09: Transformada de Laplace"
+weight: 9
+subtitle: "Transformadas Integrales"
+excerpt: "Definiremos la transformada de Laplace"
 date: '`r Sys.Date()`'
-slug: MA1035-session-01
+slug: MA1035-session-09
 draft: false
 ---
 
 En esta sesión nuestros objetivos son:
 
 
-* Conocer la definición de EDO y sus clasificaciones. <br/><br/>
-* Conocer el concepto de familia solución. <br/><br/>
-* Aplicar el método de separación de variables. <br/><br/>
-* Modelar mediante EDOS lineales de primer orden. <br/><br/>
+* Motivar la transformada de Laplace. <br/><br/>
+* Definir la transformada de Laplace. <br/><br/>
+* Calcular la transformada de Laplace.
 
-El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-01).
+El contenido para la **Sesión 09** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-09).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-01", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-09", ratio = "4:3")
 ```

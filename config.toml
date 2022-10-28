@@ -153,16 +153,16 @@ enableEmoji = true
     title = "Modelación en Ingenieria mediante Sistemas Dinámicos"
     url = "/ma1035/"
     weight = 8
-  [[menu.header]]
-    name = "F1017B"
-    title = "Sistemas Electromagnéticos"
-    url = "/f1017/"
-    weight = 7
-  [[menu.header]]
-    name = "MA1002B"
-    title = "Modelación de sistemas con Ecuaciones Diferenciales"
-    url = "/ma1002/"
-    weight = 9    
+  #[[menu.header]]
+  #  name = "F1017B"
+  #  title = "Sistemas Electromagnéticos"
+  #  url = "/f1017/"
+  #  weight = 7
+  #[[menu.header]]
+  #  name = "MA1002B"
+  #  title = "Modelación de sistemas con Ecuaciones Diferenciales"
+  #  url = "/ma1002/"
+  #  weight = 9    
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
 [privacy]
