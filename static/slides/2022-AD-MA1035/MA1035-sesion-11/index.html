@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Aplicación de la Transformada de Laplace</title>
+    <title>1er Teorema de Traslación</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2022-11-11" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x97baa89c61c415597f5f3e9032e7ea3","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa661544dabb4e9f88963b48dd5b0c53","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Aplicación de la Transformada de Laplace
+# 1er Teorema de Traslación
 ]
 .subtitle[
-## Sesión 10
+## Sesión 11
 ]
 .author[
 ### Alejandro Ucan
@@ -76,72 +76,63 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
+
 # Objetivos de la Sesión
 
-* Calcularemos transformadas de Laplace de funciones extremas. &lt;br/&gt;&lt;br/&gt;
-* Introduciremos la transformada de Laplace inversa. &lt;br/&gt;&lt;br/&gt;
-* Introduciremos la relación entre la Transformada de Laplace y la derivada de una función. &lt;br/&gt;&lt;br/&gt;
-* Aplicaremos la transformada de Laplace en la solución de EDOS.
+* Introduciremos el 1er teorema de Traslación. &lt;br/&gt;&lt;br/&gt;
+* Aplicaremos el 1er teorema de traslación en el calculo de transformadas. &lt;br/&gt;&lt;br/&gt;
+* Aplicaremos este teorema a la solución de EDOs.
+---
+# Motivación:
+&lt;br/&gt;&lt;br/&gt;
+
+&gt; Calcule la transformada de Laplace de la función `\(f(t)=e^{5t}t^3.\)`
+
 
 ---
-# Transformadas de funciones Extremas:
+# 1er Teorema de Traslación
 
-&gt; Utilizando la definición de la transformada de Laplace calcule la transformada de las siguientes funciones:
-  * `\(f(t)=-1\)` si `\(0\leq t \leq 1\)` y `\(f(t)=1\)` si `\(t&gt;1.\)`
-  * `\(f(t)=0\)` si `\(0\leq t\leq a\)` y `\(f(t)=t\)` si `\(t&gt;a.\)`
-  * `\(f(t)=1\)` si `\(a\leq t\leq b\)` y `\(f(t)=0\)` de lo contrario.
+&gt; __Teorema:__ Sea `\(f(t)\)` una función tal que `\(\mathcal{L}\{f(t)\}=F(s)\)` exista. Entonces se cumple que `$$\mathcal{L}\{e^{at}f(t)\}=F(s-a).$$`
 
----
-# Transformadas de Laplace comunes:
-
-La siguiente muestra una lista de transformadas de Laplace más comunes:
-
-  * `\(\mathcal{L}\left\{t^n\right\}=\frac{n!}{s^{n+1}}\)` 
-  * `\(\mathcal{L}\left\{e^{at}\right\}=\frac{1}{s-a}\)`
-  * `\(\mathcal{L}\left\{\sin(kt)\right\}=\frac{k}{s^2+k^2}\)`
-  * `\(\mathcal{L}\left\{\cos(kt)\right\}=\frac{s}{s^2+k^2}\)`
-  * `\(\mathcal{L}\left\{\sinh(kt)\right\}=\frac{k}{s^2-k^2}\)`
-  * `\(\mathcal{L}\left\{\cos(kt)\right\}=\frac{s}{s^2-k^2}\)`
-  
----
-### Ejemplo:
-
-&gt; ¿Quién sería el la función de la que provienen las siguientes transformadas de Laplace? 
-  * `\(F(s)=\frac{1}{s^5}\)`
-  * `\(F(s)=\frac{1}{s^2+7}\)`
-  * `\(F(s)=\frac{s^2+6s+9}{(s-1)(s-2)(s+4)}\)`
-  
----
-# Transformación de Derivadas:
-
-&gt; __Teorema:__ Si existe `\(\mathcal{L}\{f(t)\}=F(s)\)` entonces se cumple `$$\mathcal{L}\{f'(t)\}=sF(s)-f(0)$$` `$$\mathcal{L}\{f^(n)(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0).$$`
-
-### Ejemplo: 
-
-Encuentra la solución de la ecuación `$$y'+3y=13\sin(2t)\quad y(0)=6$$`
+&lt;br/&gt;&lt;br/&gt;
+&gt; _Implicaciones del Teorema:_ ahora cada que veamos una función conocida "trasladada" por un factor exponencial, esto se traduce en la transformada como una traslación en la `\(s.\)`
 
 ---
-### Ejemplo:
+## Aplicando el teorema:
 
-Encuentre la solución a la ecuación `$$y''-3y'+2y=e^{-4t},\quad y(0)=1,\quad y'(0)=5.$$`
-
----
-### Ejemplo:
-
-Encuentre la solución a la ecuación `$$2y'''+3y''-3y'-2y=e^{-t},\, y(0)=0,\,y'(0)=0,\,y''(0)=1.$$`
+### Ejemplo (Calculo directo):
+&gt; Calcule las transformadas de Laplace de `\(f(t)=e^{5t}t^3,\)` `\(f(t)=e^{-2t}\cos(4t)\)` y `\(f(t)=e^{-2t}\)` si `\(t&gt;1\)` y `\(f(t)=0\)` de lo contrario.
 
 ---
-# Actividad en clase 
+### Ejemplo (Calculo de Inversas):
 
-Calcula lo que se te pide:
+&gt; Calcule la Transformada inversa como se te indica: 
+`$$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}$$`
 
-* `\(\mathcal{L}^{-1}\left\{\frac{1}{s^2}-\frac{1}{s}+\frac{1}{s-2}\right\}.\)`
-* `\(\mathcal{L}^{-1}\left\{\frac{5}{s^2+49}\right\}.\)`
-* `\(\mathcal{L}^{-1}\left\{\frac{1}{s^2+s-20}\right\}.\)`
-* `\(y'-y=1,\, y(0)=0.\)`
-* `\(y'-y=2\cos(5t),\, y(0)=0\)`
-* `\(y''+5y'+4y=0,\, y(0)=1,\, y'(0)=0.\)`
-* `\(y''+y=\sqrt{2}\sin(\sqrt{2}t),\,y(0)=10,\, y'(0)=0.\)`
+---
+### Ejemplo (Calculo de Inversas):
+
+&gt; Calcule la Transformada inversa como se te indica:
+`$$\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}$$`
+
+---
+### Ejemplo (Solución de EDOs)
+
+&gt; Encuentre la solución de la EDO `$$y''-6y'+9y=t^2e^{3t},\quad y(0)=2,\quad y'(0)=17.$$`
+
+---
+### Ejemplo (Solución de EDOs)
+
+&gt; Encuentre la solución de la EDO `$$y''+4y'+6y=1+e^{-t},\quad y(0)=0,\quad y'(0)=0.$$`
+
+---
+# Actividad 
+
+&gt; Utiliza el 1er teorema de traslación para encontrar la solución a las EDOs:
+* `\(y'+4y=e^{-4t},\, y(0)=2.\)`
+* `\(y'-y=1+te^{t},\, y(0)=0.\)`
+* `\(y''+2y'+y=0,\, y(0)=1,\, y'(0)=1.\)`
+* `\(y''-4y'+4y=t^3e^{2t},\, y(0)=0,\, y'(0)=0.\)`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
