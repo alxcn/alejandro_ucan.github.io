@@ -10,12 +10,12 @@ draft: false
 
 En esta sesión nuestros objetivos son:
 
-
+* Calcularemos la Transformada de funciones más complejas.
 * Introduciremos la transformada de Laplace inversa. <br/><br/>
 * Introduciremos la relación entre la Transformada de Laplace y la derivada de una función. <br/><br/>
 * Aplicaremos la transformada de Laplace en la solución de EDOS.
 
-El contenido para la **Sesión 10* se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-10).
+El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-10).
 
 ```{r embed-xaringan, echo=FALSE}
 xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-10", ratio = "4:3")

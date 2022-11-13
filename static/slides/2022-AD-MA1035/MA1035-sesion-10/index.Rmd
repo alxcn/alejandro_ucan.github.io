@@ -1,6 +1,6 @@
 ---
-title: "Transformada de Laplace"
-subtitle: "Sesión 09"
+title: "Aplicación de la Transformada de Laplace"
+subtitle: "Sesión 10"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
