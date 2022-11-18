@@ -11,7 +11,7 @@ draft: false
 En esta sesión nuestros objetivos son:
 
 * Introduciremos el 2do teorema de Traslación. <br/><br/>
-* Aplicaremos el 1er teorema de traslación en el calculo de transformadas. <br/><br/>
+* Aplicaremos el 2do teorema de traslación en el cálculo de transformadas. <br/><br/>
 * Aplicaremos este teorema a la solución de EDOs.
 
 El contenido para la **Sesión 12** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-12).
