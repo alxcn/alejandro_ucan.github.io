@@ -86,6 +86,12 @@ xaringanExtra::use_logo(
 
 > Calcule las transformadas de Laplace inversa de $F(s)=\frac{1}{s-4}e^{-2s},$ $F(s)=\frac{s}{s^2+9}e^{-\pi s/2}.$
 
+
+---
+### Ejemplo (Cálculo Directo)
+
+> Calcule la transfromada de Laplace Inversa de $$F(s)=\frac{e^{-s}}{s(s^2-4)}.$$
+
 ---
 ### Ejemplo (Solución de EDOs):
 
