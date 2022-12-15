@@ -13,6 +13,6 @@ My field of research correspond to dynamical systems, geometry and topology, wit
 
 Currently I'm a full-time professor at the Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Monterrey (NL, Mexico), previously I was a postdoc position by CONACyT (Mex) at the Institut de Mathématiques de Jussieu-Paris Rive Gauche under the supervision of Prof. Elisha Falbel. 
 
-My current project is related to the study of complex projective structures on special manifolds (like links' complements, Deligne-Mostow lattices quotients). 
+My current project is related to the study of complex projective structures on special manifolds, like links' complements or Deligne-Mostow lattices quotients and MCG in collaboration with Irene Pasquinelli and Elisha Falbel. 
 
 Other of my interest are: programming, writing (with the blog i.rracionalx) and photography. :mx:
