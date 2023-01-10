@@ -1,0 +1,19 @@
+---
+title: "Sesión 17: Diferenciación compleja"
+weight: 18
+subtitle: "Veremos la definición de diferenciación compleja y condiciones suficientes y necesarias para que una función sea diferenciable"
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: MMF-sesion-17
+draft: false
+---
+
+ * Conocer la definición de derivada (compleja). <br/><br/>
+ * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
+ * Definir la propiedad de holomorficidad en las funciones y otras propiedades relacionadas a la derivación compleja. <br/><br/>
+
+El contenido para la **Sesión 17** se encuentra en following [slides](/slides/2022-06-MMF/MMF-sesion-17).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-06-MMF/MMF-sesion-17", ratio = "4:3")
+```

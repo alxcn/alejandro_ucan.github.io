@@ -1,0 +1,21 @@
+---
+title: "Sesión 1: Topología."
+weight: 1
+subtitle: "Topología y algunos ejemplos"
+excerpt: "Comenzaremos con la definición de espacios topológicos y lo que es una topología, así como diversas construcciones de topologías útiles en el futuro."
+date: '`r Sys.Date()`'
+slug: MA2007B-P1-S01
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos: 
+
+* Introducir el concepto de Espacio Topológico. <br/><br/>
+* Definir la topología: trivial, discreta y complemento finito. <br/><br/>
+* Definir la topología subespacio. <br/><br/>
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2023-FJ-MA2007B/MA2007B-P1-S01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-MA2007B/MA2007B-P1-S01", ratio = "4:3")
+```
