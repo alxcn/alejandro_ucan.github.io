@@ -1,0 +1,21 @@
+---
+title: "Sesión 2: Propiedades Topológicas."
+weight: 2
+subtitle: "Cerrados, Conexos, Arco-Conexos y Compactos"
+excerpt: "Introduciremos las primeras propiedades topológicas importantes para nuestro curso."
+date: '`r Sys.Date()`'
+slug: MA2007B-P1-S02
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos: 
+
+* Introducir los conceptos de Cerrado, Conexo, Arco-conexo, Compacidad y Espacio métrico. <br/><br/>
+* Mostrar ejemplos de los conceptos anteriores. <br/><br/>
+* Relacionarlos con la topología. <br/><br/>
+
+El contenido para la **Sesión 02** se encuentra en following [slides](/slides/2023-FJ-MA2007B/MA2007B-P1-S02).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-MA2007B/MA2007B-P1-S02", ratio = "4:3")
+```
