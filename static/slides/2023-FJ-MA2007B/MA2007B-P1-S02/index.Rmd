@@ -1,5 +1,5 @@
 ---
-title: "Propiedades Topológicas y Espacios Métricos"
+title: "Propiedades Topológicas"
 subtitle: "Sesión 02"  
 author: 
   - "Alejandro Ucan"
@@ -131,7 +131,9 @@ Consideremos nuestro grafo $\Gamma=(V,E)$ donde $V=\{a,b,c,d\}$ y $E=\{(a,d),(b,
   * Es conexo en $(X,\tau).$
   * Si existe $V\subset X$ conexo, entonces $U=V.$
 
+
 --
+
 #### Ejemplo:
 
 Sea $X=\{1,2,3,4\}$ y $\tau=\{\varnothing,\{1,2\},\{3,4\},\{1,2,3,4\}\}.$ Las componentes conexas de $X$ son $\{1,2\}$ y $\{3,4\}.$ <br/><br/>
@@ -140,25 +142,18 @@ Pero si consideramos a $X$ con la topología $$\tilde{\tau}=\{\varnothing,\{1\},
 ---
 # Compacidad 
 
-> __Definición:__ Sea $(X,\tau)$ un espacio topológico, 
-
-> __Definición:__ Sea $(X,d)$ un espacio métrico (con su topología inducida) y $Q$ un subespacio de $X.$ El __díametro__ de $Q$ se define como el número $$\sup_{p,q\in Q} d(p,q)=\mbox{ la cota superior más chica entre todas las cotas superiores}.$$ Decimos que el conjunto $Q$ es __acotado__ si su díametro es finito, y __no acotado__ de lo contrario. 
-
+> __Definición:__ Sea $(X,\tau)$ un espacio topológico decimos que $X$ es __compacto__ si para cualquier cubierta de abiertos de $X,$ es decir, colección de elementos de $\tau$ que cumplan $$X\subset \bigcup U_\alpha,$$ se tiene que existe una sub-colección _finita_ que sigue siendo cubierta.
 
 --
 
-##### Ejemplo:
+#### Ejemplo:
 
-* Toda bola en $\mathbb{R}^n$ con la distancia estándar es acotada. <br/>
+* Cualquier espacio topológico finito (una colección finita de puntos) es compacto para cualquier topología. 
+<br/>
+
 --
+* Consideremos el _Conjunto de Cantor_ con la topología subespacio de $\mathbb{R}.$ Este es un conjunto compacto pero con una infinidad de puntos en el.
 
-* $\mathbb{R}^n$ no es acotado. <br/>
---
-
-* Un grafo con finitos vértices es acotado. <br/>
---
-
-* La gráfica de $\sqrt{x}$ como subespacio de $\mathbb{R}^2$ no es acotado.
 
 ---
 
@@ -176,4 +171,4 @@ Pero si consideramos a $X$ con la topología $$\tilde{\tau}=\{\varnothing,\{1\},
 
 <br/>
 
-* Investiga la representación gráfica del grafo $K_6$ y calcula la bola centrada en un vértice de radio 1 en la distancia de trayectorias.
+* Investiga la representación gráfica del grafo $K_6,$ ¿Qué propiedades topológicas puedes decir de este grafo?

@@ -10,7 +10,7 @@ draft: false
 
 En la Sesión uno trabajaremos con los objetivos: 
 
-* Introducir los conceptos de Cerrado, Conexo, Arco-conexo, Compacidad y Espacio métrico. <br/><br/>
+* Introducir los conceptos de Cerrado, Conexo, Arco-conexo y Compacidad. <br/><br/>
 * Mostrar ejemplos de los conceptos anteriores. <br/><br/>
 * Relacionarlos con la topología. <br/><br/>
 

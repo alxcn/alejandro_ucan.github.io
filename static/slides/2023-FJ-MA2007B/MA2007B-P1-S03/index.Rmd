@@ -53,10 +53,6 @@ xaringanExtra::use_logo(
 * Introduciremos el concepto de Espacio Métrico. <br/><br/>
 * Presentaremos ejemplos de Espacios Métricos. <br/><br/>
 * $\mathbb{R}^n$ como espacio métrico. <br/><br/>
-* Subespacios topológicos de $\mathbb{R}^n$. <br/><br/>
-
-* Definiremos clases de equivalencia y espacios cociente. <br/><br/>
-* Mostraremos las propiedades hereditarias en espacios cociente. <br/><br/>
 
 ---
 # Espacios Métricos
@@ -67,6 +63,7 @@ xaringanExtra::use_logo(
   * $d(p,q)\leq d(p,r)+d(r,p).$
   
 --  
+
 #### Ejemplo:
 
 * Un ejemplo bien conocido de espacio métrico es $\mathbb{R}$ con la función dada por $$d(x,y)=|x-y|.$$ Y podemos generalizarlo a $\mathbb{R}^n,\,\mathbb{C}^n$ con sus respectivas distancias asociadas a la norma.
@@ -84,7 +81,7 @@ xaringanExtra::use_logo(
 ---
 ## Métrica y Topología.
 
-> __Definición:__ Dado un espacio métrico $(X,d)$ y la colección de todas las bolas $$B_d(x,r)=\{y\in X: d(x,y)<r\}$$ y sus uniones, forman una topología en $X.$
+> __Definición:__ Dado un espacio métrico $(X,d)$ y la colección de todas las bolas $$B_d(x,r)=\{y\in X: d(x,y)<r\}$$ y sus uniones, forman una topología en $X.$ A la métrica anterior se le conoce como __topología métrica.__
 
 <br/><br/>
 --
@@ -133,3 +130,29 @@ __Definición:__ Sea $U\subset\mathbb{R}^n$ decimos que $x$ es un punto frontera
 __Definición:__ Sea $U\subset\mathbb{R}^n$ decimos que es un cerrado, si $U$ contiene a todos sus puntos frontera.
 
 ---
+
+## Conexidad en $\mathbb{R}^n.$
+
+> __Definición:__ Sea $X\subset \mathbb{R}^n,$ decimos que $X$ es __arco-conexo__ si para cualquier par de puntos en $X,$ existe un arco ó trayectoria que los una, es decir, una función continua $f:[0,1]\to X.$
+
+--
+<br/><br/>
+__Teorema:__ En $\mathbb{R}^n,$ si un subespacio $X$ es arco-conexo, entonces $X$ es conexo.
+
+--
+<br/><br/>
+
+__Teorema:__ Si $a<b,$ entonces $[a,b]$ es conexo en $\mathbb{R}$ con la topología estándar.
+
+---
+## Compacidad en $\mathbb{R}^n.$
+
+
+> __Definición:__ Sea $X\subset \mathbb{R}^n,$ decimos que el __díametro__ de $X$ es el número $$\sup_{x,y\in X} d(x,y)$$ que puede puede ser finito o $\infty,$ y se denota por $\mbox{diam}(X).$ 
+<br/><br/>
+Cuando $\mbox{diam}(X)<\infty$ entonces decimos que $X$ es __acotado.__
+
+--
+ 
+__Teorema:__ En $\mathbb{R}^n,$ $X$ es cerrado y acotado si y sólo si $X$ es compacto.
+

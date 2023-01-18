@@ -1,0 +1,22 @@
+---
+title: "Sesión 3: Espacios Métricos."
+weight: 3
+subtitle: "Distancias y Geometrías"
+excerpt: "Definiremos la topología asociada a uno de los espacios que más trabajaremos, esto mediante métricas."
+date: '`r Sys.Date()`'
+slug: MA2007B-P1-S03
+draft: false
+---
+
+En la Sesión uno trabajaremos con los objetivos: 
+
+* Introduciremos el concepto de Espacio Métrico. <br/><br/>
+* Presentaremos ejemplos de Espacios Métricos. <br/><br/>
+* $\mathbb{R}^n$ como espacio métrico. <br/><br/>
+
+
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2023-FJ-MA2007B/MA2007B-P1-S03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-MA2007B/MA2007B-P1-S03", ratio = "4:3")
+```
