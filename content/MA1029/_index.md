@@ -15,8 +15,8 @@ sidebar:
   description: |
     Puedes encontrar los recursos de los siguientes periodos:
     
-    - 2022 AD Módulo 1
-    - 2022 AD Módulo 2
+    - 2023 FJ Módulo 1
+    - 2023 FJ Módulo 2
     
   #  Check out the _index.md file in the /blog folder 
   #  to edit this content. 

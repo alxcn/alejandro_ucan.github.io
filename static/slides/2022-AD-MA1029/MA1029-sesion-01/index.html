@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Optimización con Restricciones</title>
+    <title>Funciones de Varias Variables</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-02-07" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xc6a12fe9ca24ba9a28589ab33a67665","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"afc8e4aa135747e78144635289d6b5b0","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Optimización con Restricciones
+# Funciones de Varias Variables
 ]
 .subtitle[
-## Sesión 02
+## Sesión 01
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-02-07
 ]
 
 ---
@@ -44,81 +44,103 @@ class: center, middle, inverse, title-slide
 
 # Objetivos:
 
-* Conocer las condiciones necesarias y suficientes para la existencia de valores extremos en problemas con restricción. &lt;br/&gt;&lt;br/&gt;
- * Encontrar estos valores mediante el método de los multiplicadores de Lagrange.
- 
----
-# ¿Optimización con restricciones?
-
-&gt; __Ejemplo:__ Una caja rectangular sin una caja sin tapa hecha con `\(12m^2\)` de cartón. Encuentre el volumen máximo de la caja.
-
-&lt;br/&gt;
-Notemos que tenemos una restricciones de las variables y es que satisfagan `$$A_{sup}=2xz+2y&lt;+xy=12.$$`
+  * Introducir el concepto de función de `\(\mathbb{R}^2\to \mathbb{R}\)` y `\(\mathbb{R}^3\to\mathbb{R}\)`. &lt;br/&gt;&lt;br/&gt;
+  * Estudiaremos la gráfica de estas funciones y sus curvas de nivel. &lt;br/&gt;&lt;br/&gt;
+  * Presentaremos las cónicas y sus particularidades. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Intuitivamente
+# Motivación:
 
-Queremos encontrar los valores extremos de una función `\(f(x,y)\)` de tal manera que las variables cumplan una restricción que pueda expresarse como una curva de nivel de una función `\(g(x,y).\)` &lt;br/&gt;&lt;br/&gt;
+&gt; Queremos conocer el movimiento (a través del tiempo) que describe una cuerda (cuyos extremos están fijos) cuando se estira y se suelta. Suponiendo que cada punto de la cuerda en movimiento dependerá no solo de su posición en el plano sino también del tiempo, tenemos que esto será una _función_ de `\(x\)` y `\(t.\)` Es decir, una función `\(u(x,t)\)` que toma valores en `\(\mathbb{R}^2\)` y regresa un valor de `\(\mathbb{R}.\)`
 
-Queremos encontrar los `\((x,y)\)` tal que `$$f(x,y)\mbox{ tiene un valor extremo}$$` `$$g(x,y)=k.$$`
-
----
-## Visualmente esto se ve como
-
+&lt;iframe src="https://www.wolframcloud.com/obj/alejandroucan-puc/Published/Basic_wave_ed_sol.nb?_embed=iframe" width="1000" height="300"&gt;&lt;/iframe&gt;
 
 ---
-## El mutiplicador
+## ¿Cómo es la función que modela este problema?
 
-&gt; __Definición:__ Dada las condiciones del dibujo anterior, diremos que `\(\lambda\)` es un __multiplicador de Lagrange__ si satisface que `$$\nabla f(x_0,y_0,z_0)=\lambda \nabla g(x_0,y_0,z_0).$$`
+&gt; La función que describe mejor este problema es la función `$$u(x,t)=\cos(t)\sin(x).$$`
 
----
-# El método de Multiplicadores de Lagrange.
-
-&gt; Para encontrar los valores extremos de `\(f(x,y,z)\)` sujeto a la restricción `\(g(x,y,z)=k,\)` suponiendo que `\(\nabla g\neq 0.\)` &lt;br/&gt;&lt;br/&gt;
-  * Encontrar los valores `\(x,y,z\)` y `\(\lambda\)` para los que se cumpla `$$\nabla f(x,y,z)=\lambda \nabla g(x,y,z)$$` `$$g(x,y,z)=k.$$`
-  * Evalua `\(f\)` en estos puntos, el mayor de estos números es al máximo y el menor el mínimo. 
-  
----
-# El ejemplo incial
-
-La función volumen es `\(V(x,y,z)=xyz\)` y la función restricción es `\(g(x,y,z)=2xz+2yz+xy.\)` 
-
-Utilizando el método de los multiplicadores de Lagrange se debe cumplir que: `\(V_x=\lambda g_x,\, V_y=\lambda g_y,\,  V_z=\lambda g_z,\)` y `\(g(x,y,z)=12.\)`
-
-De lo anterior tenemos que `\(yz=\lambda (2z+y),\)` `\(xz=\lambda(2z+x),\)` `\(xy=\lambda(2x+2y),\)` y `\(2xz+2yz+xy=12.\)` __Este es el sistema que tenemos que encontrar.
+&lt;iframe src="https://www.wolframcloud.com/obj/alejandroucan-puc/Published/WaveSol_NivelCurves.nb?_embed=iframe" width="1000" height="400"&gt;&lt;/iframe&gt;
 
 ---
-# Continuación ejemplo inicial
+# Funciones de Varias Variables:
 
-Si multiplicamos las primeras tres ecuaciones por la variable que nos falta obtenemos que `$$xyz=\lambda(2xz+xy)=\lambda(2zy+xy)=\lambda(2xz+2yz).$$`
+&gt; Una función `\(f:\mathbb{R}^n\to\mathbb{R}\)` (con `\(n=2,3\)`) es una relación que asigna a cada punto `\(x\in\mathbb{R}^n\)` un número real `\(y\in\mathbb{R}.\)` `$$f(x)=y.$$`
+#### Ejemplo:
+  * `\(f(x_1,x_2)=3x_1 x_2.\)` &lt;br/&gt;
+  * `\(f(x_1,x_2)=x_1^2+x_2^2\)` &lt;br/&gt;
+  * `\(f(x_1,x_2)=e^{x_1}\cos(x_2)\)` &lt;br/&gt;
+  * `\(f(x_1,x_2,x_3)=x_3\sqrt{e^{x_1+x_2}}\)` &lt;br/&gt;
+  * `\(f(x_1,x_2,x_3)=3x_1-4x_2-3x_3^2+x_1x_2.\)`
 
-De aquí podemos decir que `\(\lambda\neq 0,\)` por que si lo fuera alguna medida sería cero lo cual no es posible. Cómo `\(\lambda \neq 0,\)` entonces `$$2xz+xy=2zy+xy,$$` lo cual implica que `\(x=y.\)` 
-
-Así mismo podemos decir que `$$2yz+xy=2xz+2yz,$$` lo cual implica que `\(2z=y=x.\)` Sustituyendo esto último en la última ecuación obtenemos que `\(12z^2=12.\)` Por lo que `\(z=1,x=2,y=2.\)`s
-
----
-# Ejemplo 2:
-
-&gt; Calcule los valores extremos de la función `\(f(x,y)=5x^2+6y^2-xy\)` restringida a `\(x+2y=24.\)`
+--
 
 
----
-# Ejemplo 3:
-
-&gt; Encuentre los valores extremos de la función `\(f(x,y,z)=2x^2+y^2+3z^2\)` bajo la restrincción  `\(2x-3y-4z=49.\)`
-
+De igual manera que las funciones de 1 variable, las funciones de varias variables tienen un _dominio_ de definición (subconjunto de `\(\mathbb{R}^n\)` donde la función está bien definida) y una _imágen_ (subconjunto de `\(\mathbb{R}\)` dónde se encuentran todos los valores de la función que alcanza).
 
 ---
-# Ejercicio 1:
+## Dominio de funciones de varias variables
 
-&gt; La función de producción de Cobb-Douglas para una producción está dada por `\(f(x,y)=100x^{3/4}y^{1/4}.\)` Dónde `\(x\)` son las unidades de producción (a 150mxn por unidad) y `\(y\)` son las unidades de capital (a 250mxn por unidad). Si nuestras unidades de producción y capital están restringidas a 50000mxn. Encuentra la máxima producción para esta manufactura.
+#### Ejemplo:
+
+Consideremos la función `\(f(x,y)=\sqrt{1-x^2-y^2}.\)` ¿Cuál es el dominio de `\(f\)`? &lt;br/&gt;&lt;br/&gt;
+
+Consideremos que para que la raíz cuadrada de un número real, este debe ser positivo o cero. De tal manera que `$$1-x^2-y^2\geq 0\Leftrightarrow x^2+y^2\leq 1.$$` Esta función solo está definida en el disco unitario.
+
+--
+
+#### Ejemplo:
+
+Consideremos la función `\(f(x,y)=\ln(x^2+y^2-3).\)` ¿Cuál es el dominio de `\(f\)`? &lt;br/&gt;&lt;br/&gt;
+
+Al igual que para la raíz cuadrada, el logaritmo sólo se aplica para números más grandes que `\(0.\)` De tal manera que `$$x^2+y^2-3&gt;0 \Leftrightarrow x^2+y^2&gt;3.$$`
 
 ---
-# Ejercicio 2:
+## Gráficas de funciones de varias variables.
 
-&gt; Un granjero tiene 1000 hectáreas de tierra para parcelas. El total de utilidad por unidad de parcela son 10mxn y 8mxn respectivamente. Si las funciones de producción sde cada parcela están dadas por `\(f_1(x)=x^{0.06}\)` y `\(f_2(y)=x^{0.8}.\)` Maximice la utilidad total de cada parcela. 
+&gt; __Definición:__ Dada una función `\(f:\mathbb{R}^2\to \mathbb{R},\)` la __gráfica__ de `\(f\)` es el subconjunto de `\(\mathbb{R}^3\)` dado por los puntos `$$(x,y,f(x,y)),$$` donde `\((x,y)\)` pertenecen al dominio de `\(f.\)`
+
+--
+
+#### Ejemplo:
+
+Consideremos la función `\(f(x,y)=3x+2y,\)` entonces la gráfica de `\(f\)` es el conjunto de puntos de la forma: `$$(x,y,3x+2y).$$` Notemos que `\((0,0,0),\,(0,1,2)\)` y `\((1,0,3)\)` pertenecen a la gráfica.
+
+---
+### ¿Qué pasa cuándo `\(f:\mathbb{R}^3\to\mathbb{R}\)`?
+
+&gt;__Definición:__ Dada una función `\(f:\mathbb{R}^n\to\mathbb{R}\)` definimos una __curva o superficie de nivel__ como el conjunto de puntos de `\(\mathbb{R}^n\)` tal que `$$f(x_1,\cdots,x_n)=k\quad \mbox{con }k\in\mathbb{R}.$$`
+
+--
+
+#### Ejemplo:
+
+¿Cuáles son las curvas de nivel de `\(f(x,y)=3x+y\)`?
 
 
+---
+#### Ejemplo:
+
+¿Cuáles son las curvas de nivel de `\(f(x,y)=xy\)`?
+
+
+---
+#### Ejemplo:
+
+¿Cuáles son las curvas de nivel de `\(f(x,y,z)=x+y+z\)`?
+
+
+---
+#### Ejemplo:
+
+¿Cuáles son las curvas de nivel de `\(f(x,y,z)=x^2+y^2\)`?
+
+---
+# Superficies básicas
+
+En el siguiente link encontraremos un notebook de Mathematica con la descripción de las superficies básicas.
+
+[Notebook](https://www.wolframcloud.com/obj/alejandroucan-puc/Published/Basic_Surfaces.nb)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

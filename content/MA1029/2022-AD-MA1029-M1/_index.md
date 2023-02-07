@@ -1,7 +1,7 @@
 ---
-title: Unidad 01, Otoño 2022
+title: Modulo 01, FJ 2023
 description: |
-  Recursos para la Unidad 01 para _Métodos Matemáticos para la Física_ Semestre Otoño 2022.
+  Recursos para el Módulo 01 para _Modelación Matemática Intermedia_ Semestre FJ 2023.
 author: Alejandro Ucan-Puc
 show_post_thumbnail: false
 show_author_byline: true
@@ -11,11 +11,11 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: Unidad 01, Otoño 2022
-  subtitle: Unidad 01
+  title: Modulo 01, FJ 2023
+  subtitle: Modulo 01
   author: Alejandro Ucan-Puc
   description: |
-    Recursos para la Unidad 01 para la matería Métodos Matemáticos para la Física, Otoño 2022.
+    Recursos para el Módulo 01 para la matería Modelación Matemática Intermedia, FJ 2023.
   text_link_label: ""
   text_link_url: ""
   show_sidebar_adunit: false # show ad container
@@ -35,13 +35,13 @@ cascade:
     text_series_label: "In this series" 
     text_contents_label: "On this page" 
   tags:
-  - MMF
-  - otoño 2022, unidad 01
-  - otoño 2022
+  - MA1029
+  - FJ 2023, Modulo 01
+  - FJ 2023
   categories:
-  - MMF
-  - Otoño 2022, Unidad 01
-  - Otoño 2022
+  - MA1029
+  - FJ 2023, Modulo 01
+  - FJ 2023
 ---
 
 ** No content below YAML for the series _index. This file is a leaf bundle, and provides settings for the listing page layout and sidebar content.**

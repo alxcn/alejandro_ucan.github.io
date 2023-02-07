@@ -105,11 +105,11 @@ enableEmoji = true
     title = "About Me"
     url = "/about/"
     weight = 1
-  #[[menu.header]]
-  #  name = "Papers & Preprints"
-  #  title = "papers"
-  #  url = "/papers/"
-  #  weight = 2
+  [[menu.header]]
+    name = "Papers & Preprints"
+    title = "papers"
+    url = "/papers/"
+    weight = 2
   [[menu.header]]
     name = "I.rracionalx"
     title = "i.rracionalx"
@@ -120,21 +120,21 @@ enableEmoji = true
   #  title = "Métodos Matemáticos para la Física"
   #  url = "/f1009/"
   #  weight = 6
-  #[[menu.header]]
-  #  name = ""
-  #  title = ""
-  #  url = ""
-  #  weight = 4
+  [[menu.header]]
+    name = "MA1029"
+    title = "Modelación Intermedia"
+    url = "/ma1029/"
+    weight = 7
   [[menu.header]]
     name = "Teaching"
     title = "Teaching Information"
     url = "/teaching/"
     weight = 5
-    [[menu.header]]
-    name = "photos"
-    title = "My Favorite Photos"
-    url = "/photos/"
-    weight=4
+  #[[menu.header]]
+  #  name = "photos"
+  #  title = "My Favorite Photos"
+  #  url = "/photos/"
+  #  weight=4
     
     
   # Configure footer  
@@ -162,7 +162,12 @@ enableEmoji = true
     name = "MA2007B"
     title = "Uso de geometría y topología para ciencia de datos"
     url = "/ma2007b/"
-    weight = 9    
+    weight = 9
+  [[menu.header]]
+    name = "F1010"
+    title = "Modelación con Ecuaciones Diferenciales"
+    url = "/f1010/"
+    weight = 6
   
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
