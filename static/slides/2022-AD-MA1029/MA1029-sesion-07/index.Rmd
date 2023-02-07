@@ -1,6 +1,6 @@
 ---
 title: "Optimización con Restricciones"
-subtitle: "Sesión 02"  
+subtitle: "Sesión 07"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
