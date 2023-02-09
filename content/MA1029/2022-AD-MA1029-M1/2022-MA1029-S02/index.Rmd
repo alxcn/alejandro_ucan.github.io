@@ -1,0 +1,21 @@
+---
+title: "S02: Derivación Parcial"
+weight: 1
+subtitle: "Derivada parcial como razón de cambio restringido."
+excerpt: "Introduciremos el concepto de Derivada parcial como una razón de cambio observada en la variación de una sola variable."
+date: '`r Sys.Date()`'
+slug: MA1029-sesion-02
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+  * Introduciremos las razones de cambio de una función multivariada. <br/><br/>
+  * Definiremos el concepto de derivada parcial. <br/><br/>
+  * Aplicaremos las reglas generales de derivación parcial. <br/><br/>
+
+El contenido para la **Sesión 02** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-02).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-02", ratio = "4:3")
+```
