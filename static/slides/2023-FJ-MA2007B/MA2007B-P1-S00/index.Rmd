@@ -89,37 +89,43 @@ Actualmente el TDA se ha consolidado y estandarizado, que contamos con algunos p
 
 
 ---
-# Temario:
+# ¿Qué es _forma_?
 
-1. Espacios Topológicos:
-  * Definición y Ejemplos.
-  * Topología Subespacio.
-  * Propiedades Topológicas.
-  * Relaciones de Equivalencia y Topología Cociente.
-  * Topologías métricas.
-  * Homeomorfismos.
-  * Teoremas de Homeomorfismos.
-  * Homotopía.
-  
-2. Complejos Simpliciales:
-  * Simplejos.
-  * Topología de complejos Simpliciales.
-  * Cadenas y Fronteras.
-  * Grupos de Homología.
+> Entendemos por _forma_ a la estructura de un objeto/espacio. <br/><br/>
+La __topología__ es la rama de las mátematicas que estudia las propiedas intrínsecas de una espacio (_espacios topológicos_) que son preservadas bajo ciertas transformaciones (_homeomorfismos_).
+
+![Cube and Sphere](cube_sphere.png)
 
 ---
+# ¿Topología?
 
-3. Forma de los Datos:
-  * Dimensión cero.
-  * Nervios.
-  * Complejo de Vietoris-Rips.
-  * Complejo de Cech.
-  * Complejo Alpha.
-  * Algoritmo de Mapper y Grafos de Reeb.
-  * Persistencia.
-  * Caracteristica de Euler.
-  
-4. Aplicaciones
+- Geometría, Euclides y sus elementos.
+
+--
+<br/><br/>
+- ¿Cómo estudiar la forma de algo sin necesidad de medidas?
+
+--
+<br/><br/>
+
+- Atribución a _Johann Benedict Listing_
+
 ---
+# El problema de los Puentes de Köningsberg y Leonard Euler.
 
 
+![Konigsberg Bridges](Koningsberg_brigdes.jpg)
+
+---
+## Solución
+
+![Graph](Graphs_K.png)
+
+---
+# Contribuciones
+
+> Podemos mencionar a: <br/><br/>
+  - August Möbius. <br/><br/>
+  - Georg Cantor. <br/><br/>
+  - Maurice Fréchet, Schoenflies, Felix Hausdorff.
+  - Poincaré, Perelman, Thurston, etc.
