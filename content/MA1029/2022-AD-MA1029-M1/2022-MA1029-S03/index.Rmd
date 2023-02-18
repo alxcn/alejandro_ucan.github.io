@@ -1,0 +1,24 @@
+---
+title: "S03: Derivadas de Orden Superior y Gradiente"
+weight: 3
+subtitle: "Las Derivadas parciales son funciones de varias variables."
+excerpt: "Calularemos las razones de cambio parciales para las derivadas parciales, así como el gradiente que nos dira lo dirección optima."
+date: '`r Sys.Date()`'
+slug: MA1029-sesion-03
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+  # Objetivos:
+
+  * Introduciremos el concepto de Derivadas Parciales de Orden superior. <br/><br/>
+  * Introduciremos el concepto de vector Gradiente. <br/><br/>
+  * Interpretaremos geométricamente al gradiente. <br/><br/>
+  * Modelaremos con el gradiente.
+
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-03", ratio = "4:3")
+```
