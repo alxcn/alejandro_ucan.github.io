@@ -4,7 +4,7 @@ weight: 6
 subtitle: "Aproximaciones lineales"
 excerpt: "Construiremos una forma de aproximar valores de funciones de manera lineal utilizando las derivadas parciales."
 date: '`r Sys.Date()`'
-slug: MA1029-sesion-05
+slug: MA1029-sesion-06
 draft: false
 ---
 
