@@ -70,7 +70,7 @@ La el cambio de variable $$h(t)=h(x(t)+y(t))=\cos(2(1+3t)^2-(1+3t)(1+4t)+(1+4t)^
 
 Si calculamos $h_t$ con el cambio de variable obtendremos la razón de cambio de la humedad en el camino. La derivada es $$h_t = h_x x_t+h_y y_t = -\sin(2x^2-xy+y^2)\cdot (4x-y)\cdot 3 - \sin(2x^2-xy+y^2)\cdot (-x+2y)\cdot 4 $$
 
-Cuando evaluamos en $t=0,$ el valor de $x(1)=1$ y $y(1)=1,$ por lo que la razón en el instante $t=1$ es: $$h_t(0)=h_x(1,1)x_t(0)+h_y(1,1)y_t(0)$$
+Cuando evaluamos en $t=0,$ el valor de $x(1)=1$ y $y(1)=1,$ por lo que la razón en el instante $t=0$ es: $$h_t(0)=h_x(1,1)x_t(0)+h_y(1,1)y_t(0)$$
 $$=-\sin(2(1)-(1)(1)+(1)^2)\cdot (4(1)-1)\cdot 3 - \sin(2(1)^2-(1)(1)+(1)^2)\cdot (-1+2(1))\cdot 4$$ $$h_t(0)=-13\sin(2)\approx -11.82$$
 
 ---
@@ -104,7 +104,7 @@ Notemos que $h(t)=f(x(t),y(t))$ tiene como derivada $$h(t)=f_x(x_0,y_0)u+f_y(x_0
 
 1. Calculamos el vector gradiente $\nabla f$ en el punto $(1,1):$ $$\nabla f(1,1)=\left(-\frac{y^2}{x^2},\frac{2y}{x}\right)|_{(1,1)}=(-1,1)$$
 
-2. Calculamos calculamos la derivada direccional $$D_{(u,v)}f=\nabla f(1,1)\cdot (2,1)=(-1)(2)+(1)(1)$$
+2. Calculamos calculamos la derivada direccional $$D_{(u,v)}f=\nabla f(1,1)\cdot (2,1)=(-1)(2)+(1)(2)$$
 
 
 ---
