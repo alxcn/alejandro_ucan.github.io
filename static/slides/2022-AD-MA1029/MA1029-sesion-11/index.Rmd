@@ -1,6 +1,6 @@
 ---
-title: "Integrales Triples"
-subtitle: "Sesión 06"
+title: "Coordenadas Polares"
+subtitle: "Sesión 05"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,72 +43,73 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Conocer la diferencial de volumen. <br/><br/>
- * Definir la integral en $\mathbb{R}^3$. <br/><br/>
- * Calcular integrales triples en regiones elementales.
+ * Conocer la definición de coordenadas polares. <br/><br/>
+ * Establecer las identidades de cambio de coordenadas. <br/><br/>
+ * Mostrar como se afecta la integral en este nuevo sistema de coordenadas.
+
+---
+# Motivación:
+ ### Coordenadas Polares en $\mathbb{R}^2.$
+<iframe src="https://www.geogebra.org/calculator/aubzbhsd?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+---
+# El cambio de coordenadas
+
+> Si tenemos un punto $(x,y)$ en $\mathbb{R}^2$ entonces se cumple: <br/><br/>
+  * $r=\sqrt{x^2+y^2}$ y $\tan(\theta)= \frac{y}{x}.$ <br/><br/><br/>
+  * $x=r\cos(\theta)$ y $y=r\sin(\theta)$
 
 
 ---
-# Integral triple:
+# El diferencial de Área en el nuevo sistem
 
-> Sea $f(x,y,z)$ una función continua en una región caja dada por $B=[a,b]\times [c,d]\times [e,f].$ Dada una partición de la región $(x_i,y_j,z_k)$ con 
-$$x_{i+1}-x_{i}=\Delta x,\quad y_{j+1}-y_j=\Delta y \mbox{ y } z_{k+1}-z_k =\Delta z.$$ Entonces la siguiente suma aproxima el volumen debajo de la gráfica de $f,$ $$\sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^s f(x_i,y_j,z_k)\Delta x \Delta y \Delta k.$$ 
-<br/><br/>
-Refinando la partición, en el límite obtenemos la integral de la función en la región $R,$ denotada por $$\int_B f \, dV.$$
-
----
-# ¿Cómo calculo integrales triples?
-
-El teorema de Fubini es valido para integrales triples, así que para calcularlo basta realizar una integración iterada.
-
-$${\int\!\int\!\int}_B fdV=\int_a^b \int_c^d \int_e^f f(x,y,z)dzdydx.$$
-
-Y el orden no afecta.
+```{r, echo=FALSE, out.width="60%", fig.cap="Diferencial de área"}
+knitr::include_graphics("https://f54648cc-a-62cb3a1a-s-sites.googlegroups.com/site/pesqueriagrupocal/5-calculo-de-varias-variables/integrales-dobles-en-coordenadas-polares/dip%205.png?attachauth=ANoY7crO9XTlPhJdk1W3FnjzKSSzcM8y8zxXDkO_S8slkccFSBJvngN9KLQgCG7eBBwkLciMoyI6Bf8-Lf5AJnSc1H3DJ-9--JOv2xs-Nd-whsCLxc9oee_Fj8TcDZV8m_LsXLI5C6B_w38wCbBO8fOi7_x2QrVW_PKogYdJXLOs5XRfOFaGZw951qmR3cfb6oMq-fwPbYFdFCv1yUqBfysnbm4nPdSUKrFBOvAyFVTosv2vrMqSXqSXUFdV6QP3xDNqSTWNEzGQf2kgycoOm_sUIxh__B35mW1GyG5x4iHd5xTdIJMU8n94X4aUfNbfCtaVl3jpMH1i&attredirects=0
+")
+```
 
 ---
-# ¿Sólo puedo integrar en cajas?
+# Apliquemos el cambio de variable en una integral.
 
-> __Definición:__ Una región __elemental__ en $\mathbb{R}^3$ es una región en la cual una de las variables está acotada entre dos funciones de las otras dos variables.
+> Calcule el área de la región acotada por el eje $x$ y la curva $f(x)=\sqrt{1-x^2}$ utilizando las coordenadas polares.
 
-<br/><br/>
-
-__Ejemplo:__ La __bola__ de radio uno en $\mathbb{R}^3$ es una región elemental descrita por la siguientes inecuaciones: $$-1\leq x\leq 1,$$
-$$-\sqrt{1-x^2} \leq y\leq \sqrt{1-x^2},$$ 
-$$ -\sqrt{1-x^2-y^2} \leq z \leq \sqrt{1-x^2-y^2}.$$
 
 ---
-# Ejemplos:
+# La apadtación al diferencial de área.
 
-Algunos ejemplos de regiones elementales:
+De lo anterior notamos que no es posible calcular integral solo cambiando los datos, hace falta hacer una adecuación. Esta adecuación se hace en el diferencial de área $$dxdy=rdrd\theta.$$
+> Calcule el área de la región acotada por el eje $x$ y la curva $f(x)=\sqrt{1-x^2}$ utilizando las coordenadas polares.
 
-* Consideremos la región dada por un cilindro: $$-1\leq x \leq 1$$ $$-\sqrt{1-x^2}\leq y \leq \sqrt{1-x^2}$$ $$ -2\leq z \leq 2.$$
-
-* Consideremos un prisma triangular: $$-1 \leq x \leq 2$$ $$0\leq y \leq 2$$ $$0\leq z\leq 3-2x-2y$$
-
----
-# Ejemplo 1:
-
-> Encuentre la integral de $f(x,y,z)=z$ en la región acotada por los planos $x=0,\,y=0,\, z=0$ y $x+y+z=1$
-
-$$R: 0\leq x\leq 1,\, 0\leq y \leq 1-x,\, 0\leq z\leq 1-x-y.$$
-
-$$\int\int\int_R z dV= \int_0^1\int_0^{1-x}\int_0^{1-x-y} z dzdydx$$
 ---
 # Ejemplo:
 
-> Encuentre la integral de la función $f(x,y,z)=\sqrt{x^2+z^2}$ en la región acotada por el paraboloide $y=x^2+z^2$ y $y=4.$
+> Calcule el valor de la integral de $f(x,y)=e^{x^2+y^2}$ en la mitad positiva del circulo unitario.
 
-$$E: -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq z\leq \sqrt{4-x^2},\, x^2+z^2\leq y\leq 4$$
-
-$$\int\int\int_E \sqrt{x^2+z^2}dV= \int_{-2}^2\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\int_{x^2+z^2}^4  \sqrt{x^2+z^2} dydzdx$$
 ---
-# Actividad en Clase:
+# Ejemplo:
 
-1. Calcula las siguientes integrales
-  * $\int_0^1\int_0^z\int_0^{x+z}6xzdydxdz$
-  * $\int_0^1\int_0^z\int_0^y ze^{-y^2}dxdydz$
-  * $\int_0^{\sqrt{\pi}}\int_0^x\int_0^{xz}x^2\sin(y)dydzdx$
+> Calcule el valor de la integral de $f(x,y)=e^{x^2+y^2}$ en la mitad positiva del circulo unitario.
 
-2. Dibuja la región $E$ y calcula la integral de $f(x,y,z)=6.$ La región $E$ es la región acotada bajo el plano $z=1+x+y$ y $z=0$ acotadas por las curvas $y=\sqrt{x},\, y=0$ y $x=1.$
+$$\int\int_R e^{x^2+y^2}=\int_0^\pi\int_0^1 e^{r^2} rdrd\theta =\int_0^\pi \left[\frac{1}{2}e^{r^2}\right]_0^1 d\theta = \frac{\pi(e-1)}{2}.$$
 
-3. Dibuja la región $E$ y calcula la integral de $f(x,y,z)=xy.$ La región $E$ es la región acotada por los cilindros parabólicos $z=1-y^2$ y $x=y^2$ y los planos $z=0$ y $z=x+y.$
+---
+# Ejercicio:
+
+> Calcula la integral de $f(x,y)=x$ en el cuarto de disco de radio $a$ que se encuentra en el primer cuadrante.
+
+---
+# ¿Por qué es mejor calcular la integral con un cambio de variable?
+
+> Intenta calcular la integral $$\int_0^1\int_0^{\sqrt{1-x^2}}x^2+y^2 dydx$$ en coordenadas rectangulares y luego con un cambio de coordenadas.
+
+
+---
+# Ejemplo:
+
+> Encuentra el volumen del cilindro sólido que se encuentra sobre el circulo unitario y tiene tapa en el paraboloide $z=9-x^2-y^2.$
+
+
+---
+# Ejercicio:
+
+> Encuentre el área de la parte inferior al plano $z=4$ del paraboloide $z=x^2+y^2$ 

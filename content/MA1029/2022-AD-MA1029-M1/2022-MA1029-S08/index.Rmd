@@ -1,7 +1,7 @@
 ---
-title: "S08: Integrales multiples."
+title: "S08: Optimización con Restricciones."
 weight: 8
-subtitle: "Las bases de la integración multiple"
+subtitle: "El método de los multiplicadores de Lagrange"
 excerpt: " "
 date: '`r Sys.Date()`'
 slug: MA1029-sesion-08
@@ -10,8 +10,8 @@ draft: false
 
 En esta sesión nuestros objetivos son:
 
- * Utilizar el concepto de integral multiple para calcular volúmenes y áreas. <br/><br/>
- * Utilizar el teorema de Fubini para calcular integrales multiples como integrales iteradas. <br/><br/>
+* Conocer las condiciones necesarias y suficientes para la existencia de valores extremos en problemas con restricción. <br/><br/>
+ * Encontrar estos valores mediante el método de los multiplicadores de Lagrange.
 
 El contenido para la **Sesión 08** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-08).
 

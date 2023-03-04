@@ -1,21 +1,20 @@
 ---
-title: "S010: Coordenadas Polares"
-weight: 10
-subtitle: ""
-excerpt: "Realizaremos cambios de variables que nos facilitarán el calculo de integrales en ciertos casos."
+title: "S09: Aplicaciones de Integrales Multiples."
+weight: 9
+subtitle: "Aplicando integrales en diferentes ámbitos"
+excerpt: " "
 date: '`r Sys.Date()`'
-slug: MA1029-sesion-010
+slug: MA1029-sesion-09
 draft: false
 ---
 
 En esta sesión nuestros objetivos son:
 
- * Conocer la definición de coordenadas polares. <br/><br/>
- * Establecer las identidades de cambio de coordenadas. <br/><br/>
- * Mostrar como se afecta la integral en este nuevo sistema de coordenadas.
+ * Realizar cambios de orden en integrales generales. <br/><br/>
+ * Conocer las aplicaciones generales de la integral. <br/><br/>
 
-El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-10).
+El contenido para la **Sesión 09** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-09).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-10", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-09", ratio = "4:3")
 ```
