@@ -56,6 +56,14 @@ xaringanExtra::use_logo(
 * Modelar mediante EDOS lineales de primer orden. <br/><br/>
 
 ---
+# Motivación:
+
+Considere una cámara rectangular con un gas, y comencemos a calentar el gas. Nos gustaría describir las trayectorias que seguiría el gas.
+
+
+
+
+---
 # ¿Qué es una EDO?
 
 > __Definición:__ Una _Ecuación Diferencial_ es una ecuación que contiene derivadas o funciones incognitas respecto a una o mas variables independientes. <br/><br/><br/>

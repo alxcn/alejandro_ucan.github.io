@@ -1,10 +1,10 @@
 ---
-title: "S09: Aplicaciones de Integrales Multiples."
-weight: 9
+title: "S10: Aplicaciones de Integrales Multiples."
+weight: 10
 subtitle: "Aplicando integrales en diferentes ámbitos"
 excerpt: " "
 date: '`r Sys.Date()`'
-slug: MA1029-sesion-09
+slug: MA1029-sesion-10
 draft: false
 ---
 
@@ -13,8 +13,8 @@ En esta sesión nuestros objetivos son:
  * Realizar cambios de orden en integrales generales. <br/><br/>
  * Conocer las aplicaciones generales de la integral. <br/><br/>
 
-El contenido para la **Sesión 09** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-09).
+El contenido para la **Sesión 10** se encuentra en following [slides](/slides/2022-AD-MA1029/MA1029-sesion-10).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-09", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1029/MA1029-sesion-10", ratio = "4:3")
 ```

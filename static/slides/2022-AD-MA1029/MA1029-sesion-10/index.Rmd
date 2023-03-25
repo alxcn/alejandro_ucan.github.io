@@ -1,6 +1,6 @@
 ---
 title: "Integrales Multiples parte II"
-subtitle: "Sesión 04"
+subtitle: "Sesión 10"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'

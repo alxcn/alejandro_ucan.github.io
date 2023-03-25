@@ -1,7 +1,7 @@
 ---
-title: "Modelación en ingeniería mediante sistemas dinámicos"
+title: "Modelación con Ecuaciones Diferenciales"
 description: |
-  Recursos para la materia MA1035 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es).
+  Recursos para la materia F1010 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es).
 author: "Alejandro Ucan-Puc"
 show_post_thumbnail: true
 show_author_byline: true
@@ -11,12 +11,12 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: Recursos para la materia MA1035 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es)
+  title: Recursos para la materia F1010 ofertada en el [ITESM Campus Monterrey](https://tec.mx/es)
   description: |
     Puedes encontrar los recursos de los siguientes periodos:
     
-    - 2022 AD Módulo 1
-    - 2022 AD Módulo 2
+    - 2023 FJ Módulo 1
+    - 2023 FJ Módulo 2
     
   #  Check out the _index.md file in the /blog folder 
   #  to edit this content. 
