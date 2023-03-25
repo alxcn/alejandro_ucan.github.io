@@ -1,0 +1,22 @@
+---
+title: "S04: Funciones Lineales de Orden Superior no Homogéneas"
+weight: 4
+subtitle: "Métodos de Coeficientes Indeterminados"
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: MA1035-session-04
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
+* Resolver EDO lineales no homogéneas de orden superior. <br/><br/>
+* Aprender el método de coeficientes indeterminados. <br/><br/>
+
+El contenido para la **Sesión 04** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-04).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-04", ratio = "4:3")
+```
+

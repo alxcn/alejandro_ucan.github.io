@@ -1,0 +1,23 @@
+---
+title: "S08: Sistemas de Ecuaciones Diferenciales p. III"
+weight: 8
+subtitle: ""
+excerpt: "El método de los valores propios para resolver sistemas de EDOs"
+date: '`r Sys.Date()`'
+slug: MA1035-session-08
+draft: false
+---
+
+En esta sesión nuestros objetivos son:
+
+* Solución en el caso de valores propios repetidos. <br/><br/>
+* Solución en el caso de valores propios complejos. <br/><br/>
+* Planos fase. <br/><br/>
+* Solución de Sistemas no homogéneos. 
+
+El contenido para la **Sesión 08** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-08).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-08", ratio = "4:3")
+```
+

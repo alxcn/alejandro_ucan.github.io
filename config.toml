@@ -126,6 +126,11 @@ enableEmoji = true
     url = "/ma1029/"
     weight = 7
   [[menu.header]]
+    name = "F1010"
+    title = "Modelación con ED"
+    url = "/f1010/"
+    weight = 7
+  [[menu.header]]
     name = "Teaching"
     title = "Teaching Information"
     url = "/teaching/"
