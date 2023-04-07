@@ -1,8 +1,8 @@
 ---
-title: "S04: Funciones Lineales de Orden Superior no Homogéneas"
+title: "S04: EDOs lineales con coeficientes constantes."
 weight: 4
-subtitle: "Métodos de Coeficientes Indeterminados"
-excerpt: ""
+subtitle: "Polinomio Auxiliar"
+excerpt: "Usando el polinomio auxiliar encontraremos las funciones raíz que general la solución de una EDO linea homogénea de coeficientes constantes."
 date: '`r Sys.Date()`'
 slug: MA1035-session-04
 draft: false
@@ -10,9 +10,10 @@ draft: false
 
 En esta sesión nuestros objetivos son:
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
-* Resolver EDO lineales no homogéneas de orden superior. <br/><br/>
-* Aprender el método de coeficientes indeterminados. <br/><br/>
+
+* Deduciremos el polinomio auxiliar aun EDO lineal de coeficientes constantes. <br/><br/>
+* Describiremos el tipo de función asociada a una raíz del polinomio auxiliar. <br/><br/>
+* Demostraremos que el sistema de funciones raíz es un conjunto L.I. 
 
 El contenido para la **Sesión 04** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-04).
 

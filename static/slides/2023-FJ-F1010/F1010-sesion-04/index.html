@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDO Lineales de Orden Superior No homogéneas</title>
+    <title>Coeficientes Constantes</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-04-07" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x57fd3738e244273911a602c216df199","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xf823fc4c266453fa5c2a858bca5a503","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# EDO Lineales de Orden Superior No homogéneas
+# Coeficientes Constantes
 ]
 .subtitle[
 ## Sesión 04
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-04-07
 ]
 
 ---
@@ -78,104 +78,62 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. &lt;br/&gt;&lt;br/&gt;
-* Resolver EDO lineales no homogéneas de orden superior. &lt;br/&gt;&lt;br/&gt;
-* Aprender el método de coeficientes indeterminados. &lt;br/&gt;&lt;br/&gt;
-
-
----
-# EDO lineal de orden superior no homogénea
-
-&gt; Recordemos que una EDO lineal de orden superior no homogénea es de la forma `$$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2y''+a_1y'+a_0y=g(x),$$` por el momento supondremos que nuestros coeficientes son constantes. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt; 
-En el caso de EDO líneales no homogéneas de primer orden, tenemos que la solución general se forma mediante `$$y_p+y_h.$$` &lt;br/&gt;&lt;br/&gt; En el caso de orden superior no es la excepción. 
+* Deduciremos el polinomio auxiliar aun EDO lineal de coeficientes constantes. &lt;br/&gt;&lt;br/&gt;
+* Describiremos el tipo de función asociada a una raíz del polinomio auxiliar. &lt;br/&gt;&lt;br/&gt;
+* Demostraremos que el sistema de funciones raíz es un conjunto L.I. 
 
 ---
-## Algunas consideraciones:
+# EDO lineal de orden superior con coeficientes constantes.
 
-&gt; Notemos que la función `\(g(x)\)` puede ser cualquier tipo de función, pero nos centraremos (restringiremos) a los siguientes tipos de funciones que puede aceptar `\(g(x):\)` &lt;br/&gt;&lt;br/&gt;
-  * Polinomios (dentro los cuales se encuentran las constantes) `$$g(x)=c_0+c_1x+c_2x^2+\cdots+c_nx^n.$$`
-  * Exponenciales: `$$g(x)=e^{cx}$$`
-  * Senos o Cosenos: `$$g(x)=\sin(cx)\mbox{ o } g(x)=\cos(cx).$$`
-  * Combinaciones de estas (producto y/o sumas):
+&gt; Consideremos la EDO `$$a_n y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2 y''+a_1y'+a_0y=0,$$` donde `\(a_j\)` es una constante y `\(a_n\neq 0.\)` &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+Por ejemplo: `$$a_1 y'+a_0y=0\Leftrightarrow y'=\frac{-a_0}{a_1}y$$` cuya solución es `\(y=ce^{-a_0x/a_1}.\)` Si consideramos el polinomio `$$a_1\lambda+a_0=0$$` su solución es `\(\lambda=-a_0/a_1.\)`
+
+---
+
+## Polinomio auxiliar
+
+&gt; Para la EDO `$$a_n y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2 y''+a_1y'+a_0y=0,$$` diremos que `$$p(\lambda)=a_n\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_2 \lambda^2+a_1\lambda+a_0$$` se le conoce como el _polinomio auxiliar_ de la EDO. &lt;br/&gt;&lt;br/&gt;
+
+---
+## Funciones raíz
+
+__Lemma:__ Si `\(\lambda_i\)` es una raíz del polinomio auxiliar `\(p(x),\)` entonces la función `\(y(x)=e^{\lambda_i x}\)` es una solución de la EDO lineal de coeficientes constantes.
+
+---
+
+## Tipos de raíz-función
+
+&gt; Supongamos que `\(\lambda\)` es una raíz del polinomio auxiliar `\(p(x)\)` para una EDO lineal de coeficientes constantes. Entonces: &lt;br/&gt;&lt;br/&gt;
+  1. Si `\(\lambda\)` es real sin multiplicidad, entonces la función auxiliar es `\(y_\lambda(x)=e^{\lambda x}.\)`
+  2. Si `\(\lambda\)` es complejo, entonces las funciones `\(y_\lambda\)` y `\(y_{\overline{\lambda}}\)` se cambian por `$$y_{r}=e^{Re(\lambda)}\cos(Im(\lambda)x)\quad \mbox{y}\quad y_{i}=e^{Re(\lambda)}\sin(Im(\lambda)x)$$`
+  3. Si `\(\lambda\)` es real con multiplicidad `\(k,\)` entonces hay `\(k\)` funciones asociadas a `\(\lambda\)` y son `$$y_1=e^{\lambda x},\, y_2=xe^{\lambda x},\, y_3=x^2e^{\lambda x},\cdots, y_k=x^{k-1}e^{\lambda x}.$$`
   
-  __Ejemplos:__ `\(g(x)=10,\)` `\(g(x)=15x-6+8e^{-x}\)` o `\(g(x)=xe^x \sin(x)+(3x^2-1)e^{-4x}.\)`
   
+__Teorema:__ La solución general de una EDO lineal con coeficientes constantes es la superposición de las funciones asociadas a las raíces.
 ---
-# Método de Coeficientes Indeterminados:
 
-El método se aplica para EDOs lineales no homogeneas con:
-* _coeficientes constantes,_
-* `\(g(x)\)` como en la lista anterior.
+#### Ejemplo 1:
 
-La idea detrás del método: 
-
-" Las derivadas de funciones `\(g(x)\)` como en la lista anterior, de nuevo son funciones en la lista, es decir, son sumas y/o productos de polinomios, senos, cosenos y/o exponenciales"
-
----
-## Ejemplo 1:
-
-&gt; Encuentre la solución de la EDO `$$y''+4y'-2y=2x^2-3x+6.$$`
-
-1. Primero resolvemos la versión homogénea de la EDO. `$$y_h=c_1e^{(-2-\sqrt{6})x}+c_2e^{(-2+\sqrt{6})x}.$$`
-
-1. Cómo `\(g(x)\)` es un polinomio de grado dos, entonces la solución particular al menos podría ser un polinomio de grado dos (igual), supongamos que es `$$y_p=Ax^2+Bx+C.$$`
-
-1. Sustituyendo `\(y_p\)` en la EDO lineal: `\(y_p'=2Ax+B\)` y `\(y_p''=2A\)` entonces `$$2A+8Ax+4B-2Ax^2-2Bx-2C=2x^2-3x+6.$$`
-
----
-## Ejemplo 1:
-
-1. Por teoría de polinomios, los coeficientes deben ser iguales, es decir:
-`$$-2A=2$$` `$$8A-2B=-3$$` `$$2A+4B-2C=6$$`
-
-1. Resolvemos este sistema: &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-
-1. Entonces `\(y_p=-x^2-\frac{5}{2}x-9.\)`
-
----
-## Ejemplo 2:
-
-&gt; Encuentra la solución `\(y''-y'+y=2\sin(3x).\)`
-
-Primero calculemos la solución particular. Cómo la `\(g(x)=2\sin(3x)\)` entonces la solución que debe cumplir derivadas entonces tenemos que pensar que esta solución debe contener senos y cosenos. Así:
-
-`$$y_p=A\cos(3x)+B\sin(3x)$$`
-
----
-## Ejemplo 3:
-
-&gt; Encuentra la solución `\(y''-2y'-3y=4x-5+6xe^{2x}.\)`
-
-En este caso la solución particular debe contener un polinomio y una exponencial. `$$y_p=Ax+B+Cxe^{2x}+Ee^{2x}.$$`
-
----
-## Un error en la matrix:
-
-&gt; Encuentra la solución de `$$y''-5y'+4y=8e^x.$$` Verifica con el método de coeficientes indeterminados. ¿Qué sucede? ¿La solución particular funciona? ¿Ahora intenta con la forma particulas `\(y_p=A x e^x\)`. ¿Por qué sucede esto?
+&gt; Encuentre la solución general de `$$2y''-5y'-3y=0.$$`
 
 
 ---
-# ¿Cómo decidir que función modelo utilizar?
 
-&lt;div class="figure"&gt;
-&lt;img src="tablafuncionesmodelo.jpg" alt="Funciones Modelo" width="60%" /&gt;
-&lt;p class="caption"&gt;Funciones Modelo&lt;/p&gt;
-&lt;/div&gt;
+#### Ejemplo 2:
+
+&gt; Encuentre la solución general de `$$y'''-10y''+25y'=0.$$`
 
 ---
-# Actividad en Clase: 
 
-Encuentra la solución a las siguientes EDOs lineales de orden superior no homogéneas. &lt;br/&gt;&lt;br/&gt;
- 
-* `\(y''+3y'+2y=6\)` 
+#### Ejemplo 3:
 
-* `\(y''-10y'+25y=30x+3\)`
+&gt; Encuentre la solución general de `$$y''+4y'+7y=0.$$`
 
-* `\(\frac{1}{4}y''+y'+y=x^2-2x\)`
+---
 
-* `\(y''-8y'+20y=100x^2-26xe^x\)`
+#### Ejemplo 4:
 
-* `\(4y''-4y'-3y=\cos(2x)\)`
+&gt; Encuentre la solución general de `$$y^{(4)}+2y''+y=0.$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

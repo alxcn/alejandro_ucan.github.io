@@ -1,8 +1,8 @@
 ---
 title: "S03: Ecuaciones Líneales de orden superior"
 weight: 3
-subtitle: "Movimiento Armónico Simple"
-excerpt: "Solución mediante polinomios auxiliares"
+subtitle: "Reducción de Orden"
+excerpt: "Solución de Reducción de orden"
 date: '`r Sys.Date()`'
 slug: MA1035-session-03
 draft: false
@@ -12,8 +12,7 @@ En esta sesión nuestros objetivos son:
 
 * Conocer la forma genérica de una EDO lineal de orden superior. <br/><br/>
 * Conocer la forma genérica de un problema de valor inicial con una EDO lineal de orden superior. <br/><br/>
-* Aprender la solución para EDO's lineales de orden superior. <br/><br/>
-* Aplicar el método para resolver EDO's lineales de orden superior con coeficientes constantes.
+* Aplicar el método de reducción de orden para EDOS lineales. 
 
 El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-03).
 
