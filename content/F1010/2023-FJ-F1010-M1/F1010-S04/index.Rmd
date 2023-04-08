@@ -18,6 +18,6 @@ En esta sesión nuestros objetivos son:
 El contenido para la **Sesión 04** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-04).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-04", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-F1010/F1010-sesion-04", ratio = "4:3")
 ```
 
