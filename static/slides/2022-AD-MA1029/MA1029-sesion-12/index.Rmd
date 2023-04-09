@@ -1,6 +1,6 @@
 ---
 title: "Integrales Triples"
-subtitle: "Sesión 06"
+subtitle: "Sesión 12"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -102,13 +102,20 @@ $$E: -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq z\leq \sqrt{4-x^2},\, x^2+z^2\leq y\leq
 
 $$\int\int\int_E \sqrt{x^2+z^2}dV= \int_{-2}^2\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\int_{x^2+z^2}^4  \sqrt{x^2+z^2} dydzdx$$
 ---
-# Actividad en Clase:
+#### Ejemplo 1:
 
-1. Calcula las siguientes integrales
+Calcula las siguientes integrales
   * $\int_0^1\int_0^z\int_0^{x+z}6xzdydxdz$
   * $\int_0^1\int_0^z\int_0^y ze^{-y^2}dxdydz$
   * $\int_0^{\sqrt{\pi}}\int_0^x\int_0^{xz}x^2\sin(y)dydzdx$
 
-2. Dibuja la región $E$ y calcula la integral de $f(x,y,z)=6.$ La región $E$ es la región acotada bajo el plano $z=1+x+y$ y $z=0$ acotadas por las curvas $y=\sqrt{x},\, y=0$ y $x=1.$
 
-3. Dibuja la región $E$ y calcula la integral de $f(x,y,z)=xy.$ La región $E$ es la región acotada por los cilindros parabólicos $z=1-y^2$ y $x=y^2$ y los planos $z=0$ y $z=x+y.$
+---
+#### Ejemplo 2:
+
+Dibuja la región $E$ y calcula la integral de $f(x,y,z)=6.$ La región $E$ es la región acotada bajo el plano $z=1+x+y$ y $z=0$ acotadas por las curvas $y=\sqrt{x},\, y=0$ y $x=1.$
+
+
+---
+#### Ejemplo 3:
+Dibuja la región $E$ y calcula la integral de $f(x,y,z)=xy.$ La región $E$ es la región acotada por los cilindros parabólicos $z=1-y^2$ y $x=y^2$ y los planos $z=0$ y $z=x+y.$
