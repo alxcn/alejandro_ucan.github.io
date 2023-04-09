@@ -1,6 +1,6 @@
 ---
 title: "Coordenadas Polares"
-subtitle: "Sesión 05"
+subtitle: "Sesión 11"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -59,6 +59,12 @@ xaringanExtra::use_scribble()
   * $r=\sqrt{x^2+y^2}$ y $\tan(\theta)= \frac{y}{x}.$ <br/><br/><br/>
   * $x=r\cos(\theta)$ y $y=r\sin(\theta)$
 
+---
+## Determinar regiones polares:
+
+> Dadas las siguientes regiones determina si son regiones polares o no.
+
+![RegionesPolares](regiones.png)
 
 ---
 # El diferencial de Área en el nuevo sistem
@@ -75,7 +81,7 @@ knitr::include_graphics("https://f54648cc-a-62cb3a1a-s-sites.googlegroups.com/si
 
 
 ---
-# La apadtación al diferencial de área.
+# La adaptación al diferencial de área.
 
 De lo anterior notamos que no es posible calcular integral solo cambiando los datos, hace falta hacer una adecuación. Esta adecuación se hace en el diferencial de área $$dxdy=rdrd\theta.$$
 > Calcule el área de la región acotada por el eje $x$ y la curva $f(x)=\sqrt{1-x^2}$ utilizando las coordenadas polares.
@@ -104,12 +110,19 @@ $$\int\int_R e^{x^2+y^2}=\int_0^\pi\int_0^1 e^{r^2} rdrd\theta =\int_0^\pi \left
 
 
 ---
+
+![Región](regione1.png) $C=\{(r,\theta): 0\leq r\leq 1, 0\leq \theta \leq \frac{\pi}{4}\}.$ Por lo que la integral es: $$\int_0^1\int_0^{\pi/4} (r\cos(\theta))^2+(r\sin(\theta))^2 rd\theta dr=\int_0^1\int_0^{\pi/4}r^3d\theta\ dr =\left.\frac{\pi}{4}\frac{r^4}{4}\right|_0^1=\frac{\pi}{4}.$$
+
+---
 # Ejemplo:
 
 > Encuentra el volumen del cilindro sólido que se encuentra sobre el circulo unitario y tiene tapa en el paraboloide $z=9-x^2-y^2.$
 
 
 ---
-# Ejercicio:
+# Ejemplo:
 
 > Encuentre el área de la parte inferior al plano $z=4$ del paraboloide $z=x^2+y^2$ 
+
+
+
