@@ -14,7 +14,7 @@ En esta sesión nuestros objetivos son:
 * Conocer la forma genérica de un problema de valor inicial con una EDO lineal de orden superior. <br/><br/>
 * Aplicar el método de reducción de orden para EDOS lineales. 
 
-El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-03).
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2023-FJ-F1010/F1010-sesion-03).
 
 ```{r embed-xaringan, echo=FALSE}
 xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-F1010/F1010-sesion-03", ratio = "4:3")
