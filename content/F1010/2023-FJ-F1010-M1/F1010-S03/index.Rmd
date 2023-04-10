@@ -4,7 +4,7 @@ weight: 3
 subtitle: "Reducción de Orden"
 excerpt: "Solución de Reducción de orden"
 date: '`r Sys.Date()`'
-slug: MA1035-session-03
+slug: F1010-session-03
 draft: false
 ---
 
