@@ -1,22 +1,21 @@
 ---
-title: "S06: Sistemas de Ecuaciones Diferenciales"
+title: "S06: Sistemas Masa-Resorte"
 weight: 6
 subtitle: ""
-excerpt: "Introducción a los sistemas de ecuaciones diferenciales"
+excerpt: "Describiremos las diferentes EDOs que modelan un sistema de masa-resortes en diferentes condiciones físicas."
 date: '`r Sys.Date()`'
-slug: MA1035-session-06
+slug: F1010-session-06
 draft: false
 ---
 
 En esta sesión nuestros objetivos son:
 
-* Conocer diferentes problematicas que involucran sistemas de EDOs. <br/><br/>
-* Conocer la forma matricial de un sistema de EDOs. <br/><br/>
-* Estudiar la solución (vector de funciones) de un sistema. 
+* Describir el sistema masa-resorte y la EDO que lo modela. <br/><br/>
+* Resolver las diferentes EDOs asociadas a un sistema masa resorte para diferentes condiciones físicas.
 
-El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-06).
+El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2023-FJ-F1010/F1010-sesion-06).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-05", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-F1010/F1010-sesion-06", ratio = "4:3")
 ```
 

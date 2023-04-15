@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas de EDOs lineales</title>
+    <title>Modelando con EDOs lineales de orden superior</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-04-15" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x4b16b4e63e8492a8ea0768a88190dc1","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ddd635e47c224dc8ad6988adf36f6948","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sistemas de EDOs lineales
+# Modelando con EDOs lineales de orden superior
 ]
 .subtitle[
 ## Sesión 06
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-04-15
 ]
 
 ---
@@ -78,77 +78,141 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Conocer diferentes problematicas que involucran sistemas de EDOs. &lt;br/&gt;&lt;br/&gt;
-* Conocer la forma matricial de un sistema de EDOs. &lt;br/&gt;&lt;br/&gt;
-* Estudiar la solución (vector de funciones) de un sistema. 
+* Determinar la EDO que modela un sistema de resortes y masas. &lt;br/&gt;&lt;br/&gt;
+
+* Aprender otras problematicas que modela una EDO lineal de orden superior. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Recordando:
+# Modelando con EDOs lineales de orden superior:
 
-&gt; Recordemos que si tenemos una población `\(P(t),\)` su crecimiento puede ser modelado mediante la ecuación diferencial `$$\frac{dP}{dt}=kP,$$` &lt;br/&gt;&lt;br/&gt; de igual manera podemos considerar la presencia de una fracción de inmigrantes (por el momento constante) `$$\frac{dP}{dt}=kP-r.$$` &lt;br/&gt;&lt;br/&gt;
-Realmente sabemos que la población que inmigra no es constante en el tiempo, así que el modelo anterior no es tan real.
-
----
-# Un modelo más real
-
-&gt; Nuestro modelo sería más realista si `\(R(t)\)` define la población de inmigrantes en el tiempo `\(t,\)` `$$\frac{dP}{dt}=kP-R,$$` y si además tenemos información del crecimiento de la población inmigrante, por ejemplo `$$\frac{dR}{dt}=sR.$$` &lt;br/&gt;&lt;br/&gt; 
-Entonces el modelo sería `$$\frac{dP}{dt}=kP-R,$$` `$$\frac{dR}{dt}=sR.$$`
+&gt; Suongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa `\(m\)` en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. &lt;br/&gt;&lt;br/&gt;
+* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: `$$F=-ks.$$` &lt;br/&gt;
+* _Segunda Ley de Newton_ `$$m\frac{d^2x}{dt^2}=-kx.$$`
 
 ---
-# Sistema de EDOs lineales
+# Gráfica
 
-&gt; Un sistema de ecuaciones diferenciales es un par de EDOs que involucran dos funciones variables, de la forma general `$$\frac{dx}{dt}=g_1(t,x,y)$$` `$$\frac{dy}{dt}=g_2(t,x,y)$$` y si pedimos que sean lineales las ecuaciones entonces `$$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$` `$$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$`
 
----
-# Sistema Predador-Presa
-
-&gt; Supongamos que tenemos dos especies que interactuan en un ecosistemas `\(x(t)\)` y `\(y(t),\)` de donde `\(x(t)\)` es extrictamente vegetariana y `\(y(t)\)` carnivora (consume a `\(x(t)\)`) entonces `$$\frac{dy}{dt}=-ay+bxy$$` `$$\frac{dx}{dt}=cx-dxy.$$` Este modelo se conoce como el __Lotka-Volterra para predador-presa.__
-
----
-# ¿Cómo se ve?
 
 &lt;div class="figure"&gt;
-&lt;img src="https://strimas.com/post/2017-10-13-lotka-volterra/index_files/figure-html/time-plot-1.png" alt="Ejempo de Soluciónes" width="60%" /&gt;
-&lt;p class="caption"&gt;Ejempo de Soluciónes&lt;/p&gt;
+&lt;img src="vertspringmodel.jpg" alt="Vista gráfica del modelo." width="50%" /&gt;
+&lt;p class="caption"&gt;Vista gráfica del modelo.&lt;/p&gt;
 &lt;/div&gt;
 ---
-# Sistema de EDOs lineales
-
-&gt; Consideremos el siguiente sistema de EDOS lineales de `\(n\)` ecuaciones con `\(n\)` incognitas: $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&amp;=&amp; x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &amp;=&amp; x'_2 \\ \vdots &amp; = &amp; \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&amp;=&amp; x'_n \\ \end{array}$$  
-
----
-## Versión matricial 
-
-&gt; La expresión anterior se puede expresar de forma matricial: 
-
-`$$\left(\begin{array}{c} x'_1 \\ x'_2 \\ \vdots \\ x'_n \end{array}\right) =\left(\begin{array}{c} a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n}\\ a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\ a_{n1} &amp; a_{n2} &amp; \ldots &amp; a_{nn} \end{array}\right) \left(\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right)+ \left(\begin{array}{c} f_1(t) \\ f_2(t) \\ \vdots \\ f_n(t) \end{array}\right)$$`
-$$ X' = A X+F$$
+## Solución general del modelo
+ 
+ &gt; Queremos encontrar la solución general de `$$m\frac{d^2x}{dt^2}=-kx.$$` Notemos que esta ecuación es equivalente a `$$x''+\frac{k}{m}x=0.$$`
+&gt; Mi polinomio auxiliar es `$$m^2+\frac{k}{m}=0$$` cuyas soluciones son `\(m_1=\sqrt{\frac{k}{m}}i\)` y `\(m_2=-\sqrt{\frac{k}{m}}i.\)` Por lo que mi solución general de la EDO es: `$$x(t)=c_1\cos\left(\frac{k}{m}t\right)+c_2\sin\left(\frac{k}{m}t\right).$$`
 
 ---
-# ¿Cómo se ve la solución?
+### Algunas componentes de la solución:
 
-&gt; La solución de un sistema es un vector `$$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$` que satisface las ecuaciones anteriores.
+* Al número `\(w=\sqrt{\frac{k}{m}}\)` se le conoce como _frecuencia circular._
+
+* El período de la función solución es `$$T=\frac{2\pi}{w}.$$`
+
+* La frecuencia de la función es `$$f=1/T.$$`
 
 ---
-# Ejemplo
+### Ejemplo:
 
-&gt; Verifique que el siguiente vector `$$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$` es resultado del sistema `$$X'=\left(\begin{array} 1 &amp; 3 \\ 5 &amp; 3 \end{array}\right) X$$` y también `$$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$`
+&gt; Una masa de peso `\(2lbs\)` estira un resorte de `\(6\)` pulgadas. Si en `\(t=0\)` la masa es liberada desde un punto `\(8\)` pulgadas por debajo del equilibrio con una velocidad de `\(4/3\)` pies/s. Determine la ecuación de movimiento.
+
+Realizando las conversiones adecuadas (pulgas en pies, y libras en unidades de masa), obtenemos que la ecuación diferencial es: `$$\frac{1}{16}x''+4x=0.$$` Con las condicions inciales de `\(x(0)=2/3\)` y `\(x'(0)=-4/3.\)` Por lo tanto `\(w^2=64\)` y `\(w=8,\)` así que la función de movimiento es: `$$x(t)=c_1\cos(8t)+c_2\sin(8t).$$`
+
+Sustituyendo las condiciones iniciales obtenemos que `\(c_1=2/3\)` y `\(c_2=-1/6.\)`
 
 ---
-# Superposición e Independencia Lineal
+### Ejercicio:
 
-&gt; En un sistema de EDOs homogéneas, si `\(X_1\)` y `\(X_2\)` son soluciones, para cualquier número reales `\(c_1\)` y `\(c_2,\)` entonces `$$c_1 X_1 + c_2 X_2$$` también es solución. &lt;br/&gt;&lt;br/&gt; 
-__Definición:__ decimos que las soluciones `\(X_1, \, X_2,\, \cdots,\, X_n\)` son __linealmente indepentiendes__ si la unica combinación `$$c_1 X_1+c_2 X_2+\cdots + c_n X_n=0$$` entonces `\(c_1=c_2=\cdots=c_n=0.\)`
+&gt; Una masa que pesa 4 libras esta atada a un resorte cuya constante de Hooke es 16lb/ft. ¿Cuál es el período del movimiento armónico simple?
+
+---
+# Recordemos el movimiento harmónico
+
+&gt; Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa `\(m\)` en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. &lt;br/&gt;&lt;br/&gt;
+* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: `$$F=-ks.$$` &lt;br/&gt;
+* _Segunda Ley de Newton_ `$$m\frac{d^2x}{dt^2}=-kx.$$`
+
+---
+# Movimiento libre amortiguado
+
+&gt; Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa `\(m\)` en su punta libre. Supongamos que nuestro peso se encuentra en un medio que presenta una __resistencia__ (por ejemplo un medio viscoso o un amortiguador). &lt;br/&gt;&lt;br/&gt;
+* __Mecánica:__ esta acción de amortiguador se ve directamente proporcional a la velocidad instantánea del resorte ( `\(\frac{dx}{dt}\)` ). &lt;br/&gt;&lt;br/&gt;
+* No hay otra fuerza que este actuando en nuestro sistema.&lt;br/&gt;&lt;br/&gt; 
+$$ m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}.$$
+
+---
+## Resolvamos la EDO anterior
+
+&gt; Reescribiendo todo en una forma genérica obtenemos `$$\frac{d^2x}{dt^2}+2\lambda \frac{dx}{dt}+\omega^2=0$$` donde `\(2\lambda=\frac{b}{m}\)` y `\(\omega^2=\frac{k}{m}.\)`
+
+&lt;br/&gt;&lt;br/&gt;
+Notemos que esta es una EDO líneal de orden dos homogénea, por lo que para resolverla necesitamos el polinomio auxiliar: `$$m^2+2\lambda m +\omega^2=0.$$`
+
+---
+## Nuestra solución depende de las raíces 
+
+&gt; Las raíces del polinomio auxiliar son: `$$m_1=-\lambda + \sqrt{\lambda^2-\omega^2}\quad\mbox{y}\quad m_2=-\lambda-\sqrt{\lambda^2-\omega^2}.$$` &lt;br/&gt;&lt;br/&gt;
+
+### Casos:
+
+__Caso 1:__ `\(\lambda^2-\omega^2&gt;0,\)` nuestro sistema está _sobre amortiguado_ y su solución es: `$$x(t)=e^{-\lambda t}\left(c_1 e^{\sqrt{\lambda^2-\omega^2} t}+c_2 e^{-\sqrt{\lambda^2-\omega^2} t}\right)$$`
+
+---
+### Casos:
+
+__Caso 2:__ `\(\lambda^2-\omega^2&lt;0,\)` nuestro sistema está _subamortiguado_ y su solución es: `$$x(t)=e^{-\lambda t}\left(c_1 \cos\left(\sqrt{\lambda^2-\omega^2}t\right)+c_2 \sin\left(\sqrt{\lambda^2-\omega^2}t\right)\right)$$`
+&lt;br/&gt;&lt;br/&gt;
+__Caso 3:__ `\(\lambda^2-\omega^2=0,\)` nuestro sistema está _criticamente amortiguado_ y su solución es: `$$x(t)=e^{-\lambda t}\left(c_1+c_2 t\right)$$`
+---
+# Ejemplos:
+
+### Movimiento sobre amortiguado:
+
+&gt; Encuentre la solución al PVI dado por `$$x''+5x'+4x=0$$` con `\(x(0)=1\)` y `\(x'(0)=1.\)`
+
+---
+### Movimiento criticamente amortiguado:
+
+&gt; Un peso con peso de `\(8lbs\)` estira un resorte `\(2ft.\)` Asumientdo que la fuerza de amortiguado es igual a `\(2\)` veces la velocidad instantánea. Detemrine la función que describe el movimiento del peso si inicialmente se liberó desde el equilibrio con una velidad (negativa) de `\(3ft/s.\)`
+
+
+---
+### Movimiento subamortiguado:
+
+&gt; Una peso con peso de `\(16lbs\)` está atado a un resorte de `\(5ft\)` de longitud. En el equilibrio el resorte mide `\(8.2ft.\)` Si el peso es inicialmente el peso es liberado `\(2ft\)` por encima de la posición de equilibrio. Encuentre la función de desplazamiento si el medio opone una resistencia igual a la velocidad instantánea.
+
+---
+# Movimiento Impulsado
+
+&gt; Supongamos que en nuestro sistema de movimiento amortiguado, agregagos una variable donde nuestro soporte ya no es fijo. Esto se traduce a una fuerza externa que actua sobre el sistema. La segunda Ley de Newton se traduce a: `$$mx''=-kx-bx+f(t)$$` o equivalentemente `$$x''-2\lambda x'+\omega^2 x= f(t).$$`
+
+---
+### Ejemplo:
+
+&gt; Resuelva el siguiente PVI `$$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$` con `\(x(0)=\frac{1}{2}\)` y `\(x'(0)=0.\)`
+
+---
+# Circuito LRC
+
+&gt; Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si `\(q(t)\)` mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. `$$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$`
 
 ---
 ## Ejemplo:
 
-&gt; En el ejemplo anterior, los vectores solución `$$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$` son linealmente independientes.
+&gt; Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que `\(L=0.25\)` henry, `\(R=10\)` ohms, y `\(C=0.001\)` farad. Así mismo `\(E(t)=0\)` y `\(q(0)=q_0\)` coulumbs y `\(q'(0)=0.\)`
 
 ---
-## Actividad:
+# Actividad:
 
-&gt; Compruebe que las funciones vectores `$$X_1=\left(\begin{array}{c} \cos(t) \\ \frac{-\cos(t)}{2}+\frac{\sin(t)}{2}\\ -\cos(t)-\sin(t) \end{array}\right) \mbox{ y } \left(\begin{array}{c} 0 \\ e^t \\ 0  \end{array}\right)$$` es un conjunto solución linealmente independiente para el sistema `$$X'=\left(\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ -2 &amp; 0 &amp; -1\end{array}\right) X$$`
+1. Una masa con peso (fuerza) 16lbs estira un resorte `\(8/3\)`fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de `\(1/2\)` la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a `\(f(t)=10\cos(3t).\)`
+
+2. Encuentre la solución general de la carga en un circuito LRC cuando `\(L=1h,\, R=2\Omega,\,C=0.25f\)` y `\(E(t)=50\cos(t) V.\)`
+
+3. Un peso de 2kg esta en el extremo de un resorte con constante `\(32 N/m.\)` Si empiexa en `\(t=0,\)` una fuerza externa igual a `\(f(t)=68e^{-2t}\cos(4t)\)` se aplica al sistema. Encuentre la función que modela el desplazamiento.
+
+4. Encuentre la función que modela la carga del capacitor en un circuito LRC si `\(L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c\)` y `\(q'(0)=0 A.\)`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,5 +1,5 @@
 ---
-title: "Modelando con EDOs lineales de orden superior no homogéneas"
+title: "EDO Lineales de Orden Superior No homogéneas"
 subtitle: "Sesión 05"  
 author: 
   - "Alejandro Ucan"
@@ -51,90 +51,99 @@ xaringanExtra::use_logo(
 # Objetivos de la Sesión
 
 * Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
-
----
-# Recordemos el movimiento harmónico
-
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. <br/><br/>
-* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: $$F=-ks.$$ <br/>
-* _Segunda Ley de Newton_ $$m\frac{d^2x}{dt^2}=-kx.$$
-
----
-# Movimiento libre amortiguado
-
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. Supongamos que nuestro peso se encuentra en un medio que presenta una __resistencia__ (por ejemplo un medio viscoso o un amortiguador). <br/><br/>
-* __Mecánica:__ esta acción de amortiguador se ve directamente proporcional a la velocidad instantánea del resorte ($\frac{dx}{dt}$). <br/><br/>
-* No hay otra fuerza que este actuando en nuestro sistema.<br/><br/> 
-$$ m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}.$$
-
----
-## Resolvamos la EDO anterior
-
-> Reescribiendo todo en una forma genérica obtenemos $$\frac{d^2x}{dt^2}+2\lambda \frac{dx}{dt}+\omega^2=0$$ donde $2\lambda=\frac{b}{m}$ y $\omega^2=\frac{k}{m}.$$
-
-<br/><br/>
-Notemos que esta es una EDO líneal de orden dos homogénea, por lo que para resolverla necesitamos el polinomio auxiliar: $$m^2+2\lambda m +\omega^2=0.$$
-
----
-## Nuestra solución depende de las raíces 
-
-> Las raíces del polinomio auxiliar son: $$m_1=-\lambda + \sqrt{\lambda^2-\omega^2}\quad\mbox{y}\quad m_2=-\lambda-\sqrt{\lambda^2-\omega^2}.$$ <br/><br/>
-
-### Casos:
-
-__Caso 1:__ $\lambda^2-\omega^2>0,$ nuestro sistema está _sobre amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 e^{\sqrt{\lambda^2-\omega^2} t}+c_2 e^{-\sqrt{\lambda^2-\omega^2} t}\right)$$
-
----
-### Casos:
-
-__Caso 2:__ $\lambda^2-\omega^2<0,$ nuestro sistema está _subamortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 \cos\left(\sqrt{\lambda^2-\omega^2}t\right)+c_2 \sin\left(\sqrt{\lambda^2-\omega^2}t\right)\right)$$
-<br/><br/>
-__Caso 3:__ $\lambda^2-\omega^2=0,$ nuestro sistema está _criticamente amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1+c_2 t\right)$$
----
-# Ejemplos:
-
-### Movimiento sobre amortiguado:
-
-> Encuentre la solución al PVI dado por $$x''+5x'+4x=0$$ con $x(0)=1$ y $x'(0)=1.$
-
----
-### Movimiento criticamente amortiguado:
-
-> Un peso con peso de $8lbs$ estira un resorte $2ft.$ Asumientdo que la fuerza de amortiguado es igual a $2$ veces la velocidad instantánea. Detemrine la función que describe el movimiento del peso si inicialmente se liberó desde el equilibrio con una velidad (negativa) de $3ft/s.$
+* Resolver EDO lineales no homogéneas de orden superior. <br/><br/>
+* Aprender el método de coeficientes indeterminados. <br/><br/>
 
 
 ---
-### Movimiento subamortiguado:
+# EDO lineal de orden superior no homogénea
 
-> Una peso con peso de $16lbs$ está atado a un resorte de $5ft$ de longitud. En el equilibrio el resorte mide $8.2ft.$ Si el peso es inicialmente el peso es liberado $2ft$ por encima de la posición de equilibrio. Encuentre la función de desplazamiento si el medio opone una resistencia igual a la velocidad instantánea.
-
----
-# Movimiento Impulsado
-
-> Supongamos que en nuestro sistema de movimiento amortiguado, agregagos una variable donde nuestro soporte ya no es fijo. Esto se traduce a una fuerza externa que actua sobre el sistema. La segunda Ley de Newton se traduce a: $$mx''=-kx-bx+f(t)$$ o equivalentemente $$x''-2\lambda x'+\omega^2 x= f(t).$$
+> Recordemos que una EDO lineal de orden superior no homogénea es de la forma $$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2y''+a_1y'+a_0y=g(x),$$ por el momento supondremos que nuestros coeficientes son constantes. <br/><br/><br/> 
+En el caso de EDO líneales no homogéneas de primer orden, tenemos que la solución general se forma mediante $$y_p+y_h.$$ <br/><br/> En el caso de orden superior no es la excepción. 
 
 ---
-### Ejemplo:
+## Algunas consideraciones:
 
-> Resuelva el siguiente PVI $$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$ con $x(0)=\frac{1}{2}$ y $x'(0)=0.$
+> Notemos que la función $g(x)$ puede ser cualquier tipo de función, pero nos centraremos (restringiremos) a los siguientes tipos de funciones que puede aceptar $g(x):$ <br/><br/>
+  * Polinomios (dentro los cuales se encuentran las constantes) $$g(x)=c_0+c_1x+c_2x^2+\cdots+c_nx^n.$$
+  * Exponenciales: $$g(x)=e^{cx}$$
+  * Senos o Cosenos: $$g(x)=\sin(cx)\mbox{ o } g(x)=\cos(cx).$$
+  * Combinaciones de estas (producto y/o sumas):
+  
+  __Ejemplos:__ $g(x)=10,$ $g(x)=15x-6+8e^{-x}$ o $g(x)=xe^x \sin(x)+(3x^2-1)e^{-4x}.$
+  
+---
+# Método de Coeficientes Indeterminados:
+
+El método se aplica para EDOs lineales no homogeneas con:
+* _coeficientes constantes,_
+* $g(x)$ como en la lista anterior.
+
+La idea detrás del método: 
+
+" Las derivadas de funciones $g(x)$ como en la lista anterior, de nuevo son funciones en la lista, es decir, son sumas y/o productos de polinomios, senos, cosenos y/o exponenciales"
 
 ---
-# Circuito LRC
+## Ejemplo 1:
 
-> Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si $q(t)$ mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. $$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$
+> Encuentre la solución de la EDO $$y''+4y'-2y=2x^2-3x+6.$$
+
+1. Primero resolvemos la versión homogénea de la EDO. $$y_h=c_1e^{(-2-\sqrt{6})x}+c_2e^{(-2+\sqrt{6})x}.$$
+
+1. Cómo $g(x)$ es un polinomio de grado dos, entonces la solución particular al menos podría ser un polinomio de grado dos (igual), supongamos que es $$y_p=Ax^2+Bx+C.$$
+
+1. Sustituyendo $y_p$ en la EDO lineal: $y_p'=2Ax+B$ y $y_p''=2A$ entonces $$2A+8Ax+4B-2Ax^2-2Bx-2C=2x^2-3x+6.$$
 
 ---
-## Ejemplo:
+## Ejemplo 1:
 
-> Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que $L=0.25$ henry, $R=10$ ohms, y $C=0.001$ farad. Así mismo $E(t)=0$ y $q(0)=q_0$ coulumbs y $q'(0)=0.$
+1. Por teoría de polinomios, los coeficientes deben ser iguales, es decir:
+$$-2A=2$$ $$8A-2B=-3$$ $$2A+4B-2C=6$$
+
+1. Resolvemos este sistema: <br/><br/><br/><br/><br/><br/><br/>
+
+1. Entonces $y_p=-x^2-\frac{5}{2}x-9.$
 
 ---
-# Actividad:
+## Ejemplo 2:
 
-1. Una masa con peso (fuerza) 16lbs estira un resorte $8/3$fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de $1/2$ la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a $f(t)=10\cos(3t).$
+> Encuentra la solución $y''-y'+y=2\sin(3x).$
 
-2. Encuentre la solución general de la carga en un circuito LRC cuando $L=1h,\, R=2\Omega,\,C=0.25f$ y $E(t)=50\cos(t) V.$
+Primero calculemos la solución particular. Cómo la $g(x)=2\sin(3x)$ entonces la solución que debe cumplir derivadas entonces tenemos que pensar que esta solución debe contener senos y cosenos. Así:
 
-3. Un peso de 2kg esta en el extremo de un resorte con constante $32 N/m.$ Si empiexa en $t=0,$ una fuerza externa igual a $f(t)=68e^{-2t}\cos(4t)$ se aplica al sistema. Encuentre la función que modela el desplazamiento.
+$$y_p=A\cos(3x)+B\sin(3x)$$
 
-4. Encuentre la función que modela la carga del capacitor en un circuito LRC si $L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c$ y $q'(0)=0 A.$
+---
+## Ejemplo 3:
+
+> Encuentra la solución $y''-2y'-3y=4x-5+6xe^{2x}.$
+
+En este caso la solución particular debe contener un polinomio y una exponencial. $$y_p=Ax+B+Cxe^{2x}+Ee^{2x}.$$
+
+---
+## Un error en la matrix:
+
+> Encuentra la solución de $$y''-5y'+4y=8e^x.$$ Verifica con el método de coeficientes indeterminados. ¿Qué sucede? ¿La solución particular funciona? ¿Ahora intenta con la forma particulas $y_p=A x e^x$. ¿Por qué sucede esto?
+
+
+---
+# ¿Cómo decidir que función modelo utilizar?
+
+```{r, echo=FALSE, out.width="60%", fig.cap="Funciones Modelo"}
+knitr::include_graphics("tablafuncionesmodelo.jpg")
+```
+
+---
+# Actividad en Clase: 
+
+Encuentra la solución a las siguientes EDOs lineales de orden superior no homogéneas. <br/><br/>
+ 
+* $y''+3y'+2y=6$ 
+
+* $y''-10y'+25y=30x+3$
+
+* $\frac{1}{4}y''+y'+y=x^2-2x$
+
+* $y''-8y'+20y=100x^2-26xe^x$
+
+* $4y''-4y'-3y=\cos(2x)$

@@ -1,20 +1,21 @@
 ---
-title: "S05: Modelando con EDOs lineales de orden superior no homogeneas"
+title: "S05: Coeficientes Indeterminados"
 weight: 5
 subtitle: ""
-excerpt: "Modelación con EDOs lineales de orden superior p. 2"
+excerpt: "Usaremos funciones modelo para resolver EDOs lineales con coeficientes constantes no homogéneas."
 date: '`r Sys.Date()`'
-slug: MA1035-session-05
+slug: F1010-session-05
 draft: false
 ---
 
 En esta sesión nuestros objetivos son:
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
+* Resolver EDOs lineales no homogéneas de orden superior.
 
-El contenido para la **Sesión 05** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-05).
+
+El contenido para la **Sesión 05** se encuentra en following [slides](/slides/2023-FJ-F1010/F1010-sesion-05).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-05", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-F1010/F1010-sesion-05", ratio = "4:3")
 ```
 

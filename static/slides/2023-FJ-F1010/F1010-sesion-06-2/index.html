@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDO Lineales de Orden Superior No homogéneas</title>
+    <title>Sistemas de EDOs lineales</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2023-04-15" />
+    <meta name="date" content="2022-10-15" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ff2a2c855c1d4c81ba161b3a6b9b8736","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x4b16b4e63e8492a8ea0768a88190dc1","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# EDO Lineales de Orden Superior No homogéneas
+# Sistemas de EDOs lineales
 ]
 .subtitle[
-## Sesión 05
+## Sesión 06
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2023-04-15
+### 2022-10-15
 ]
 
 ---
@@ -78,104 +78,77 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. &lt;br/&gt;&lt;br/&gt;
-* Resolver EDO lineales no homogéneas de orden superior. &lt;br/&gt;&lt;br/&gt;
-* Aprender el método de coeficientes indeterminados. &lt;br/&gt;&lt;br/&gt;
-
-
----
-# EDO lineal de orden superior no homogénea
-
-&gt; Recordemos que una EDO lineal de orden superior no homogénea es de la forma `$$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_2y''+a_1y'+a_0y=g(x),$$` por el momento supondremos que nuestros coeficientes son constantes. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt; 
-En el caso de EDO líneales no homogéneas de primer orden, tenemos que la solución general se forma mediante `$$y_p+y_h.$$` &lt;br/&gt;&lt;br/&gt; En el caso de orden superior no es la excepción. 
+* Conocer diferentes problematicas que involucran sistemas de EDOs. &lt;br/&gt;&lt;br/&gt;
+* Conocer la forma matricial de un sistema de EDOs. &lt;br/&gt;&lt;br/&gt;
+* Estudiar la solución (vector de funciones) de un sistema. 
 
 ---
-## Algunas consideraciones:
+# Recordando:
 
-&gt; Notemos que la función `\(g(x)\)` puede ser cualquier tipo de función, pero nos centraremos (restringiremos) a los siguientes tipos de funciones que puede aceptar `\(g(x):\)` &lt;br/&gt;&lt;br/&gt;
-  * Polinomios (dentro los cuales se encuentran las constantes) `$$g(x)=c_0+c_1x+c_2x^2+\cdots+c_nx^n.$$`
-  * Exponenciales: `$$g(x)=e^{cx}$$`
-  * Senos o Cosenos: `$$g(x)=\sin(cx)\mbox{ o } g(x)=\cos(cx).$$`
-  * Combinaciones de estas (producto y/o sumas):
-  
-  __Ejemplos:__ `\(g(x)=10,\)` `\(g(x)=15x-6+8e^{-x}\)` o `\(g(x)=xe^x \sin(x)+(3x^2-1)e^{-4x}.\)`
-  
----
-# Método de Coeficientes Indeterminados:
-
-El método se aplica para EDOs lineales no homogeneas con:
-* _coeficientes constantes,_
-* `\(g(x)\)` como en la lista anterior.
-
-La idea detrás del método: 
-
-" Las derivadas de funciones `\(g(x)\)` como en la lista anterior, de nuevo son funciones en la lista, es decir, son sumas y/o productos de polinomios, senos, cosenos y/o exponenciales"
+&gt; Recordemos que si tenemos una población `\(P(t),\)` su crecimiento puede ser modelado mediante la ecuación diferencial `$$\frac{dP}{dt}=kP,$$` &lt;br/&gt;&lt;br/&gt; de igual manera podemos considerar la presencia de una fracción de inmigrantes (por el momento constante) `$$\frac{dP}{dt}=kP-r.$$` &lt;br/&gt;&lt;br/&gt;
+Realmente sabemos que la población que inmigra no es constante en el tiempo, así que el modelo anterior no es tan real.
 
 ---
-## Ejemplo 1:
+# Un modelo más real
 
-&gt; Encuentre la solución de la EDO `$$y''+4y'-2y=2x^2-3x+6.$$`
-
-1. Primero resolvemos la versión homogénea de la EDO. `$$y_h=c_1e^{(-2-\sqrt{6})x}+c_2e^{(-2+\sqrt{6})x}.$$`
-
-1. Cómo `\(g(x)\)` es un polinomio de grado dos, entonces la solución particular al menos podría ser un polinomio de grado dos (igual), supongamos que es `$$y_p=Ax^2+Bx+C.$$`
-
-1. Sustituyendo `\(y_p\)` en la EDO lineal: `\(y_p'=2Ax+B\)` y `\(y_p''=2A\)` entonces `$$2A+8Ax+4B-2Ax^2-2Bx-2C=2x^2-3x+6.$$`
+&gt; Nuestro modelo sería más realista si `\(R(t)\)` define la población de inmigrantes en el tiempo `\(t,\)` `$$\frac{dP}{dt}=kP-R,$$` y si además tenemos información del crecimiento de la población inmigrante, por ejemplo `$$\frac{dR}{dt}=sR.$$` &lt;br/&gt;&lt;br/&gt; 
+Entonces el modelo sería `$$\frac{dP}{dt}=kP-R,$$` `$$\frac{dR}{dt}=sR.$$`
 
 ---
-## Ejemplo 1:
+# Sistema de EDOs lineales
 
-1. Por teoría de polinomios, los coeficientes deben ser iguales, es decir:
-`$$-2A=2$$` `$$8A-2B=-3$$` `$$2A+4B-2C=6$$`
-
-1. Resolvemos este sistema: &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-
-1. Entonces `\(y_p=-x^2-\frac{5}{2}x-9.\)`
+&gt; Un sistema de ecuaciones diferenciales es un par de EDOs que involucran dos funciones variables, de la forma general `$$\frac{dx}{dt}=g_1(t,x,y)$$` `$$\frac{dy}{dt}=g_2(t,x,y)$$` y si pedimos que sean lineales las ecuaciones entonces `$$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$` `$$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$`
 
 ---
-## Ejemplo 2:
+# Sistema Predador-Presa
 
-&gt; Encuentra la solución `\(y''-y'+y=2\sin(3x).\)`
-
-Primero calculemos la solución particular. Cómo la `\(g(x)=2\sin(3x)\)` entonces la solución que debe cumplir derivadas entonces tenemos que pensar que esta solución debe contener senos y cosenos. Así:
-
-`$$y_p=A\cos(3x)+B\sin(3x)$$`
+&gt; Supongamos que tenemos dos especies que interactuan en un ecosistemas `\(x(t)\)` y `\(y(t),\)` de donde `\(x(t)\)` es extrictamente vegetariana y `\(y(t)\)` carnivora (consume a `\(x(t)\)`) entonces `$$\frac{dy}{dt}=-ay+bxy$$` `$$\frac{dx}{dt}=cx-dxy.$$` Este modelo se conoce como el __Lotka-Volterra para predador-presa.__
 
 ---
-## Ejemplo 3:
-
-&gt; Encuentra la solución `\(y''-2y'-3y=4x-5+6xe^{2x}.\)`
-
-En este caso la solución particular debe contener un polinomio y una exponencial. `$$y_p=Ax+B+Cxe^{2x}+Ee^{2x}.$$`
-
----
-## Un error en la matrix:
-
-&gt; Encuentra la solución de `$$y''-5y'+4y=8e^x.$$` Verifica con el método de coeficientes indeterminados. ¿Qué sucede? ¿La solución particular funciona? ¿Ahora intenta con la forma particulas `\(y_p=A x e^x\)`. ¿Por qué sucede esto?
-
-
----
-# ¿Cómo decidir que función modelo utilizar?
+# ¿Cómo se ve?
 
 &lt;div class="figure"&gt;
-&lt;img src="tablafuncionesmodelo.jpg" alt="Funciones Modelo" width="60%" /&gt;
-&lt;p class="caption"&gt;Funciones Modelo&lt;/p&gt;
+&lt;img src="https://strimas.com/post/2017-10-13-lotka-volterra/index_files/figure-html/time-plot-1.png" alt="Ejempo de Soluciónes" width="60%" /&gt;
+&lt;p class="caption"&gt;Ejempo de Soluciónes&lt;/p&gt;
 &lt;/div&gt;
+---
+# Sistema de EDOs lineales
+
+&gt; Consideremos el siguiente sistema de EDOS lineales de `\(n\)` ecuaciones con `\(n\)` incognitas: $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&amp;=&amp; x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &amp;=&amp; x'_2 \\ \vdots &amp; = &amp; \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&amp;=&amp; x'_n \\ \end{array}$$  
 
 ---
-# Actividad en Clase: 
+## Versión matricial 
 
-Encuentra la solución a las siguientes EDOs lineales de orden superior no homogéneas. &lt;br/&gt;&lt;br/&gt;
- 
-* `\(y''+3y'+2y=6\)` 
+&gt; La expresión anterior se puede expresar de forma matricial: 
 
-* `\(y''-10y'+25y=30x+3\)`
+`$$\left(\begin{array}{c} x'_1 \\ x'_2 \\ \vdots \\ x'_n \end{array}\right) =\left(\begin{array}{c} a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n}\\ a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\ a_{n1} &amp; a_{n2} &amp; \ldots &amp; a_{nn} \end{array}\right) \left(\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right)+ \left(\begin{array}{c} f_1(t) \\ f_2(t) \\ \vdots \\ f_n(t) \end{array}\right)$$`
+$$ X' = A X+F$$
 
-* `\(\frac{1}{4}y''+y'+y=x^2-2x\)`
+---
+# ¿Cómo se ve la solución?
 
-* `\(y''-8y'+20y=100x^2-26xe^x\)`
+&gt; La solución de un sistema es un vector `$$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$` que satisface las ecuaciones anteriores.
 
-* `\(4y''-4y'-3y=\cos(2x)\)`
+---
+# Ejemplo
+
+&gt; Verifique que el siguiente vector `$$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$` es resultado del sistema `$$X'=\left(\begin{array} 1 &amp; 3 \\ 5 &amp; 3 \end{array}\right) X$$` y también `$$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$`
+
+---
+# Superposición e Independencia Lineal
+
+&gt; En un sistema de EDOs homogéneas, si `\(X_1\)` y `\(X_2\)` son soluciones, para cualquier número reales `\(c_1\)` y `\(c_2,\)` entonces `$$c_1 X_1 + c_2 X_2$$` también es solución. &lt;br/&gt;&lt;br/&gt; 
+__Definición:__ decimos que las soluciones `\(X_1, \, X_2,\, \cdots,\, X_n\)` son __linealmente indepentiendes__ si la unica combinación `$$c_1 X_1+c_2 X_2+\cdots + c_n X_n=0$$` entonces `\(c_1=c_2=\cdots=c_n=0.\)`
+
+---
+## Ejemplo:
+
+&gt; En el ejemplo anterior, los vectores solución `$$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$` son linealmente independientes.
+
+---
+## Actividad:
+
+&gt; Compruebe que las funciones vectores `$$X_1=\left(\begin{array}{c} \cos(t) \\ \frac{-\cos(t)}{2}+\frac{\sin(t)}{2}\\ -\cos(t)-\sin(t) \end{array}\right) \mbox{ y } \left(\begin{array}{c} 0 \\ e^t \\ 0  \end{array}\right)$$` es un conjunto solución linealmente independiente para el sistema `$$X'=\left(\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ -2 &amp; 0 &amp; -1\end{array}\right) X$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
