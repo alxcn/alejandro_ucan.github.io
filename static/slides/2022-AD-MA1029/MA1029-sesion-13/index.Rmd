@@ -1,6 +1,6 @@
 ---
 title: "Coordenadas Cilíndricas"
-subtitle: "Sesión 07"
+subtitle: "Sesión 13"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -49,9 +49,7 @@ xaringanExtra::use_scribble()
 
 
 ---
-# 
-
-### Coordenadas Cilíndricas $(\theta,r,z).$
+# Coordenadas Cilíndricas $(\theta,r,z).$
 
 <iframe src="https://www.geogebra.org/calculator/za424zgv?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
@@ -71,6 +69,17 @@ Existen expresiones que nos permiten hacer la conversión entre distintos tipos 
 - $x=r\cdot \cos(\theta)$ <br/>
 - $y=r\cdot \sin(\theta)$ y 
 - $z=z.$
+
+---
+## Veamos algunas regiones cilíndricas
+
+> Describa la región acotada por el plano $z=0$ y el paraboloide $z=4-x^2-y^2$ en coordenadas cilíndricas.
+
+---
+
+## Veamos algunas regiones cilíndricas.
+
+> Describa la región dentro de la esfera $x^2+y^2+z^2=4$ y el cilindro $x^2+y^2=2.$
 
 ---
 # ¿Cómo cambia mi diferencial de volumen?
