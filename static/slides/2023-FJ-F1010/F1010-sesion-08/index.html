@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas de EDOs lineales P. III</title>
+    <title>Ecuación de Cauchy-Euler</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-17" />
+    <meta name="date" content="2023-04-23" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xeb04dafd3234dadad73aae46867fcba","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a5e3f9d3efb040fe94ec5f3507b74392","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sistemas de EDOs lineales P. III
+# Ecuación de Cauchy-Euler
 ]
 .subtitle[
 ## Sesión 08
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-17
+### 2023-04-23
 ]
 
 ---
@@ -78,70 +78,76 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Solución en el caso de valores propios repetidos. &lt;br/&gt;&lt;br/&gt;
-* Solución en el caso de valores propios complejos. &lt;br/&gt;&lt;br/&gt;
-* Planos fase. &lt;br/&gt;&lt;br/&gt;
-* Solución de Sistemas no homogéneos.
-
----
-# Valores propios repetidos.
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X.$$` Queremos construir una solución general. El polinomio característico es: `$$\lambda^2-2\lambda +1=0,$$` así que el único valor propio es `\(\lambda=1.\)` Su vector propio es `$$(A+I)=\left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right)\Rightarrow 2v_1+2v_2=0\Rightarrow v_2=-v_1.$$` &lt;br/&gt;
-Para conseguir el otro vector para que nuestra solución general este completo, para esto  debemos resolver `$$(A-\lambda I)w=v.$$`
-
----
-## Continuación ejemplo
-
-&gt; Resolvamos para `$$(A+I)w=v\Rightarrow \left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right) \left(\begin{array}{c} w_1  \\ w_2 \end{array}\right) =\left(\begin{array}{c} 1  \\ -1 \end{array}\right),$$` que se reduce a la ecuación `$$2w_1+2w_2=1\Leftrightarrow 2w_1=1+2w_2.$$` Podemos tomar el valor `\(w_2=0,\)` y mi otro vector sería `$$\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right)$$` Así mi solución general es `$$X=c_1e^{-t}\left(\begin{array}{c} -1 \\ 1 \end{array}\right)+c_2te^{-t}\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right).$$`
-
----
-### Ejemplo 2:
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 3 &amp; -18 \\ 2 &amp; -9 \end{array}\right)X.$$`
+* Introduciremos la EDO de Cauchy-Euler. &lt;br/&gt;&lt;br/&gt;
+* Describiremos la solución de una EDO de Cauchy-Euler. &lt;br/&gt;&lt;br/&gt;
+* Describiremos los tipos de soluciones para el polinomio auxiliar.
 
 
 ---
-# Valores propios complejos.
+# La EDO de Cauchy-Euler
 
-&gt; Consideremos el sistema `$$X'= \left(\begin{array}{cc} 6 &amp; -1 \\ 5 &amp; 4 \end{array}\right) X.$$` &lt;br/&gt;&lt;br/&gt; Su polinomio caracteristico es `$$\lambda^2-10\lambda+29=0\Rightarrow \lambda_1=5+2i\quad \lambda_2=5-2i.$$` &lt;br/&gt;&lt;br/&gt; Sus vectores propios son `$$v_1=\left(\begin{array}{c} 1 \\ 1-2i \end{array}\right)\quad v_2=\left(\begin{array}{c} 1 \\ 1+2i \end{array}\right)$$`
----
-## Reescribiendo los vectores propios: 
+&gt; Consideremos la EDO no lineal no homogénea `$$a_nx^n y^{(n)}+a_{n-1}x^{n-1}y^{(n-1)}+\cdots a_1xy'+a_0y=g(x).$$`
 
-&gt; Como queremos funciones reales, tenemos que reescribir los vectores de tal forma que sean reales. &lt;br/&gt;&lt;br/&gt;
-Sean `$$w_1=\left(\begin{array}{c} 1 \\ 1 \end{array}\right) \quad w_2=\left(\begin{array}{c} 0 \\ -2 \end{array}\right)$$` Así mi solución general será la combinación de las soluciones `$$X_1=(w_1\cos(2t)-w_2 \sin(2t))e^{t}$$` `$$X_2=(w_2\cos(2t)+w_1\sin(2t))e^t.$$`
+&lt;br/&gt;&lt;br/&gt;
+Consideremos que nuestras soluciones van a estar definidas en el intervalo `\(I=(0,\infty)\)` y son de la forma `\(y=x^m,\)` esto es por que `$$y^{(k)}=(x^m)^{(k)}=m(m-1)(m-1)\cdots(m-k+1)x^{m-k}$$` por lo que cuando `$$a_kx^ky^{(k)}=a_k(m)(m-1)\cdots(m-k+1)x^m.$$`
 
----
-### Ejemplo 3:
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} -1 &amp; 2 \\ -1 &amp; 1 \end{array}\right)X.$$`
+Por lo que al final, todo queda en terminos de `\(x^m.\)`
 
 ---
-# Planos Fase:
+## La EDO de orden 2.
 
-&lt;iframe src="https://www.geogebra.org/calculator/xnzc4b6w?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
+&gt; Queremos resolver `$$ax^2y''+bxy'+ cx=0.$$` Suponiendo que `\(y=x^m,\)` entonces `$$am(m-1)x^m+bmx^m+cx^m=(am^2+(b-a)m+c)x^m$$`
 
----
-# Sistemas no homogéneos
-
-&gt; Al igual que las ecuaciones lineales no homogéneas, la solución general de un sistema de EDOs no homogénea está formada por la solución general del sistema homogéneo y una solución particular. 
-
-### Ejemplo 3: 
-
-&gt; Considere el sistema `$$X'= \left(\begin{array}{cc} 2 &amp; 7 \\ -5 &amp; -10 \end{array}\right) X+\left(\begin{array}{c} -8 \\ 3 \end{array}\right).$$` Primero encontremos la solución particular, como el vector que hace nuestro sistema no homogéneo es __constante__ podemos considerar que mi solución modelo es constante,
+&lt;br/&gt;&lt;br/&gt;
+Como `\(x^m\)` no es cero, entonces `$$am^2+(b-a)m+c=0$$` cuyas soluciones son: `$$m_{1,2}=\frac{(a-b)\pm \sqrt{(b-a)^2-4ac}}{2a}.$$`
 
 ---
-### continuación:
+### Raíces distintas
 
-Digamos `$$X_p=\left(\begin{array}{c} a_1 \\ b_1 \end{array}\right),$$` 
-sustituyendo en mi sistema obtenemos
-`$$0=2a_1+7b_1-8$$` `$$0=-5a_1-10b_1+3$$` 
+&gt; Si `\(m_i\)` son dos raíces reales distintas, entonces `\(y_1=x^{m_1}\)` y `\(y_2=x^{m_2}\)` es nuestro conjunto de soluciones, por lo que la solución general es: `$$y=c_1x^{m_1}+c_2x^{m_2}.$$`
 
-$$2a_1+7b_1=8 $$ `$$-5a_1-10b_1=3$$` cuya solución es `$$a_1=-\frac{101}{15}\mbox{ y }a_2=-\frac{46}{15}.$$`
+#### Ejemplo 1:
+
+&gt; Encuentre la solución general de  `\(x^2y''-2xy'-4y=0.\)` 
+
+--
+
+&lt;br/&gt;&lt;br/&gt;
+Mi poliniomio auxiliar es `$$m^2-3m-4=0$$` cuyas soluciones son `\(m=-1\)` y `\(m=4,\)` por lo que la solución general `$$y=c_1x^{-1}+c_2x^4.$$`
 
 ---
-### Ejemplo 4:
+### Raíces repétidas
 
-&gt; Considere el sistema `$$X'= \left(\begin{array}{cc} 6 &amp; 1 \\ 4 &amp; 3 \end{array}\right) X+\left(\begin{array}{c} 6t \\ -10t+4 \end{array}\right).$$` 
+&gt; Si mi polinomio auxiliar tiene solución `\(m=\frac{a-b}{2a},\)` y una solución es `\(y=x^m.\)` Para encontrar la otra solución usaremos reducción de orden. Obteniendo que `$$y_2=x^m\ln(x).$$` &lt;br/&gt;&lt;br/&gt; Por lo que la solución general es `$$y=c_1x^m+c_2x^m\ln(x).$$`
+
+---
+#### Ejemplo 2:
+
+&gt; Encuentre la solución de `\(4x^2y''+8xy'+y=0,\)`
+
+
+--
+&lt;br/&gt;&lt;br/&gt;
+
+cuya polinomio auxliar es `$$4m^2+4m+1=0$$` y sus solución es `\(m=\frac{-1}{2}.\)` Así que la solución general es: `$$y=c_1x^{-1/2}+c_2x^{-1/2}\ln(x).$$`
+
+---
+### Raíces conjugadas
+
+&gt; Suponiendo que mi polinomio tiene raíces complejas conjugadas: `\(m=a+ib\)` con `\(b&gt;0.\)` Entonces la solución es `$$y=x^m=x^{a+ib}$$` pero tenemos que reescribir la parte compleja de esta función `$$x^{ib}=(e^{\ln x})^{ib}=cos(b\ln x)+i\sin(b\ln x)$$` por lo que la solución general es: `$$y=x^a(c_1\cos (b\ln x)+c_2\sin(b\ln x)).$$`
+
+---
+#### Ejemplo 3:
+
+&gt; Encuentra la solución a `\(4x^2y''+17y=0.\)`
+
+--
+
+&lt;br/&gt;&lt;br/&gt; El polinomio auxiliar es `\(4m^2-4m+17=0\)` cuyas raíces son `\(m=\frac{1}{2}\pm 2i.\)` Por lo que la solución general es `$$y=x^{1/2}(c_1\cos(2\ln x)+c_2\sin(2\ln x)).$$`
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

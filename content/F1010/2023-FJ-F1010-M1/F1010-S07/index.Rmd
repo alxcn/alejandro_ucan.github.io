@@ -1,22 +1,21 @@
 ---
-title: "S07: Sistemas de Ecuaciones Diferenciales p. II"
+title: "S07: Variación de Parámetros II"
 weight: 7
 subtitle: ""
-excerpt: "El método de los valores propios para resolver sistemas de EDOs"
+excerpt: "Usando sistemas de EDOs podemos resolver una EDO de segundo orden."
 date: '`r Sys.Date()`'
-slug: MA1035-session-07
+slug: F1010-session-07
 draft: false
 ---
 
 En esta sesión nuestros objetivos son:
 
-* Utilizar vectores y valores propios para resolver Sistemas de EDOs. <br/><br/>
-* Casos: valores propios distinto y valores propios repetidos. <br/><br/>
-* El Wronksiano como test para independencia lineal. 
+* Utilizar el Wronksiano para generar soluciones particulares. <br/><br/>
+* Resolver la solución de una EDO lineal de orden 2 no homogéneas. <br/><br/>
 
-El contenido para la **Sesión 07** se encuentra en following [slides](/slides/2022-AD-MA1035/MA1035-sesion-07).
+El contenido para la **Sesión 07** se encuentra en following [slides](/slides/2023-FJ-F1010/F1010-sesion-07).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-MA1035/MA1035-sesion-07", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-FJ-F1010/F1010-sesion-07", ratio = "4:3")
 ```
 

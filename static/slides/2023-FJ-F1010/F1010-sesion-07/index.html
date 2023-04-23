@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas de EDOs lineales P. II</title>
+    <title>Variación de Parametros II</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-04-23" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c85dd6d7341444c99ba441b36b1456c2","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x6ffc63bcddf42a8b6b6f8ee257de18d","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sistemas de EDOs lineales P. II
+# Variación de Parametros II
 ]
 .subtitle[
 ## Sesión 07
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-04-23
 ]
 
 ---
@@ -78,64 +78,49 @@ top:2em;right:2em;
 </div>
 # Objetivos de la Sesión
 
-* Utilizar vectores y valores propios para resolver Sistemas de EDOs. &lt;br/&gt;&lt;br/&gt;
-* Casos: valores propios distinto y valores propios repetidos. &lt;br/&gt;&lt;br/&gt;
-* El Wronksiano como test para independencia lineal. 
+* Utilizar el Wronksiano para generar soluciones particulares. &lt;br/&gt;&lt;br/&gt;
+* Resolver la solución de una EDO lineal de orden 2 no homogéneas. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Condiciones en nuestro sistema.
+# Motivación del Método
 
-&gt; __Convención:__ En lo que sigue del tema consideraremos que nuestro sistema es de dos ecuaciones con dos funciones incognitas cuyas EDOs son lineales de coeficientes constantes. Esto se describe de la forma general `$$\begin{array}{c} x'= a_{11}x+a_{22}y+f_1(t) \\ y'=a_{21}x+a_{22}y+f_2(t) \end{array}$$`
+&gt; Recordemos que mi EDO es de la forma `$$a_2(x)y''+a_1(x)y'+a_0(x)=g(x)$$` que podemos reescribir como `$$y''+P(x)y'+Q(x)y=f(x).$$` &lt;br/&gt;&lt;br/&gt; Sabemos que la solución general debe estar formada por una parte homogénea y una particular, además la parte de la solución homogénea está formada por un conjunto l.i `\(\{y_1(x),y_2(x)\}.\)`
 
----
-# Resolución de Sistemas de EDOs homogéneos.
+--
 
-&gt; Dado nuestro sistema `$$X'=AX$$` consideremos la matriz `\(A.\)` Supongamos que `\((\lambda,v)\)` formado por el valor propio de `\(A\)` y su vector propio asociado. Sea `\(F=e^{\lambda t}v,\)` el vector de funciones, entonces el vector `\(F\)` es un vector de soluciones del sistema. 
-
----
-### Ejemplo: 
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 3 &amp; 1 \\ 0 &amp; -3 \end{array}\right) X$$` Compruebe que el par `\(\left(3,(1,0)^t\right)\)` es un par de valor y vector propio de `\(A\)` y construye la solución.
+__Nuestra suposición fundamental:__ `$$y_p=u_1y_1+u_2y_2$$` donde `\(u_i\)` son funciones de `\(x\)` y son incógnitas.
 
 ---
-### Ejemplo: 
+## Determinación del método:
 
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X$$` Compruebe que el par `\(\left(-1,(-1,1)^t\right)\)` es un par de valor y vector propio de `\(A\)` y construye la solución. Comprueba que también es solución `\(-te^{-t}(1/2,0)^t.\)`
-
----
-## Test de Independencia Lineal
-
-&gt; __Definición:__ Consideremos los vectores función solución `\(X_1\)` y `\(X_2\)` para un sistema de EDOs. El __wronksiano__ de las soluciones es el determinante de la matriz `$$\left(\begin{array}{cc} x_1 &amp; x_2 \\ y_1  &amp; y_2\end{array}\right)$$` y se denota por `\(W(X_1,X_2).\)`
-
-&lt;br/&gt;&lt;br/&gt;
-&gt; __Teorema [de Abel o Criterio del Wronksiano]:__ Las soluciones `\(X_1\)` y `\(X_2\)` son __linealmente independientes__ si `$$W(X_1,X_2)\neq 0.$$`
+&gt; Si `\(y_p=u_1y_1+u_2y_2\)` es una solución a la EDO, entonces debe satisfacer la ecuación. Por lo que: `$$y_p''+Py_p'+Qy_p=f(x)$$` y de aquí podemos reescribirlo a `$$(y_1u_1'+y_2u_2')'+P(y_1u_1'+y_2u_2')+y_1'u_1'+y_2'u_2'=f(x),$$` de aquí podemos suponer que `$$\begin{array}{c} y_1u_1'+y_2u_2'=0\\ y_1'u_1'+y_2'u_2'=f(x)\end{array}.$$`
 
 ---
-### Ejemplo:
+## ¿Cómo resolvemos el sistema anterior?
 
-&gt; Compruebe que para el sistema `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X$$` las siguientes soluciones son linealmente independientes. `$$X_1=e^{-t}\left(\begin{array}{c} -1 \\ 1 \end{array}\right) \mbox{ y } X_2=t e^{-t}\left(\begin{array}{c} \frac{1}{2} \\ 0 \end{array}\right).$$`
-
+`$$u_1'=\frac{W_1}{W}\quad\mbox{y}\quad u_2'=\frac{W_2}{W}$$` dónde `$$W=\left|\begin{array}{cc}  y_1 &amp; y_2 \\ y_1' &amp; y_2' \end{array}\right|$$` `$$W_1= \left|\begin{array}{cc}  0 &amp; y_2 \\ f(x) &amp; y_2' \end{array}\right| \quad \mbox{y} \quad W_2=\left|\begin{array}{cc}  y_1 &amp; 0 \\ y_1' &amp; f(x) \end{array}\right|$$`
 
 ---
-## Método para obtener soluciones de un sistema. 
+### Ejemplo 1:
 
-&gt; __Método de Vectores y Valores propios__: Para el sistema `\(X'=AX.\)` Realice
-  1. Calcular los diferentes valores y vectores propios. 
-      * Si son valores propios reales distintos entonces las soluciones son `$$X_1=e^{\lambda_1}v_1\mbox{ y } X_2=e^{\lambda_2}v_2.$$`
-      * Sin son valores propios reales repetidos, entonces la soluciones son `$$X_1=e^{\lambda}v\mbox{ y }X_2=te^{\lambda}v_1$$` donde `\(v_1\)` es l.i de `\(v.\)`
-  2. Comprobar con el Criterio del Wronksiano que realmente son soluciones l.i.
-  3. Expresar la solución general como `$$X=c_1X_1+c_2X_2.$$`
-  
+&gt; Encuentra la solución particular de `\(y''-4y'+4y=(x+1)e^{2x}.\)`
+
+--
+Las soluciones de la EDO homogénea es `\(y_1(x)=e^{2x}\)` y `\(y_2(x)=xe^2x.\)`
+
+Entonces `$$u_1'=\frac{W_1}{W}=\frac{-(x+1)xe^{4x}}{e^{4x}}\quad\mbox{y}\quad u_2'=\frac{W_2}{W}=\frac{(x+1)e^{4x}}{e^{4x}}$$`
+
+Por lo que `\(u_1=\frac{-x^3}{3}-\frac{x^2}{2}\)` y `\(u_2=\frac{x^2}{2}+x.\)` Y la solución particular es `$$y_p=\left(-\frac{x^3}{3}-\frac{x^2}{2}\right)e^{2x}+\left(\frac{x^2}{2}+x\right)xe^{2x}=\frac{x^3}{6}e^{2x}+\frac{x^2}{2}e^{2x}.$$`
+
 ---
-## Actividad en clase:
+### Ejemplo 2:
 
-&gt; Resuelva los siguientes sistemas de EDOs `\(X'=AX\)` donde `\(A\)` es la matriz: &lt;br/&gt;&lt;br/&gt;
- * `\(A=\left(\begin{array}{cc} 1 &amp; 2 \\ 4 &amp; 3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} -4 &amp; 2 \\ -\frac{5}{2} &amp; 2 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 10 &amp; -5 \\ 8 &amp; -12 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 3 &amp; -1 \\ 9 &amp; -3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} -1 &amp; 3 \\ -3 &amp; 5 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 2 &amp; 4 \\ -1 &amp; 6 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+Encuentra la solución particular de la EDO `$$x^2y''-4xy'+6y=\frac{1}{x}.$$` Suponiendo que `\(y_1=x^2\)` y `\(y_2=x^3.\)`
+
+--
+
+`$$u_1'=\frac{W_1}{W}=\frac{-1}{x^4}\quad\mbox{y}\quad u_2'=\frac{W_2}{W}=\frac{x^{-1}}{x^4}$$` Por lo que `$$u_1=\frac{1}{3x^3}\quad\mbox{y}\quad u_2=\frac{-1}{4x^4}$$` `$$y_p=\frac{x^2}{3x^3}-\frac{x^3}{4x^4}=\frac{1}{12x}.$$`
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
