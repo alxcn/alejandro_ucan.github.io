@@ -1,6 +1,6 @@
 ---
-title: "1er Teorema de Traslación"
-subtitle: "Sesión 11"
+title: "Álgebra y Geometría de Vectores"
+subtitle: "Sesión 1"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -51,57 +51,63 @@ xaringanExtra::use_logo(
 
 # Objetivos de la Sesión
 
-* Introduciremos el 1er teorema de Traslación. <br/><br/>
-* Aplicaremos el 1er teorema de traslación en el calculo de transformadas. <br/><br/>
-* Aplicaremos este teorema a la solución de EDOs.
+* $\mathbb{R}^3$ como espacio vectorial. <br/><br/>
+* . <br/><br/>
+* Vector Products.
 ---
-# Motivación:
-<br/><br/>
+# Estructura de Espacio vectorial
 
-> Calcule la transformada de Laplace de la función $f(t)=e^{5t}t^3.$
-
-
----
-# 1er Teorema de Traslación
-
-> __Teorema:__ Sea $f(t)$ una función tal que $\mathcal{L}\{f(t)\}=F(s)$ exista. Entonces se cumple que $$\mathcal{L}\{e^{at}f(t)\}=F(s-a).$$
-
-<br/><br/>
-> _Implicaciones del Teorema:_ ahora cada que veamos una función conocida "trasladada" por un factor exponencial, esto se traduce en la transformada como una traslación en la $s.$
+Consideremos $$\mathbb{R}^3=\{\mathbf{x}=(x_1,x_2,x_3): x_j\in \mathbb{R}\}$$ con las siguientes propiedades:
+   1. $\mathbf{x}+\mathbf{y}=(x_1,x_2,x_3)+(y_1,y_2,y_3)=(x_1+y_1,x_2+y_2,x_3+y_3)$.
+   2. Si $c\in\mathbb{R},$ entonces $c\mathbf{x}=c(x_1,x_2,x_3)=(cx_1,cx_2,cx_3).$$
+   3. $c(\mathbf{x}+\mathbf{y})=c\mathbf{x}+c\mathbf{y}.$
+   4. $(c+d)\mathbf{x}=c\mathbf{c}+d\mathbf{x}.$
+   5. $\mathbf{x}+\mathbf{y}=\mathbf{y}+\mathbf{x}.$
 
 ---
-## Aplicando el teorema:
+# Geometría Vectorial de $\mathbb{R}^3.$$
 
-### Ejemplo (Calculo directo):
-> Calcule las transformadas de Laplace de $f(t)=e^{5t}t^3,$ $f(t)=e^{-2t}\cos(4t)$ y $f(t)=e^{-2t}$ si $t>1$ y $f(t)=0$ de lo contrario.
-
----
-### Ejemplo (Calculo de Inversas):
-
-> Calcule la Transformada inversa como se te indica: 
-$$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}$$
+% Geogebra o Mathematica
 
 ---
-### Ejemplo (Calculo de Inversas):
+# Componentes de un vectorial
 
-> Calcule la Transformada inversa como se te indica:
-$$\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}$$
-
----
-### Ejemplo (Solución de EDOs)
-
-> Encuentre la solución de la EDO $$y''-6y'+9y=t^2e^{3t},\quad y(0)=2,\quad y'(0)=17.$$
+> Un __vector__ se define como una cantidad que tiene una magnitud y una dirección, para $\mathbb{x}\in\mathbb{R}^3:$$
+  1. _Magnitud:_ la norma o magnitud del vector $\mathbf{x}$ se define por la cantidad $$|\mathbf{x}|=\sqrt{x_1^2+x_2^2+x_3^2}.$$
+  2. _Dirección:_ la dirección del vector $\mathbf{x}$ es aquella que tomamos cuando nos movemos del origen $\mathbf{o}=(0,0,0)$ hacía $\mathbf{x}.$
 
 ---
-### Ejemplo (Solución de EDOs)
+# Producto Escalar
 
-> Encuentre la solución de la EDO $$y''+4y'+6y=1+e^{-t},\quad y(0)=0,\quad y'(0)=0.$$
+> __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _producto escalar_ de estos vectores se define como $$\mathbf{v}\cdot \mathbf{w}=\langle \mathbf{v},\mathbf{w}\rangle = v_1w_1+ v_2w_2+v_3w_3.$$
+
+##### Ejemplo:
+ $$(1,2,3)\cdot (-3,1,1)=\langle (1,2,3),(-3,1,1)\rangle = (1)(-3)+(2)(1)+(3)(1)=2.$$
 
 ---
-# Actividad 
+## Propiedades del Producto Escalar
 
-> Utiliza el 1er teorema de traslación para encontrar la solución a las EDOs:
-* $y'+4y=e^{-4t},\, y(0)=2.$
-* $y'-y=1+te^{t},\, y(0)=0.$
-* $y''+2y'+y=0,\, y(0)=1,\, y'(0)=1.$
-* $y''-4y'+4y=t^3e^{2t},\, y(0)=0,\, y'(0)=0.$
+  1. _Conmutativo:_ $$\mathbf{v}\cdot\mathbf{w}=\mathbf{w}\cdot\mathbf{v}.$$ <br/><br/>
+  2. _Magnitud:_ $$|\mathbf{v}|^2=\mathbf{v}\cdot\mathbf{v}.$$ <br/><br/>
+  3. _Distributiva:_ $$(\mathbf{v}_1+\mathbf{v}_2)\cdot\mathbf{w}=\mathbf{v}_1\cdot \mathbf{w}+\mathbf{v}_2\cdot \mathbf{w}.$$
+ ---
+ ## Geometría del Producto Escalar
+
+ > __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _ángulo_ $\theta$ entre estos vectores se define como el valor que satisface $$\langle \mathbf{v},\mathbf{w}\rangle=|\mathbf{v}| |\mathbf{w}|\cos(\theta).$$
+
+ ---
+ # Producto Vectorial
+ 
+ > __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _producto vectorial_ de estos vectores se define como el vector $$\mathbf{v}\times \mathbf{w}=\det \left( \begin{array}{ccc} \mathbf{i} & \mathbf{j} & \mathbf{k}\\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\right).$$
+
+---
+## Propiedades del Producto Vectorial
+
+  1. _Anticonmutatividad:_ $$\mathbf{v}\times\mathbf{w}=-\mathbf{w}\times\mathbf{v}.$$ <br/><br/>
+  2. _Paralelismo:_ si $\mathbf{v}$ y $\mathbf{w}$ son paralelos, entonces $$\mathbf{v}\times\mathbf{w}=\mathbf{o}.$$
+  3. _Perdedicularidad:_ $\mathbf{v}\times\mathbf{w}$ es perpendicular a $\mathbf{v}$ y $\mathbf{w},$ $$(\mathbf{v}\times \mathbf{w})\cdot \mathbf{v}=0.$$
+  4. _Distributiva:_ $$(\mathbf{v}_1+\mathbf{v}_2)\times\mathbf{w}=\mathbf{v}_1\times \mathbf{w}+\mathbf{v}_2\times \mathbf{w}.$$
+---
+## Geometría del Producto Vectorial
+
+> __Definición:__ Dado un plano $L$ en $\mathbb{R}^3,$ el _vector normal_ es el producto vectorial de cualquiera de dos de sus elementos normalizado, es decir, si $\mathb{v},\mathbf{w}\in L,$ entonces $\mathbf{n}_L=\frac{\mathbf{v}\times\mathbf{w}}{|\mathbf{v}\times\mathbf{w}|}.$$ 
