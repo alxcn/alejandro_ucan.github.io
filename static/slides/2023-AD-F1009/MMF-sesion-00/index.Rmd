@@ -97,6 +97,24 @@ La función $c(t)=(\cos(t),\sin(t))$ con $t\in[0,2\pi)$ representa el circulo un
 El plano es una superficies y también $$s(u,v)=(\cos(u)\cos(v),\cos(u)\sin(v),\sin(u)$$ con $(u,v)\in[0,2\pi)\times[0,\pi]$ que corresponde a una semiesféra.
 
 ---
+# Parametrización de Curvas-Superficies
+
+> __Definición:__ Una _parametrización_ de una curva o superficie es una función que toma un intervalo o caja y lo mapea hacía la curva o superficie. En este curso, las parametrizaciones serán funciones continuas y diferenciables, y pueden ser funciones a trozos.
+
+#### Ejemplo de parametrizaciones de Curvas:
+
+* La parametrización de una hélice es $$h(t)=(\cos(t),\sin(t),t)$$ con $t\in\mathbb{R}.$ <br/><br/>
+* La parametrización de un segmento de recta entre $p$ y $q$ es $$s(t)=p+t(q-p)$$ con $t\in[0,1].$ <br/><br/>
+* La parametrización de un cardiode es $$c(t)=(2\cos(t)-\cos(2t),2\sin(t)-\sin(2t))$$ con $t\in[0,2\pi].$ <br/><br/>
+
+----
+#### Ejemplo de parametrizaciones de Superficies:
+
+* La parametrización de un helicoide es $$h(u,v)=(u\cos(v),u\sin(v),v)$$ con $(u,v)\in\mathbb{R}\times[0,2\pi).$ <br/><br/>
+* La parametrización de un toroide es $$t(u,v)=((2+\cos(v))\cos(u),(2+\cos(v))\sin(u),\sin(v))$$ con $(u,v)\in[0,2\pi)\times[0,2\pi).$ <br/><br/>
+* La parametrización de una esfera es $$s(u,v)=(\cos(u)\cos(v),\cos(u)\sin(v),\sin(u)$$ con $(u,v)\in[0,2\pi)\times[0,\pi].$ <br/><br/>
+
+---
 # Componentes de un vectorial
 
 > Un __vector__ se define como una cantidad que tiene una magnitud y una dirección, para $\mathbb{x}\in\mathbb{R}^3:$$
@@ -104,3 +122,9 @@ El plano es una superficies y también $$s(u,v)=(\cos(u)\cos(v),\cos(u)\sin(v),\
   2. _Dirección:_ la dirección del vector $\mathbf{x}$ es aquella que tomamos cuando nos movemos del origen $\mathbf{o}=(0,0,0)$ hacía $\mathbf{x}.$
 ---
 # Actividad
+
+* Si los vectores $\mathbf{u}=(1,2,3)$ y $\mathbf{v}=(2,1,3),$ calcule los $2\mathbf{u},\, 5\mathbf{u}-1/2\mathbf{v}$ y $\mathbf{u}+2\mathbf{v}-2\mathbf{u}. <br/><br/>
+* Pruebe que en cualquier triángulo, las medianas se intersectan a un punto que es dos tercios del camino desde cada vértice hacía el punto medio del lado opuesto. <br/><br/>
+* Pruebe que en cualquier triángulo, las bisectrices se intersectan a un punto que es equidistante de los lados del triángulo. <br/><br/>
+* Parametrice la curva x=\left(\frac{6+y}{3}\right)^2$
+* Parametrice la superficie $1+z^2-x^2-y^2=0$ sobre el rectángulo $[-1,1]\times[-3,3].$
