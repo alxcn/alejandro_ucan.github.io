@@ -1,6 +1,6 @@
 ---
-title: "Cálculo en Varias Variables"
-subtitle: "Sesión 02"
+title: "Introducción al Análisis Vectorial"
+subtitle: "Sesión 03"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,9 +43,25 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Determinar la existencia de límites en campos escalares. <br/> <br/>
- * Calcular límites en campos escalares y en campos vectoriales. <br/> <br/>
- * Calcular derivadas parciales de un campo escalar.
+ * Introducir los campos vectoriales y sus gráficas. <br/> <br/>
+ * Calcular límites en campos vectoriales. <br/> <br/>
+ * Conocer las razones de cambio de un campo vectorial.
+
+---
+# Campos vectoriales
+
+> __Definición:__ Una _función vectorial_ es una función que asigna a cada vector de un conjunto $A\subset \mathbb{R}^n$ un vector de $\mathbb{R}^m.$ <br/><br/> En símbolos, $$f:A\subset \mathbb{R}^n\to \mathbb{R}^m.$$ <br/><br/> Si $m=1$ decimos que la función es un _campo escalar_ y si $m>1$ decimos que la función es un _campo vectorial_.
+
+#### Ejemplos:
+
+1. $f(x,y)=x^2+y^2+2$ es un campo escalar. <br/><br/>
+2. $f(x,y)=(x^2+y^2+2,x+y)$ es un campo vectorial.
+3. Los grafos de direcciónes de viento o corrientes oceanicas.
+
+---
+## Gráfica de un campo vectorial
+
+> La gráfica de un campo vectorial $f:\mathbb{R}^n\to \mathbb{R}^m$ es el conjunto de todos los vectores $(\vec{x},f(\vec{x}))$ en $\mathbb{R}^{n+m}.$ Si bien es complicado realizar un bosquejo de esta, usualmente lo que hacemos en espacios de dimensión $2$ o $3$ es realizar un bosquejo de los vectores $f(\vec{x})$ en cada punto $\vec{x}$ del dominio.
 
 ---
 # Límites
@@ -56,127 +72,55 @@ En símbolos escribimos, $$\lim_{\vec{x}\to \vec{x}_0}f(\vec{x})=\vec{L}.$$
 ---
 # Ejemplo:
 
-Calcule el límite de la función $f(x,y)=x^2+y^2+2$ cuando $(x,y)$ tiende a $(0,1).$
+Por ejemplo, si consideramos el campo vectorial $f(x,y)=(x+y+2,x+y)$ y queremos calcular el límite de $f$ cuando $(x,y)$ tiende a $(0,0).$ <br/><br/> Para esto, consideremos un entorno $U$ de $(2,0)$, por ejemplo, $U=B((2,0),1)$ (o séa, la bola de radio $1$ centrada en $(2,0)$). <br/><br/> Entonces, si queremos que $f(V)\subset U$ para algún entorno $V$ de $(0,0)$, entonces necesitamos que $f(V)$ esté contenido en $U.$ 
 
-<iframe src="https://www.geogebra.org/calculator/nhnmmvej?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-
----
-# No Ejemplo:
-
-Calcule el límite de la función $f(x,y)=\displaystyle{\frac{x^2-y^2}{x^2+y^2}}$ cuando $(x,y)$ tiende a $(0,0).$
-
-<iframe src="https://www.geogebra.org/calculator/hywpmx8h?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
----
-# ¿Cuándo no existe un límite?
-
-> Decimos que $$\lim_{\vec{x}\to \vec{x}_0}f(\vec{x})=\vec{L}$$ existe si para cualquier trayectoria $c(t)$ en $\mathbb{R}^m$ que cumpla $c(0)=\vec{x}_0$ se cumple que $$\lim_{t\to 0}f(c(t))=\vec{L}.$$ <br/><br/>
-Entonces, si existen __dos trayectorias__ con límites distintos, entonces el límite completo no existe.
+Para esto, $|f(x,y)-(2,0)|<1,$ esto implica que $$\sqrt{(x+y+2-2)^2+(x+y-0)^2}<1.$$ Lo que es equivalente a $$\sqrt{2}|x+y|<1.$$ Entonces, si consideramos $V=B((0,0),1/2\sqrt{2})$, entonces $f(V)\subset U.$
 
 ---
-# Ejemplo
+# Continuidad en Campos vectoriales
 
-Calcule el límite de la función $f(x,y)=\displaystyle{\frac{x^2-y^2}{x^2+y^2}}.$
+> __Definición:__ Sea $f:A\subset \mathbb{R}^n\to \mathbb{R}^m$ un campo vectorial. Diremos que $f$ es _continua_ si para todo $\vec{x}_0\in A$ se cumple que $$\lim_{\vec{x}\to \vec{x}_0}f(\vec{x})=f(\vec{x}_0).$$ 
 
-Pensemos en la trayectoria, $c(t)=(t,t)$ (o séa la recta $x=y$), notemos que $c(0)=(0,0).$ $$f(c(t))=\frac{t^2-t^2}{t^2+t^2}=\frac{0}{2t^2}=0.$$
+##### Nota:
 
-<br/><br/>
-
-Pensemos en le trayectoria, $s(t)=(0,t)$ (o séa, la recta $x=0$), notemos que $s(0)=(0,0).$
-
-$$f(s(t))=\frac{-t^2}{t^2}=-1.$$
----
-# ¿Cómo calculamos un límite?
-
-Para realizar esto necesitamos recurrir al concepto de __continuidad__. <br/>
-
-> Una función $f:\mathbb{R}^n\to \mathbb{R}^m$ es continua en el vector $\vec{v}\in\mathbb{R}^n$ si se cumple:
-- Si $\displaystyle{\lim_{\vec{x}\to \vec{v}}f(\vec{x})}$ existe,
-- y $\displaystyle{\lim_{\vec{x}\to \vec{v}}f(\vec{x})}=f(\vec{v}).$
-
-
-La definición anterior puede ser un poco contraintuitiva, pero para fines practicos:
-
-> Un _campo escalar_ es __continuo__ si la gráfica no tiene huecos o roturas. Un _campo vectorial_ es __continuo__, si cada función coordenada (en la regla de asignación) es continuo cuando las tomamos como funciones de una variable o campos escalares.
-
+Para fines prácticos, la continuidad de un campo vectorial está dada a través de la continuidad de sus funciones componente. Si estas funciones componente son continuas, entonces el campo vectorial total es continuo.
 ---
 # Ejemplo:
 
-- La función $f(x,y)=3x^2+2xy+y^3$ es continua para todo vector de $\mathbb{R}^2.$ <br/>
-
-- La función $f(x,y,z)=\sin(x+y)+\cos(z)+e^z$ es continua para todo vector de $\mathbb{R}^3.$ <br/>
-
+- La función $f(x,y)=(3x+2,2y-3)$ es continua en todo $\mathbb{R}^2.$ <br/>
 - La función $f(x,y)=(\sin(x),\cos(y))$ es continua para todo vector de $\mathbb{R}^2.$ <br/>
 
-- La función $f(x,y)=\frac{1}{x+y}$ es continua para todo vector de $\mathbb{R}^2$ excepto $(0,0).$ <br/>
+- La función $f(x,y,z)=\left(\frac{1}{x+y},z,3x+2z\right)$ es continua para todo vector de $\mathbb{R}^3$ excepto para aquellos donde $x+y=0.$ <br/>
+---
+# Campo Gradiente
 
-- La función $f(x,y)=\sec(x)+\csc(y)$ es discontinua en varias partes de $\mathbb{R}^2.$
+> __Definición:__ Dada una función escalar $f:\mathbb{R}^n\to\mathbb{R},$ podemos definir un campo vectorial asociado a $f$ conocido como _campo gradiente_ definida como las razones de cambio de la función $f$ en todas las direcciones estándares $$\nabla f=\left(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},\cdots, \frac{\partial f}{\partial x_n}\right).$$
+
+#### Ejemplo:
+
+Si $f(x,y,z)=\sqrt{x^2+y^2+z^2},$ entonces el campo gradiente asociado es $$\nabla f= \left(\frac{x}{\sqrt{x^2+y^2+z^2},\frac{y}{\sqrt{x^2+y^2+z^2},\frac{z}{\sqrt{x^2+y^2+z^2}\right).$$
 
 ---
-# Cálculo de Límites:
+## Derivadas Direccionales
 
-> Para calcular el límite de una función en varias variables realizamos el siguiente razonamiento:<br/><br/>
-  - ¿La función es continua? Si la función es continua, entonces el límite será el resultado de evaluar la función en el valor a donde tendemos. <br/><br/>
-  - ¿La función no es continua? Entonces comprobamos si existe el límite utilizando trayectorias. <br/><br/>
-  
-__Ejemplo 1:__ Calcule $\displaystyle{\lim_{\vec{x}\to (0,1)}3x^2+2y^3-2xy-1}$
+> Supongamos que $f:\mathbb{R}^n\to\mathbb{R}$ es una función y $p$ es una partícula que recorre una curva $c:[a,b]\to\mathbb{R}^n$ en el espacio. <br/><br/> La _derivada direccional_ de $f$ en la dirección de $c$ en el punto $t$ es $$\frac{d}{dt}f(c(t))=\lim_{h\to 0}\frac{f(c(t+h))-f(c(t))}{h}.$$
 
+##### Nota:
+La derivada direccional nos permite conocer la razón de cambio de una partícula cuando recorre un camino en particular.
 
 ---
-# Ejemplos:
+#### Ejemplo:
 
-__Ejemplo 2:__ Calcule $\displaystyle{\lim_{\vec{x}\to (1,1)}(3x^2,-2xy,3-x^2y^2)}$
-<br/><br/><br/><br/><br/><br/>
-
-__Ejemplo 3:__ Calcule $\displaystyle{\lim_{\vec{x}\to(0,0,0)}e^{x^2+y+z^3}}$
-
+> Un insecto se halla en un medio tóxico, y los niveles de toxicidad se distribuyen mediante la función $$f(x,y)=\frac{1}{x^2+y^2+1}.$$ Si el insecto se encuentra en el punto $(1,1)$ y se mueve en la dirección del vector $v=(1,1)$, ¿cuál es la razón de cambio de la toxicidad en el punto $(1,1)$?
 
 ---
-# Ejemplos: 
+## Aplicaciones del Campo Gradiente. 
 
-__Ejemplo 4:__ Calcule límite $\displaystyle{\lim_{(x,y)\to (0,0)}\frac{xy\cos(y)}{3x^2+y^2}}.$
-<br/><br/><br/><br/><br/><br/>
-
-__Ejemplo 5:__ Calcule límite $\displaystyle{\lim_{(x,y,z)\to (0,0,0)}\frac{xy+xz^2+yz^2}{x^2+y^2+z^4}}.$
+> __Proposición:__ Sea $f:\mathbb{R}^n\to\mathbb{R}$ y $c:[0,1]\to\mathbb{R}^n$ una curva. La derivada direccional de $f$ en la dirección $c'(t)$ en el tiempo $t$ está dada por $$\nabla f(c(t))\cdot c'(t).$$ 
+<br/><br/><br/>
 
 ---
-# Derivación
+# Actividad
 
-La derivación si hace distinción entre campos escalares y vectoriales, pero en ambas necesitamos la siguiente definición:
-
-> __Definición:__ Supongamos que tenemos un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ con variables $(x_1,x_2,\cdot,x_m).$ Definimos la __derivada parcial de $f$ respecto a $x_j$__ como el límite $$\lim_{h\to 0} \frac{f(x_1,\cdots,x_j+h,\cdots,x_m)-f(x_1,\cdots,x_j,\cdots,x_m)}{h}.$$ A tal derivada parcial se le denotará por $\frac{\partial f}{\partial x_j}$ o $D_{x_j}f.$
-
-
-La definición anterior solamente indica, que la derivada parcial de una función respecto a cualquiera de sus variables es simplemente derivar la función respecto a la variable deseada y el resto de las variables se consideran constantes.
-
----
-# Ejemplo 1:
-
-Encuentre $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$ para el campo escalar $$f(x,y) =3x^2y+e^y+4\cos(x).$$
-
-
----
-# Ejemplo 2:
-
-Calcule todas las derivadas parciales del campo escalar $f(x,y,z)=\ln(xyz)+x+y+z.$
-
----
-# Visión geométrica de las Derivadas Parciales
-
-Aquí vemos las derivadas parciales de la función $f(x,y)=x^2+xy+y^3$ en el punto $(1,1).$
-
-<iframe src="https://www.geogebra.org/calculator/uagaabd5?embed" width="1200" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-
----
-# Modelación con Derivadas Parciales:
-
-La altura de un terreno está dada por la función $h(x,y)=e^{x+y}\sqrt{4-3x^2-2y^2},$ donde $h$ está medida en $km,$ al igual que $x$ y $y.$ ¿A qué razón cambia la altura cuando nos restringimos a la dirección de $y$? ¿A qué razón cambia la altura cuando nos restringimos a $x$?
-
-
----
-# Regla de la Cadena
-
-Supongamos que $f(x,y)$ es un campo escalar, y supongamos que existen campos escalares $x=g(s,t)$ y $y=h(s,t).$ Entonces las $f$ se puede expresar como una función de $s$ y $t,$ y las derivadas parciales respecto a $s$ y $t$ están dadas por:
-
-$$\frac{\partial f(g(s,t),h(s,t))}{\partial s}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial s}$$
-$$\frac{\partial f(g(s,t),h(s,t))}{\partial t}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial t}$$
-__Ejemplo:__ Supongamos que $f(x,y)=e^x\sin y,$ y $x=st^2$ y $y=s^2t.$ Calcule las derivadas parciales respecto a $s$ y $t$ de la función $f(g,h).$
+1. Pruebe que la definición de derivada direcciónal no depende de la curva. Es decir, si $c_1$ y $c_2$ son dos curvas que pasan por el punto $p$ y tienen la misma dirección en $p$, entonces las derivadas direccional coinciden. <br/><br/>
+2. Si la razón de cambio total en una dirección es el valor absoluto de la derivada direccional. Pruebe que el vector gradiente de una función $f$ en $p$ es el vector unitario que maximiza la razón de cambio total de $f$ en $p.$ <br/><br/>
