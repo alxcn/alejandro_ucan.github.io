@@ -115,31 +115,37 @@ enableEmoji = true
     title = "i.rracionalx"
     url = "/i.rracionalx/"
     weight = 3
-  #[[menu.header]]
-  #  name = "F1009"
-  #  title = "Métodos Matemáticos para la Física"
-  #  url = "/f1009/"
-  #  weight = 6
   [[menu.header]]
-    name = "MA1029"
-    title = "Modelación Intermedia"
-    url = "/ma1029/"
-    weight = 7
-  [[menu.header]]
-    name = "F1010"
-    title = "Modelación con ED"
-    url = "/f1010/"
-    weight = 7
+    name = "photos"
+    title = "My Favorite Photos"
+    url = "/photos/"
+    weight=4
   [[menu.header]]
     name = "Teaching"
     title = "Teaching Information"
     url = "/teaching/"
     weight = 5
+  [[menu.header]]
+    name = "F1009"
+    title = "Métodos Matemáticos para la Física"
+    url = "/f1009/"
+    weight = 6
+  [[menu.header]]
+    name = "MA1033"
+    title = "Análisis de Ecuaciones Diferenciales"
+    url = "/ma1033/"
+    weight = 7
+  [[menu.header]]
+    name = "MA1034"
+    title = "Modelación de procesos mediante Álgebra Lineal"
+    url = "/ma1034/"
+    weight = 8
   #[[menu.header]]
-  #  name = "photos"
-  #  title = "My Favorite Photos"
-  #  url = "/photos/"
-  #  weight=4
+  #  name = "MA103"
+  #  title = "Modelación en Ingenieria mediante Sistemas Dinámicos"
+  #  url = "/ma1035/"
+  #  weight = 8
+
     
     
   # Configure footer  
@@ -148,31 +154,17 @@ enableEmoji = true
   #  title = "License"
   #  url = "/license/"
   #  weight = 1
-  [[menu.footer]]
-    name = "Contact"
-    title = "Contact form"
-    url = "/contact/"
-    weight = 1
-  #[[menu.header]]
-  #  name = "MA1035"
-  #  title = "Modelación en Ingenieria mediante Sistemas Dinámicos"
-  #  url = "/ma1035/"
-  #  weight = 8
+
   #[[menu.header]]
   #  name = "F1017B"
   #  title = "Sistemas Electromagnéticos"
   #  url = "/f1017/"
   #  weight = 7
   [[menu.header]]
-    name = "MA2007B"
-    title = "Uso de geometría y topología para ciencia de datos"
-    url = "/ma2007b/"
+    name = "MA3014"
+    title = "Geometric Structures on the Borromean Rings"
+    url = "/ma3014/"
     weight = 9
-  [[menu.header]]
-    name = "F1010"
-    title = "Modelación con Ecuaciones Diferenciales"
-    url = "/f1010/"
-    weight = 6
   
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
