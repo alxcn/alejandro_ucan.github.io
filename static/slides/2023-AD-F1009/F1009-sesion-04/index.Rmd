@@ -47,7 +47,7 @@ xaringanExtra::use_scribble()
  * Conocer la definición de divergencia y rotacional de un campo vectorial. <br/><br/>
  * Interpretar la divergencia y rotacional de un campo vectorial. <br/><br/>
 
- ---
+---
 # Operador Nabla
 
 > __Definición:__ El _operador nabla_ denotado por $\nabla$ y definido por $$\nabla=\partial_x\mathbf{i}+\partial_y\mathbf{j}+\partial_z\mathbf{k}$$ es un operador diferencial vectorial que actúa sobre un campo escalar o vectorial. <br/><br/>
@@ -64,6 +64,11 @@ xaringanExtra::use_scribble()
 ---
 ## Interpretación de la divergencia
 
+Supongamos que tenemos un fluido que se mueve a velocidad dada por el campo $\mathbf{V}$ con una densidad $\varrho$ y queremos observar que sucede con el flujo en una curva: $$\varrho(\mathbf{r}(t))\mathbf{V}(\mathbf{r}(t)).$$<br/><br/>
+Queremos calcular la _razón de cambio_ del flujo en una unidad de volumen $\Delta x\Delta y\Delta z.$
+
+---
+
 ---
 # Rotacional
 
@@ -71,7 +76,7 @@ xaringanExtra::use_scribble()
 
 #### Ejemplo
 
-Si $\mathbf{F}=-y\mathbf{i}+x\mathbf{y}$, entonces $\nabla\times\mathbf{F}=2\mathbf{k}$.
+Si $\mathbf{F}=-y\mathbf{i}+x\mathbf{j}$, entonces $\nabla\times\mathbf{F}=2\mathbf{k}$.
 
 ---
 ## Interpretación del Rotacional
@@ -80,6 +85,6 @@ Si $\mathbf{F}=-y\mathbf{i}+x\mathbf{y}$, entonces $\nabla\times\mathbf{F}=2\mat
 ---
 # Actividad 
 
-> Calcula la divergencia del campo $\mathbf{F}=e^x\cos(y)\mathbf{i}+e^y \sin(x)\mathbf{j}+z^2\mathbf{k}$ y el rotacional del campo $\mathbf{F}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}$. <br/><br/>
-> Calcula la divergencia y el rotacional del campo $\mathbf{F}=\frac{x}{\sqrt{x^2+y^2+z^2}\mathbf{i}+\frac{y}{\sqrt{x^2+y^2+z^2}\mathbf{j}+\frac{z}{\sqrt{x^2+y^2+z^2}\mathbf{k}.$
-> Si $\phi$ es una función escalar y $\mathbf{V}$ es un campo vectorial. Prueba que $$\nabla \cdot (\phi\mathbf{V})=\nabla\phi \cdot \mathbf{V}+\phi(\nabla \cdot \mathbf{V}).$$
+1. Calcula la divergencia del campo $\mathbf{F}=e^x\cos(y)\mathbf{i}+e^y \sin(x)\mathbf{j}+z^2\mathbf{k}$ y el rotacional del campo $\mathbf{F}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}$.
+1. Calcula la divergencia y el rotacional del campo $\mathbf{F}=\frac{x}{\sqrt{x^2+y^2+z^2}}\mathbf{i}+\frac{y}{\sqrt{x^2+y^2+z^2}}\mathbf{j}+\frac{z}{\sqrt{x^2+y^2+z^2}}\mathbf{k}.$
+1. Si $\phi$ es una función escalar y $\mathbf{V}$ es un campo vectorial. Prueba que $$\nabla \cdot (\phi\mathbf{V})=\nabla\phi \cdot \mathbf{V}+\phi(\nabla \cdot \mathbf{V}).$$

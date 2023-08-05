@@ -1,0 +1,22 @@
+---
+title: "S01: Modelado y EDO's"
+weight: 1
+subtitle: ""
+excerpt: "Aprenderemos como construir un modelo para un problema de la vida real"
+date: '`r Sys.Date()`'
+slug: MA1033-session-01
+draft: false
+---
+
+En esta sesión de **MA1033** nuestros objetivos son:
+
+
+* Introduciendo la teoría de Modelado. <br/><br/>
+* Modelando con EDOs. <br/><br/>
+* Definir EDOs. <br/><br/>
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2023-AD-MA1033/MA1033-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1033/MA1033-sesion-01", ratio = "4:3")
+```

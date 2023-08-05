@@ -15,4 +15,6 @@ Currently I'm a full-time professor at the Instituto Tecnológico y de Estudios 
 
 My current project is related to the study of complex projective structures on special manifolds, like links' complements or Deligne-Mostow lattices quotients and MCG in collaboration with Irene Pasquinelli and Elisha Falbel. 
 
+I've been working on projects where we use Topological Data Analysis in divers dataset to understand their geometry and topology, and provide insights.
+
 Other of my interest are: programming, writing (with the blog i.rracionalx) and photography. :mx:

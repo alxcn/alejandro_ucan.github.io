@@ -14,7 +14,6 @@ output:
       ratio: 16:9
       countIncrementalSlides: true
 ---
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
@@ -41,7 +40,7 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
----
+
 # Objetivos:
 
  * Introducir los diferentes productos de vectores. <br/> <br/>
@@ -59,18 +58,24 @@ xaringanExtra::use_scribble()
 ---
 ## Propiedades del Producto Escalar
 
-  1. _Conmutativo:_ $$\mathbf{v}\cdot\mathbf{w}=\mathbf{w}\cdot\mathbf{v}.$$ <br/><br/>
-  2. _Magnitud:_ $$|\mathbf{v}|^2=\mathbf{v}\cdot\mathbf{v}.$$ <br/><br/>
-  3. _Distributiva:_ $$(\mathbf{v}_1+\mathbf{v}_2)\cdot\mathbf{w}=\mathbf{v}_1\cdot \mathbf{w}+\mathbf{v}_2\cdot \mathbf{w}.$$
- ---
- ## Geometría del Producto Escalar
+  * _Conmutativo:_ $$\mathbf{v}\cdot\mathbf{w}=\mathbf{w}\cdot\mathbf{v}.$$ <br/><br/><br/>
+  
+  * _Magnitud:_ $$|\mathbf{v}|^2=\mathbf{v}\cdot\mathbf{v}.$$ <br/><br/><br/>
+  
+  * _Distributiva:_ $$(\mathbf{v}_1+\mathbf{v}_2)\cdot\mathbf{w}=\mathbf{v}_1\cdot \mathbf{w}+\mathbf{v}_2\cdot \mathbf{w}.$$ <br/><br/>
+
+
+***
+---
+## Geometría del Producto Escalar
 
  > __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _ángulo_ $\theta$ entre estos vectores se define como el valor que satisface $$\langle \mathbf{v},\mathbf{w}\rangle=|\mathbf{v}| |\mathbf{w}|\cos(\theta).$$
 
- ---
- # Producto Vectorial
+
+---
+# Producto Vectorial
  
- > __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _producto vectorial_ de estos vectores se define como el vector $$\mathbf{v}\times \mathbf{w}=\det \left( \begin{array}{ccc} \mathbf{i} & \mathbf{j} & \mathbf{k}\\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\right).$$
+ > __Definición:__ Sean $\mathbf{v},\mathbf{w}\in\mathbb{R}^3,$ el _producto vectorial_ de estos vectores se define como el vector $$\mathbf{v}\times \mathbf{w}=\det \left(\begin{array}{ccc} \mathbf{i} & \mathbf{j} & \mathbf{k}\\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\end{array}\right).$$
 
 ---
 ## Propiedades del Producto Vectorial
@@ -82,7 +87,7 @@ xaringanExtra::use_scribble()
 ---
 ## Geometría del Producto Vectorial
 
-> __Definición:__ Dado un plano $L$ en $\mathbb{R}^3,$ el _vector normal_ es el producto vectorial de cualquiera de dos de sus elementos normalizado, es decir, si $\mathb{v},\mathbf{w}\in L,$ entonces $\mathbf{n}_L=\frac{\mathbf{v}\times\mathbf{w}}{|\mathbf{v}\times\mathbf{w}|}.$$ 
+> __Definición:__ Dado un plano $L$ en $\mathbb{R}^3,$ el _vector normal_ es el producto vectorial de cualquiera de dos de sus elementos normalizado, es decir, si $\mathbf{v},\mathbf{w}\in L,$ entonces $$\mathbf{n}_L=\frac{\mathbf{v}\times\mathbf{w}}{|\mathbf{v}\times\mathbf{w}|}.$$ 
 
 > __Definición:__ Si $S$ es una superficie paramétrica, el _vector normal_ es el producto vectorial de los vectores tangentes $\mathbf{r}_u$ y $\mathbf{r}_v,$ es decir, $\mathbf{n}_S=\mathbf{r}_u\times\mathbf{r}_v$ donde $r(u,v)$ es la parametrización de $S.$
 
@@ -92,7 +97,7 @@ El vector normal nos permite determinar la "orientación" de la superficie, sabi
 ---
 # Trabajo
 
-> Supongamos que una partícula $p$ se desplaza sobre una curva $c(t)$ con $t\in[a,b]$ y conocemos una fuerza $\mathbf{F}$ que afecta el desplazamiento de $p$ en cada punto de $c(t).$ El _trabajo_ realizado por $\mathbf{F}$ del punto $t_1$ al $t_2$ está dado por $$\mathbf{F}\cdot (c(t_2)-c(t_1).$$ Suponiendo que queremos conocer el trabajo instantaneo, entonces $$\mathbf{F}\cdot c'(t),$$ donde $c'(t)$ es el vector tangente a la curva $c.$
+> Supongamos que una partícula $p$ se desplaza sobre una curva $c(t)$ con $t\in[a,b]$ y conocemos una fuerza $\mathbf{F}$ que afecta el desplazamiento de $p$ en cada punto de $c(t).$ El _trabajo_ realizado por $\mathbf{F}$ del punto $t_1$ al $t_2$ está dado por $$\mathbf{F}\cdot (c(t_2)-c(t_1)).$$ Suponiendo que queremos conocer el trabajo instantaneo, entonces $$\mathbf{F}\cdot c'(t),$$ donde $c'(t)$ es el vector tangente a la curva $c.$
 
 ---
 # Torque 
@@ -129,4 +134,11 @@ __Afirmación:__ $$\mathbf{u}\times (\mathbf{v}\times \mathbf{w})=(\mathbf{u}\cd
 ---
 # Actividad
 
+1. Calcula el volumen del paralelepípedo formado por los vectores $\mathbf{o},\,\mathbf{v}=(1,0,1),\, \mathbf{w}=(0,1,0)$ y $\mathbf{v}+\mathbf{w}.$
+
+2. Calcula el vector normal a la semiesfera superior de radio $r$ centrada en el origen.
+
+3. Prueba que si $p$ es un punto que no está en la recta $L$ que pasa por los puntos $q$ y $r.$ Entonces la distancia de $p$ a la recta está dada por $$\frac{|\mathbf{a}\times\mathbf{b}|}{|\mathbf{a}|}$$ donde $\mathbf{a}=\vec{qr}$ y $\mathbf{b}=\vec{qp}.$
+
+4. Si $\mathbf{r}=(x,y,z),\,\mathbf{a}=(a_1,a_2,a_3)$ y $\mathbf{b}=(b_1,b_2,b_3).$ Demuestre que los vectores que satisfacen $(\mathbf{r}-\mathbf{a})\cdot(\mathbf{r}-\mathbf{b})=0$ están en una esfera. ¿Qué radio y centro tiene?
 

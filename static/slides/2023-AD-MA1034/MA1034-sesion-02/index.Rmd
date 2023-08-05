@@ -1,6 +1,5 @@
-<<<<<<< Updated upstream
 ---
-title: "EDO Lineales No homogéneas"
+title: "Espacios Generados y Dimensión"
 subtitle: "Sesión 02"  
 author: 
   - "Alejandro Ucan"
@@ -19,7 +18,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
+  fig.width = 9, fig.height = 3.5, fig.retina = 3,
   out.width = "100%",
   cache = FALSE,
   echo = FALSE,
@@ -51,223 +50,96 @@ xaringanExtra::use_logo(
 ```
 # Objetivos de la Sesión
 
-* Conocer la forma genérica de una EDO lineal <br/><br/>
-* Aprender otras problematicas que modela una EDO lineal. <br/><br/>
-* Resolver EDO lineales no homogéneas. <br/><br/>
-* Aprender el método de variación de parámetros. <br/><br/>
+* Introducir las combinaciones lineales. <br/><br/>
+* Diferenciar entre dependencia e independencia lineal. <br/><br/>
+* Introducir los espacios generados. <br/><br/>
+* Definir el concepto de dimensión. <br/><br/>
 
 
 ---
-# EDO lineal.
+# Combinaciones Lineales
 
-> La forma genérica de una EDO lineal es $$a_1(x)y'+a_0(x)y+g(x)=0,$$ donde $a_0(x)$ y $a_1(x)$ son los coeficientes. <br/><br/>
-Si $g(x)=0,$ entonces la EDO se dice __homogénea__, de lo contrario es __no homogénea.__
+> __Definición:__ Sea $v\in V$ un vector. Si $u_1,\cdots,u_n\in V$ son vectores, decimos que $v$ es _combinación lineal_ de $u_1,\cdots,u_n$ si existen escalares $a_1,\cdots,a_n$ tales que $$v=a_1u_1+\cdots+a_nu_n.$$ <br/><br/>Estos escalares $a_1,\cdots,a_n$ se llaman _coeficientes_ de la combinación lineal.
 
-__Por ejemplo:__ $xy'-4y-x^6e^x=0.$
 
----
-## ¿Cómo es la solución de EDO lineal?
-
-> Podemos escribir la ecuación generica como sigue $$y'+P(x)y=f(x).$$ Queremos una solución en un intervalo $I$ donde $P(x)$ y $f(x)$ sean funciones continuas. <br/><br/>
-Si $y_h$ es una solución a la versión homogénea de la EDO anterior y $y_p$ es una solución particular de la ecuación. Entonces $$y_h+y_p$$ es una solución de la ecuación no homogenea.
-
-__Reto:__ comprueba esto de manera genérica.
+##### Ejemplo 1
+En $\mathbb{R}^2,$ el vector $(3,4)$ tiene las siguientes combinaciones lineales:
+1. $(3,4)=1(3,0)+4(0,1)$
+1. $(3,4)=2(1,2)+1(1,0)$
+1. $(3,4)=1(1,2)+2(1,1)$
 
 ---
-## Soluciones de EDO lineales no homogéneas.
+## Encontrar una C.L.
 
-> __Variación de Paramétros:__ la idea es encontrar una solución de la forma $y_p=u(x)y_1(x)$ donde $y_1$ es la solución de la versión homogénea de la EDO. <br/><br/>
-Método:
-  1. Escribir la EDO de la forma: $$y'+P(x)y=f(x).$$
-  1. Identifica $P(x)$ y calcula el _factor integrador_ $$e^{\int P(x)dx}.$$
-  1. Multiplica en la EDO por el factor integrador. Esto modifica a la ecuación a la forma $$\frac{d}{dx}\left[e^{\int P(x)dx} y\right]= e^{\int P(x)dx}f(x).$$ 
-  1. Integra ambos lados y simplifica.
+> Sea $v=(1,1,1)$ y $S=\{(1,2,3),(0,1,2),(-1,0,1)\}.$ Encuentre una c.l. de $v$ en termino de los vectores en $S.$ <br/><br/>
 
----
-### Ejemplo 1 (EDO lineal homogénea)
+--
 
-> Resuelva $y'-3y=0.$
-
-1. Ya se encuentra en la forma estándar.
-
-1. $P(x)=-3,$ por lo que el factor integrador es $$e^{\int -3dx}=e^{-3x}.$$
-
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-3x}y\right]=0.$$
-
-1. Integramos y despejamos: $$e^{-3x}y=c\Rightarrow y=c e^{3x}.$$
+$$v=a_1(1,2,3)+a_2(0,1,2)+a_3(-1,0,1)$$ <br/>
+$$v=(a_1-a_3,2a_1+a_2,3a_1+2a_2+a_3)$$ <br/>
+Usando Gauss-Jordan en la matriz $$\left(\begin{array}{ccc|c}1 & 0 & -1 & 1 \\ 2& 1 & 0 & 1 \\ 3 & 2 & 1 & 1\end{array}\right)$$ obtenemos que $a_1=2, \,a_2=-3,$ y $a_3=1.$ Por lo tanto, $$v=2(1,2,3)-3(0,1,2)+(-1,0,1).$$
 
 ---
-### Ejemplo 2 (EDO lineal no homogénea)
+## Conjunto Generador
 
-> Resuelva la ecuación $y'-2y=6.$
+> __Definición:__ Sea $S=\{u_1,\cdots,u_n\}$ un conjunto de vectores en $V.$ El _espacio generado_ por $S,$ denotado por $\langle S\rangle,$ es el conjunto de todas las combinaciones lineales de $u_1,\cdots,u_n.$ <br/><br/>Es decir, $$\langle S\rangle=\{a_1u_1+\cdots+a_nu_n\mid a_1,\cdots,a_n\in\mathbb{R}\}.$$ <br/><br/> A $S$ se le conoce como conjunto generador.
+--
 
-1. Ya se encuentra en la forma estándar.
 
-1. $P(x)=-2,$ por lo que el factor integrador es $$e^{\int -2dx}=e^{-2x}.$$
-
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-2x}y\right]=6e^{-2x}.$$
-
-1. Integramos y despejamos: $$e^{-2x}y=-3e^{-2x}+c\Rightarrow y=-3+ce^{-2x}.$$
+##### Ejemplo
+ 
+El conjunto $S=\{(1,0,0),(0,1,0),(0,0,1)\}$ es un conjunto generador de $\mathbb{R}^3$ y $S=\{(1,1),(1,-1)\}$ es un conjunto generador de $\mathbb{R}^2.$
 
 ---
-### Ejemplo 3 (No homogénea)
+##### No Ejemplo
 
-> Resuelva la ecuación $y'-2xy=2.$ 
+> Si consideramos el conjunto $S=\{(1,2),(-2,-4)\}.$ Este conjunto no genera a $\mathbb{R}^2.$ <br/><br/><br/><br/>
 
-Notemos que nuestro factor integrador es: $$e^{\int -2xdx}=e^{-x^2}.$$ Esto implica que debemos integrar $$\int 2e^{-x^2}.$$
-
-Esta integral no tiene solución explícita, pero se puede expresar como la integral definida $$\int_0^x e^{-t^2}dt.$$ También denotada por $\frac{1}{2}\sqrt{\pi} erf(x).$
+> El conjunto $S=\{(1,2,3),(0,1,2),(-1,0,1)\},$ no genera a $\mathbb{R}^3.$ Esto se debe a que el vector $(1,-2,2)$ no es c.l. de $S.$
 
 ---
-# Caída No libre
+## Subespacios Vectoriales Generados
 
-> Consideremos un cuerpo que está cayendo pero el medio en donde cae presenta una resistencia (digamos el aire). Si la velocidad con la caé el cuerpo está dada por $v(t)$ entonces satisface la EDO lineal no homogénea: $$mv'+\beta v=mg,$$ dónde $m$ es la masa del objeto, $\beta$ es la constante de resistencia, y $g$ es la fuerza de gravedad. 
-
----
-## La solución de la caída no libre.
-
-Usando __variación de parametros__ podemos resolver esta EDO, veamos.
-
-1. $P(x)=\beta/m,$ $f(x)=g$ y factor integrador es: $$e^{\frac{\beta t}{m}}.$$
-
-1. Multiplicando el factor y transformado la ecuación obtenemos: $$\frac{d}{dt}\left[e^{\frac{\beta t}{m}}v\right]=ge^{\frac{\beta t}{m}}.$$
-
-1. Realizando la integral y simplicando obtenemos: $$v(t)=\frac{mg}{\beta}+ce^{-\frac{\beta t}{m}}.$$
-
-=======
----
-title: "EDO Lineales No homogéneas"
-subtitle: "Sesión 02"  
-author: 
-  - "Alejandro Ucan"
-date: '`r Sys.Date()`'
-output:
-  xaringan::moon_reader:
-    css: xaringan-themer.css
-    nature:
-      slideNumberFormat: "%current%"
-      highlightStyle: github
-      highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
----
-
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
-  cache = FALSE,
-  echo = FALSE,
-  message = FALSE, 
-  warning = FALSE,
-  hiline = TRUE
-)
-```
-
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#000080",
-  secondary_color = "#f2f3f4",
-  inverse_header_color = "#00147e"
-)
-```
-
-```{r xaringan-editable, echo=FALSE}
-xaringanExtra::use_editable(expires = 1)
-xaringanExtra::use_scribble()
-```
-
-```{r xaringan-logo, echo=FALSE}
-xaringanExtra::use_logo(
-  image_url = "https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png",
-  position = xaringanExtra::css_position(top = "2em", right = "2em")
-)
-```
-# Objetivos de la Sesión
-
-* Conocer la forma genérica de una EDO lineal <br/><br/>
-* Aprender otras problematicas que modela una EDO lineal. <br/><br/>
-* Resolver EDO lineales no homogéneas. <br/><br/>
-* Aprender el método de variación de parámetros. <br/><br/>
-
+> __Teorema:__ Sea $S=\{u_1,\cdots,u_n\}$ un conjunto de vectores en $V.$ Entonces $\langle S\rangle$ es un subespacio vectorial de $V$ y es el subespacio vectorial más chico que contiene a $S.$
 
 ---
-# EDO lineal.
+# Dependencia e Independencia lineales
 
-> La forma genérica de una EDO lineal es $$a_1(x)y'+a_0(x)y+g(x)=0,$$ donde $a_0(x)$ y $a_1(x)$ son los coeficientes. <br/><br/>
-Si $g(x)=0,$ entonces la EDO se dice __homogénea__, de lo contrario es __no homogénea.__
+> __Definición:__ Sea $S=\{u_1,\cdots,u_n\}$ un conjunto de vectores en $V.$ Decimos que $S$ es _linealmente dependiente_ si existe una combinación lineal de $u_1,\cdots,u_n$ que es igual al vector cero y al menos uno de los coeficientes de la combinación lineal es distinto de cero. <br/><br/>Si $S$ no es linealmente dependiente, decimos que $S$ es _linealmente independiente_.
 
-__Por ejemplo:__ $xy'-4y-x^6e^x=0.$
+--
+##### Ejemplo 
 
----
-## ¿Cómo es la solución de EDO lineal?
-
-> Podemos escribir la ecuación generica como sigue $$y'+P(x)y=f(x).$$ Queremos una solución en un intervalo $I$ donde $P(x)$ y $f(x)$ sean funciones continuas. <br/><br/>
-Si $y_h$ es una solución a la versión homogénea de la EDO anterior y $y_p$ es una solución particular de la ecuación. Entonces $$y_h+y_p$$ es una solución de la ecuación no homogenea.
-
-__Reto:__ comprueba esto de manera genérica.
+El conjunto $S=\{(1,1),(1,-1)\}$ es l.i. pero $S=\{(1,2,3),(0,1,2),(-1,0,1)\}$ no lo es.
 
 ---
-## Soluciones de EDO lineales no homogéneas.
+## Dependencia e Independencia lineales
 
-> __Variación de Paramétros:__ la idea es encontrar una solución de la forma $y_p=u(x)y_1(x)$ donde $y_1$ es la solución de la versión homogénea de la EDO. <br/><br/>
-Método:
-  1. Escribir la EDO de la forma: $$y'+P(x)y=f(x).$$
-  1. Identifica $P(x)$ y calcula el _factor integrador_ $$e^{\int P(x)dx}.$$
-  1. Multiplica en la EDO por el factor integrador. Esto modifica a la ecuación a la forma $$\frac{d}{dx}\left[e^{\int P(x)dx} y\right]= e^{\int P(x)dx}f(x).$$ 
-  1. Integra ambos lados y simplifica.
+> __Teorema:__ Sea $S=\{u_1,\cdots,u_n\}$ un conjunto de vectores en $V.$ Entonces $S$ es linealmente dependiente si y solo si al menos uno de los vectores en $S$ es combinación lineal de los demás vectores en $S.$
 
 ---
-### Ejemplo 1 (EDO lineal homogénea)
+# Dimensión
 
-> Resuelva $y'-3y=0.$
+> __Definición:__ Decimos que $S$ es una base para el espacio vectorial $V,$ si $S$ es l.i. y además genera a $V.$
 
-1. Ya se encuentra en la forma estándar.
+--
+##### Ejemplo
 
-1. $P(x)=-3,$ por lo que el factor integrador es $$e^{\int -3dx}=e^{-3x}.$$
-
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-3x}y\right]=0.$$
-
-1. Integramos y despejamos: $$e^{-3x}y=c\Rightarrow y=c e^{3x}.$$
+Por ejemplo, $\{(0,1),(1,0)\},$ $\{(1,1),(1,0)\}$ y $\{(1,1),(-1,1)\}$ son bases de $\mathbb{R}^2.$ Y $\{(1,1,0),(0,1,0),(0,1,1,)$ es base de $\mathbb{R}^3.$
 
 ---
-### Ejemplo 2 (EDO lineal no homogénea)
+## Teoremas de bases.
 
-> Resuelva la ecuación $y'-2y=6.$
+> __Teorema:__ Si $S$ es una base de $V$ con $n-$elementos. Entonces todo subconjunto de vectores con $n+1$ elementos es linealmente dependiente. <br/><br/>Además, si $S$ es una base de $V$ con $n-$elementos. Entonces todo subconjunto de vectores con $n-1$ elementos no genera a $V.$
 
-1. Ya se encuentra en la forma estándar.
+--
 
-1. $P(x)=-2,$ por lo que el factor integrador es $$e^{\int -2dx}=e^{-2x}.$$
-
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-2x}y\right]=6e^{-2x}.$$
-
-1. Integramos y despejamos: $$e^{-2x}y=-3e^{-2x}+c\Rightarrow y=-3+ce^{-2x}.$$
+> __Definición:__ Si $V$ tiene una base con $n-$elementos, entonces diremos que $V$ tiene _dimensión_ $n.$
 
 ---
-### Ejemplo 3 (No homogénea)
+# Actividad
 
-> Resuelva la ecuación $y'-2xy=2.$ 
-
-Notemos que nuestro factor integrador es: $$e^{\int -2xdx}=e^{-x^2}.$$ Esto implica que debemos integrar $$\int 2e^{-x^2}.$$
-
-Esta integral no tiene solución explícita, pero se puede expresar como la integral definida $$\int_0^x e^{-t^2}dt.$$ También denotada por $\frac{1}{2}\sqrt{\pi} erf(x).$
-
----
-# Caída No libre
-
-> Consideremos un cuerpo que está cayendo pero el medio en donde cae presenta una resistencia (digamos el aire). Si la velocidad con la caé el cuerpo está dada por $v(t)$ entonces satisface la EDO lineal no homogénea: $$mv'+\beta v=mg,$$ dónde $m$ es la masa del objeto, $\beta$ es la constante de resistencia, y $g$ es la fuerza de gravedad. 
-
----
-## La solución de la caída no libre.
-
-Usando __variación de parametros__ podemos resolver esta EDO, veamos.
-
-1. $P(x)=\beta/m,$ $f(x)=g$ y factor integrador es: $$e^{\frac{\beta t}{m}}.$$
-
-1. Multiplicando el factor y transformado la ecuación obtenemos: $$\frac{d}{dt}\left[e^{\frac{\beta t}{m}}v\right]=ge^{\frac{\beta t}{m}}.$$
-
-1. Realizando la integral y simplicando obtenemos: $$v(t)=\frac{mg}{\beta}+ce^{-\frac{\beta t}{m}}.$$
-
->>>>>>> Stashed changes
+1. Sea $S=\{(1,1,1),(1,2,3),(1,3,6)\}.$ Pruebe que $S$ es l.i. y que genera a $\mathbb{R}^3.$
+1. Encuentra una base para la recta $L=\{(x,3x)\in\mathbb{R}^2:x\in\mathbb{R}\}.$ ¿qué dimensión debería tener?
+1. Encuentra una base para el plano $P=\{(x,y,z)\in\mathbb{R}^3:x+y+z=0\}.$ ¿qué dimensión debería tener?
+1. Si $S=\{(1,1,1),(1,0,1),(1,a,1)\}$, ¿qué valor debe tener $a$ para que sea linealmente dependiente?

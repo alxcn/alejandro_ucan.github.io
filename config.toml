@@ -115,31 +115,31 @@ enableEmoji = true
     title = "i.rracionalx"
     url = "/i.rracionalx/"
     weight = 3
-  [[menu.header]]
-    name = "photos"
-    title = "My Favorite Photos"
-    url = "/photos/"
-    weight=4
+  #[[menu.header]]
+  #  name = "photos"
+  #  title = "My Favorite Photos"
+  #  url = "/photos/"
+  #  weight=4
   [[menu.header]]
     name = "Teaching"
     title = "Teaching Information"
     url = "/teaching/"
-    weight = 5
+    weight = 4
   [[menu.header]]
     name = "F1009"
     title = "Métodos Matemáticos para la Física"
     url = "/f1009/"
-    weight = 6
+    weight = 5
   [[menu.header]]
     name = "MA1033"
     title = "Análisis de Ecuaciones Diferenciales"
     url = "/ma1033/"
-    weight = 7
+    weight = 6
   [[menu.header]]
     name = "MA1034"
     title = "Modelación de procesos mediante Álgebra Lineal"
     url = "/ma1034/"
-    weight = 8
+    weight = 7
   #[[menu.header]]
   #  name = "MA103"
   #  title = "Modelación en Ingenieria mediante Sistemas Dinámicos"

@@ -45,7 +45,7 @@ xaringanExtra::use_scribble()
 
  * Introducir los campos vectoriales y sus gráficas. <br/> <br/>
  * Calcular límites en campos vectoriales. <br/> <br/>
- * Conocer las razones de cambio de un campo vectorial.
+ * Conocer las razones de cambio a través de un campo vectorial.
 
 ---
 # Campos vectoriales
@@ -94,11 +94,11 @@ Para fines prácticos, la continuidad de un campo vectorial está dada a través
 ---
 # Campo Gradiente
 
-> __Definición:__ Dada una función escalar $f:\mathbb{R}^n\to\mathbb{R},$ podemos definir un campo vectorial asociado a $f$ conocido como _campo gradiente_ definida como las razones de cambio de la función $f$ en todas las direcciones estándares $$\nabla f=\left(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},\cdots, \frac{\partial f}{\partial x_n}\right).$$
+> __Definición:__ Dada una función escalar $f:\mathbb{R}^n\to\mathbb{R},$ podemos definir un campo vectorial asociado a $f$ conocido como _campo gradiente_ definida como las razones de cambio de la función $f$ en todas las direcciones estándares $$\nabla f=\left(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},\cdots,\frac{\partial f}{\partial x_n}\right).$$
 
 #### Ejemplo:
 
-Si $f(x,y,z)=\sqrt{x^2+y^2+z^2},$ entonces el campo gradiente asociado es $$\nabla f= \left(\frac{x}{\sqrt{x^2+y^2+z^2},\frac{y}{\sqrt{x^2+y^2+z^2},\frac{z}{\sqrt{x^2+y^2+z^2}\right).$$
+Si $f(x,y,z)=\sqrt{x^2+y^2+z^2},$ entonces el campo gradiente asociado es $$\nabla f= \left(\frac{x}{\sqrt{x^2+y^2+z^2}},\frac{y}{\sqrt{x^2+y^2+z^2}},\frac{z}{\sqrt{x^2+y^2+z^2}}\right).$$
 
 ---
 ## Derivadas Direccionales
@@ -116,7 +116,7 @@ La derivada direccional nos permite conocer la razón de cambio de una partícul
 ---
 ## Aplicaciones del Campo Gradiente. 
 
-> __Proposición:__ Sea $f:\mathbb{R}^n\to\mathbb{R}$ y $c:[0,1]\to\mathbb{R}^n$ una curva. La derivada direccional de $f$ en la dirección $c'(t)$ en el tiempo $t$ está dada por $$\nabla f(c(t))\cdot c'(t).$$ 
+> __Proposición:__ Sea $f:\mathbb{R}^n\to\mathbb{R}$ y $c:[0,1]\to\mathbb{R}^n$ una curva. La derivada direccional de $f$ en la dirección $c'(t)$ en el tiempo $t$ está dada por $$\nabla f(c(t))\cdot \frac{c'(t)}{|c'(t)|}.$$ 
 <br/><br/><br/>
 
 ---

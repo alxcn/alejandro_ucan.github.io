@@ -1,0 +1,22 @@
+---
+title: "S01: Espacios Vectoriales"
+weight: 1
+subtitle: ""
+excerpt: "Definiremos de manera formal lo que es un espacio vectorial y daremos ejemplos de estos"
+date: '`r Sys.Date()`'
+slug: MA1034-session-01
+draft: false
+---
+
+En esta sesión de **MA1034** nuestros objetivos son:
+
+
+* Definir la estructura de espacio vectorial. <br/><br/>
+* Introducir ejemplos de espacios vectoriales. <br/><br/>
+* Definir los subespacios vectoriales. <br/><br/>
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2023-AD-MA1034/MA1034-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1034/MA1034-sesion-01", ratio = "4:3")
+```

@@ -1,0 +1,21 @@
+---
+title: "S03: Introducción al Análisis Vectorial"
+weight: 3
+subtitle: ""
+excerpt: "Mostraremos los primeros pasos para estudiar el cálculo desde un punto de vista de espacios vectoriales."
+date: '`r Sys.Date()`'
+slug: F1009-sesion-03
+draft: false
+---
+
+En esta sesión de __F1009__ tendremos por objetivo:
+
+ * Introducir los campos vectoriales y sus gráficas. <br/> <br/>
+ * Calcular límites en campos vectoriales. <br/> <br/>
+ * Conocer las razones de cambio a través de un campo vectorial. <br/><br/>
+ 
+El contenido para la **Sesión 03** se encuentra en [slides](/slides/2023-AD-F1009/F1009-sesion-03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1009/F1009-sesion-03", ratio = "4:3")
+```
