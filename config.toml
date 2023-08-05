@@ -164,7 +164,7 @@ enableEmoji = true
     name = "MA3014"
     title = "Geometric Structures on the Borromean Rings"
     url = "/ma3014/"
-    weight = 9
+    weight = 8
   
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
