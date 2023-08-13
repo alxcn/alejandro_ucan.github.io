@@ -1,6 +1,6 @@
 ---
-title: "Operadores vectoriales: gradiente, divergencia y rotacional."
-subtitle: "Sesión 04"
+title: "Integrales de Linea y Trabajo"
+subtitle: "Sesión 05"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -43,163 +43,75 @@ xaringanExtra::use_scribble()
 ```
 # Objetivos:
 
- * Conocer el concepto de derivada direccional. <br/><br/>
- * Aprender la definición de gradiente, divergencia y rotacional. <br/><br/>
- * Aplicar el gradiente, divergencia y rotacional en problemas físicos. <br/><br/>
+ * Definir la integral de línea. <br/><br/>
+ * Calcular integrales de línea. <br/><br/>
+ * Resolver problemas aplicados al trabajo. <br/><br/>
 
 ---
-# Gradiente
+# Integral de línea
 
-> Dada un campo escalar $f:\mathbb{R}^m\to \mathbb{R},$ el gradiente de $f$ (denotado por $\nabla f)$ es el campo vectorial $$\nabla f(\vec{v})=\left(\frac{\partial f}{\partial x_1}(\vec{v}),\cdots,\frac{\partial f}{\partial x_m}(\vec{v})\right).$$
-
-<br/><br/>
-
-El campo asigna a cada vector $v$ el vector de las derivadas de la función en todas las direcciones principales. Hasta el momento, para un campo escalar, el _gradiente_ es lo más cercano a la derivada de la función.
-
-<br/><br/>
-
-__Ejemplo:__ ¿Cuál es el gradiente del campo escalar $f(x,y)=(6x-3y)^5.$
-
-$$\nabla f (x,y)=(30(6x-3y)^4,-15(6x-3y)^4).$$
----
-# Ejemplo:
-
-Consideremos el campo escalar _la norma_ de $(x,y,z).$ $$ r(x,y,z)=\sqrt{x^2+y^2+z^2}.$$
-
-Notemos que se cumple: $$ \frac{\partial r}{\partial x}=\frac{x}{\sqrt{x^2+y^2+z^2}}=\frac{x}{r}.$$
-
-Así que el __campo gradiente__ está dado por: $$\nabla r =\frac{\vec{v}}{r}=\frac{x}{r}\mathbf{e}_1+\frac{y}{r}\mathbf{e}_2+\frac{z}{r}\mathbf{e}_3.$$
+> __Definición:__ Sea $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ un campo vectorial y $c:[a,b]\rightarrow \mathbb{R}^n$ una curva suave. La integral de línea de $\mathbf{F}$ sobre $c,$ denotada por $\int_c\mathbf{F}\cdot d\mathbf{s}$, se define como $$\int_c\mathbf{F}\cdot d\mathbf{s}=\int_a^b\mathbf{F}(c(t))\cdot c'(t)dt.$$
 
 ---
-# Ejemplo
+##### Ejemplo 1
 
-Aplicando lo anterior a electroestática, una carga puntual genera un potencial inversamente proporcional a su distancia desde el origen de la carga. 
+> Calcular $\int_c\mathbf{F}\cdot d\mathbf{s}$, donde $\mathbf{F}(x,y)=( x^2y,2xy^2 )$ y $c$ es la curva parametrizada por $c(t)=\langle t^2,t^3\rangle$ para $0\leq t\leq 1.$
 
-$$ P=\frac{1}{r}.$$
+--
+##### Solución
 
-Utilizando la ley de Coulumb, obtenemos que la fuerza que produce nuestro potencial estará dado por la ecuación:
-
-$$ \mathbf{F}=\frac{1}{r^2}\vec{v}.$$
-
-En general, si el campo escalar es $r^n,$ entonces el campo gradiente está dado por: $$\nabla (r^n)=nr^{n-1}\nabla r.$$
+Notemos que $c'(t)=(2t,3t^2)$ y $\mathbf{F}(c(t))=((t^2)^2(t^3),2(t^2)(t^3)^2)=(t^7,2t^8).$ Por lo tanto, $$\int_c\mathbf{F}\cdot d\mathbf{s}=\int_0^1\mathbf{F}(c(t))\cdot c'(t)dt=\int_0^1(t^7,2t^8)\cdot(2t,3t^2)dt=\int_0^1(2t^8+6t^9)dt$$
+$$=\left.\frac{2}{9}t^9+\frac{6}{10}t^{10}\right|_0^1=\frac{2}{9}+\frac{6}{10}=\frac{47}{45}.$$
 
 ---
-# Derivadas Direccionales:
+##### Ejemplo 2
 
-Supongamos que un pájaro vuela en una recta (parametrizada vectorialmente) $\mathbf{x}_0+t\mathbf{v}_0,$ y su altura desde el piso está dada por el campo escalar $f(\mathbf{x}).$ ¿cómo podemos conocer cual es la razón de cambio de la altura durante el vuelo del pájaro?
+> Calcular $\int_c\mathbf{F}\cdot d\mathbf{s}$, donde $\mathbf{F}(x,y)=( y,2x )$ y $c$ es la circunferencia centrada en $(1,1)$ de radio $2.$
 
-> La __derivada direccional__ de $f$ en el punto $\mathbf{x}_0$ está dada por el escalar $$\nabla f(\mathbf{x}_0)\cdot \mathbf{v}_0.$$
+--
+##### Solución
 
----
-# Direcciones de cambio rapido.
-
-El gradiente nos permite conocer en que dirección (dado un vector base) la función crece rapidamente o decrece rápidamente.
-
-> __Teorema:__ Si $\nabla f(\mathbf{x}_0)\neq \mathbf{0},$ entonces $\nabla f(\mathbf{x}_0)$ es la dirección donde la función crece o decrece más rapidamente.
-
-<iframe src="https://www.geogebra.org/calculator/avqjfgau?embed" width="1200" height="300" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
----
-# Divergencia
-
-> Dado un campo vectorial $\mathbf{F}:\mathbb{R}^m\to \mathbb{R}^m,$ definida por la regla de asignación $(f_1,f_2,\cdots,f_m)$. La _divergencia_ del campo está dado por la cantidad escalar $$ \frac{\partial f_1}{\partial x_1}+\frac{\partial f_2}{\partial x_2}+\cdots+\frac{\partial f_m}{\partial x_m}.$$
-Usualmente se denota con el símbolo $\nabla\cdot \mathbf{F}$ ó $\mbox{div}\mathbf{F}.$
-
-<br/><br/>
-
-__Nota:__ No confundir la divergencia y el gradiente. El gradiente está definido para campos escalares y da como resultado un campo vectorial. La divergencia está definida para campos vectoriales y da como resultado un campo escalar. 
+Notemos que $c(t)=(1+2\cos t,1+2\sin t)$ y $c'(t)=(-2\sin t,2\cos t).$ Por lo tanto, $$\int_c\mathbf{F}\cdot d\mathbf{s}=\int_0^{2\pi}\mathbf{F}(c(t))\cdot c'(t)dt=\int_0^{2\pi}(1+2\sin t,2+4\cos t)\cdot(-2\sin t,2\cos t)dt$$
+$$=\int_0^{2\pi}(-4\sin t+4\cos t+8\cos^2t)dt=\left.4\cos t+4\sin t+\frac{8}{3}\cos^3t\right|_0^{2\pi}$$
+$$=4+0+\frac{8}{3}-4-0-\frac{8}{3}=0.$$
 
 ---
-# Interpretación física de la divergencia.
+## ¿Qué pasa si cambio de parametrización?
 
-Imaginemos que tenemos un campo $\mathbf{F}$ que mide la velocidad de desplazamiento de particulas de un gas o fluido.
-
-```{python gas-speed, eval=FALSE, include=FALSE}
-import numpy as np
-import matplotlib.pylab as pl
-x,y = np.meshgrid(np.linspace(-3,3,20),np.linspace(-3,3,20))
-
-u = np.sin(x+y)
-v = np.cos(x-y)
-
-pl.figure(figsize=(15,10))
-pl.quiver(x,y,u,v,scale=7,units="xy",color="blue")
-pl.title("Campo de velocidades de un gas.")
-pl.show()
-```
-
-![Gas Speed](Gas-speed.png)
----
-# Divergencia:
-
-> Podemos decir que la divergencia es: <br/><br/>
-  - En $\mathbb{R}^2,$ la _razón de expansión del área_ en un campo. <br/><br/>
-  - En $\mathbb{R}^3,$ la _razón de expansión del volumen_ en un campo.
-  
-<br/><br/>
-__Ejemplo:__ Calcule divergencia para las siguientes campos vectoriales: $\mathbf{F}_1(x,y)=(x,0),\, \mathbf{F}_2(x,y)=(x,y)$ y $\mathbf{F}_3=(-x,-y).$
+> __Teorema:__ Sea $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ un campo vectorial y $c:[a,b]\rightarrow \mathbb{R}^n$ una curva suave. Si $c_1:[\alpha,\beta]\rightarrow \mathbb{R}^n$ es una reparametrización (que preserva la orientación) de $c,$ entonces $$\int_c\mathbf{F}\cdot d\mathbf{s}=\int_{c_1}\mathbf{F}\cdot d\mathbf{s}.$$
 
 ---
-# El producto cruz o producto vectorial
+## ¿Qué pasa si cambiamos la orientación?
 
-> El producto vectorial es un campo vectorial que asigna a dos vectores $\mathbf{v}$ y $\mathbf{w},$ un nuevo vector denotado por $\mathbf{v}\times\mathbf{w}.$ En coordenadas esto se ve cómo $$\mathbb{v}\times \mathbb{w} = (v_1,v_2,v_3)\times (w_1,w_2,w_3) =\left| \begin{array}{ccc} e_1 & e_2 & e_3 \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\end{array}\right|.$$
-
-Algunas propiedades:
-  - $\mathbf{v}\times\mathbf{w} = -\mathbf{w}\times\mathbf{v}.$
-  - $(k\mathbf{v})\times(l\mathbf{w})=kl\cdot \mathbf{v}\times\mathbf{w}.$
-  - $\mathbf{v}\times(\mathbf{w}_1+\mathbf{w}_2)=\mathbf{v}\times \mathbf{w}_1+\mathbf{v}\times \mathbf{w}_2.$
-  - Si $\mathbf{v}\times \mathbf{w}=0$ entonces $\mathbf{w}=k\mathbf{v}.$
+> __Teorema:__ Sea $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ un campo vectorial y $c:[a,b]\rightarrow \mathbb{R}^n$ una curva suave. Si $c_1:[\alpha,\beta]\rightarrow \mathbb{R}^n$ es una reparametrización (que no preserva la orientación) de $c,$ entonces $$\int_c\mathbf{F}\cdot d\mathbf{s}=-\int_{c_1}\mathbf{F}\cdot d\mathbf{s}.$$
 
 ---
-# Ejemplo: 
+## ¿Qué pasa si mi curva está en pedazos?
 
-Calcule el producto cruz  de los vectores los vectores $(1,2,-3)$ y $(-1,4,2).$
-
----
-# Rotacional
-
-> El __rotacional__ de un campo vectorial $\mathbf{F}=(f_1,f_2,f_3),$ es el campo vectorial dado por las reglas de asignación $$\left(\frac{\partial f_3}{\partial y}-\frac{\partial f_2}{\partial z}, \frac{\partial f_1}{\partial z}-\frac{\partial f_3}{\partial x}, \frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right),$$ usualmente se denota con el símbolo $\nabla \times \mathbf{F}$ ó $\mbox{rot}\mathbf{F}.$
+> __Teorema:__ Sea $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ un campo vectorial y $c:[a,b]\rightarrow \mathbb{R}^n$ una curva suave. Si $c=c_1+c_2+\cdots+c_n$ con $c_i:[a_i,b_i]\to\mathbb{R}^n,$ entonces $$\int_c\mathbf{F}\cdot d\mathbf{s}=\int_{c_1}\mathbf{F}\cdot d\mathbf{s}+\int_{c_2}\mathbf{F}\cdot d\mathbf{s}+\cdots+\int_{c_n}\mathbf{F}\cdot d\mathbf{s}.$$
 
 ---
-# Interpretación física del rotacional.
+##### Ejemplo 3
 
-.pull-left[Imaginemos que tenemos el campo vectorial $\mathbf{F}(x,y,z)=(y,-x,0),$ que representa las velocidades de un fluído. ]
+Sea $\mathbf{F}=(\sin(x),\cos(y),t)$ y $c$ la curva formada por el triángulo formado por $(1,0,0),(0,1,0),(0,0,1)$ en el sentido contrario a las manecillas del reloj. Calcular $\int_c\mathbf{F}\cdot d\mathbf{s}.$
 
-```{python eval=FALSE, include=FALSE}
-import numpy as np
-import matplotlib.pylab as pl
-from mpl_toolkits.mplot3d import axes3d
 
-x,y,z = np.meshgrid(np.linspace(-3,3,10),np.linspace(-3,3,10),np.linspace(-1,1,5))
-
-u = y
-v = -x
-w=0
-
-fig=pl.figure()
-ax = fig.gca(projection='3d')
-ax.quiver(x,y,z,u,v,w,length=0.1,color="blue")
-pl.title("Campo de velocidades de un fluído.")
-pl.show()
-```
-.pull-right[
-![Gas Speed](fluid-speed.png)]
 ---
-# Interpretación física del Rotacional
+## Trabajo
 
-.pull-left[En una sección de altura, esto se ve cómo:]
+> __Definición:__ Sea $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ un campo vectorial y $c:[a,b]\rightarrow \mathbb{R}^n$ una curva suave. El trabajo realizado por $\mathbf{F}$ sobre $c$ se define como $$W=\int_c\mathbf{F}\cdot d\mathbf{s}.$$
 
-```{python eval=FALSE, include=FALSE}
-import numpy as np
-import matplotlib.pylab as pl
-x,y = np.meshgrid(np.linspace(-3,3,10),np.linspace(-3,3,10))
+---
+##### Ejemplo 4
 
-u = y
-v = -x
+> Una partícula se mueve a lo largo de la curva $c(t)=( e^t\cos(t),e^t\sin(t) )$ para $0\leq t\leq 1.$ Si la fuerza que actúa sobre la partícula es $\mathbf{F}(x,y)=( x^2y,2xy^2 )$, ¿cuánto trabajo se realiza sobre la partícula?
 
-pl.figure(figsize=(15,10))
-pl.quiver(x,y,u,v,scale=7,units="xy",color="blue")
-pl.title("Campo de velocidades de un gas.")
-pl.show()
-```
-.pull-right[![Gas Speed](transversal-fluid-speed.png)]
-Cuando calculamos el rotacional: $$\nabla \times \mathbf{F}= (0,0,-2z).$$
+
+---
+# Actividad
+
+1. Si $\mathbf{F}$ es perpendicular a $c'(t)$ a lo largo de su dominio. Demuestra que $\int_c\mathbf{F}\cdot d\mathbf{s}=0.$ <br/><br/>
+
+1. Si $\mathbf{F}=\nabla f,$ demuestra que $\int_c\mathbf{F}\cdot d\mathbf{s}=f(c(b))-f(c(a)).$ <br/><br/>
+
+1. Un ciclista sube la montaña $x^2+y^2+z=2pi$ dando una vuelta completa en sentido contrario a las manecillas del reloj con una altura de incremento constante (derivada constante). Si la fuerza que actúa sobre el ciclista es $\mathbf{F}(x,y,z)=(y,x,0),$ ¿cuánto trabajo se realiza sobre el ciclista? <br/><br/>

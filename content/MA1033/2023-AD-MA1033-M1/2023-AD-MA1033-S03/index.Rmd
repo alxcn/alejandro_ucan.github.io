@@ -1,0 +1,22 @@
+---
+title: "S03: Separación de Variables"
+weight: 3
+subtitle: ""
+excerpt: "Utilizaremos una técnica de integración para resolver un tipo especial de EDOs."
+date: '`r Sys.Date()`'
+slug: MA1033-session-03
+draft: false
+---
+
+En esta sesión de **MA1033** nuestros objetivos son:
+
+
+* Determinar cuándo una EDO es separable. <br/><br/>
+* Aplicar el método de Separación de Variables. <br/><br/>
+* Describir la solución de una EDO. <br/><br/>
+
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2023-AD-MA1033/MA1033-sesion-03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1033/MA1033-sesion-03", ratio = "4:3")
+```

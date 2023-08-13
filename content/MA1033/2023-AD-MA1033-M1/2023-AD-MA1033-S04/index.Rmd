@@ -1,0 +1,21 @@
+---
+title: "S04: EDOs Exactas"
+weight: 4
+subtitle: ""
+excerpt: "Utilizaremos técnicas de cálculo multivariado para resolver un tipo especial de EDOs"
+date: '`r Sys.Date()`'
+slug: MA1033-session-04
+draft: false
+---
+
+En esta sesión de **MA1033** nuestros objetivos son:
+
+
+* Diferenciar las EDOs exactas. <br/><br/>
+* Resolver las EDOs exactas por integración parcial. <br/><br/>
+
+El contenido para la **Sesión 04** se encuentra en following [slides](/slides/2023-AD-MA1033/MA1033-sesion-04).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1033/MA1033-sesion-04", ratio = "4:3")
+```
