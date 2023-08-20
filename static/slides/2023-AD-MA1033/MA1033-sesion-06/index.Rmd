@@ -1,7 +1,6 @@
-<<<<<<< Updated upstream
 ---
-title: "Sistemas de EDOs lineales"
-subtitle: "Sesión 06"
+title: "Ecuaciones Líneales de orden superior"
+subtitle: "Sesión 06"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -20,7 +19,7 @@ output:
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
   fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
+  out.width = "80%",
   cache = FALSE,
   echo = FALSE,
   message = FALSE, 
@@ -51,196 +50,120 @@ xaringanExtra::use_logo(
 ```
 # Objetivos de la Sesión
 
-* Conocer diferentes problematicas que involucran sistemas de EDOs. <br/><br/>
-* Conocer la forma matricial de un sistema de EDOs. <br/><br/>
-* Estudiar la solución (vector de funciones) de un sistema. 
+* Conocer la forma genérica de una EDO lineal de orden superior. <br/><br/>
+* Conocer la forma genérica de un problema de valor inicial con una EDO lineal de orden superior. <br/><br/>
+* Aprender la solución para EDO's lineales de orden superior. <br/><br/>
+* Aplicar el método para resolver EDO's lineales de orden superior con coeficientes constantes.
 
 ---
-# Recordando:
+# EDO lineal de orden superior.
 
-> Recordemos que si tenemos una población $P(t),$ su crecimiento puede ser modelado mediante la ecuación diferencial $$\frac{dP}{dt}=kP,$$ <br/><br/> de igual manera podemos considerar la presencia de una fracción de inmigrantes (por el momento constante) $$\frac{dP}{dt}=kP-r.$$ <br/><br/>
-Realmente sabemos que la población que inmigra no es constante en el tiempo, así que el modelo anterior no es tan real.
+> __Definción:__ La forma genérica de una EDO lineal de orden superior es: $$a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_2(x)y''+a_1(x)y'+a_0(x)y+g(x)=0.$$
 
----
-# Un modelo más real
+Esta se convierte en un problema de valores iniciales cuando le agregamos las condiciones: $$y(x_0)=y_0,\, y'(x_0)=y_1,\,y''(x_0)=y_2,\cdots,\,y^{(n-1)}(x_0)=y_{n-1}.$$
 
-> Nuestro modelo sería más realista si $R(t)$ define la población de inmigrantes en el tiempo $t,$ $$\frac{dP}{dt}=kP-R,$$ y si además tenemos información del crecimiento de la población inmigrante, por ejemplo $$\frac{dR}{dt}=sR.$$ <br/><br/> 
-Entonces el modelo sería $$\frac{dP}{dt}=kP-R,$$ $$\frac{dR}{dt}=sR.$$
+__Nota:__ necesitamos tantas condiciones como el orden de la EDO.
 
 ---
-# Sistema de EDOs lineales
+# Ejemplo:
 
-> Un sistema de ecuaciones diferenciales es un par de EDOs que involucran dos funciones variables, de la forma general $$\frac{dx}{dt}=g_1(t,x,y)$$ $$\frac{dy}{dt}=g_2(t,x,y)$$ y si pedimos que sean lineales las ecuaciones entonces $$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$ $$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$
+> Supongamos que tenemos la EDO $3y'''+5y''-y'+7y=0.$
 
----
-# Sistema Predador-Presa
+La función $y=0$ es una solución a la ED0.
 
-> Supongamos que tenemos dos especies que interactuan en un ecosistemas $x(t)$ y $y(t),$ de donde $x(t)$ es extrictamente vegetariana y $y(t)$ carnivora (consume a $x(t)$) entonces $$\frac{dy}{dt}=-ay+bxy$$ $$\frac{dx}{dt}=cx-dxy.$$ Este modelo se conoce como el __Lotka-Volterra para predador-presa.__
+> Supongamos que tenemos la EDO $y''-4y=12x$ con condiciones iniciales $y(0)=4$ y $y'(0)=1.$ 
 
----
-# ¿Cómo se ve?
-
-```{r, echo=FALSE, out.width="60%", fig.cap="Ejempo de Soluciónes"}
-knitr::include_graphics("https://strimas.com/post/2017-10-13-lotka-volterra/index_files/figure-html/time-plot-1.png")
-```
----
-# Sistema de EDOs lineales
-
-> Consideremos el siguiente sistema de EDOS lineales de $n$ ecuaciones con $n$ incognitas: $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&=& x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &=& x'_2 \\ \vdots & = & \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&=& x'_n \\ \end{array}$$  
+La función $y=3e^{2x}+e^{-2x}-3x$ es una solución de este problema de valores iniciales.
 
 ---
-## Versión matricial 
+# EDO's lineales de orden superior con coeficientes constantes.
 
-> La expresión anterior se puede expresar de forma matricial: 
+> Recordemos que para una EDO líneal homogenea $$ay'+by=0$$ <br/><br/>
+ * Posible solución es $y=e^{mx},$ <br/><br/>
+ * Sustituyendo en la EDO $$ame^{mx}+be^{mx}=0=e^{mx}(am+b),$$ 
+ *cómo $e^{mx}\neq 0$ entonces $$am+b=0\Rightarrow m=-b/a.$$
 
-$$\left(\begin{array}{c} x'_1 \\ x'_2 \\ \vdots \\ x'_n \end{array}\right) =\left(\begin{array}{c} a_{11} & a_{12} & \ldots & a_{1n}\\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \ldots & a_{nn} \end{array}\right) \left(\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right)+ \left(\begin{array}{c} f_1(t) \\ f_2(t) \\ \vdots \\ f_n(t) \end{array}\right)$$
-$$ X' = A X+F$$
-
----
-# ¿Cómo se ve la solución?
-
-> La solución de un sistema es un vector $$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$ que satisface las ecuaciones anteriores.
+Este prodecimiento lo podemos generalizar.
 
 ---
-# Ejemplo
+# Ejemplo:
 
-> Verifique que el siguiente vector $$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$ es resultado del sistema $$X'=\left(\begin{array} 1 & 3 \\ 5 & 3 \end{array}\right) X$$ y también $$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$
+> Supongamos que tenemos la EDO $$ay''+by'+cy=0.$$ <br/>
+* Nuestro __polinomio auxiliar__ es: $$am^2+bm+c=0.$$ <br/>
+* Aplicando la fórmula general tendremos que las raíces son $$m_{1,2}=\frac{-b\pm \sqrt{b^2-4ac}}{2a}.$$ <br/>
+* Esto implica que: 
+    * Las soluciones son reales diferentes $\Delta=b^2-4ac>0.$ 
+    * Las soluciones son reales iguales $\Delta=0.$
+    * Las soluciones son complejas conjugadas $\Delta<0.$
+    
+---
+## Caso 1: Soluciones diferentes:
+
+> Cuando las raíces son reales y distintas, es decir, dos números $m_1$ y $m_2,$ entonces la solución general de la EDO es $$y=c_1 e^{m_1 x}+c_2e^{m_2 x}.$$
+
+__Ejemplo:__ Encuentra las soluciones de $2y''-5y'-3y=0,$ <br/><br/>
+
+* Mi polinomio auxiliar es: $2m^2-5m-3=0$ <br/>
+* Sus raíces son $m_1=-1/2$ y $m_2=3$ <br/>
+* La solución general $$y=c_1e^{-x/2}+c_2e^{3x}.$$
 
 ---
-# Superposición e Independencia Lineal
+## Caso 2: Soluciones iguales
 
-> En un sistema de EDOs homogéneas, si $X_1$ y $X_2$ son soluciones, para cualquier número reales $c_1$ y $c_2,$ entonces $$c_1 X_1 + c_2 X_2$$ también es solución. <br/><br/> 
-__Definición:__ decimos que las soluciones $X_1, \, X_2,\, \cdots,\, X_n$ son __linealmente indepentiendes__ si la unica combinación $$c_1 X_1+c_2 X_2+\cdots + c_n X_n=0$$ entonces $c_1=c_2=\cdots=c_n=0.$
+> Cuando las raíces son reales pero iguales, es decir, $m_1=m_2=m,$ entonces la solución general de la EDO es $$y=c_1e^{mx}+c_2xe^{mx}.$$
 
----
-## Ejemplo:
+__Ejemplo:__ Encuentra las soluciones de $y''-10y'+25y=0.$
 
-> En el ejemplo anterior, los vectores solución $$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$ son linealmente independientes.
-
----
-## Actividad:
-
-=======
----
-title: "Sistemas de EDOs lineales"
-subtitle: "Sesión 06"
-author: 
-  - "Alejandro Ucan"
-date: '`r Sys.Date()`'
-output:
-  xaringan::moon_reader:
-    css: xaringan-themer.css
-    nature:
-      slideNumberFormat: "%current%"
-      highlightStyle: github
-      highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
----
-
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
-  cache = FALSE,
-  echo = FALSE,
-  message = FALSE, 
-  warning = FALSE,
-  hiline = TRUE
-)
-```
-
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#000080",
-  secondary_color = "#f2f3f4",
-  inverse_header_color = "#00147e"
-)
-```
-
-```{r xaringan-editable, echo=FALSE}
-xaringanExtra::use_editable(expires = 1)
-xaringanExtra::use_scribble()
-```
-
-```{r xaringan-logo, echo=FALSE}
-xaringanExtra::use_logo(
-  image_url = "https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png",
-  position = xaringanExtra::css_position(top = "2em", right = "2em")
-)
-```
-# Objetivos de la Sesión
-
-* Conocer diferentes problematicas que involucran sistemas de EDOs. <br/><br/>
-* Conocer la forma matricial de un sistema de EDOs. <br/><br/>
-* Estudiar la solución (vector de funciones) de un sistema. 
+* Mi polinomio auxiliar es: $m^2-10m+25=0$ <br/>
+* Su raíz es $m_1=m_2=5.$ <br/>
+* La solución general $$y=c_1e^{5x}+c_2xe^{5x}.$$
 
 ---
-# Recordando:
+## Caso 3: Soluciones Complejas conjugadas
 
-> Recordemos que si tenemos una población $P(t),$ su crecimiento puede ser modelado mediante la ecuación diferencial $$\frac{dP}{dt}=kP,$$ <br/><br/> de igual manera podemos considerar la presencia de una fracción de inmigrantes (por el momento constante) $$\frac{dP}{dt}=kP-r.$$ <br/><br/>
-Realmente sabemos que la población que inmigra no es constante en el tiempo, así que el modelo anterior no es tan real.
+> Cuando las raíces son complejas conjugadas, es decir, $m_1=a+bi$ y $m_2=a-bi,$ entonces la solución general de la EDO es $$y=c_1e^{ax}\cos(bx)+c_2e^{ax}\sin(bx).$$
 
----
-# Un modelo más real
+__Ejemplo:__ Encuentra las soluciones de $y''+4y'+7y=0.$
 
-> Nuestro modelo sería más realista si $R(t)$ define la población de inmigrantes en el tiempo $t,$ $$\frac{dP}{dt}=kP-R,$$ y si además tenemos información del crecimiento de la población inmigrante, por ejemplo $$\frac{dR}{dt}=sR.$$ <br/><br/> 
-Entonces el modelo sería $$\frac{dP}{dt}=kP-R,$$ $$\frac{dR}{dt}=sR.$$
+* Mi polinomio auxiliar es $m^2+4m+7=0$ <br/>
+* Sus raíces son $m_1=-2+\sqrt{3}i$ y $m_2=-2-\sqrt{3}i.$ Por lo que $a=-2$ y $b=\sqrt{3}.$ <br/>
 
----
-# Sistema de EDOs lineales
-
-> Un sistema de ecuaciones diferenciales es un par de EDOs que involucran dos funciones variables, de la forma general $$\frac{dx}{dt}=g_1(t,x,y)$$ $$\frac{dy}{dt}=g_2(t,x,y)$$ y si pedimos que sean lineales las ecuaciones entonces $$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$ $$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$
+* La solución general es $$y=c_1e^{-2x}\cos(\sqrt{3}x)+c_2e^{-2x}\sin(\sqrt{3}x).$$
 
 ---
-# Sistema Predador-Presa
+### Un problema de valores iniciales.
 
-> Supongamos que tenemos dos especies que interactuan en un ecosistemas $x(t)$ y $y(t),$ de donde $x(t)$ es extrictamente vegetariana y $y(t)$ carnivora (consume a $x(t)$) entonces $$\frac{dy}{dt}=-ay+bxy$$ $$\frac{dx}{dt}=cx-dxy.$$ Este modelo se conoce como el __Lotka-Volterra para predador-presa.__
-
----
-# ¿Cómo se ve?
-
-```{r, echo=FALSE, out.width="60%", fig.cap="Ejempo de Soluciónes"}
-knitr::include_graphics("https://strimas.com/post/2017-10-13-lotka-volterra/index_files/figure-html/time-plot-1.png")
-```
----
-# Sistema de EDOs lineales
-
-> Consideremos el siguiente sistema de EDOS lineales de $n$ ecuaciones con $n$ incognitas: $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&=& x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &=& x'_2 \\ \vdots & = & \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&=& x'_n \\ \end{array}$$  
+> Encuentren la solución a la EDO $4y''+4y'+17y=0$ dados que $y(0)=-1$ y $y'(0)=2.$
 
 ---
-## Versión matricial 
+# Modelando con EDOs lineales de orden superior:
 
-> La expresión anterior se puede expresar de forma matricial: 
-
-$$\left(\begin{array}{c} x'_1 \\ x'_2 \\ \vdots \\ x'_n \end{array}\right) =\left(\begin{array}{c} a_{11} & a_{12} & \ldots & a_{1n}\\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \ldots & a_{nn} \end{array}\right) \left(\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right)+ \left(\begin{array}{c} f_1(t) \\ f_2(t) \\ \vdots \\ f_n(t) \end{array}\right)$$
-$$ X' = A X+F$$
-
----
-# ¿Cómo se ve la solución?
-
-> La solución de un sistema es un vector $$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$ que satisface las ecuaciones anteriores.
+> Suongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. <br/><br/>
+* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: $$F=-ks.$$ <br/>
+* _Segunda Ley de Newton_ $$m\frac{d^2x}{dt^2}=-kx.$$
 
 ---
-# Ejemplo
-
-> Verifique que el siguiente vector $$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$ es resultado del sistema $$X'=\left(\begin{array} 1 & 3 \\ 5 & 3 \end{array}\right) X$$ y también $$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$
-
----
-# Superposición e Independencia Lineal
-
-> En un sistema de EDOs homogéneas, si $X_1$ y $X_2$ son soluciones, para cualquier número reales $c_1$ y $c_2,$ entonces $$c_1 X_1 + c_2 X_2$$ también es solución. <br/><br/> 
-__Definición:__ decimos que las soluciones $X_1, \, X_2,\, \cdots,\, X_n$ son __linealmente indepentiendes__ si la unica combinación $$c_1 X_1+c_2 X_2+\cdots + c_n X_n=0$$ entonces $c_1=c_2=\cdots=c_n=0.$
+## Solución general del modelo
+ 
+ > Queremos encontrar la solución general de $$m\frac{d^2x}{dt^2}=-kx.$$ Notemos que esta ecuación es equivalente a $$x''+\frac{k}{m}x=0.$$
+> Mi polinomio auxiliar es $$m^2+\frac{k}{m}=0$$ cuyas soluciones son $m_1=\sqrt{\frac{k}{m}}i$ y $m_2=-\sqrt{\frac{k}{m}}i.$ Por lo que mi solución general de la EDO es: $$x(t)=c_1\cos\left(\frac{k}{m}t\right)+c_2\sin\left(\frac{k}{m}t\right).$$
 
 ---
-## Ejemplo:
+### Algunas componentes de la solución:
 
-> En el ejemplo anterior, los vectores solución $$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$ son linealmente independientes.
+* Al número $w=\sqrt{\frac{k}{m}}$ se le conoce como _frecuencia circular._
+
+* El período de la función solución es $$T=\frac{2\pi}{w}.$$
+
+* La frecuencia de la función es $$f=1/T.$$
 
 ---
-## Actividad:
+### Ejemplo:
 
->>>>>>> Stashed changes
-> Compruebe que las funciones vectores $$X_1=\left(\begin{array}{c} \cos(t) \\ \frac{-\cos(t)}{2}+\frac{\sin(t)}{2}\\ -\cos(t)-\sin(t) \end{array}\right) \mbox{ y } \left(\begin{array}{c} 0 \\ e^t \\ 0  \end{array}\right)$$ es un conjunto solución linealmente independiente para el sistema $$X'=\left(\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 0 \\ -2 & 0 & -1\end{array}\right) X$$
+> Una masa de peso $2lbs$ estira un resorte de $6$ pulgadas. Si en $t=0$ la masa es liberada desde un punto $8$ pulgadas por debajo del equilibrio con una velocidad de $4/3$ pies/s. Determine la ecuación de movimiento.
+
+Realizando las conversiones adecuadas (pulgas en pies, y libras en unidades de masa), obtenemos que la ecuación diferencial es: $$\frac{1}{16}x''+4x=0.$$ Con las condicions inciales de $x(0)=2/3$ y $x'(0)=-4/3.$ Por lo tanto $w^2=64$ y $w=8,$ así que la función de movimiento es: $$x(t)=c_1\cos(8t)+c_2\sin(8t).$$
+
+Sustituyendo las condiciones iniciales obtenemos que $c_1=2/3$ y $c_2=-1/6.$
+
+

@@ -1,0 +1,23 @@
+---
+title: "S06: Ecuaciones Líneales de orden superior"
+weight: 6
+subtitle: ""
+excerpt: "Utilizaremos una versión algebraica de polinomios para resolver algunas EDOs particulares."
+date: '`r Sys.Date()`'
+slug: MA1033-session-06
+draft: false
+---
+
+En esta sesión de **MA1033** nuestros objetivos son:
+
+
+* Conocer la forma genérica de una EDO lineal de orden superior. <br/><br/>
+* Conocer la forma genérica de un problema de valor inicial con una EDO lineal de orden superior. <br/><br/>
+* Aprender la solución para EDO's lineales de orden superior. <br/><br/>
+* Aplicar el método para resolver EDO's lineales de orden superior con coeficientes constantes.
+
+El contenido para la **Sesión 06** se encuentra en following [slides](/slides/2023-AD-MA1033/MA1033-sesion-06).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1033/MA1033-sesion-06", ratio = "4:3")
+```

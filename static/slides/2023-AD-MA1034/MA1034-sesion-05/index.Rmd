@@ -1,6 +1,5 @@
-<<<<<<< Updated upstream
 ---
-title: "Modelando con EDOs lineales de orden superior no homogéneas"
+title: "Transformaciones Lineales"
 subtitle: "Sesión 05"  
 author: 
   - "Alejandro Ucan"
@@ -51,233 +50,72 @@ xaringanExtra::use_logo(
 ```
 # Objetivos de la Sesión
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
+* Introducir el concepto de Transformación lineal. <br/><br/>
+* Demostrar que una función es una transformación lineal. <br/><br/>
+* Calcular los subespacios predilectos: Núcleo e Imagen. <br/><br/>
+* Teorema de la Dimensión.
 
 ---
-# Recordemos el movimiento harmónico
+# Transformaciones Lineales
 
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. <br/><br/>
-* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: $$F=-ks.$$ <br/>
-* _Segunda Ley de Newton_ $$m\frac{d^2x}{dt^2}=-kx.$$
+> __Definición:__ Sean $V$ y $W$ espacios vectoriales. Una función $T:V\rightarrow W$ se llama __transformación lineal__ si para todo $u,v\in V$ y para todo escalar $\alpha\in \mathbb{R}$ se cumple que: $$T(u+v)=T(u)+T(v)$$ $$T(\alpha u)=\alpha T(u).$$
 
----
-# Movimiento libre amortiguado
+--
+<br/>
+##### Ejemplo 1
 
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. Supongamos que nuestro peso se encuentra en un medio que presenta una __resistencia__ (por ejemplo un medio viscoso o un amortiguador). <br/><br/>
-* __Mecánica:__ esta acción de amortiguador se ve directamente proporcional a la velocidad instantánea del resorte ($\frac{dx}{dt}$). <br/><br/>
-* No hay otra fuerza que este actuando en nuestro sistema.<br/><br/> 
-$$ m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}.$$
+La función $T:\mathbb{R}^2\rightarrow \mathbb{R}^2$ definida por $T(x,y)=(x+y,2x-y)$ es una transformación lineal, por que $$T(x_1+x_2,y_1+y_2)=(x_1+x_2+y_1+y_2,2(x_1+x_2)-(y_1+y_2))$$ $$=(x_1+y_1,2x_1-y_1)+(x_2+y_2,2x_2-y_2)=T(x_1,y_1)+T(x_2,y_2)$$ y $$T(\alpha x_1,\alpha y_1)=(\alpha x_1+\alpha y_1,2\alpha x_1-\alpha y_1)=\alpha(x_1+y_1,2x_1-y_1)=\alpha T(x_1,y_1).$$
 
 ---
-## Resolvamos la EDO anterior
+##### Ejemplo 2
+La función $T:\mathbb{R}^3\rightarrow P_2$ definida por $T(x,y,z)=x+yt+zt^2$ no es una transformación lineal, 
+--
+<br/><br/><br/>
+por que $$T(x_1+x_2,y_1+y_2,z_1+z_2)=x_1+x_2+(y_1+y_2)t+(z_1+z_2)t^2=(x_1+y_1t+z_2t^2)+(x_2+y_2t+z_2t^2)$$ $$=T(x_1,y_1,z_1)+T(x_2,y_2,z_2)$$ pero $$T(\alpha x_1,\alpha y_1,\alpha z_1)=\alpha x_1+\alpha y_1t+\alpha z_1t^2= \alpha(x_1+y_1t+z_1t^2)=\alpha T(x_1,y_1,z_1).$$
 
-> Reescribiendo todo en una forma genérica obtenemos $$\frac{d^2x}{dt^2}+2\lambda \frac{dx}{dt}+\omega^2=0$$ donde $2\lambda=\frac{b}{m}$ y $\omega^2=\frac{k}{m}.$$
+---
+##### Ejemplo 3
 
+Prueben que la función $T:P_3\to \mathbb{R}$  dada por $T(p)=p(0)$ es tranformación lineal.
+
+--
 <br/><br/>
-Notemos que esta es una EDO líneal de orden dos homogénea, por lo que para resolverla necesitamos el polinomio auxiliar: $$m^2+2\lambda m +\omega^2=0.$$
+__Solución:__ Sean $p,q\in P_3$ y $\alpha\in \mathbb{R}$, entonces $$T(p+q)=(p+q)(0)=(a_0+b_0+(a_1+b_1)(0)+(a_2
+b_2)(0)^2=a_0+b_0=T(p)+T(q)$$ y $$T(\alpha p)=(\alpha p)(0)=\alpha a_0+\alpha a_1(0)+\alpha a_2(0)=\alpha T(p).$$
 
 ---
-## Nuestra solución depende de las raíces 
+## El Núcleo y el Rango
 
-> Las raíces del polinomio auxiliar son: $$m_1=-\lambda + \sqrt{\lambda^2-\omega^2}\quad\mbox{y}\quad m_2=-\lambda-\sqrt{\lambda^2-\omega^2}.$$ <br/><br/>
-
-### Casos:
-
-__Caso 1:__ $\lambda^2-\omega^2>0,$ nuestro sistema está _sobre amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 e^{\sqrt{\lambda^2-\omega^2} t}+c_2 e^{-\sqrt{\lambda^2-\omega^2} t}\right)$$
+> __Definición:__ Sea $T:V\to W$ una transformación lineal: <br/><br/>
+  * __El núcleo:__ es el subespacio vectorial de $V$ definido por todos los vectores que se anulan bajo $T$ $$N(T)=\{v\in V:T(v)=0\}.$$ <br/><br/>
+  * __El rango:__ es el subespacio de $W$ definido por todos los vectores de la forma $T(v)$ para $v\in V$ $$R(T)=\{T(v):v\in V\}.$$
 
 ---
-### Casos:
+##### Ejemplo 4
 
-__Caso 2:__ $\lambda^2-\omega^2<0,$ nuestro sistema está _subamortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 \cos\left(\sqrt{\lambda^2-\omega^2}t\right)+c_2 \sin\left(\sqrt{\lambda^2-\omega^2}t\right)\right)$$
-<br/><br/>
-__Caso 3:__ $\lambda^2-\omega^2=0,$ nuestro sistema está _criticamente amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1+c_2 t\right)$$
----
-# Ejemplos:
+Consideremos la transformación lineal $T:\mathbb{R}^2\to \mathbb{R}^2$ definida por $T(x,y)=(x+y,2x-y)$. <br/><br/>
 
-### Movimiento sobre amortiguado:
+--
+* El núcleo de $T$ es el conjunto de todos los vectores $(x,y)$ tales que $T(x,y)=(0,0)$, es decir, $x+y=0$ y $2x-y=0$ $$\left(\begin{array}{cc|c} 1 & 1 & 0\\ 2 & -1 & 0\end{array}\right)\sim \left(\begin{array}{cc|c} 1 & 1 & 0\\ 0 & -3 & 0\end{array}\right)\sim \left(\begin{array}{cc|c} 1 & 0 & 0\\ 0 & 1 & 0\end{array}\right)$$ por lo tanto, $N(T)=\{(0,0)\}$ y $\dim N(T)=0$.
 
-> Encuentre la solución al PVI dado por $$x''+5x'+4x=0$$ con $x(0)=1$ y $x'(0)=1.$
+* Para encontrar el rango de $T$ tomamos un vector genérico $(u,v)$ de $\mathbb{R}^2$ y resolvemos el sistema $$\left(\begin{array}{cc|c} 1 & 1 & u\\ 2 & -1 & v\end{array}\right)\sim \left(\begin{array}{cc|c} 1 & 1 & u\\ 0 & -3 & v-2u\end{array}\right)\sim \left(\begin{array}{cc|c} 1 & 0 & \frac{v+2u}{3}\\ 0 & 1 & \frac{2u-v}{3}\end{array}\right)$$ por lo tanto, $R(T)=\{(u,v)\in \mathbb{R}^2:u=\frac{y+2x}{3},v=\frac{2x-y}{3}\}$ y $\dim R(T)=2$.
 
 ---
-### Movimiento criticamente amortiguado:
+##### Ejemplo 5
 
-> Un peso con peso de $8lbs$ estira un resorte $2ft.$ Asumientdo que la fuerza de amortiguado es igual a $2$ veces la velocidad instantánea. Detemrine la función que describe el movimiento del peso si inicialmente se liberó desde el equilibrio con una velidad (negativa) de $3ft/s.$
+Consideremos la transformación lineal $D:P_2\to P_1$ definida por $D(p)=p'$. <br/><br/>
 
+--
+* $D(a_0+a_1x+a_2x^2)=a_1+2a_2x=0+0x$ si y solo si $a_1=0$ y $a_2=0$, por lo tanto, $N(D)=\{p\in P_2:a_1=a_2=0\}=\{a_1\}$ y $\dim N(D)=1$.
 
----
-### Movimiento subamortiguado:
-
-> Una peso con peso de $16lbs$ está atado a un resorte de $5ft$ de longitud. En el equilibrio el resorte mide $8.2ft.$ Si el peso es inicialmente el peso es liberado $2ft$ por encima de la posición de equilibrio. Encuentre la función de desplazamiento si el medio opone una resistencia igual a la velocidad instantánea.
-
----
-# Movimiento Impulsado
-
-> Supongamos que en nuestro sistema de movimiento amortiguado, agregagos una variable donde nuestro soporte ya no es fijo. Esto se traduce a una fuerza externa que actua sobre el sistema. La segunda Ley de Newton se traduce a: $$mx''=-kx-bx+f(t)$$ o equivalentemente $$x''-2\lambda x'+\omega^2 x= f(t).$$
+* Para encontrar el rango de $D$ tomamos un vector genérico $p=a_0+a_1x$ de $P_1$ y calculamos $$D(b_0+b_1x+b_2x^2)=b_1+2b_2x=a_0+a_1x$$, por lo tanto: $a_0=b_1$ y $b_2=\frac{a_1}{2}$, por lo tanto, $R(D)=P_1$ y $\dim R(D)=2$.
 
 ---
-### Ejemplo:
+##### Ejemplo 6
 
-> Resuelva el siguiente PVI $$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$ con $x(0)=\frac{1}{2}$ y $x'(0)=0.$
-
----
-# Circuito LRC
-
-> Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si $q(t)$ mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. $$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$
+Consideremos la transformación lineal $T:\mathbb{R}^2\to \mathbb{R}^3$ definida por $T(x,y)=A(x,y)$ donde $$A=\left(\begin{array}{cc} 0 & 1 \\ 2 & 1 \\ 1 & 3\end{array}\right).$$ <br/><br/>
 
 ---
-## Ejemplo:
+## Teorema de la Dimensión
 
-> Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que $L=0.25$ henry, $R=10$ ohms, y $C=0.001$ farad. Así mismo $E(t)=0$ y $q(0)=q_0$ coulumbs y $q'(0)=0.$
-
----
-# Actividad:
-
-1. Una masa con peso (fuerza) 16lbs estira un resorte $8/3$fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de $1/2$ la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a $f(t)=10\cos(3t).$
-
-2. Encuentre la solución general de la carga en un circuito LRC cuando $L=1h,\, R=2\Omega,\,C=0.25f$ y $E(t)=50\cos(t) V.$
-
-3. Un peso de 2kg esta en el extremo de un resorte con constante $32 N/m.$ Si empiexa en $t=0,$ una fuerza externa igual a $f(t)=68e^{-2t}\cos(4t)$ se aplica al sistema. Encuentre la función que modela el desplazamiento.
-
-4. Encuentre la función que modela la carga del capacitor en un circuito LRC si $L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c$ y $q'(0)=0 A.$
-=======
----
-title: "Modelando con EDOs lineales de orden superior no homogéneas"
-subtitle: "Sesión 05"  
-author: 
-  - "Alejandro Ucan"
-date: '`r Sys.Date()`'
-output:
-  xaringan::moon_reader:
-    css: xaringan-themer.css
-    nature:
-      slideNumberFormat: "%current%"
-      highlightStyle: github
-      highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
----
-
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
-  cache = FALSE,
-  echo = FALSE,
-  message = FALSE, 
-  warning = FALSE,
-  hiline = TRUE
-)
-```
-
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#000080",
-  secondary_color = "#f2f3f4",
-  inverse_header_color = "#00147e"
-)
-```
-
-```{r xaringan-editable, echo=FALSE}
-xaringanExtra::use_editable(expires = 1)
-xaringanExtra::use_scribble()
-```
-
-```{r xaringan-logo, echo=FALSE}
-xaringanExtra::use_logo(
-  image_url = "https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png",
-  position = xaringanExtra::css_position(top = "2em", right = "2em")
-)
-```
-# Objetivos de la Sesión
-
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
-
----
-# Recordemos el movimiento harmónico
-
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. <br/><br/>
-* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: $$F=-ks.$$ <br/>
-* _Segunda Ley de Newton_ $$m\frac{d^2x}{dt^2}=-kx.$$
-
----
-# Movimiento libre amortiguado
-
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. Supongamos que nuestro peso se encuentra en un medio que presenta una __resistencia__ (por ejemplo un medio viscoso o un amortiguador). <br/><br/>
-* __Mecánica:__ esta acción de amortiguador se ve directamente proporcional a la velocidad instantánea del resorte ($\frac{dx}{dt}$). <br/><br/>
-* No hay otra fuerza que este actuando en nuestro sistema.<br/><br/> 
-$$ m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}.$$
-
----
-## Resolvamos la EDO anterior
-
-> Reescribiendo todo en una forma genérica obtenemos $$\frac{d^2x}{dt^2}+2\lambda \frac{dx}{dt}+\omega^2=0$$ donde $2\lambda=\frac{b}{m}$ y $\omega^2=\frac{k}{m}.$$
-
-<br/><br/>
-Notemos que esta es una EDO líneal de orden dos homogénea, por lo que para resolverla necesitamos el polinomio auxiliar: $$m^2+2\lambda m +\omega^2=0.$$
-
----
-## Nuestra solución depende de las raíces 
-
-> Las raíces del polinomio auxiliar son: $$m_1=-\lambda + \sqrt{\lambda^2-\omega^2}\quad\mbox{y}\quad m_2=-\lambda-\sqrt{\lambda^2-\omega^2}.$$ <br/><br/>
-
-### Casos:
-
-__Caso 1:__ $\lambda^2-\omega^2>0,$ nuestro sistema está _sobre amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 e^{\sqrt{\lambda^2-\omega^2} t}+c_2 e^{-\sqrt{\lambda^2-\omega^2} t}\right)$$
-
----
-### Casos:
-
-__Caso 2:__ $\lambda^2-\omega^2<0,$ nuestro sistema está _subamortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 \cos\left(\sqrt{\lambda^2-\omega^2}t\right)+c_2 \sin\left(\sqrt{\lambda^2-\omega^2}t\right)\right)$$
-<br/><br/>
-__Caso 3:__ $\lambda^2-\omega^2=0,$ nuestro sistema está _criticamente amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1+c_2 t\right)$$
----
-# Ejemplos:
-
-### Movimiento sobre amortiguado:
-
-> Encuentre la solución al PVI dado por $$x''+5x'+4x=0$$ con $x(0)=1$ y $x'(0)=1.$
-
----
-### Movimiento criticamente amortiguado:
-
-> Un peso con peso de $8lbs$ estira un resorte $2ft.$ Asumientdo que la fuerza de amortiguado es igual a $2$ veces la velocidad instantánea. Detemrine la función que describe el movimiento del peso si inicialmente se liberó desde el equilibrio con una velidad (negativa) de $3ft/s.$
-
-
----
-### Movimiento subamortiguado:
-
-> Una peso con peso de $16lbs$ está atado a un resorte de $5ft$ de longitud. En el equilibrio el resorte mide $8.2ft.$ Si el peso es inicialmente el peso es liberado $2ft$ por encima de la posición de equilibrio. Encuentre la función de desplazamiento si el medio opone una resistencia igual a la velocidad instantánea.
-
----
-# Movimiento Impulsado
-
-> Supongamos que en nuestro sistema de movimiento amortiguado, agregagos una variable donde nuestro soporte ya no es fijo. Esto se traduce a una fuerza externa que actua sobre el sistema. La segunda Ley de Newton se traduce a: $$mx''=-kx-bx+f(t)$$ o equivalentemente $$x''-2\lambda x'+\omega^2 x= f(t).$$
-
----
-### Ejemplo:
-
-> Resuelva el siguiente PVI $$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$ con $x(0)=\frac{1}{2}$ y $x'(0)=0.$
-
----
-# Circuito LRC
-
-> Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si $q(t)$ mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. $$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$
-
----
-## Ejemplo:
-
-> Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que $L=0.25$ henry, $R=10$ ohms, y $C=0.001$ farad. Así mismo $E(t)=0$ y $q(0)=q_0$ coulumbs y $q'(0)=0.$
-
----
-# Actividad:
-
-1. Una masa con peso (fuerza) 16lbs estira un resorte $8/3$fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de $1/2$ la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a $f(t)=10\cos(3t).$
-
-2. Encuentre la solución general de la carga en un circuito LRC cuando $L=1h,\, R=2\Omega,\,C=0.25f$ y $E(t)=50\cos(t) V.$
-
-3. Un peso de 2kg esta en el extremo de un resorte con constante $32 N/m.$ Si empiexa en $t=0,$ una fuerza externa igual a $f(t)=68e^{-2t}\cos(4t)$ se aplica al sistema. Encuentre la función que modela el desplazamiento.
-
-4. Encuentre la función que modela la carga del capacitor en un circuito LRC si $L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c$ y $q'(0)=0 A.$
->>>>>>> Stashed changes
+> __Teorema:__ Sea $T:V\to W$ una transformación lineal, entonces $$\dim V=\dim N(T)+\dim R(T).$$
