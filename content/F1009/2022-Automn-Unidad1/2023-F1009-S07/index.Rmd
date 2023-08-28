@@ -1,0 +1,22 @@
+---
+title: "S07: Teorema de Stokes"
+weight: 7
+subtitle: ""
+excerpt: "Bajo ciertas condiciones demostraremos que una integral de línea puede ser igual a una integral de superficie."
+date: '`r Sys.Date()`'
+slug: F1009-sesion-07
+draft: false
+---
+
+En esta sesión de __F1009__ tendremos por objetivo:
+
+ * Recordar la Integral de superficie. <br/><br/>
+ * Describir las hipótesis del Teorema de Stokes. <br/><br/>
+ * Probar la validez del Teorema de Stokes. <br/><br/>
+ * Aplicar el Teorema de Stokes. <br/><br/>
+ 
+El contenido para la **Sesión 07** se encuentra en [slides](/slides/2023-AD-F1009/F1009-sesion-07).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1009/F1009-sesion-07", ratio = "4:3")
+```

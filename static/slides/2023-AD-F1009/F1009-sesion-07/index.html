@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Diagonalización</title>
+    <title>Integral de Superficie y Teorema de Stokes</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2023-08-27" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x894af0f2f5b4521aee95cf4e0d3e955","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bc6b9befd03b4e419ccfd1956fd7dac4","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Diagonalización
+# Integral de Superficie y Teorema de Stokes
 ]
 .subtitle[
-## Sesión 08
+## Sesión 07
 ]
 .author[
 ### Alejandro Ucan
@@ -42,99 +42,51 @@ class: center, middle, inverse, title-slide
 
 
 
+# Objetivos:
 
-<div>
-<style type="text/css">.xaringan-extra-logo {
-width: 110px;
-height: 128px;
-z-index: 0;
-background-image: url(https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png);
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-top:2em;right:2em;
-}
-</style>
-<script>(function () {
-  let tries = 0
-  function addLogo () {
-    if (typeof slideshow === 'undefined') {
-      tries += 1
-      if (tries < 10) {
-        setTimeout(addLogo, 100)
-      }
-    } else {
-      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(function (slide) {
-          const logo = document.createElement('div')
-          logo.classList = 'xaringan-extra-logo'
-          logo.href = null
-          slide.appendChild(logo)
-        })
-    }
-  }
-  document.addEventListener('DOMContentLoaded', addLogo)
-})()</script>
-</div>
-# Objetivos de la Sesión
+ * Recordar la Integral de superficie. &lt;br/&gt;&lt;br/&gt;
+ * Describir las hipótesis del Teorema de Stokes. &lt;br/&gt;&lt;br/&gt;
+ * Probar la validez del Teorema de Stokes. &lt;br/&gt;&lt;br/&gt;
+ * Aplicar el Teorema de Stokes. &lt;br/&gt;&lt;br/&gt;
 
-* Matrices de cambio de base. &lt;br/&gt;&lt;br/&gt;
-* Diagonalización de transformaciones lineales. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Matrices de cambio de base
+# Recordar que...
 
-&gt; Supongamos que tenemos un espacio vectorial `\(V\)` y dos bases para `\(V,\)` digamos `\(B_1\)` y `\(B_2.\)` La matriz de cambio de base de `\(B_1\)` a `\(B_2\)` es la matriz `\(P\)` tal que `\([v]_{B_2}=P[v]_{B_1}\)` para todo `\(v\in V.\)`
+&gt; __Definición:__ Una superficie _paramétrica_ es una función `\(\Phi:[a,b]\times[c,d]\to \mathbb{R}^3\)` con una regla de asignación `$$\Phi(u,v)=\left(\phi_1(u,v),\phi_2(u,v),\phi_3(u,v)\right).$$`
 
---
-##### Ejemplo
-
-&gt; Calcule la matriz de cambio de base de `\(\mathbb{R}^2\)` con las bases `\(\{(1,0),(0,1)\}\)` y `\(\{(-3,2),(2,3)\}.\)`
-
-La matriz de cambio de base es `$$P=\left(\begin{array}{cc} -3 &amp; 2 \\ 2 &amp; 3 \end{array} \right).$$`
-
----
-##### Ejemplo:
-
-&gt; Calcule la matriz de cambio de base de `\(\mathbb{R}^2\)` con las bases `\(\{(1,2),(3,4)\}\)` y `\(\{(1,1),(1,-1)\}.\)` &lt;br/&gt;&lt;br/&gt;
-
---
-&lt;br/&lt;br/&gt;
-Escribir la base `\(\{(1,2),(3,4)\}\)` en combinaciones lineales de `\(\{(1,1),(1,-1)\}:\)` 
 &lt;br/&gt;&lt;br/&gt;
-`$$\left(\begin{array}{cc|cc} 1 &amp; 1 &amp; 1 &amp; 3 \\ 1 &amp; -1 &amp; 2 &amp; 4 \end{array}\right)\sim \left(\begin{array}{cc|cc} 1 &amp; 1 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; \frac{-1}{2} &amp; \frac{-1}{2} \end{array}\right)\sim \left(\begin{array}{cc|cc} 1 &amp; 0 &amp; \frac{3}{2} &amp; \frac{7}{2} \\ 0 &amp; 1 &amp; \frac{-1}{2} &amp; \frac{-1}{2} \end{array}\right)$$`
+
+__Ejemplos:__ 
+  * Una gráfica de una función `\(f(x,y)\)` es una superficie paramétrica, cuya parametrización es `\((u,v,f(u,v))\)` donde `\([a,b]\times[c,d]\)` es el dominio de la función `\(f\)`. &lt;br/&gt;&lt;br/&gt;
+  
+  * El casco esférico del norte es una superficie paramétrica, cuya parametrización es `$$(\cos(\theta)\sin(\phi),\sin(\theta)\sin(\phi),\cos(\phi))$$` donde `\(\theta\in[0,2\pi)\)` y `\(\phi\in[0,\pi/2].\)`
 
 ---
-##### Diagonalización de transformaciones lineales
+# Integral de Superficie.
 
-&gt; __Definición:__ Sea `\(T:V\to V\)` una transformación lineal. Decimos que `\(T\)` es diagonalizable si existe una base `\(B\)` de `\(V\)` tal que `\([T]_B\)` es una matriz diagonal. &lt;br/&gt;&lt;br/&gt;
+&gt; __Definición:__ La __integral de superficie__ de un campo vectorial `\(\mathbf{F}\)` definido sobre una superficie paramétrica `\(S\)` (con parametrización `\(\Phi\)`) es la cantidad: `$$\int_\Phi \mathbf{F}\cdot dS = {\int\!\int}_D \mathbf{F}\cdot \left(T_u \times T_v\right) du dv.$$`
 
---
-&lt;br/&gt;&lt;br/&gt; 
-
-En el caso de matrices, una matriz `\(A\)` es diagonalizable si existe una matriz invertible `\(P\)` tal que `\(P^{-1}AP\)` es diagonal. Entonces, si los vectores propios de `\(A\)` forman una base, la matriz de cambio de base de la canónica al conjunto de vectores propios es la matriz que funciona para diagonalizar.
-
----
-##### Ejemplo
-
-Encuentra la diagonalización de la transformación `\(T(x,y)=(5x-12y,-12x-5y)\)` y la matriz de cambio de bases para la diagonalización.
-
---
 &lt;br/&gt;&lt;br/&gt;
-##### Solución:
-
-El polinomio característico de `\(T\)` es `\(\lambda^2-169\)` cuyas raíces son `\(13\)` y `\(-13.\)` Los vectores propios asociados son `\((-2,3)\)` y `\((3,2).\)` La matriz de cambio de base de estandar a los vectores propios es `$$P=\left(\begin{array}{cc} -2 &amp; 3 \\ 3 &amp; 2 \end{array}\right).$$` Así que la diagonalización es `$$T=\left\{\left(\begin{array}{cc} 13 &amp; 0 \\ 0 &amp; -13 \end{array}\right),\left(\begin{array}{cc} -2 &amp; 3 \\ 3 &amp; 2 \end{array}\right)\right\}.$$`
+__Nota:__ en este caso `\(T_u\)` y `\(T_v\)` representan los vectores tangentes a la superficie en las direcciones `\(u\)` y `\(v.\)` Para calcularlos basta con derivar cada función coordenada respecto a la dirección.
 
 ---
-##### Ejemplo
+# Teorema de Stokes
 
-Encuentra la diagonalización de la transformación `\(T(x,y)=(7x-2y,2x+2y)\)` y la matriz de cambio de bases para la diagonalización.
+&gt; __Teorema:__ Sea `\(S\)` una superficie orientada parametrizada uno-a-uno por `\(\Phi:D\to\mathbb{R}^3\)` y `\(D\)` es una región simple, y sea `\(\partial S\)` la curva frontera. Para un campo vectorial `\(\mathbf{F}\)` definida sobre `\(S,\)` se cumple la siguiente igualdad `$${\int\!\int}_S (\nabla\times \mathbf{F})\cdot dS = \int_{\partial S} \mathbf{F}\cdot ds.$$`
 
---
-&lt;br/&gt;&lt;br/&gt;
-##### Solución:
+### ¿Qué gano con esto?
 
-El polinomio característico de `\(T\)` es `\(\lambda^2+9\lambda-18\)` y sus raíces son `\(3\)` y `\(6.\)` Los vectores propios esta transformación son `\((1,2)\)` y `\((2,1).\)` La matriz de cambio de base canónica a la de los vectores propios es `$$P=\left(\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array}\right).$$` Así que la diagonalización es `$$T=\left\{\left(\begin{array}{cc} 3 &amp; 0 \\ 0 &amp; 6 \end{array}\right),\left(\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array}\right)\right\}.$$`
+Obtenemos que la integral de la parte _normal_ del campo sobre la superficie coincide con la parte _tangencial_ del campo sobre su frontera.
+
+---
+## Prueba del Teorema de Stokes.
+
+---
+# Teorema de Stokes: aplicación.
+
+&gt; Queremos medir el flujo de agua que pasa en una sección de un tubo de radio 10 `\(m\)` y cuya frontera está parametrizada por `\((0,\cos t, \sin t)\)` con `\(0\leq t\leq 2\pi.\)` Si la velocidad del agua está dada por el campo `\(\mathbf{F}(x,y,z)=(0,y^2,\cos(x)).\)`
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

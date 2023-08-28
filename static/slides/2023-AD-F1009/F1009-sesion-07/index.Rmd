@@ -1,0 +1,88 @@
+---
+title: "Integral de Superficie y Teorema de Stokes"
+subtitle: "Sesión 07"
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Recordar la Integral de superficie. <br/><br/>
+ * Describir las hipótesis del Teorema de Stokes. <br/><br/>
+ * Probar la validez del Teorema de Stokes. <br/><br/>
+ * Aplicar el Teorema de Stokes. <br/><br/>
+
+
+---
+# Recordar que...
+
+> __Definición:__ Una superficie _paramétrica_ es una función $\Phi:[a,b]\times[c,d]\to \mathbb{R}^3$ con una regla de asignación $$\Phi(u,v)=\left(\phi_1(u,v),\phi_2(u,v),\phi_3(u,v)\right).$$
+
+<br/><br/>
+
+__Ejemplos:__ 
+  * Una gráfica de una función $f(x,y)$ es una superficie paramétrica, cuya parametrización es $(u,v,f(u,v))$ donde $[a,b]\times[c,d]$ es el dominio de la función $f$. <br/><br/>
+  
+  * El casco esférico del norte es una superficie paramétrica, cuya parametrización es $$(\cos(\theta)\sin(\phi),\sin(\theta)\sin(\phi),\cos(\phi))$$ donde $\theta\in[0,2\pi)$ y $\phi\in[0,\pi/2].$
+
+---
+# Integral de Superficie.
+
+> __Definición:__ La __integral de superficie__ de un campo vectorial $\mathbf{F}$ definido sobre una superficie paramétrica $S$ (con parametrización $\Phi$) es la cantidad: $$\int_\Phi \mathbf{F}\cdot dS = {\int\!\int}_D \mathbf{F}\cdot \left(T_u \times T_v\right) du dv.$$
+
+<br/><br/>
+__Nota:__ en este caso $T_u$ y $T_v$ representan los vectores tangentes a la superficie en las direcciones $u$ y $v.$ Para calcularlos basta con derivar cada función coordenada respecto a la dirección.
+
+---
+# Teorema de Stokes
+
+> __Teorema:__ Sea $S$ una superficie orientada parametrizada uno-a-uno por $\Phi:D\to\mathbb{R}^3$ y $D$ es una región simple, y sea $\partial S$ la curva frontera. Para un campo vectorial $\mathbf{F}$ definida sobre $S,$ se cumple la siguiente igualdad $${\int\!\int}_S (\nabla\times \mathbf{F})\cdot dS = \int_{\partial S} \mathbf{F}\cdot ds.$$
+
+### ¿Qué gano con esto?
+
+Obtenemos que la integral de la parte _normal_ del campo sobre la superficie coincide con la parte _tangencial_ del campo sobre su frontera.
+
+---
+## Prueba del Teorema de Stokes.
+
+---
+# Teorema de Stokes: aplicación.
+
+> Queremos medir el flujo de agua que pasa en una sección de un tubo de radio 10 $m$ y cuya frontera está parametrizada por $(0,\cos t, \sin t)$ con $0\leq t\leq 2\pi.$ Si la velocidad del agua está dada por el campo $\mathbf{F}(x,y,z)=(0,y^2,\cos(x)).$
+

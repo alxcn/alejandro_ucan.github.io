@@ -1,0 +1,95 @@
+---
+title: "Teorema de Gauss"
+subtitle: "Sesión 08"
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.show =('asis'),
+  dev='png',
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "90%"
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+# Objetivos:
+
+ * Describir los dominios simples de $\mathbb{R}^3$ y sus fronteras. <br/><br/>
+ * Describir las hipótesis del Teorema de Gauss. <br/><br/>
+ * Probar la validez del Teorema de Gauss. <br/><br/>
+ * Aplicar el Teorema de Gauss. <br/><br/>
+
+---
+# Dominios simples de $\mathbb{R}^3$ y sus fronteras
+
+> __Definición:__ Decimos que un subconjunto de $\mathbb{R}^3$ es un _dominio simple_ si se puede expresar como una región entre dos superficies simples.
+
+
+---
+# Dominios simples de $\mathbb{R}^3$ y sus fronteras
+
+> __Definición:__ La frontera de un dominio simple $D,$ se denota por $\partial D$ y es una superficie (parametrizable) de $\mathbb{R}^3$ (posiblemente a trozos) cerrada (no tiene frontera).
+
+--
+##### Ejemplo:
+
+Supongamos tenemos la bola unitaria $\mathbb{B}^3,$ su frontera es la esfera unitaria. De igual manera, el cubo unitario tiene como frontera a los seis pedazos de planos que lo forman.
+
+---
+# Teorema de Gauss
+
+> __Teorema:__ Sea $D$ una dominio simple de $\mathbb{R}^3$ y $\partial D$ su frontera con una orientación dada. Si $\mathbf{F}$ es un campo definido en $D,$ entonces se cumple que $$\int_{\partial D} \mathbf{F}\cdot dS = \int_{D} \nabla \cdot \mathbf{F} dV.$$
+
+---
+## Prueba del Teorema de Gauss
+
+---
+# Aplicaciones del Teorema de Gauss
+
+> Calcule la cantidad de flujo del campo $\mathbf{F}(x,y,z)= (xy^2,x^2y,y)$ en la superficie formada por el cilindro $x^2+y^2=1$ y la parte de los planos $z=\pm 1$ acotada por el cilíndro.
+
+--
+##### Solución:
+
+Notemos que para calcular el flujo necesitaríamos parametrizar la superficie formada por el cilíndro y los discos en $z=\pm 1.$ Sin embargo, podemos aplicar el Teorema de Gauss para calcular el flujo. La región acotada por esta región es simple y su frontera es la superficie formada por el cilindro y los discos en $z=\pm 1.$ Entonces, $$\int_D \nabla \cdot \mathbf{F} dV = 2 \int_{x^2+y^2\leq 1}(x^2+y^2)dxdy=2\pi.$$
+
+---
+# Ley de Gauss
+
+> __Teorema:__ Sea $D\subset \mathbb{R}^3$ una región simple tal que $(0,0,0)\not\in \partial D.$ Entonces se cumple que $$\int_{\partial D}\frac{\mathbf{r}}{r^3}\cdot dS =\left\{\begin{array}{c} 4\pi \text{ si } (0,0,0)\in D \\ 0 \text{ si } (0,0,0)\not\in D \end{array}\right.$$ donde $\mathbf{r}=(x,y,z)$ y $r=\sqrt{x^2+y^2+z^2}.$
+
+
+---
+## Prueba de la Ley de Gauss
+
+
+
