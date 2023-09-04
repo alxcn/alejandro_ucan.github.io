@@ -1,6 +1,6 @@
 ---
 title: "El plano complejo"
-subtitle: "Sesión 08"
+subtitle: "Sesión 09"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
