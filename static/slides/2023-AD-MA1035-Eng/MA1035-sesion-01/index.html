@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Ecuaciones Diferenciales Ordinarias y Modelación</title>
+    <title>ODEs and Modelling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-09-17" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ed04fb26d6ee4b39b39328e773711329","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x2572f20c06746aca58b3231bf60b73d","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Ecuaciones Diferenciales Ordinarias y Modelación
+# ODEs and Modelling
 ]
 .subtitle[
-## Sesión 01
+## Session 01
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-09-17
 ]
 
 ---
@@ -76,122 +76,137 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Session's Goals
 
-* Conocer la definición de EDO y sus clasificaciones. &lt;br/&gt;&lt;br/&gt;
-* Conocer el concepto de familia solución. &lt;br/&gt;&lt;br/&gt;
-* Aplicar el método de separación de variables. &lt;br/&gt;&lt;br/&gt;
-* Modelar mediante EDOS lineales de primer orden. &lt;br/&gt;&lt;br/&gt;
+* Defining Differential Equations (DE). &lt;br/&gt;&lt;br/&gt;
+* Modelling with DE. &lt;br/&gt;&lt;br/&gt;
+* Slope fields and qualitative understanting. &lt;br/&gt;&lt;br/&gt;
+* Solutions of DE (family and IVP). &lt;br/&gt;&lt;br/&gt;
 
 ---
-# ¿Qué es una EDO?
+# What is a DE?
 
-&gt; __Definición:__ Una _Ecuación Diferencial_ es una ecuación que contiene derivadas o funciones incognitas respecto a una o mas variables independientes. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-Diremos que una ecuación diferencial es _ordinaria_ si las funciones derivada se consideran de una varibale, y _parciales_ si las funciones derivada son de varias variables.
+&gt; __Defintion:__ a _Differential Equation_ is an equation that contains derivatives or incognite functions with respect to one or more independent variables. &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+We said that a DE is _ordinary_ if the derivative functions are considered of one variable, and _partial_ if the derivative functions are of several variables.
 
-__Ejemplos:__
+#### Examples:
+
   * `\(\frac{dy}{dx}+5y=e^x,\)` `\(\frac{d^2y}{dx^2}-\frac{dy}{dx}+6y=0\)` ó `\(\frac{dx}{dt}+\frac{dy}{dt}=2x+y.\)` &lt;br/&gt;&lt;br/&gt;
   
   * `\(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0\)` `\(\frac{\partial u}{\partial y}=-\frac{\partial u}{\partial x}.\)`
   
 ---
-## Clasificación de las EDO.
+## Classification of ODEs.
 
-&gt; Las EDO se pueden clasificar mediante:
-  * El orden de la derivada: &lt;br/&gt;&lt;br/&gt;
-    * Primer orden: `\(y'=y,\)` o `\(y'sin(x)=y.\)` &lt;br/&gt;
-    * Segundo, tercer, y así consecutivamente involucran derivadas de ese orden. &lt;br/&gt;&lt;br/&gt;
-  * Linealidad:
-    * Lineal: la función `\(y\)` y sus derivadas se encuentran a la potencia 1, y los coeficientes solo dependen de `\(x.\)`  `$$y''+y'+6=0.$$`
-    * No lineal: alguna función `\(y\)` o sus derivadas se encuentra a potencia mayor a 1, o los coeficientes pueden depender de `\(x\)` y `\(y\)` o sus derivadas. `$$(1-y)y'+2y=e^x,$$` `$$(y'')^3+sin(y)=0.$$`
+&gt; ODEs are classified by:
+  * The order of the derivative: &lt;br/&gt;&lt;br/&gt;
+    * First order: `\(y'=y,\)` or `\(y'sin(x)=y.\)` &lt;br/&gt;
+    * Second, third, and so on involve derivatives of that order. &lt;br/&gt;&lt;br/&gt;
+  * Linearity: &lt;br/&gt;&lt;br/&gt;
+    * Linear: the function `\(y\)` and its derivatives are raised to the power of 1, and the coefficients only depend on `\(x.\)`  `$$y''+y'+6=0.$$`
+    * Non-linear: the function `\(y\)` or its derivatives are raised to a power greater than 1, or the coefficients depend on `\(x\)` and `\(y\)` or its derivatives. `$$(1-y)y'+2y=e^x,$$` `$$(y'')^3+sin(y)=0.$$`$
     
 ---
-## Solución de una EDO.
+## Solutions of an ODE.
 
-&gt; __Definición:__ Decimos que `\(f\)` es una función definida en cierto intervalo `\(I,\)` con derivadas continuas en `\(I\)` (tantas derivadas como el orden de la ecuación) es una solución de una ecuación diferencial si cuando sustituimos la función obtenemos una identidad.
+&gt; __Definition:__ Let `\(f\)` be a function defined in an interval `\(I,\)` with continuous derivatives in `\(I\)` (as many derivatives as the order of the equation) is a solution of a differential equation if when we substitute the function we obtain an identity.
 
-__Ejemplo:__ La función `\(f(x)=e^x\)` definida en `\(\mathbb{R},\)` es una solución de la EDO `$$y'-y=0.$$` Veamos, `\(f'(x)=e^x\)` y si `\(y=f(x),\)` entonces `$$y'-y=e^x-e^x=0.$$`
-
----
-## Curva Solución
-
-&gt; __Definicón:__ la gráfica de una función solución a una EDO se conoce como curva solución, notemos que la curva solución puede diferir de la gráfica de la función dado que la curva solución __depende del intervalo de definición de la solución.__
-
-__Ejemplo:__ Consideremos la ecuación `\(xy'+y=0.\)` La función `\(y=f(x)=1/x\)` es una solución, pero recordemos que `\(f(x)\)` no es diferenciable en `\(x=0,\)` por lo que debemos definir que intervalo tomaremos, si `\((-\infty,0)\)` o `\((0,\infty).\)` 
+--
+#### Example:
+The function `\(f(x)=e^x\)` defined in `\(\mathbb{R}\)` is a solution of the DE `$$y'-y=0.$$` &lt;br/&gt;&lt;br/&gt;
+Let's check it out: `$$f'(x)-f(x)=e^x-e^x=0.$$`
 
 ---
-### Soluciones implícitas.
+### Implicit solutions.
 
-&gt; __Definición:__ A veces las EDO pueden satisfacerse por una relación `\(G(x,y)\)` (ecuación que involucra `\(x\)` y `\(y\)`), pero siempre con la premisa que hay una función que satisface esta relación que se comportará como la solución de la EDO.
+&gt; __Definition:__ Sometimes the solutions of a DE can be expressed as a relation `\(G(x,y)=0,\)` where `\(G\)` is a function of two variables, but always thinking that there is a function that satisfies this relation. &lt;br/&gt;&lt;br/&gt;
 
-__Ejemplo:__ La relación `\(x^2+y^2=k^2\)` es una solución de la ecuación `\(yy'+x=0.\)` Y las funciones asociadas son `\(f(x)=\sqrt{k^2-x^2}\)` y `\(f(x)=-\sqrt{k^2-x^2}\)` en sus respectivos intervalos de definición.
+--
+#### Example:
 
----
-# Técnicas para resolver EDOs
-
-&gt; __Definición:__ Una EDO se dice que es una ecuación __separable__ o acepta __separación de variables__ si es de la forma `$$y'=g(x)h(y).$$`
-
-__Ejemplo:__ Consideremos la EDO `\(y'=1+e^{2x}.\)` &lt;br/&gt;&lt;br/&gt;
-
-Notemos que si realizamos la antideravada `$$\int 1+e^{2x}dx=x+\frac{e^{2x}}{2}+c$$` es una solución para la ecuación diferencial para cada constante `\(c.\)`
+The relation `\(x^2+y^2=1\)` is a solution of the DE `\(yy'+x=0.\)` &lt;br/&gt;&lt;br/&gt;
 
 ---
-## ¿Cómo utilizo el método?
+# Separable ODEs
 
-&gt; Si tenemos una EDO que es separable `$$\frac{dy}{dx}=g(x)h(y).$$`
-  * Separamos las variables `\(y\)` y `\(x\)` en un lado de la ecuación. `$$p(y)\frac{dy}{dx}=g(x),\quad\mbox{donde }p(y)=\frac{1}{h(y)}.$$`
-  * Separamos nuestras diferenciales como si fuera una "fracción",
-`$$p(y)dy=g(x)dx$$`
-  * Integramos cada lado de la ecuación, `$$\int p(y)dy =\int g(x)dx.$$`
-  * Las antiderivadas formaran una _relación_ que fungirá de solución.
+&gt; __Definition:__ A DE is said to be __separable__ if it can be written in the form `$$\frac{dy}{dx}=g(x)h(y).$$`
 
----
-### Ejemplo del método.
-
-&gt; Resuelva la EDO `\((1+x)\frac{dy}{dx}-y=0.\)`
+--
+#### Example:
+Consider the DE `\(y'=x^2y.\)` &lt;br/&gt;&lt;br/&gt;
+This DE is separable, since we can write it as `$$\frac{dy}{dx}=x^2y,$$` `$$\frac{dy}{y}=x^2dx.$$`
+ 
+But not all DEs are separable, for example `\(y'=x^2+y.\)`
 
 ---
-### Ejemplo del método.
+## Method: Separation of Variables
 
-&gt; Resuelva la EDO `\(\frac{dy}{dx}=e^{3x+2y}.\)`
-
----
-# Modelos Lineales: Crecimiento y Decaimiento
-
-&gt; En una rebanada de pan sabemos que se encuentran una comunidad de bacterias. Si sabemos que la razón de crecimiento de de esta comunidad es de 3/2 el número de la población. ¿Hay una función que describa la cantidad de bacterias en el tiempo determinado?
-
-&lt;br/&gt;&lt;br/&gt;
-
-Cuando una _razón de cambio_ es __proporcional__ a la población obtenemos una EDO lineal dada por `$$\frac{dx}{dt}=kx$$` donde la población `\(x(t)\)` depende del tiempo `\(t.\)`
+&gt; If our equation is separable of the form `$$\frac{dy}{dx}=g(x)h(y).$$`
+Then we can solve it by the following steps:
+  * We separate the variables `\(y\)` and `\(x\)` on one side of the equation  `\(\frac{dy}{h(y)}=g(x)dx.\)`
+  * We integrate both sides of the equation. `\(\int \frac{dy}{h(y)}=\int g(x)dx.\)`
+  * We aggregate a constant to only one of the integration. `\(\int \frac{dy}{h(y)}=\int g(x)dx+C.\)`
+  * Antiderivatives will form a _relation_ that will act as a solution.
 
 ---
-## Esta ecuación es separable.
+#### Example 1:
 
-Notemos que la EDO anterior es separable, y que todas las soluciones son similares, es decir, toda solución pertenece a la familia `$$x(t)=ce^{kt}.$$`
+&gt; Solve `\((1+x)\frac{dy}{dx}-y=0.\)`
 
-*Reto:* Utiliza separación de variables para resolver la ecuación modelo y llegar a la familia solución.
-
-&gt; Usualmente un problema de modelación nos da información necesaria para delimitar el problema, conocido como __condición inicial__. Esta información nos permite transformar nuestra EDO en algo conocido como __problema de valor inicial__.
-
----
-## Problemas de valores iniciales y soluciones.
-
-&gt; __Definición:__ Un __problema de valor inicial__ se conforma de una EDO más una condición que debe satisfacer la solución. 
-
-
-#### Nota: la condición inicial permite que la solución que encontremos sea __única__, para la EDO y la condición inicial.
-
-&gt; En una rebanada de pan sabemos que se encuentran una comunidad de bacterias. Si sabemos que la razón de crecimiento de de esta comunidad es de 3/2 el número de la población. ¿Qué función modela la población de bacterias _si se sabe que al inicio de nuestra observación_ había __500 mil bacterias__?
+--
+It is separable since after manipulation we have: `$$\frac{dy}{dx}=\frac{y}{1+x}.$$` 
+Then we have: `$$\frac{dy}{y}=\frac{dx}{1+x}.$$`
+Integrating both sides we have: `$$\int \frac{dy}{y}=\int \frac{dx}{1+x},$$` `$$ln|y|=ln|1+x|+C.$$`
+Then we have: `$$y=C(1+x).$$`
 
 ---
-### Problemas de Temperatura
+#### Example 2:
 
-#### Ley de Newton para el enfriamento/calentamiento.
+&gt; Find the solution family of `\(\frac{dy}{dx}=e^{3x+2y}.\)`
 
-&gt; La razón de cambio de la temperatura que experimenta un cuerpo es proporcional a la diferencia entre la temperatura del cuerpo y la temperatura de medio en el que se encuentra. $$ \frac{dT}{dt}=k(T-T_m).$$
+--
+It is separable since after manipulation we have: `$$\frac{dy}{dx}=e^{3x}e^{2y}.$$` 
+Then we have: `$$\frac{dy}{e^{2y}}=e^{3x}dx.$$` 
+Integrating both sides we have: `$$\int \frac{dy}{e^{2y}}=\int e^{3x}dx \Rightarrow-\frac{1}{2}e^{-2y}=\frac{1}{3}e^{3x}+C.$$`
+Then we have: `$$e^{-2y}=-\frac{2}{3}e^{3x}+C.$$`
+Finally we have: `\(y=-\frac{1}{2}ln(-\frac{2}{3}e^{3x}+C).\)`
 
+---
+# Modelling with ODEs
 
-__Ejemplo:__ La temperatura de unos chilaquiles Tec recien servidos es de `\(90^\circ C.\)` Si la temperatura en la cafetería es de `\(22^\circ C.\)` Si despues de 2 minutos la temperatura de mis chilaquiles es de `\(80^\circ C.\)` ¿Qué función modela la temperatura de mis chilaquiles?
+&gt; __Definition:__ A model is a mathematical representation of a real situation. Modelling with ODEs means that our real situation can be represented by a DE.
+
+## Growth and Decay
+
+&gt; __Hypothesis:__ The rate of change of a variable is proportional to the size of its ammount at all times . &lt;br/&gt;&lt;br/&gt; `$$\frac{dx}{dt}=kx.$$`
+
+#### Example:
+  An slice of bread has a bacteria population of 1000. If the rate of growth of the bacteria is 3/2 the size of the population. What function models the population of bacteria?
+
+---
+## Let's solve previous example.
+
+Note that previous equation is separable: `$$\frac{dx}{dt}=kx\Rightarrow\frac{dx}{x}=kdt.$$` Therefore we have: `$$\int \frac{dx}{x}=\int kdt\Rightarrow ln|x|=kt+C.$$` Then we have: `$$x=Ce^{kt}.$$`
+
+Therefore we have that `\(B(t)=Ce^{3t/2}.\)` But we know that at the start of observations, we had `\(B(0)=1000,\)` therefore `$$B(0)=Ce^{3(0)/2}=1000,$$` `$$C=1000.$$`
+
+Then we have that `\(B(t)=1000e^{3t/2}.\)`
+---
+## Initial Value Problems.
+
+&gt; __Definition:__ An __Initial Value Problem__ is a DE plus a condition that the solution must satisfy.
+
+##### Remark: The solution of an IVP is a function that satisfies the DE and the condition, therefore this one is unique in the case that exists such function.
+
+---
+### Temperature problems
+
+#### Newton's law for cooling/heating.
+&gt; The rate of change of the temperature of a body is proportional to the difference between the temperature of the body and the temperature of the medium in which it is located. &lt;br/&gt;&lt;br/&gt;
+$$ \frac{dT}{dt}=k(T-T_m).$$
+
+#### Example: 
+A cup of coffee is at `\(90^\circ C\)` and is placed in a room at `\(22^\circ C.\)` After 2 minutes the temperature of the coffee is `\(80^\circ C.\)` What function models the temperature of the coffee?
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

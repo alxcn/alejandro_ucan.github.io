@@ -1,0 +1,21 @@
+---
+title: "S01: Introduction to Bussines Variables"
+weight: 1
+subtitle: ""
+excerpt: "We will introduce the concept of dependency in variables, and function dependency"
+date: '`r Sys.Date()`'
+slug: MA1027-session-01
+draft: false
+---
+
+In this session of **MA1027** our goals are:
+
+ * Understand the concept of variable dependencies. <br/><br/>
+ * Understand the concept of function and its difference with relations. <br/><br/>
+ * Applications of functions in business. <br/><br/>
+
+The slides for **Session 01** are in [slides](/slides/2023-AD-MA1027/MA1027-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1027/MA1027-sesion-01", ratio = "4:3")
+```

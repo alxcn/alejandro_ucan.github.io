@@ -131,14 +131,14 @@ enableEmoji = true
     url = "/f1009/"
     weight = 5
   [[menu.header]]
-    name = "MA1033"
-    title = "Análisis de Ecuaciones Diferenciales"
-    url = "/ma1033/"
+    name = "F1006"
+    title = "Introduction to Modelling and Mathematics for Physical movement."
+    url = "/f1006/"
     weight = 6
   [[menu.header]]
-    name = "MA1034"
-    title = "Modelación de procesos mediante Álgebra Lineal"
-    url = "/ma1034/"
+    name = "MA1035"
+    title = "Engeneering modeling via Dynamical Systems"
+    url = "/ma1035Eng/"
     weight = 7
   #[[menu.header]]
   #  name = "MA103"
@@ -161,9 +161,9 @@ enableEmoji = true
   #  url = "/f1017/"
   #  weight = 7
   [[menu.header]]
-    name = "MA3014"
-    title = "Geometric Structures on the Borromean Rings"
-    url = "/ma3014/"
+    name = "MA1027"
+    title = "Mathematical Thinking"
+    url = "/ma1027/"
     weight = 8
   
 
