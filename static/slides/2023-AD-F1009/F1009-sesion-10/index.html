@@ -4,9 +4,9 @@
     <title>Funciones de variable compleja</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-09-17" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x1a8a941b3ec4ac38a4645916449f4fe","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bcda6cf4e16c4ab8a6bd68020406f689","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -25,13 +25,13 @@ class: center, middle, inverse, title-slide
 # Funciones de variable compleja
 ]
 .subtitle[
-## Sesión 09
+## Sesión 10
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-09-17
 ]
 
 ---
@@ -43,39 +43,7 @@ class: center, middle, inverse, title-slide
 
 
 
-<div>
-<style type="text/css">.xaringan-extra-logo {
-width: 110px;
-height: 128px;
-z-index: 0;
-background-image: url(https://github.com/alxcn/TecLogoEIC/blob/9562a53875418e749a296c85808a19c85fc4be74/IngenieriaCiencias_Horizontal_RGB.png);
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-top:1em;right:1em;
-}
-</style>
-<script>(function () {
-  let tries = 0
-  function addLogo () {
-    if (typeof slideshow === 'undefined') {
-      tries += 1
-      if (tries < 10) {
-        setTimeout(addLogo, 100)
-      }
-    } else {
-      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(function (slide) {
-          const logo = document.createElement('div')
-          logo.classList = 'xaringan-extra-logo'
-          logo.href = null
-          slide.appendChild(logo)
-        })
-    }
-  }
-  document.addEventListener('DOMContentLoaded', addLogo)
-})()</script>
-</div>
+preserve3ab6d5986ac9715f
 # Objetivos:
 
  * Introducir los conceptos de regiones en el plano complejo. &lt;br/&gt; &lt;br/&gt;
@@ -114,11 +82,6 @@ Denotaremos por `\(\overline{S}\)` al conjunto que resulta de unir `\(S\)` con s
 &lt;br/&gt;
 &gt; __Definición:__ Un conjunto abiero `\(S\)` en `\(\mathbb{C}\)` se dice que es _conexo_ si cualquier par de puntos los puedo unir por un camino de rectas contenido enteramente en `\(S.\)` &lt;br/&gt;
 Un conjunto `\(S\)` es _acotado_ si existe un círculo de radio `\(R\)` que contiene al conjunto `\(S.\)` Si no existe tal circulo, entonces diremos que `\(S\)` es _no acotado._
-
----
-# Compactificación a un punto de `\(\mathbb{C}.\)`
-
-
 ---
 # Funciones de (una) variable compleja.
 
@@ -318,6 +281,33 @@ slideshow._releaseMath = function(el) {
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
+e.tagName !== 'PRE' && code.childElementCount === 0) {
       text = code.textContent;
       if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
           /^\$\$(.|\s)+\$\$$/.test(text) ||

@@ -1,0 +1,22 @@
+---
+title: "S10: Funciones de Variables Compleja"
+weight: 10
+subtitle: ""
+excerpt: "Introduciremos un poco de la topología del plano complejo así como los inicios del cálculo complejo."
+date: '`r Sys.Date()`'
+slug: F1009-sesion-10
+draft: false
+---
+
+En esta sesión de __F1009__ tendremos por objetivo:
+
+ * Introducir los conceptos de regiones en el plano complejo. <br/> <br/>
+ * Entender la compactificación en un punto del plano complejo. <br/> <br/>
+ * Introducir el concepto de función de variable compleja. <br/><br/>
+ * Entender los límites y continuidad en el plano complejo.
+ 
+El contenido para la **Sesión 10** se encuentra en [slides](/slides/2023-AD-F1009/F1009-sesion-10).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1009/F1009-sesion-10", ratio = "4:3")
+```

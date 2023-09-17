@@ -1,6 +1,6 @@
 ---
 title: "Funciones de variable compleja"
-subtitle: "Sesión 09"
+subtitle: "Sesión 10"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -86,11 +86,6 @@ Denotaremos por $\overline{S}$ al conjunto que resulta de unir $S$ con sus punto
 <br/>
 > __Definición:__ Un conjunto abiero $S$ en $\mathbb{C}$ se dice que es _conexo_ si cualquier par de puntos los puedo unir por un camino de rectas contenido enteramente en $S.$ <br/>
 Un conjunto $S$ es _acotado_ si existe un círculo de radio $R$ que contiene al conjunto $S.$ Si no existe tal circulo, entonces diremos que $S$ es _no acotado._
-
----
-# Compactificación a un punto de $\mathbb{C}.$
-
-
 ---
 # Funciones de (una) variable compleja.
 
