@@ -1,5 +1,5 @@
 ---
-title: "Linear Functional Models"
+title: "Linear Function Models"
 subtitle: "Session 02"  
 author: 
   - "Alejandro Ucan"
@@ -155,5 +155,55 @@ tab <- as.table(rbind(c(3, 6,9,12), c(8,17,26,35)))
 dimnames(tab) <- list(data = c("x", "f(x)"),
                       index  = c("1", "2", "3","4"))
 tab
-
 ```
+
+<br/><br/>
+* Does it fit to a linear model? <br/><br/>
+* What is the mean change of the function? <br/><br/>
+* What is the expresion of the function?
+
+---
+#### Business linear functions
+
+> __Definition:__ The __total cost__ function represent the cost of producing $x$ units of a product. <br/><br/>The total cost is equal to the sum of the fixed costs and the variable ones. $$C_{total}=C_{fixed}+C_{variable}$$
+
+
+--
+
+<br/><br/>
+> __Definition:__ The __income__ function represents the total amount of money obtained by selling $q$ items at price $p.$ Therefore, $$I=p\cdot q.$
+
+---
+#### Example 5
+
+A company produces a product that has a fixed cost of 1000mxn and a variable cost of 10mxn per unit. <br/><br/> If each unit is selled at 20mxn, determine the total cost and the income functions.
+
+--
+<br/><br/>
+
+* Let $x$ be the number of units produced. <br/><br/>
+* Total cost function: $C_{total}(x)=1000+10x$ <br/><br/>
+* Income function: $I(x)=20x$ <br/><br/>
+
+---
+#### Example 6
+
+A small company offers offers e-markating services. The company pays the salary of one content creator and one web designer. If the fixed expenses of the company are 500mxn of web servers, 1000mxn of rent and 800mxn of light bills. The concent creator earns 100mxn per hour and the web designer earns 150mxn per hour. <br/><br/> If the company charges 200mxn per hour of work, determine the total cost and the income functions.
+
+--
+<br/><br/>
+
+* Let $t$ be the number of hours. <br/><br/>
+* Total cost function: $C_{total}(t)=2300+ 100t+150t=2300 +250t$ <br/><br/>
+* Income function: $I(x)=200t$ <br/><br/>
+
+---
+#### Business linear functions
+
+> __Definition:__ The _utility or revenue__ function is defined as the difference between the income and the total cost functions. $$U(x)=I(x)-C_{total}(x)$$
+
+--
+<br/><br/>
+
+In example 5, the utility function is $$U(x)=20x-(1000+10x)=10x-1000.$$ And in example 6, the utility function is $$U(t)=200t-(2300+250t)=-50t+2300.$$
+

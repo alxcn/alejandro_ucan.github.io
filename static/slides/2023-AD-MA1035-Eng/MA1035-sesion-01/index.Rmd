@@ -1,5 +1,5 @@
 ---
-title: "ODEs and Modelling"
+title: "Introduction to Business Variables"
 subtitle: "Session 01"  
 author: 
   - "Alejandro Ucan"
@@ -48,134 +48,108 @@ xaringanExtra::use_logo(
   position = xaringanExtra::css_position(top = "2em", right = "2em")
 )
 ```
-# Session's Goals
+ Session's Goals
 
-* Defining Differential Equations (DE). <br/><br/>
-* Modelling with DE. <br/><br/>
-* Slope fields and qualitative understanting. <br/><br/>
-* Solutions of DE (family and IVP). <br/><br/>
+ * Understand the concept of variable dependencies. <br/><br/>
+ * Understand the concept of function and its difference with relations. <br/><br/>
+ * Applications of functions in business. <br/><br/>
+
+ ---
+ # Motivation
+
+ > __Q1:__ When you go to the gym, on what depends the amount of burned calories? <br/><br/>
+ --
+ __Q2:__ When you are uploading a document, on what depends the time it takes to upload? <br/><br/>
+ --
+ __Q3:__ When you pay taxes, on what depends the amount of taxes you pay? <br/><br/>
+ ---
+# Variable Dependency
+
+> __Definition:__ Given two variables $x$ and $y,$ we say that $y$ _depends_ on $x$ if the value of $y$ is determined by the value of $x.$ <br/><br/> This dependency implies a _relation_ between the possible values of $x$ and $y.$
 
 ---
-# What is a DE?
+## Functions
 
-> __Defintion:__ a _Differential Equation_ is an equation that contains derivatives or incognite functions with respect to one or more independent variables. <br/><br/><br/>
-We said that a DE is _ordinary_ if the derivative functions are considered of one variable, and _partial_ if the derivative functions are of several variables.
+> __Definition:__ A _function_ is a relation between two variables $x$ and $y$ such that for each value of $x$ there is a unique value of $y.$ <br/><br/> We write $y=f(x)$ to denote that $y$ is a function of $x.$
 
-#### Examples:
-
-  * $\frac{dy}{dx}+5y=e^x,$ $\frac{d^2y}{dx^2}-\frac{dy}{dx}+6y=0$ ó $\frac{dx}{dt}+\frac{dy}{dt}=2x+y.$ <br/><br/>
-  
-  * $\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0$ $\frac{\partial u}{\partial y}=-\frac{\partial u}{\partial x}.$
-  
 ---
-## Classification of ODEs.
-
-> ODEs are classified by:
-  * The order of the derivative: <br/><br/>
-    * First order: $y'=y,$ or $y'sin(x)=y.$ <br/>
-    * Second, third, and so on involve derivatives of that order. <br/><br/>
-  * Linearity: <br/><br/>
-    * Linear: the function $y$ and its derivatives are raised to the power of 1, and the coefficients only depend on $x.$  $$y''+y'+6=0.$$
-    * Non-linear: the function $y$ or its derivatives are raised to a power greater than 1, or the coefficients depend on $x$ and $y$ or its derivatives. $$(1-y)y'+2y=e^x,$$ $$(y'')^3+sin(y)=0.$$$
-    
+### Parts of a function:
+$$f:D\to R$$ $$x\mapsto y=f(x)$$
+* __Domain:__ the set of all possible values of $x$ that can be inputs of the function. <br/><br/>
+* __Codomain:__ the set of all possible values of $y$ that can be outputs of the function. <br/><br/>
+* __Relation Rule:__ the expression that relates $x$ and $y.$ <br/><br/>
 ---
-## Solutions of an ODE.
+## Example 1
 
-> __Definition:__ Let $f$ be a function defined in an interval $I,$ with continuous derivatives in $I$ (as many derivatives as the order of the equation) is a solution of a differential equation if when we substitute the function we obtain an identity.
+> The price of a minute call in AT&T cost $0.79$mxn, then the cost of a call of $x$ minutes is given by the function $f(x)=0.79x.$ <br/><br/>
+ * Domain: the set of all positive numbers. <br/><br/> 
+ * Codomain: the set of all positive real numbers. <br/><br/> 
+ * Relation rule: is given by the expression $f(x)=0.79x.$
+
+---
+## Example 2
+
+> The profit of an enterprise depends on time, where its total revenue is $1000t$ and its cost at time $t$ is $300t^2$. <br/><br/>
+* Domain: the set of all positive numbers. <br/><br/>
+* Codomain: the set of all real numbers. <br/><br/>
+* Relation rule: is given by the expression $f(x)=1000t-300t^2.$
+
+---
+## Graph of a function
+
+> __Definition:__ the _graph_ of a function is a visual representation of the function $f,$ where the domain is represented in the horizontal axis and the codomain in the vertical axis, and a point $p$ is drawn at the coordinate $(x,f(x)).$<br/><br/>
+
+---
+## Example 3
+
+> The graph of the function $f(x)=0.79x$ is given by:
+
+```{r, echo=FALSE, fig.cap="Graph of the function $f(x)=0.79x$"}
+library(ggplot2)
+ggplot(data.frame(x=c(0,10)), aes(x)) + 
+  stat_function(fun = function(x) 0.79*x, geom = "line") +
+  labs(x = "Minutes", y = "Cost (mxn)")
+```
+---
+## Example 4
+
+---
+## The Supply function
+
+> __Definition:__ the _supply function_ is a function that relates the price of a product with the quantity of the product that is supplied to the market. <br/><br/> $$p=f(q)$$ <br/><br/> where $p$ is the price of the product and $q$ is the quantity of the product.
 
 --
-#### Example:
-The function $f(x)=e^x$ defined in $\mathbb{R}$ is a solution of the DE $$y'-y=0.$$ <br/><br/>
-Let's check it out: $$f'(x)-f(x)=e^x-e^x=0.$$
+<br/><br/>
+Notes on Supply function: <br/>
+* The supply function is an increasing function. <br/><br/>
 
 ---
-### Implicit solutions.
+## The Demand function
 
-> __Definition:__ Sometimes the solutions of a DE can be expressed as a relation $G(x,y)=0,$ where $G$ is a function of two variables, but always thinking that there is a function that satisfies this relation. <br/><br/>
+> __Definition:__ the _demand function_ is a function that relates the price of a product with the quantity of the product that is demanded to the market. <br/><br/> $$p=f(q)$$ <br/><br/> where $p$ is the price of the product and $q$ is the quantity of the product.
 
 --
-#### Example:
-
-The relation $x^2+y^2=1$ is a solution of the DE $yy'+x=0.$ <br/><br/>
-
----
-# Separable ODEs
-
-> __Definition:__ A DE is said to be __separable__ if it can be written in the form $$\frac{dy}{dx}=g(x)h(y).$$
-
---
-#### Example:
-Consider the DE $y'=x^2y.$ <br/><br/>
-This DE is separable, since we can write it as $$\frac{dy}{dx}=x^2y,$$ $$\frac{dy}{y}=x^2dx.$$
- 
-But not all DEs are separable, for example $y'=x^2+y.$
+<br/><br/>
+Notes on Demand function: <br/>
+* The demand function is a decreasing function. <br/><br/>
 
 ---
-## Method: Separation of Variables
+### The equilibrium state
 
-> If our equation is separable of the form $$\frac{dy}{dx}=g(x)h(y).$$
-Then we can solve it by the following steps:
-  * We separate the variables $y$ and $x$ on one side of the equation  $\frac{dy}{h(y)}=g(x)dx.$
-  * We integrate both sides of the equation. $\int \frac{dy}{h(y)}=\int g(x)dx.$
-  * We aggregate a constant to only one of the integration. $\int \frac{dy}{h(y)}=\int g(x)dx+C.$
-  * Antiderivatives will form a _relation_ that will act as a solution.
+> __Definition:__ the _equilibrium state_ is the state where the supply and demand functions intersect
 
 ---
-#### Example 1:
+## The Total Cost function
 
-> Solve $(1+x)\frac{dy}{dx}-y=0.$
-
---
-It is separable since after manipulation we have: $$\frac{dy}{dx}=\frac{y}{1+x}.$$ 
-Then we have: $$\frac{dy}{y}=\frac{dx}{1+x}.$$
-Integrating both sides we have: $$\int \frac{dy}{y}=\int \frac{dx}{1+x},$$ $$ln|y|=ln|1+x|+C.$$
-Then we have: $$y=C(1+x).$$
+> __Definition:__ the _total cost function_ is a function that relates the quantity of a product with the total cost of producing that quantity. <br/><br/> $$C=f(q)$$ <br/><br/> where $C$ is the total cost and $q$ is the quantity of the product.
 
 ---
-#### Example 2:
+## The Income function
 
-> Find the solution family of $\frac{dy}{dx}=e^{3x+2y}.$
-
---
-It is separable since after manipulation we have: $$\frac{dy}{dx}=e^{3x}e^{2y}.$$ 
-Then we have: $$\frac{dy}{e^{2y}}=e^{3x}dx.$$ 
-Integrating both sides we have: $$\int \frac{dy}{e^{2y}}=\int e^{3x}dx \Rightarrow-\frac{1}{2}e^{-2y}=\frac{1}{3}e^{3x}+C.$$
-Then we have: $$e^{-2y}=-\frac{2}{3}e^{3x}+C.$$
-Finally we have: $y=-\frac{1}{2}ln(-\frac{2}{3}e^{3x}+C).$
+> __Definition:__ the _income function_ represent the total amount of money obtained by selling a product. <br/><br/> $$I=f(q)$$ <br/><br/> where $I$ is the income and $q$ is the quantity of the product.
 
 ---
-# Modelling with ODEs
+## The Utility function
 
-> __Definition:__ A model is a mathematical representation of a real situation. Modelling with ODEs means that our real situation can be represented by a DE.
+> __Definition:__ the _utility function_ is defined as the total income minus the cost functions. <br/><br/> $$U=f(q)$$ <br/><br/> where $U$ is the utility and $q$ is the quantity of the product. <br/><br/> $$U=I-C$$
 
-## Growth and Decay
-
-> __Hypothesis:__ The rate of change of a variable is proportional to the size of its ammount at all times . <br/><br/> $$\frac{dx}{dt}=kx.$$
-
-#### Example:
-  An slice of bread has a bacteria population of 1000. If the rate of growth of the bacteria is 3/2 the size of the population. What function models the population of bacteria?
-
----
-## Let's solve previous example.
-
-Note that previous equation is separable: $$\frac{dx}{dt}=kx\Rightarrow\frac{dx}{x}=kdt.$$ Therefore we have: $$\int \frac{dx}{x}=\int kdt\Rightarrow ln|x|=kt+C.$$ Then we have: $$x=Ce^{kt}.$$
-
-Therefore we have that $B(t)=Ce^{3t/2}.$ But we know that at the start of observations, we had $B(0)=1000,$ therefore $$B(0)=Ce^{3(0)/2}=1000,$$ $$C=1000.$$
-
-Then we have that $B(t)=1000e^{3t/2}.$
----
-## Initial Value Problems.
-
-> __Definition:__ An __Initial Value Problem__ is a DE plus a condition that the solution must satisfy.
-
-##### Remark: The solution of an IVP is a function that satisfies the DE and the condition, therefore this one is unique in the case that exists such function.
-
----
-### Temperature problems
-
-#### Newton's law for cooling/heating.
-> The rate of change of the temperature of a body is proportional to the difference between the temperature of the body and the temperature of the medium in which it is located. <br/><br/>
-$$ \frac{dT}{dt}=k(T-T_m).$$
-
-#### Example: 
-A cup of coffee is at $90^\circ C$ and is placed in a room at $22^\circ C.$ After 2 minutes the temperature of the coffee is $80^\circ C.$ What function models the temperature of the coffee?
