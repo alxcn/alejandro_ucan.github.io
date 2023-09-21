@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Linear Functional Models</title>
+    <title>Linear Function Models</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2023-09-17" />
+    <meta name="date" content="2023-09-20" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ff840ddb4003483f98b7614ad0d223a3","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xaa69cce3f58474d8da1e96b79ef3d63","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Linear Functional Models
+# Linear Function Models
 ]
 .subtitle[
 ## Session 02
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2023-09-17
+### 2023-09-20
 ]
 
 ---
@@ -175,6 +175,57 @@ Determine if the following data fixed a linear model
 ##   x     3  6  9 12
 ##   f(x)  8 17 26 35
 ```
+
+&lt;br/&gt;&lt;br/&gt;
+* Does it fit to a linear model? &lt;br/&gt;&lt;br/&gt;
+* What is the mean change of the function? &lt;br/&gt;&lt;br/&gt;
+* What is the expresion of the function?
+
+---
+#### Business linear functions
+
+&gt; __Definition:__ The __total cost__ function represent the cost of producing `\(x\)` units of a product. &lt;br/&gt;&lt;br/&gt;The total cost is equal to the sum of the fixed costs and the variable ones. `$$C_{total}=C_{fixed}+C_{variable}$$`
+
+
+--
+
+&lt;br/&gt;&lt;br/&gt;
+&gt; __Definition:__ The __income__ function represents the total amount of money obtained by selling `\(q\)` items at price `\(p.\)` Therefore, `$$I=p\cdot q.$$`
+
+---
+#### Example 5
+
+A company produces a product that has a fixed cost of 1000mxn and a variable cost of 10mxn per unit. &lt;br/&gt;&lt;br/&gt; If each unit is selled at 20mxn, determine the total cost and the income functions.
+
+--
+&lt;br/&gt;&lt;br/&gt;
+
+* Let `\(x\)` be the number of units produced. &lt;br/&gt;&lt;br/&gt;
+* Total cost function: `\(C_{total}(x)=1000+10x\)` &lt;br/&gt;&lt;br/&gt;
+* Income function: `\(I(x)=20x\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+#### Example 6
+
+A small company offers offers e-markating services. The company pays the salary of one content creator and one web designer. If the fixed expenses of the company are 500mxn of web servers, 1000mxn of rent and 800mxn of light bills. The concent creator earns 100mxn per hour and the web designer earns 150mxn per hour. &lt;br/&gt;&lt;br/&gt; If the company charges 200mxn per hour of work, determine the total cost and the income functions.
+
+--
+&lt;br/&gt;&lt;br/&gt;
+
+* Let `\(t\)` be the number of hours. &lt;br/&gt;&lt;br/&gt;
+* Total cost function: `\(C_{total}(t)=2300+ 100t+150t=2300 +250t\)` &lt;br/&gt;&lt;br/&gt;
+* Income function: `\(I(x)=200t\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+#### Business linear functions
+
+&gt; __Definition:__ The _utility or revenue_ function is defined as the difference between the income and the total cost functions. `$$U(x)=I(x)-C_{total}(x)$$`
+
+--
+&lt;br/&gt;&lt;br/&gt;
+
+In example 5, the utility function is `$$U(x)=20x-(1000+10x)=10x-1000.$$` And in example 6, the utility function is `$$U(t)=200t-(2300+250t)=-50t+2300.$$`
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

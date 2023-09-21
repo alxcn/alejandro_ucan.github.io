@@ -171,7 +171,7 @@ tab
 --
 
 <br/><br/>
-> __Definition:__ The __income__ function represents the total amount of money obtained by selling $q$ items at price $p.$ Therefore, $$I=p\cdot q.$
+> __Definition:__ The __income__ function represents the total amount of money obtained by selling $q$ items at price $p.$ Therefore, $$I=p\cdot q.$$
 
 ---
 #### Example 5
@@ -200,7 +200,7 @@ A small company offers offers e-markating services. The company pays the salary 
 ---
 #### Business linear functions
 
-> __Definition:__ The _utility or revenue__ function is defined as the difference between the income and the total cost functions. $$U(x)=I(x)-C_{total}(x)$$
+> __Definition:__ The _utility or revenue_ function is defined as the difference between the income and the total cost functions. $$U(x)=I(x)-C_{total}(x)$$
 
 --
 <br/><br/>
