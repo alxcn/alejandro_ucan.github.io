@@ -1,0 +1,23 @@
+---
+title: "S03: Higher Order Linear Differential Equations with constant coefficients"
+weight: 3
+subtitle: ""
+excerpt: "The auxiliar polynomial method"
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-03
+draft: false
+---
+
+# Session's Goals
+
+* Describe the general form of a linear homogeneous differential equation with constant coefficients and the IVP. <br/><br/>
+* Determine the general solution for a linear homogeneous differential equation with constant coefficients. <br/><br/>
+* Deduce the method to solve linear homogeneous differential equations with constant coefficients. <br/><br/>
+* Apply the method to solve linear homogeneous differential equations with constant coefficients.
+
+
+Content for **Session 03** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-03", ratio = "4:3")
+```

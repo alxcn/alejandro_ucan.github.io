@@ -1,0 +1,21 @@
+---
+title: "S03: Systems of Linear Functions"
+weight: 3
+subtitle: ""
+excerpt: "We will describe the linear combination method to solve linear systems of equations."
+date: '`r Sys.Date()`'
+slug: MA1027-session-03
+draft: false
+---
+
+In this session of **MA1027** our goals are:
+
+* Describe the problem of find equilibriums between linear models. <br/><br/>
+* Describe a system of linear equations. <br/><br/>
+* Describe the method to solve a system of linear equations. <br/><br/>
+
+The slides for **Session 03** are in [slides](/slides/2023-AD-MA1027/MA1027-sesion-03).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1027/MA1027-sesion-03", ratio = "4:3")
+```

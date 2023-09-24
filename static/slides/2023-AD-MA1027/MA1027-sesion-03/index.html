@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Separación de Variables</title>
+    <title>Systems of Linear Equations</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2023-08-13" />
+    <meta name="date" content="2023-09-24" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x82ea608bb8d4563b186021e8a4d0411","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a61a8d67c77e4ee5863b39b2ec29c929","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Separación de Variables
+# Systems of Linear Equations
 ]
 .subtitle[
-## Sesión 03
+## Session 03
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2023-08-13
+### 2023-09-24
 ]
 
 ---
@@ -76,107 +76,173 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Goals
 
-* Determinar cuándo una EDO es separable. &lt;br/&gt;&lt;br/&gt;
-* Aplicar el método de Separación de Variables. &lt;br/&gt;&lt;br/&gt;
-* Describir la solución de una EDO. &lt;br/&gt;&lt;br/&gt;
+* Describe the problem of find equilibriums between linear models. &lt;br/&gt;&lt;br/&gt;
+* Describe a system of linear equations. &lt;br/&gt;&lt;br/&gt;
+* Describe the method to solve a system of linear equations. &lt;br/&gt;&lt;br/&gt;
+---
+# Equilibrium 
+
+&gt; A small company offers offers e-markating services. The company pays the salary of one content creator and one web designer. If the fixed expenses of the company are 500mxn of web servers, 1000mxn of rent and 800mxn of light bills. The concent creator earns 100mxn per hour and the web designer earns 150mxn per hour. &lt;br/&gt;&lt;br/&gt; If the company charges 500mxn per hour of work, determine the total cost and the income functions.
+&lt;br/&gt;&lt;br/&gt;
+`$$C(t)=2300+250t$$` `$$I(t)=500t$$`
+
+We want to know how many hours need the company to sell in order to pay the fixed expenses?
 
 ---
-# EDOs Separables
+## Graphically
 
-&gt; __Definición:__ Sea `\(y'=f(y,x)\)` una EDO de primer orden. Si existe una función `\(g(y)\)` y una función `\(h(x)\)` tales que `\(y'=g(y)h(x)\)`, entonces la EDO es separable.
+&gt; The equilibrium is the point where the cost and income functions intersect.
+
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Analitically
+
+&gt; In order to find our equilibrium we need to solve the following equation: `$$C(t)=I(t)$$`
+
 --
 &lt;br/&gt;&lt;br/&gt;
-* __Ejemplo:__ La EDO `\(y'=y^2\cos(x)\)` es separable, ya que `\(y'=g(y)h(x)\)`, donde `\(g(y)=y^2\)` y `\(h(x)=\cos(x)\)`. &lt;br/&gt;&lt;br/&gt;
-* __Ejemplo:__ La EDO `\(y'=y^2\cos(x)+x\)` no es separable, ya que no se puede escribir como `\(y'=g(y)h(x)\)`.
-
+#### Solution
+`$$2300+250t=500t$$`
+`$$2300=500t-250t$$`
+`$$2300=250t$$`
+`$$t=9.2$$`
 ---
-## ¿Cómo determinar si mi EDO es separable?
+# System of Linear Equations
 
-* Escribe la EDO de la forma `\(y'=f(y,x)\)`. &lt;br/&gt;&lt;br/&gt;
-* Determina si la función `\(f(y,x)\)` se puede factorizar. &lt;br/&gt;&lt;br/&gt;
-* Si en la función `\(f(y,x)\)` hay potencias, exponenciales o logaritmos, recuerda que estos se separan como productos. &lt;br/&gt;&lt;br/&gt;
-* Funciones trigonométricas es muy dificil que tengan propiedades de separación de productos.
+&gt; A system of linear equations is a set of equations that can be written in the form: `$$a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1$$` `$$a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2$$` `$$...$$` `$$a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n=b_m$$`
 
----
-## ¿Cómo resolver una EDO separable?
+where `\(a_{ij}\)` and `\(b_i\)` are real numbers and `\(x_1,x_2,...,x_n\)` are variables.
 
-&gt; __Método:__ Sea `\(y'=f(y,x)\)` una EDO separable donde `\(f(y,x)=g(y)h(x)\)`. Entonces, la solución de la EDO es: &lt;br/&gt;&lt;br/&gt;
-Primero suponemos (por abuso de lenguaje) que `\(y'=\frac{dy}{dx}\)` es una fracción y la separamos como `$$\frac{dy}{g(y)}=h(x)dx$$` &lt;br/&gt;&lt;br/&gt;
-Luego integramos ambos lados de la igualdad &lt;br/&gt;&lt;br/&gt;
-`$$\int\frac{dy}{g(y)}=\int h(x)dx+C$$`
-
----
-##### Ejemplo 1
 &lt;br/&gt;&lt;br/&gt;
-Resuelve la EDO `\(y'=y^2\cos(x).\)` 
-
---
-Notemos que es separable, y se separa así `$$\frac{dy}{y^2}=\cos(x)dx.$$` &lt;br/&gt;
-La integral del lado izquierdo es `\(\frac{-1}{y}\)` y del lado derecho es `\(\sin(x)+C\)`. &lt;br/&gt; Por lo que obtenemos que `$$\frac{-1}{y}=sin(x)+C.$$` &lt;br/&gt; Despejando `\(y\)` obtenemos que `$$y=\frac{-1}{\sin(x)+C}$$` definida para `\(x\in\mathbb{R}\)` tal que `\(\sin(x)+C\neq 0.\)`
+We have that the corresponding variables are in a linear relation with each other.
 
 ---
-##### Ejemplo 2
+## Example
+
+Consider the following system of linear equations:
+
+`$$2x+3y=8$$` `$$-x+2y=3$$`
+
+Note, that the system has two equations and two variables. Even more. We can state our linear relation if we isolate one variable.
+
+`$$y=\frac{8-2x}{3}$$` `$$y=\frac{3+x}{2}$$`
+
+---
+## Linear combination method
+
+&gt; The linear combination method is a method to solve a system of linear equations. The method consists in multiply each equation by a constant and add the equations to eliminate one variable.
+
+--
 &lt;br/&gt;&lt;br/&gt;
-Resuelve la EDO `\(y'=e^{x-y}.\)` 
+#### Example 1
+Find the solution for `\(2x+3y=8\)` and `\(-x+2y=3.\)`
 
 --
-Notemos que es separable, y se separa así `$$e^ydy=e^xdx.$$` &lt;br/&gt; La integral del lado izquierdo es `\(e^y\)` y del lado derecho es `\(e^x+C\)`. &lt;br/&gt; Por lo que obtenemos que `$$e^y=e^x+C.$$` &lt;br/&gt; Despejando `\(y\)` obtenemos que `$$y=\ln(e^x+C)$$` definida para todo `\(x\in\mathbb{R}.\)`
-
----
-
-##### Ejemplo 3
 &lt;br/&gt;&lt;br/&gt;
-Resuelve la EDO `\(y'=\ln(3x-2y).\)` 
+#### Solution
+
+`$$\begin{cases} 2x+3y=8 \\ -x+2y=3 \end{cases} \Rightarrow \begin{cases} 2x+3y=8 \\ 2(-x+2y)=2(3) \end{cases} \Rightarrow \begin{cases} 2x+3y=8 \\ -2x+4y=6 \end{cases}$$` 
+---
+#### Solution of Example 1
+Now we add up the equations: `$$2x+3y+(-2x+4y)=8+6$$` `$$7y=14\Rightarrow y=2$$`
+
+Finally, we substitute `\(y\)` in one of the equations: `$$2x+3(2)=8$$` `$$2x+6=8\Rightarrow 2x=2\Rightarrow x=1$$`
+
+Therefore the equilibrium point will be `\((x,y)=(1,2).\)`
+
+---
+#### Example 2:
+
+Find the solution for `\(3x+2y=10\)` and `\(x+2y=2.\)`
 
 --
-Notemos que es separable, y se separa así `$$\ln(2y)dy=\ln(3x)dx.$$` &lt;br/&gt; La integral del lado izquierdo es `\(y\ln(2y)-y\)` y del lado derecho es `\(x\ln(3x)-x+C\)`. &lt;br/&gt; Por lo que obtenemos que `$$y\ln(2y)-y=x\ln(3x)-x+C.$$` &lt;br/&gt; Lamentablemente no podemos despejar esta ecuación para `\(y,\)` por lo que mi solución es implícita.
+&lt;br/&gt;&lt;br/&gt;
+#### Solution
+
+`$$\begin{cases} 3x+2y=10 \\ x+2y=2 \end{cases}\Rightarrow \begin{cases} 3x+2y=10 \\ -3(x+2y)=-3(2) \end{cases} \Rightarrow \begin{cases} 3x+2y=10 \\ -3x-6y=-6 \end{cases}$$`
+
+Now we add up the equations: `$$3x+2y+(-3x-6y)=10-6$$` `$$-4y=4\Rightarrow y=-1$$`
+
+Finally, we substitute `\(y\)` in one of the equations: `$$x+2(-1)=2$$` `$$x-2=2\Rightarrow x=4$$`
+
+Therefore the equilibrium point will be `\((x,y)=(4,-1).\)`
 
 ---
-# Problemas de Valores Inciales
+#### Example 3:
 
-__Recordemos:__ La solución a una EDO es una _familia_ de funciones que satisfacen la EDO. Si queremos particularizar la solución necesitamos de una condición adicional. &lt;br/&gt;&lt;br/&gt;
+Find the solution for `\(2x+3y=8\)` and `\(2x+3y=3.\)`
 
-&gt; __Definición:__ Dada una EDO `\(f(y',y,x)=0\)` una condición inicial es una ecuación de la forma `\(y(x_0)=y_0\)` donde `\(x_0\)` y `\(y_0\)` son números reales. &lt;br/&gt;&lt;br/&gt;
-
-&gt; __Definición:__ Un problema de valores iniciales (PVI) es una EDO junto con una condición inicial. &lt;br/&gt;&lt;br/&gt;
-
----
-## ¿Cómo resolver un PVI?
-
-Resuelvo mi EDO con el método adecuado, y luego aplico la condición inicial para encontrar la solución particular. &lt;br/&gt;&lt;br/&gt;
 --
-##### Ejemplo 1
-Consideremos la EDO `\(y'=y^2\cos(x)\)` con la condición inicial `\(y(0)=1.\)` &lt;br/&gt;&lt;br/&gt; Habíamos visto que la solución a la EDO es `\(y=\frac{1}{\sin(x)+C}\)` definida para `\(x\in\mathbb{R}\)` tal que `\(\sin(x)+C\neq 0.\)` &lt;br/&gt;&lt;br/&gt; Aplicando la condición inicial obtenemos que `\(1=\frac{1}{\sin(0)+C}=\frac{1}{C+0}=\frac{1}{C}.\)` &lt;br/&gt;&lt;br/&gt; Por lo que `\(C=1\)` y la solución particular es `\(y=\frac{1}{\sin(x)+1}.\)`
+&lt;br/&gt;&lt;br/&gt;
+#### Solution
+
+`$$\begin{cases} 2x+3y=8 \\ 2x+3y=3 \end{cases}\Rightarrow \begin{cases} 2x+3y=8 \\ -1(2x+3y)=-1(3) \end{cases} \Rightarrow \begin{cases} 2x+3y=8 \\ -2x-3y=-3 \end{cases}$$`
+
+Now we add up the equations: `$$2x+3y+(-2x-3y)=8-3$$` We obtain `\(0=5,\)` but this is not possible. Therefore, the system has no solution.
 
 ---
-##### Ejemplo 2
+#### Example 4:
 
-Consideremos la EDO `\(y'=\frac{t+1}{ty+t}\)` con `\(y(1)=1.\)` &lt;br/&gt;
+Find the solution for `\(2x+3y=8\)` and `\(4x+6y=16.\)`
+
 --
+&lt;br/&gt;&lt;br/&gt;
+#### Solution
 
-* Primero notemos que la EDO es separable, y se separa así `$$(y+1)dy=\frac{(t+1)dt}{t}.$$` 
-* Integrando ambos lados obtenemos: `$$\frac{y^2}{2}+y=\ln(t)+t+C.$$` 
-* Aplicando la condición inicial obtenemos que `$$\frac{1}{2}+1=\ln(1)+1+C$$`
-* Por lo que `\(C=\frac{1}{2}\)` y la solución particular es `$$\frac{y^2}{2}+y=\ln(t)+t+\frac{1}{2}.$$`
+`$$\begin{cases} 2x+3y=8 \\ 4x+6y=16 \end{cases}\Rightarrow \begin{cases} 2x+3y=8 \\ \frac{-1}{2}(4x+6y)=\frac{-1}{2}(16) \end{cases} \Rightarrow \begin{cases} 2x+3y=8 \\ -2x-3y=-8 \end{cases}$$`
+
+Now we add up the equations: `$$2x+3y+(-2x-3y)=8-8$$` `$$0=0$$`
+
+From the fact that `\(0=0\)` is always satisfied, we can conclude that the system has infinite solutions because it doesn't matter what value we assign to `\(x\)` or `\(y\)` the equation will always be satisfied.
 
 ---
-##### Ejemplo 3
+## Solutions of a system of linear equations
 
-Consideremos la EDO logistica de crecimiento poblacional `\(y'=0.1y(1-\frac{y}{1000})\)` con `\(y(0)=100.\)`  
+&gt; A system of linear equations can have three types of solutions: &lt;br/&gt;&lt;br/&gt;
+&gt; * No solution &lt;br/&gt;&lt;br/&gt;
+&gt; * One solution &lt;br/&gt;&lt;br/&gt;
+&gt; * Infinite solutions
+
+---
+# What if we have more than two equations and two variables?
+
+&gt; The linear combination method can be used to solve a system of linear equations with more than two equations and two variables. The method consists in multiply each equation by a constant and add the equations to eliminate one variable. Once we have reduced our problem, we can use the same method to solve the system.
+
+---
+#### Example 1
+$$ \begin{cases} x+y+z=0 \\ x-y+z=-2 \\ x+y-z=6 \end{cases}$$
+
+---
+&lt;br/&gt;&lt;br/&gt;
+#### Solution
+We remove the `\(z\)` variable, by applying the linear combination method with the first and third equation, and second and third equations: `$$\begin{cases} 2x+2y=6 \\ 2x=4 \end{cases}$$` 
+
+This implies that `\(x=2,\)` and substituting in the first equation we obtain that `\(2y=6-4=2\Rightarrow y=1.\)`
+
+Finally, we substitute `\(x\)` and `\(y\)` in one of the equations: `$$2+1+z=0\Rightarrow z=-3$$`
+
+---
+#### Example 2
+
+A factory has a fixed weekly production of 42 units. The factory supplies three different wholesalers that demand the whole production. For a given week, the first wholesaler demands as many units as the secont and the third together, while the second request 10% more than the third. How many units are supplied to each wholesaler?
+
 --
-* Primero notemos que la EDO es separable, y se separa así `$$\frac{dy}{y(1-\frac{y}{1000})}=0.1dt.$$`
-* Integrando ambos lados obtenemos (del lado izquierdo necesitamos sumas parciales): `$$1000(\ln(P)-\ln(1000-P))=0.1t+C$$`
-* Aplicando la condición inicial obtenemos que `$$1000(\ln(100)-\ln(1000-100))=0.1(0)+C$$` &lt;br/&gt;&lt;br/&gt;
-* Por lo que `\(C\approx -2197.22\)` y la solución particular es `$$1000(\ln(P)-\ln(1000-P))=0.1t-2197.22.$$`
+&lt;br/&gt;&lt;br/&gt;
+#### Solution
+
+The set of equations that describe the problem are: `$$x+y+z=42$$` `$$x=y+z$$` `$$y=1.1z$$`
 
 ---
-# Actividad
+#### Example 2
 
-1. El interés de una inversión crece a una razón de `\(5\%\)`. Si comenzamos con una inversión de $\$5000$. ¿Qué función describe mejor nuestra inversión.&lt;br/&gt;&lt;br/&gt;
-1. Una taza de chocolate se encuentra a 170 grados Fahrenheit. Si la taza se encuentra en una habitación a 70 grados Fahrenheit. ¿Cuánto tiempo tardará la taza en llegar a 100 grados Fahrenheit, si se enfría a una razón de 20 grados Fahrenheit por segundo?&lt;br/&gt;&lt;br/&gt;
-1. Una cubeta de 5 galones está llena de agua pura. Supongamos que queremos añadir sal a la cubeta en razón de 1/4 de libra por minuto. Además abrimos el grifo de manera que salgan 1/2 galón por minuto, y agregamos agua pura para mantener llena la cubeta. Si la solución se mezcla perfectamente. ¿Cuánta sal habrá en la cubeta después de 10 minutos?&lt;br/&gt;&lt;br/&gt;
+Previous system of equations is equivalent to: `$$\begin{cases} x+y+z=42 \\ x-y-z=0 \\ y-1.1z=0 \end{cases}$$` we use the linear combination to remove the `\(z\)` variable.
+
+The reduced system is: `$$\begin{cases} 2x=42 \\ x+2.1y=42 \end{cases},$$` whose solutions are `\(x=21\)` and `\(y=10.\)`
+
+Finally, we substitute `\(x\)` and `\(y\)` in one of the equations: `$$21+10+z=42\Rightarrow z=11.$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -126,7 +126,7 @@ Find the intervals where $f(x)=2x^3-3x^2-12x+7$ is decresing.
 
 > For a function $f(x)$: <br/><br/><br/>
 * $f(x)$ es __concave up__ at $(a,b),$ if $f''(x)>0$ at $(a,b).$ <br/><br/>
-* $f(x)$ es __cóncava down__ at $(a,b),$ if $f''(x)<0$ at $(a,b).$ <br/><br/>
+* $f(x)$ es __concave down__ at $(a,b),$ if $f''(x)<0$ at $(a,b).$ <br/><br/>
 * If $f''(x)$ changes it sign at $x=c,$ then $f$ has an __inflection point__ at $x=c.$ 
 
 ---

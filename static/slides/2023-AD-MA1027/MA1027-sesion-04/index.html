@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDOs exactas</title>
+    <title>Linear Regression</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2023-08-13" />
+    <meta name="date" content="2023-09-24" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"e62546f2626a43cbbe7a5f8cd139e9f7","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x585a36919d34b7db5e7b1657aaa6ed6","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# EDOs exactas
+# Linear Regression
 ]
 .subtitle[
-## Sesión 04
+## Session 04
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2023-08-13
+### 2023-09-24
 ]
 
 ---
@@ -76,81 +76,88 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Goals
 
-* Diferenciar las EDOs exactas. &lt;br/&gt;&lt;br/&gt;
-* Resolver las EDOs exactas por integración parcial. &lt;br/&gt;&lt;br/&gt;
+* Given a set of data, find the best fitting line. &lt;br/&gt;&lt;br/&gt;
+* Describe the correlation coefficients. &lt;br/&gt;&lt;br/&gt;
+* Describe the coefficient of determination. &lt;br/&gt;&lt;br/&gt;
+* Determine the parameters for the best linear model that fits.
+---
+# Let's see the data
 
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="100%" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-1-2.png" width="100%" /&gt;
 
 ---
-# EDOs exactas
+# Lets see the data of two variables
 
-&gt; Supongamos que tenemos la siguiente EDO de orden 1: `$$M(x,y) + N(x,y) \frac{dy}{dx} = 0$$` &lt;br/&gt;
---
-Podemos reescribir lo anterior a: `$$M(x,y)dx + N(x,y)dy = 0$$` &lt;br/&gt; 
---
-¿Qué puedes observar de la expresión anterior? &lt;br/&gt;&lt;br/&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
-# EDOs exactas
+# Motivation
 
-&gt; __Definición:__ decimos que la EDO `$$M(x,y)dx + N(x,y)dy = 0$$` es exacta si existe una función `\(u(x,y)\)` tal que: `$$\frac{\partial u}{\partial x} = M(x,y)$$` y `$$\frac{\partial u}{\partial y} = N(x,y).$$` &lt;br/&gt;&lt;br/&gt;
-
---
-Esto implica que la EDO se ve como `$$du=M(x,y)dx + N(x,y)dy = 0,$$` por lo que mi solución sería `\(u(x,y)=c\)`.
----
-## Ejemplos
-
-Las siguientes EDOs son exactas: &lt;br/&gt;&lt;br/&gt;
-  1. `$$(2xy^2)dx + (2x^2y)dy = 0$$` &lt;br/&gt;&lt;br/&gt;
-  2. `$$-y\sin(xy)dx-x\sin(xy)dy=0$$` &lt;br/&gt;&lt;br/&gt;
-  3. $$ \frac{2dx}{x}+\frac{2dy}{y}=0$$ &lt;br/&gt;&lt;br/&gt;
----
-## Criterio para determinar exactitud
-
-&gt; __Criterio:__ La EDO `$$M(x,y)dx + N(x,y)dy = 0$$` es exacta si y sólo si `$$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.$$` &lt;br/&gt;&lt;br/&gt;
-
---
-Veamos que el criterio aplica para las EDOs anteriores:
+&gt; Sometimes the collected data (in real life) does not fit a linear model in the analitic form. &lt;br/&gt;&lt;br/&gt; But it looks like a linear model or it has a linear behavior. &lt;br/&gt;&lt;br/&gt; So, we need to find the best fitting line. &lt;br/&gt;&lt;br/&gt; This is called **Linear Regression**.
 
 ---
-# Método de Solución de EDOs Exactas
+# Linear Regression
 
-&gt; __Método:__ Sea la EDO `$$M(x,y)dx + N(x,y)dy = 0$$` exacta. &lt;br/&gt;&lt;br/&gt;
-  1. Tomar `\(M(x,y)dx\)` e integrar la función `$$u(x,y)=\int M(x,y)dx + g(y)$$` con respecto a `\(x\)`. &lt;br/&gt;&lt;br/&gt;
-  2. Derivar la función `\(u(x,y)\)` con respecto a `\(y\)` y comparar con `\(N(x,y)\)` de la siguiente manera `$$N(x,y)=\frac{\partial u}{\partial y}=\frac{\partial}{\partial y}\int M(x,y)dx + g'(y).$$`
-  3. Despejar `\(g'(y)\)` y encontrar `\(g(y)\)` integrando `\(g'(y)\)` con respecto a `\(y\)`.
+&gt; __Definition:__ A linear regression model is a model that assumes a linear relationship between the input variables (x) and the single output variable (y). &lt;br/&gt;&lt;br/&gt; More specifically, that y can be calculated from a linear combination of the input variables (x). &lt;br/&gt;&lt;br/&gt; When there is a single input variable (x), the method is referred to as simple linear regression. &lt;br/&gt;&lt;br/&gt; When there are multiple input variables, literature from statistics often refers to the method as multiple linear regression.
 
 ---
-##### Ejemplo 1
+# Correlation
 
-Resolver la EDO `$$(2xy^2)dx + (2x^2y)dy = 0$$` &lt;br/&gt;&lt;br/&gt;
+How does we can assure that two variables are candidate to be linearly related?
 
---
-__Solución:__ &lt;br/&gt;&lt;br/&gt;
-  `\(u(x,y)=\int 2xy^2dx +g(y)=x^2y^2+g(y)\)` &lt;br/&gt;&lt;br/&gt;
-  `\(\frac{\partial u}{\partial y}=2x^2y+g'(y)=2x^2y\)` &lt;br/&gt;&lt;br/&gt;
-  `\(g'(y)=2x^2y-2x^2y=0\)` &lt;br/&gt;&lt;br/&gt;Por lo que `\(g(y)=c\)` &lt;br/&gt;&lt;br/&gt;
-
-  Por lo que la solución es: `\(x^2y^2+c=0\)` &lt;br/&gt;&lt;br/&gt;
+&gt; __Definition:__ _correlation_ between two variables is a measure of the degree to which the variables are linearly related. &lt;br/&gt;&lt;br/&gt; The correlation coefficient is a number between -1 and 1. &lt;br/&gt;&lt;br/&gt; The closer the correlation coefficient is to 1 or -1, the more closely the two variables are related. &lt;br/&gt;&lt;br/&gt; If the correlation coefficient is close to 0, the variables are not very closely related.
 
 ---
-##### Ejemplo 2
+## Pearson's Correlation Coefficient
 
-Resolver la EDO `$$2xydx+(x^2-1)dy=0$$` &lt;br/&gt;&lt;br/&gt;
-
---
-__Solución:__ &lt;br/&gt;&lt;br/&gt;
-`\(u(x,y)=\int 2xydx +g(y)=x^2y+g(y)\)` &lt;br/&gt;&lt;br/&gt;
-`\(\frac{\partial u}{\partial y}=x^2+g'(y)=x^2-1\)` &lt;br/&gt;&lt;br/&gt;
-`\(g'(y)=-1\)` &lt;br/&gt;&lt;br/&gt;Por lo que `\(g(y)=-y\)` &lt;br/&gt;&lt;br/&gt;
-  
-Por lo que la solución es: `\(x^2y-y=c\)` &lt;br/&gt;&lt;br/&gt;
+&gt; __Definition:__ The _Pearson's correlation coefficient_ between variables `\(X\)` and `\(Y\)` is defined as the covariance of `\(X\)` and `\(Y\)` divided by the product of their standard deviations, in symbols &lt;br/&gt;&lt;br/&gt; `$$\rho_{X,Y} = \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y}.$$`
 
 ---
-##### Ejemplo 3
+### Determination Coefficient ($R^2$)
 
-Resolver la EDO `$$(\sin y -y\sin x)dx + (\cos x -x\cos y -y)dy = 0$$` &lt;br/&gt;&lt;br/&gt;
+&gt; __Definition:__ The _determination coefficient_ is a measure of how well the regression line represents the data. &lt;br/&gt;&lt;br/&gt; It is the proportion of the variance in the dependent variable that is predictable from the independent variable(s). &lt;br/&gt;&lt;br/&gt; It is defined as `$$R^2=\frac{\text{SSR}}{\text{SST}}=1-\frac{\text{SSE}}{\text{SST}}$$` where &lt;br/&gt;&lt;br/&gt; * `\(\text{SSR}=\sum_{i=1}^n (\hat{y}_i-\bar{y})^2\)` is the _regression sum of squares_. &lt;br/&gt;&lt;br/&gt; * `\(\text{SSE}=\sum_{i=1}^n (y_i-\hat{y}_i)^2\)` is the _error sum of squares_. &lt;br/&gt;&lt;br/&gt; * `\(\text{SST}=\sum_{i=1}^n (y_i-\bar{y})^2\)` is the _total sum of squares_.
+
+---
+## What can I obtain from linear regression?
+
+&gt; If my variables are related, it is possible to __predict__ a response value from a predictor value more accurately. Also,
+  * Examine how the response variable (y) changes as the explanatory variable (x). &lt;br/&gt;&lt;br/&gt;
+  * Predict the value of the response variable (y) for a given value of the explanatory variable (x). &lt;br/&gt;&lt;br/&gt;
+
+---
+### The line that fits
+
+&gt; The linear regression model of a `\(n-\)` sample points of `\(X\)` and `\(Y\)` is given by `$$y=mx+b+\epsilon$$` where 
+* `\(\epsilon\)` is the error given by measurement. &lt;br/&gt;&lt;br/&gt;
+* `\(m\)` is the slope of the line and it is given by `$$m=\frac{\sum_{i=1}^n xy-\overline{x}\overline{y}}{\sum_{i=1}^n x^2 -\frac{1}{n}\left(\sum_{i=1}^n x\right)^2}$$`&lt;br/&gt;&lt;br/&gt;
+* `\(b\)` is the intercept of the line and it is given by `$$b=\overline{y}-m\overline{x}.$$`
+
+---
+### How to validate our linear regression model?
+
+&gt; In order to validate if our linear regression model is acceptable we need to: &lt;br/&gt;&lt;br/&gt;
+  1. Represent the data into a scatter plot. &lt;br/&gt;&lt;br/&gt;
+  2. Compute the Pearson's correlation coefficient: If this number is closer to 1 or -1, the variables are more closely related. &lt;br/&gt;&lt;br/&gt;
+  3. Compute the determination coefficient: if the number is closer to 1, the model is more accurate and if it the number is closer to 0 the model is less accurate. &lt;br/&gt;&lt;br/&gt;
+
+---
+# Example
+
+The following table contains information related to age and income of a group of people. Can we say if there is any relation between these two variables?
+
+| Age (years) | Income (USD) |
+|:-----------:|:------------:|
+|     18      |     20,000   |
+|     21      |     25,000   |
+|     25      |     30,000   |
+|     27      |     35,000   |
+|     30      |     40,000   |
+|     35      |     45,000   |
+|     40      |     50,000   |
+|     45      |     55,000   |
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
