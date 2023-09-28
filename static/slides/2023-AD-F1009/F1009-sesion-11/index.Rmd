@@ -1,6 +1,6 @@
 ---
 title: "Funciones Elementales"
-subtitle: "Sesión 10"
+subtitle: "Sesión 11"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
