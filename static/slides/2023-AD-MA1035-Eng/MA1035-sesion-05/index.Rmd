@@ -1,6 +1,6 @@
 ---
-title: "Modelando con EDOs lineales de orden superior no homogéneas"
-subtitle: "Sesión 05"  
+title: "Modelling whit higher c.c. LODE's"
+subtitle: "Session 05"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -48,93 +48,118 @@ xaringanExtra::use_logo(
   position = xaringanExtra::css_position(top = "2em", right = "2em")
 )
 ```
-# Objetivos de la Sesión
+# Goals
 
-* Aprender otras problematicas que modela una EDO lineal no homogénea de orden superior no lineal. <br/><br/>
-
----
-# Recordemos el movimiento harmónico
-
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. La cantidad de "estiramiento" depende de la masa que le pongamos. <br/><br/>
-* _Ley de Hooke:_ la fuerza de restablecimiento que ejerce el resorte es opuesta a la dirección de estiramiento y proporcional a esta cantidad, es decir: $$F=-ks.$$ <br/>
-* _Segunda Ley de Newton_ $$m\frac{d^2x}{dt^2}=-kx.$$
+* We will use the Newton law to model a spring-mass system.
+* Using the Auxiliary polynomial and Undeterminated Coefficients we will solve those models.
 
 ---
-# Movimiento libre amortiguado
+# Spring-Mass system
 
-> Supongamos que tenemos un resorte suspendido verticalmente de un soporte rígido y que sostiene un peso de masa $m$ en su punta libre. Supongamos que nuestro peso se encuentra en un medio que presenta una __resistencia__ (por ejemplo un medio viscoso o un amortiguador). <br/><br/>
-* __Mecánica:__ esta acción de amortiguador se ve directamente proporcional a la velocidad instantánea del resorte ($\frac{dx}{dt}$). <br/><br/>
-* No hay otra fuerza que este actuando en nuestro sistema.<br/><br/> 
-$$ m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}.$$
+Suppose that you a spring that one side is attached to a platform and in the other there is a suspended object of mass $m_w.$ We whant to know the function that describe the position of the object in the time $t.$
 
----
-## Resolvamos la EDO anterior
-
-> Reescribiendo todo en una forma genérica obtenemos $$\frac{d^2x}{dt^2}+2\lambda \frac{dx}{dt}+\omega^2=0$$ donde $2\lambda=\frac{b}{m}$ y $\omega^2=\frac{k}{m}.$$
-
-<br/><br/>
-Notemos que esta es una EDO líneal de orden dos homogénea, por lo que para resolverla necesitamos el polinomio auxiliar: $$m^2+2\lambda m +\omega^2=0.$$
+![Spring-mass model](vertspringmodel.jpg)
 
 ---
-## Nuestra solución depende de las raíces 
+# Hypothesis:
 
-> Las raíces del polinomio auxiliar son: $$m_1=-\lambda + \sqrt{\lambda^2-\omega^2}\quad\mbox{y}\quad m_2=-\lambda-\sqrt{\lambda^2-\omega^2}.$$ <br/><br/>
+We will model this system with the following hypothesis:
 
-### Casos:
-
-__Caso 1:__ $\lambda^2-\omega^2>0,$ nuestro sistema está _sobre amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 e^{\sqrt{\lambda^2-\omega^2} t}+c_2 e^{-\sqrt{\lambda^2-\omega^2} t}\right)$$
-
----
-### Casos:
-
-__Caso 2:__ $\lambda^2-\omega^2<0,$ nuestro sistema está _subamortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1 \cos\left(\sqrt{\lambda^2-\omega^2}t\right)+c_2 \sin\left(\sqrt{\lambda^2-\omega^2}t\right)\right)$$
-<br/><br/>
-__Caso 3:__ $\lambda^2-\omega^2=0,$ nuestro sistema está _criticamente amortiguado_ y su solución es: $$x(t)=e^{-\lambda t}\left(c_1+c_2 t\right)$$
----
-# Ejemplos:
-
-### Movimiento sobre amortiguado:
-
-> Encuentre la solución al PVI dado por $$x''+5x'+4x=0$$ con $x(0)=1$ y $x'(0)=1.$
+1. _Conservation_ the sum of all (interacting) forces is equal to cero.
+1. _Newton law's_ the force is proportional to the mass(weight) and the acceleration, i.e. $$F=m\frac{d^2x}{dt^2}.$$
+1. _Hooke's law_ the force of the spring's restablishment is opposite to the direction of the stretch and proportional to this quantity, i.e. $$F=-ks.$$
+1. If the medium offers a resistance, this is directly proportional to the instant velocity of the spring, i.e. $$F=-bv.$$
+1. If the platform is not fixed, so the force that induce this movement is given by a function that only depends on the displacement.
 
 ---
-### Movimiento criticamente amortiguado:
+# The equation of motion
 
-> Un peso con peso de $8lbs$ estira un resorte $2ft.$ Asumientdo que la fuerza de amortiguado es igual a $2$ veces la velocidad instantánea. Detemrine la función que describe el movimiento del peso si inicialmente se liberó desde el equilibrio con una velidad (negativa) de $3ft/s.$
-
-
----
-### Movimiento subamortiguado:
-
-> Una peso con peso de $16lbs$ está atado a un resorte de $5ft$ de longitud. En el equilibrio el resorte mide $8.2ft.$ Si el peso es inicialmente el peso es liberado $2ft$ por encima de la posición de equilibrio. Encuentre la función de desplazamiento si el medio opone una resistencia igual a la velocidad instantánea.
+> The sum of all forces is equal to cero, i.e. $$m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}+f(t),$$ where:
+  * $m$ is the mass (slugs) of the object.
+  * $k$ is the spring constant.
+  * $b$ is the damping constant.
+  * $f(t)$ is the external force.
 
 ---
-# Movimiento Impulsado
+ # Example 1:
 
-> Supongamos que en nuestro sistema de movimiento amortiguado, agregagos una variable donde nuestro soporte ya no es fijo. Esto se traduce a una fuerza externa que actua sobre el sistema. La segunda Ley de Newton se traduce a: $$mx''=-kx-bx+f(t)$$ o equivalentemente $$x''-2\lambda x'+\omega^2 x= f(t).$$
+> A mass weighing (force) 2 pounds stretches a spring 6 inches. At $t=0$ the mass is released
+from a point 8 inches below the equilibrium position with an upward velocity of $3/4 ft/s$. Determine the function that describe the mass motion.
 
----
-### Ejemplo:
-
-> Resuelva el siguiente PVI $$\frac{1}{5}x''+1.2 x'+2x=5\cos(4t)$$ con $x(0)=\frac{1}{2}$ y $x'(0)=0.$
-
----
-# Circuito LRC
-
-> Supongamos que tenemos un circuito con la presencia de un inductor, una resistencia y un capacitor. Si $q(t)$ mide la carga en el capacitor, esta cumple una ecuación diferencial de segundo orden derivada de la Segunda Ley de Kirchoff. $$lq''(t)+Rq'(T)+\frac{1}{C}q=E(t).$$
-
----
-## Ejemplo:
-
-> Encuentra la función que modela la carga en el capacitor de un circuito LRC, si sabemos que $L=0.25$ henry, $R=10$ ohms, y $C=0.001$ farad. Así mismo $E(t)=0$ y $q(0)=q_0$ coulumbs y $q'(0)=0.$
+--
+The conversion of $2lbs$ to slugs is $m=\frac{2}{32}=1/16\, slugs.$ The conversion of $6in$ to feet is $s=\frac{6}{12}=1/2\, ft.$ The conversion of $8in$ to feet is $x_0=\frac{8}{12}=2/3\, ft.$ Now we are in the same units, we have that:
+  * $m=1/16\, slugs.$
+  * $|F|=k|s|,$ then $k=\frac{|F|}{|s|}=\frac{2}{1/2}=4\, lb/ft.$
+  * $b=0$ because there is no damping.
+  * $f(t)=0$ because there is no external force.
+  * $x(0)=2/3\, ft.$
+  * $x'(0)=3/4\, ft/s.$
 
 ---
-# Actividad:
+# Example 1:
 
-1. Una masa con peso (fuerza) 16lbs estira un resorte $8/3$fts. Si la masa es liberada de una posición de 2ft por debajo de la posición de equilibrio. Este movimiento se encuentra en un medio que ofrece una fuerza de amortiguamiento de $1/2$ la velocidad de desplazamiento. Encuentre la ecuación de movimiento si el peso es impulsado por una fuerza externa igual a $f(t)=10\cos(3t).$
+So my ODE is $$\frac{1}{16}x''+4x=0.$$ The auxiliary polynomial is $$\frac{1}{16}m^2+4=0$$ and the roots are $m_1=8i$ and $m_2=-8i.$ Then the general solution is $$x(t)=c_1\cos(8t)+c_2\sin(8t).$$
 
-2. Encuentre la solución general de la carga en un circuito LRC cuando $L=1h,\, R=2\Omega,\,C=0.25f$ y $E(t)=50\cos(t) V.$
+* $x(0)=2/3\, ft.$ then $c_1=2/3.$
+* $x'(0)=3/4\, ft/s.$ then $c_2=-1/16.$
+---
 
-3. Un peso de 2kg esta en el extremo de un resorte con constante $32 N/m.$ Si empiexa en $t=0,$ una fuerza externa igual a $f(t)=68e^{-2t}\cos(4t)$ se aplica al sistema. Encuentre la función que modela el desplazamiento.
+# Example 2:
 
-4. Encuentre la función que modela la carga del capacitor en un circuito LRC si $L=1/4h,\, R=20\Omega,\, C=1/300 f, E(t)=0, q(0)=4c$ y $q'(0)=0 A.$
+A mass weighing 20pounds, attached to the end of a spring, stretches it 4 in. Initially, the mass is released from rest from a point 3 inch above the equilibrium position. Find the function that describes the motion.
+--
+
+The conversion of $20lbs$ to slugs is $m=\frac{20}{32}=5/8\, slugs.$ The conversion of $4in$ to feet is $s=\frac{4}{12}=1/3\, ft.$ The conversion of $3in$ to feet is $x_0=\frac{3}{12}=1/4\, ft.$ Now we are in the same units, we have that:
+  * $m=5/8\, slugs.$
+  * $|F|=k|s|,$ then $k=\frac{|F|}{|s|}=\frac{20}{1/3}=60\, lb/ft.$
+  * $b=0$ because there is no damping.
+  * $f(t)=0$ because there is no external force.
+  * $x(0)=1/4\, ft.$
+  * $x'(0)=0\, ft/s.$
+---
+# Example 2:
+
+So the ODE is $$\frac{5}{8}x''+60x=0.$$ The auxiliary polynomial is $$\frac{5}{8}m^2+60=0$$ and the roots are $m_1=4\sqrt{15}i$ and $m_2=-4\sqrt{15}i.$ Then the general solution is $$x(t)=c_1\cos(4\sqrt{15}t)+c_2\sin(4\sqrt{15}t).$$
+
+* $x(0)=1/4\, ft.$ then $c_1=1/4.$
+* $x'(0)=0\, ft/s.$ then $c_2=0.$
+
+Therefore the function that models the displacement is $$x(t)=\frac{1}{4}\cos(4\sqrt{15}t).$$
+
+---
+# Example 3:
+
+A mass weighing $8lbs$ stretches a spring $2ft.$ Assuming that the damping force is equal to $2$ times the instant velocity. Find the function that describes the motion if the mass is initially released from the equilibrium with a velocity (negative) of $3ft/s.$
+
+--
+The conversion of $8lbs$ to slugs is $m=\frac{8}{32}=1/4\, slugs.$ The conversion of $2ft$ to feet is $s=2\, ft.$ Now we are in the same units, we have that:
+  * $m=1/4\, slugs.$
+  * $|F|=k|s|,$ then $k=\frac{|F|}{|s|}=\frac{8}{2}=4\, lb/ft.$
+  * $b=2$ because there is damping.
+  * $f(t)=0$ because there is no external force.
+  * $x(0)=0\, ft.$
+  * $x'(0)=-3\, ft/s.$ 
+
+---
+# Example 3:
+
+So the differential equation is given by $$\frac{1}{4}x''+2x'+4x=0.$$ The auxiliary polynomial is $$\frac{1}{4}m^2+2m+4=0$$ and the roots is $m=-4,$ and it is a unique root. Then the general solution is $$x(t)=c_1e^{-4t}+c_2te^{-4t}.$$
+
+* $x(0)=0\, ft.$ then $c_1=0.$ 
+* $x'(0)=-3\, ft/s.$ then $c_2=-3.$
+
+So the function, that models the displacement, is $$x(t)=-3te^{-4t}.$$
+---
+# Example 4:
+
+A mass weighing 64 pounds stretches a spring 0.32 foot.
+The mass is initially released from a point 8 inches
+above the equilibrium position with a downward velocity
+of 5 ft /s.
+(a) Find the equation of motion.
+(b) What are the amplitude and period of motion?
+(c) How many complete cycles will the mass have completed
+at the end of 3p seconds?
+(d) At what time does the mass pass through the equilibrium
+position heading downward for the second
+time?
