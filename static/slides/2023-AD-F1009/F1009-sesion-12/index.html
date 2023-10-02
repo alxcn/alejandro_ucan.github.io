@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Quadratic Functions</title>
+    <title>Señales y Sistemas</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2023-10-01" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"fec75aaaa6cd4e9c8cb74e33c2b4c214","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x3fa6d88c9674eccba2fafd21640a4fb","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Quadratic Functions
+# Señales y Sistemas
 ]
 .subtitle[
-## Session 05
+## Sesión 12
 ]
 .author[
 ### Alejandro Ucan
@@ -76,120 +76,119 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Goals
+# Objetivos:
 
-* Describe the general form a the Quadratic function model. &lt;br/&gt;&lt;br/&gt;
-* Describe intercepts and vertices of the quadratic function. &lt;br/&gt;&lt;br/&gt;
-* Apply the quadratic function to model business problems. &lt;br/&gt;&lt;br/&gt;
+ * Motivar el estudio de las series de Fourier. &lt;br/&gt;&lt;br/&gt;
+ * Describir las propiedades matemáticas de señales, y sus forma de estudiarla.&lt;br/&gt;&lt;br/&gt;
+ * Introductir los polinomios trigonométricos.
+---
+ #Motivación
+ 
+ ## Señales
 
+&gt; Nos motivaremos por el estudio de las _señales:_
+  * Intensidad de una corriente electrica.
+  * Diferencia de potencial entre dos puntos en un circuito.
+  * Posición de un objeto (respecto al tiempo o al espacio).
+  * Escala de grises de una imagen.
+  * Componentes de un campo vectorial.
+  * Un Sonido.
+  
+&lt;br/&gt;&lt;br/&gt;
+&gt; Definición: una señal corresponde a valores observados que dependen del tiempo o del espacio. Estas pueden ser análogas o discretas, dependiendo de la continuidad de la dependencia.
 
 ---
-# General Form of the Quadratic Function
+## Sistema de Tranmisición
 
-&gt; __Definition:__ The quadratic function is a polynomial function of degree 2. The general form of the quadratic function is given by: `$$f(x)=ax^2+bx+c$$` where `\(a\)`, `\(b\)` and `\(c\)` are real numbers and `\(a\neq 0\)`. The domain of the quadratic function is the set of all real numbers, but the range differs from one function to another.
-
----
-## Its graph
-
-&gt; __Definition:__ The graph associated to a quadratic function is called a parabola. The parabola is symmetric with respect to the vertical line that passes through the vertex. The vertex is the point where the parabola changes direction. The parabola opens upward if `\(a&gt;0\)` and downward if `\(a&lt;0\)`.
+&lt;img src="https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/io-io1_2.gif" width="150%" /&gt;
 
 ---
-## Its graph
+# Un Sistema
 
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" alt="Parabola" width="100%" /&gt;
-&lt;p class="caption"&gt;Parabola&lt;/p&gt;
-&lt;/div&gt;
-
----
-## The intercepts with the x-axis.
-
-&gt; __Definition:__ The intercepts with the x-axis are the points where the parabola intersects the x-axis. The x-intercepts are the solutions of the equation `\(f(x)=0\)`. The x-intercepts are also called the zeros of the function.
-
---
-In order to find our roots, we need to solve the equation `\(f(x)=0\)`. This equation is called the __quadratic equation__ and it has the form: `$$ax^2+bx+c=0,$$` we can use the quadratic general formula to solve that equation: `$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$` and dependending on the number `\(\Delta=b^2-4ac\)` we can have three different cases:
-* `\(\Delta&gt;0\)` two real roots.
-* `\(\Delta=0\)` one real root.
-* `\(\Delta&lt;0\)` no real roots.
-
----
-## The intercepts with the x-axis.
-
-&gt; __Definition:__ the number `\(\Delta=b^2-4ac\)` is called the __discriminant__ of the quadratic equation. 
+&gt; Supongamos que mis señales `\(f(t)\)` son funciones cuyo codominio es un espacio vectorial `\((\mathbb{R}, \mathbb{C}),\)` esto implica que mi espacio de funciones sea un espacio vectorial. 
 
 &lt;br/&gt;&lt;br/&gt;
-In order to interpretate the discriminant, we need to think that:
-* If `\(\Delta&gt;0\)` then the parabola intersects the x-axis in two different points.
-* If `\(\Delta=0\)` then the parabola intersects the x-axis in one point.
-* If `\(\Delta&lt;0\)` then the parabola does not intersect the x-axis.
+&gt; Definición: Un sistema es un operador lineal `\(S\)` que toma una señal `\(f(t)\)` y la transforma en otra señal `\(S(f(t)).\)`
+---
+## El principio de superposición:
+
+&gt; Decimos que las propiedades lineales del operador systema, `$$S(x+u)=S(x)+S(u) \mbox{ y } S(\alpha x)=\alpha S(x)$$` con `\(\alpha\in \mathbb{K}\)` se conoce como el principio de Superposición.
 
 ---
-#### Examples:
+## Causalidad
 
-&gt; Determine the nature of the roots for each quadratic function: &lt;br/&gt;&lt;br/&gt;
-  * `\(f(x)=x^2-4x+3\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f(x)=x^2-4x+4\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f(x)=x^2+2x+1\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f(x)=x^2+1\)` &lt;br/&gt;&lt;br/&gt;
+&gt; Decimos que un sistema `\(S\)` es causal si la salida del sistema en el tiempo `\(t\)` depende de la entrada del sistema en el tiempo `\(t\)` o en tiempos anteriores.
+
+`$$x_1(t)=x_2(t) \mbox{ para todo } t\leq t_0 \Rightarrow S(x_1)(t)=S(x_2)(t) \mbox{ para todo } t\leq t_0.$$`
 
 ---
-## The vertex of the parabola.
+## Invarianza en el tiempo
 
-&gt; __Definition:__ The vertex of the parabola is the point where the parabola changes direction. The vertex is the point `\((h,k)\)` where `\(h\)` and `\(k\)` are the coordinates of the vertex. Usually, this point is where the parabola attains its minimum or maximum value.
+&gt; Decimos que un sistema `\(S\)` es invariante en el tiempo si la salida del sistema en el tiempo `\(t\)` depende de la entrada del sistema en el tiempo `\(t\)` o en tiempos anteriores. Si `\(\tau_\alpha\)` es el operador delay `\(\tau_\alpha x(t)=x(t-\alpha)\)` entonces `$$S(\tau_\alpha x)(t)=S(x)(t-\alpha).$$`
+
+
+---
+# El espacio de funciones de cuadrado intregable.
+
+&gt; __Definición:__ El espacio de funciones (periodicas de cuadrado integrable `\(L_p^2((0,a))\)` es el espacio de funciones `\(f:(0,a)\to \mathbb{C}\)` tales que `$$\int_0^a|f(t)|^2dt&lt;\infty$$` y que además son de periodo `\(a.\)`
 
 --
-To easily find my vertex, we need to write our parabola equation in the form: `$$f(x)=p(x-h)^2+k$$` where `\(h\)` and `\(k\)` are the coordinates of the vertex.
 
----
-### The Square Completing process
-
-Assume that we have the following quadratic function: `$$f(x)=ax^2+bx+c$$` and we want to write it vertex form. We can use the following process:&lt;br/&gt;&lt;br/&gt;
-1. Take the two first terms and factor out the coefficient of the squared term. `$$f(x)=a(x^2+\frac{b}{a}x)+c$$` &lt;br/&gt;&lt;br/&gt;
-1. Add and subtract the square of half the coefficient of the linear term. `$$f(x)=a(x^2+\frac{b}{a}x+\frac{b^2}{4a^2}-\frac{b^2}{4a^2})+c$$` &lt;br/&gt;&lt;br/&gt;
-1. Factor the first three terms and simplify. `$$f(x)=a(x+\frac{b}{2a})^2-\frac{b^2}{4a}+c$$` &lt;br/&gt;&lt;br/&gt;
-1. Simplify the last two terms. `$$f(x)=a(x+\frac{b}{2a})^2-\frac{b^2-4ac}{4a}$$` &lt;br/&gt;&lt;br/&gt;
-
----
-#### Example 1:
-
-&gt; Write the quadratic function `\(f(x)=x^2-4x+3\)` in vertex form.
---
 &lt;br/&gt;&lt;br/&gt;
 
-##### Solution:
+__Lema:__ El espacio `\(L_p^2(0,a)\)` es un espacio vectorial real.
+---
+## Producto Interno y Norma:
 
-`$$f(x)=x^2-4x+3=x^2-4x+4-4+3=(x-2)^2-1$$`
+&gt; __Definción:__ Definamos la función `\(\langle \cdot,\cdot\rangle:L_p^2(0,a)\times L_p^2(0,a)\to \mathbb{C}\)` dada por `$$\langle f,g\rangle=\int_0^a f(t)\overline{g(t)}dt.$$`
 
-Note that here, `\(a=1\)`, `\(b=-4\)` and `\(c=3,\)` and `\(\Delta=b^2-4ac=16-12=4&gt;0\)` and `$$h=\frac{-b}{2a}=\frac{4}{2}=2$$` and `$$k=\frac{-b^2+4ac}{4a}=\frac{16-12}{4}=1$$`
+__Lema:__ La función `\(\langle \cdot,\cdot\rangle\)` es un producto interno en `\(L_p^2(0,a).\)`
 
 ---
-#### Example 2:
 
-&gt; Write the quadratic function `\(f(x)=x^2+1\)` in vertex form.
---
+&gt; __Definición:__ El producto anterior define una norma en el espacio `\(L_p^2(0,a)\)` de manera natural `$$\|f\|=\sqrt{\langle f,f\rangle}=\sqrt{\int_0^a|f(t)|^2dt}.$$`
+
 &lt;br/&gt;&lt;br/&gt;
-
-##### Solution:
-
-`$$f(x)=x^2+1=x^2+1+0=(x+0)^2+1$$`
-
-Note that here, `\(a=1\)`, `\(b=0\)` and `\(c=1,\)` and `\(\Delta=b^2-4ac=0-4=4&lt;0\)` and `$$h=\frac{-b}{2a}=\frac{0}{2}=0$$` and `$$k=\frac{-b^2+4ac}{4a}=\frac{0+4}{4}=1$$`
+__Lema:__ La norma anterior es una norma en `\(L_p^2(0,a).\)`
 
 ---
-# Applications
+ # El espacio de Señales Trigonométricas.
+ 
+ &gt; Consideremos las funciones `\(\varepsilon:\mathbb{R}\to \mathbb{C}\)` dadas por 
+ `$$\varepsilon_n(t)=\exp\left(2i\pi n\frac{t}{a}\right).$$` x
 
-#### Example 3:
-
-&gt; The financial department in the company that produces a digital camere arrived at the following price-demand function and the following revenue function: `$$p(x)=94.8-5x$$` `$$R(x)=xp(x)=x(94.8.5x)$$` where `\(p(x)\)` measures the wholesale price per camera at which `\(x\)` million cameras can be sold, and `\(R(x)\)` is the corresponding revenue (in million of dollars). We are interested in the case where `\(1\leq x\leq 15.\)` &lt;br/&gt;&lt;br/&gt;
-  * Find the price that maximizes the revenue. &lt;br/&gt;&lt;br/&gt;
-  * Find the maximum revenue. &lt;br/&gt;&lt;br/&gt;
+ ---
+&lt;br/&gt;&lt;br/&gt; Estas funciones son periódicas `$$\varepsilon(t+a)=\exp\left(\frac{2i\pi n (t+a)}{a}\right)=\exp\left(\frac{2i\pi n t}{a}+2i\pi n\right)=\exp\left(\frac{2i\pi n t}{a}\right)\exp\left(2i\pi n\right)=\exp\left(\frac{2i\pi n t}{a}\right)$$`
 
 ---
-#### Example 4:
+## Polynomios Trigonométricos 
 
-&gt; The marketing research department for a company that manufactures and sells notebook computers stablished the following price-demand and revenue functions: `$$p(x)=2000-60x\quad R(x)=xp(x)=x(2000-60x)$$` where `\(p(x)\)` measures the wholesale price per computer at which `\(x\)` thousand computers can be sold, and `\(R(x)\)` is the corresponding revenue (in thousand of dollars). We are interested in the case where `\(0\leq x\leq 25.\)` &lt;br/&gt;&lt;br/&gt;
-  * Find the price that maximizes the revenue. &lt;br/&gt;&lt;br/&gt;
-  * Find the maximum revenue. &lt;br/&gt;&lt;br/&gt;
+&gt; Entonces cualquier combinación lineal (con coeficientes complejos) de las funciones anteriores me va a dar una función periódica de periodo `\(a.\)`
+
+`$$p(t)=\sum_{j=1}^n c_j \varepsilon_j(t).$$`
+
+&gt; __Definición:__ Un polinomio trigonométrico es una función `\(p(t):\mathbb{R}\to \mathbb{C}\)` definida por la suma: `$$p(t)=\sum_{j=-n}^n c_j \varepsilon_j(t).$$`
+
+---
+## Representación visual de los polinomios trigonométricos
+
+&lt;iframe src="https://www.desmos.com/calculator/wbgk95zmoq?embed" width="1200" height="450" style="border: 1px solid #ccc" frameborder=0&gt;&lt;/iframe&gt;
+
+---
+## Representación Real
+
+&gt; Notemos que `\(\overline{\varepsilon_n(t)}=\varepsilon_{-n}(t),\)` por lo que el polinomio trigonométrico es simplemente: `$$p(t)=a_0+\sum_{j=1}^n\left(a_n cos\left(\frac{2\pi nt}{a}\right)+b_ni\sin\left(\frac{2\pi n t}{a}\right)\right)$$`
+con `\(n\leq 0\)` y `$$a_n=c_n+c_{-n}\mbox{ y } b_n=i(c_n-c_{-n})$$`
+
+
+---
+## Ortogonalidad 
+
+&gt; __Lema:__ Para las funciones `\(\varepsilon_n(t)\)` se cumple que `$$\int_0^a \varepsilon_n(t)\overline{\varepsilon_n(t)}dt=a\delta_{nm}.$$`
+
+Si consideramos el conjunto de polinomios trigonométricos de grado menor o igual a `\(N\)` y lo denotamos por `\(T_N,\)` y este es un subespacio vectorial (complejo) de `\(L_p^2(0,a)\)` y dado que el producto interno se hereda.
+
+Lo anterior implica que `\(\{\varepsilon_n(t)\}_{j=-N}^N\)` es una base ortogonal del espacio vectorial `\(T_N.\)`
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

@@ -1,6 +1,6 @@
 ---
-title: "EDO Lineales No homogéneas"
-subtitle: "Sesión 05"  
+title: "Quadratic Functions"
+subtitle: "Session 05"  
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -48,82 +48,120 @@ xaringanExtra::use_logo(
   position = xaringanExtra::css_position(top = "2em", right = "2em")
 )
 ```
-# Objetivos de la Sesión
+# Goals
 
-* Conocer la forma genérica de una EDO lineal <br/><br/>
-* Aprender otras problematicas que modela una EDO lineal. <br/><br/>
-* Resolver EDO lineales no homogéneas. <br/><br/>
-* Aprender el método de variación de parámetros. <br/><br/>
+* Describe the general form a the Quadratic function model. <br/><br/>
+* Describe intercepts and vertices of the quadratic function. <br/><br/>
+* Apply the quadratic function to model business problems. <br/><br/>
 
-
----
-# EDO lineal.
-
-> La forma genérica de una EDO lineal es $$a_1(x)y'+a_0(x)y+g(x)=0,$$ donde $a_0(x)$ y $a_1(x)$ son los coeficientes. <br/><br/>
-Si $g(x)=0,$ entonces la EDO se dice __homogénea__, de lo contrario es __no homogénea.__
-
-__Por ejemplo:__ $xy'-4y-x^6e^x=0.$
 
 ---
-## ¿Cómo es la solución de EDO lineal?
+# General Form of the Quadratic Function
 
-> Podemos escribir la ecuación generica como sigue $$y'+P(x)y=f(x).$$ Queremos una solución en un intervalo $I$ donde $P(x)$ y $f(x)$ sean funciones continuas. <br/><br/>
-Si $y_h$ es una solución a la versión homogénea de la EDO anterior y $y_p$ es una solución particular de la ecuación. Entonces $$y_h+y_p$$ es una solución de la ecuación no homogenea.
-
-__Reto:__ comprueba esto de manera genérica.
+> __Definition:__ The quadratic function is a polynomial function of degree 2. The general form of the quadratic function is given by: $$f(x)=ax^2+bx+c$$ where $a$, $b$ and $c$ are real numbers and $a\neq 0$. The domain of the quadratic function is the set of all real numbers, but the range differs from one function to another.
 
 ---
-## Soluciones de EDO lineales no homogéneas.
+## Its graph
 
-> __Variación de Paramétros:__ la idea es encontrar una solución de la forma $y_p=u(x)y_1(x)$ donde $y_1$ es la solución de la versión homogénea de la EDO. <br/><br/>
-Método:
-  1. Escribir la EDO de la forma: $$y'+P(x)y=f(x).$$
-  1. Identifica $P(x)$ y calcula el _factor integrador_ $$e^{\int P(x)dx}.$$
-  1. Multiplica en la EDO por el factor integrador. Esto modifica a la ecuación a la forma $$\frac{d}{dx}\left[e^{\int P(x)dx} y\right]= e^{\int P(x)dx}f(x).$$ 
-  1. Integra ambos lados y simplifica.
+> __Definition:__ The graph associated to a quadratic function is called a parabola. The parabola is symmetric with respect to the vertical line that passes through the vertex. The vertex is the point where the parabola changes direction. The parabola opens upward if $a>0$ and downward if $a<0$.
 
 ---
-### Ejemplo 1 (EDO lineal homogénea)
+## Its graph
 
-> Resuelva $y'-3y=0.$
+```{r, echo=FALSE, fig.align='center', fig.cap="Parabola"}
+library(ggplot2)
+ggplot(data.frame(x=c(-5,5)), aes(x)) + 
+  stat_function(fun = function(x) -3*x^2, geom = "line") +
+  labs(x = "x", y = "f(x)")
+```
+
+---
+## The intercepts with the x-axis.
+
+> __Definition:__ The intercepts with the x-axis are the points where the parabola intersects the x-axis. The x-intercepts are the solutions of the equation $f(x)=0$. The x-intercepts are also called the zeros of the function.
 
 --
-<br/><br/>
-1. Ya se encuentra en la forma estándar.
-
-1. $P(x)=-3,$ por lo que el factor integrador es $$e^{\int -3dx}=e^{-3x}.$$
-
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-3x}y\right]=0.$$
-
-1. Integramos y despejamos: $$e^{-3x}y=c\Rightarrow y=c e^{3x}.$$
+In order to find our roots, we need to solve the equation $f(x)=0$. This equation is called the __quadratic equation__ and it has the form: $$ax^2+bx+c=0,$$ we can use the quadratic general formula to solve that equation: $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$ and dependending on the number $\Delta=b^2-4ac$ we can have three different cases:
+* $\Delta>0$ two real roots.
+* $\Delta=0$ one real root.
+* $\Delta<0$ no real roots.
 
 ---
-### Ejemplo 2 (EDO lineal no homogénea)
+## The intercepts with the x-axis.
 
-> Resuelva la ecuación $y'-2y=6.$
+> __Definition:__ the number $\Delta=b^2-4ac$ is called the __discriminant__ of the quadratic equation. 
+
+<br/><br/>
+In order to interpretate the discriminant, we need to think that:
+* If $\Delta>0$ then the parabola intersects the x-axis in two different points.
+* If $\Delta=0$ then the parabola intersects the x-axis in one point.
+* If $\Delta<0$ then the parabola does not intersect the x-axis.
+
+---
+#### Examples:
+
+> Determine the nature of the roots for each quadratic function: <br/><br/>
+  * $f(x)=x^2-4x+3$ <br/><br/>
+  * $f(x)=x^2-4x+4$ <br/><br/>
+  * $f(x)=x^2+2x+1$ <br/><br/>
+  * $f(x)=x^2+1$ <br/><br/>
+
+---
+## The vertex of the parabola.
+
+> __Definition:__ The vertex of the parabola is the point where the parabola changes direction. The vertex is the point $(h,k)$ where $h$ and $k$ are the coordinates of the vertex. Usually, this point is where the parabola attains its minimum or maximum value.
 
 --
+To easily find my vertex, we need to write our parabola equation in the form: $$f(x)=p(x-h)^2+k$$ where $h$ and $k$ are the coordinates of the vertex.
+
+---
+### The Square Completing process
+
+Assume that we have the following quadratic function: $$f(x)=ax^2+bx+c$$ and we want to write it vertex form. We can use the following process:<br/><br/>
+1. Take the two first terms and factor out the coefficient of the squared term. $$f(x)=a(x^2+\frac{b}{a}x)+c$$ <br/><br/>
+1. Add and subtract the square of half the coefficient of the linear term. $$f(x)=a(x^2+\frac{b}{a}x+\frac{b^2}{4a^2}-\frac{b^2}{4a^2})+c$$ <br/><br/>
+1. Factor the first three terms and simplify. $$f(x)=a(x+\frac{b}{2a})^2-\frac{b^2}{4a}+c$$ <br/><br/>
+1. Simplify the last two terms. $$f(x)=a(x+\frac{b}{2a})^2-\frac{b^2-4ac}{4a}$$ <br/><br/>
+
+---
+#### Example 1:
+
+> Write the quadratic function $f(x)=x^2-4x+3$ in vertex form.
+--
 <br/><br/>
-1. Ya se encuentra en la forma estándar.
 
-1. $P(x)=-2,$ por lo que el factor integrador es $$e^{\int -2dx}=e^{-2x}.$$
+##### Solution:
 
-1. Multiplicamos y nuestra ecuación se reduce a $$\frac{d}{dx}\left[e^{-2x}y\right]=6e^{-2x}.$$
+$$f(x)=x^2-4x+3=x^2-4x+4-4+3=(x-2)^2-1$$
 
-1. Integramos y despejamos: $$e^{-2x}y=-3e^{-2x}+c\Rightarrow y=-3+ce^{-2x}.$$
-
----
-# Caída No libre
-
-> Consideremos un cuerpo que está cayendo pero el medio en donde cae presenta una resistencia (digamos el aire). Si la velocidad con la caé el cuerpo está dada por $v(t)$ entonces satisface la EDO lineal no homogénea: $$mv'+\beta v=mg,$$ dónde $m$ es la masa del objeto, $\beta$ es la constante de resistencia, y $g$ es la fuerza de gravedad. 
+Note that here, $a=1$, $b=-4$ and $c=3,$ and $\Delta=b^2-4ac=16-12=4>0$ and $$h=\frac{-b}{2a}=\frac{4}{2}=2$$ and $$k=\frac{-b^2+4ac}{4a}=\frac{16-12}{4}=1$$
 
 ---
-## La solución de la caída no libre.
+#### Example 2:
 
-Usando __variación de parametros__ podemos resolver esta EDO, veamos.
+> Write the quadratic function $f(x)=x^2+1$ in vertex form.
+--
+<br/><br/>
 
-1. $P(x)=\beta/m,$ $f(x)=g$ y factor integrador es: $$e^{\frac{\beta t}{m}}.$$
+##### Solution:
 
-1. Multiplicando el factor y transformado la ecuación obtenemos: $$\frac{d}{dt}\left[e^{\frac{\beta t}{m}}v\right]=ge^{\frac{\beta t}{m}}.$$
+$$f(x)=x^2+1=x^2+1+0=(x+0)^2+1$$
 
-1. Realizando la integral y simplicando obtenemos: $$v(t)=\frac{mg}{\beta}+ce^{-\frac{\beta t}{m}}.$$
+Note that here, $a=1$, $b=0$ and $c=1,$ and $\Delta=b^2-4ac=0-4=4<0$ and $$h=\frac{-b}{2a}=\frac{0}{2}=0$$ and $$k=\frac{-b^2+4ac}{4a}=\frac{0+4}{4}=1$$
+
+---
+# Applications
+
+#### Example 3:
+
+> The financial department in the company that produces a digital camere arrived at the following price-demand function and the following revenue function: $$p(x)=94.8-5x$$ $$R(x)=xp(x)=x(94.8.5x)$$ where $p(x)$ measures the wholesale price per camera at which $x$ million cameras can be sold, and $R(x)$ is the corresponding revenue (in million of dollars). We are interested in the case where $1\leq x\leq 15.$ <br/><br/>
+  * Find the price that maximizes the revenue. <br/><br/>
+  * Find the maximum revenue. <br/><br/>
+
+---
+#### Example 4:
+
+> The marketing research department for a company that manufactures and sells notebook computers stablished the following price-demand and revenue functions: $$p(x)=2000-60x\quad R(x)=xp(x)=x(2000-60x)$$ where $p(x)$ measures the wholesale price per computer at which $x$ thousand computers can be sold, and $R(x)$ is the corresponding revenue (in thousand of dollars). We are interested in the case where $0\leq x\leq 25.$ <br/><br/>
+  * Find the price that maximizes the revenue. <br/><br/>
+  * Find the maximum revenue. <br/><br/>
+
