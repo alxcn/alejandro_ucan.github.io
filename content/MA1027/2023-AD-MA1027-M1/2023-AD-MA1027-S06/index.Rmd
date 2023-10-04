@@ -1,0 +1,21 @@
+---
+title: "S06: Polynomial Functions"
+weight: 6
+subtitle: ""
+excerpt: "Higher degree polynomials can be also characterized"
+date: '`r Sys.Date()`'
+slug: MA1027-session-06
+draft: false
+---
+
+In this session of **MA1027** our goals are:
+
+* Describe the general form a the Polynomial function model. <br/><br/>
+* Describe the general behavior of a polynomial function. <br/><br/>
+* Apply the polynomial function to model business problems. <br/><br/>
+
+The slides for **Session 06** are in [slides](/slides/2023-AD-MA1027/MA1027-sesion-06).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1027/MA1027-sesion-06", ratio = "4:3")
+```

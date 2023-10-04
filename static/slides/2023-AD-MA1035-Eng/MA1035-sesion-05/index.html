@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Modelling whit higher c.c. LODE’s</title>
+    <title>Modelling with higher c.c. LODE’s</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2023-10-01" />
+    <meta name="date" content="2023-10-04" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xc8a50dce6144d8ca9935e144d85f9ce","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bdd977c09ded41819ef9b8891fb231b6","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Modelling whit higher c.c. LODE’s
+# Modelling with higher c.c. LODE’s
 ]
 .subtitle[
 ## Session 05
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2023-10-01
+### 2023-10-04
 ]
 
 ---
@@ -115,6 +115,7 @@ We will model this system with the following hypothesis:
 from a point 8 inches below the equilibrium position with an upward velocity of `\(3/4 ft/s\)`. Determine the function that describe the mass motion.
 
 --
+&lt;br/&gt;&lt;br/&gt;
 The conversion of `\(2lbs\)` to slugs is `\(m=\frac{2}{32}=1/16\, slugs.\)` The conversion of `\(6in\)` to feet is `\(s=\frac{6}{12}=1/2\, ft.\)` The conversion of `\(8in\)` to feet is `\(x_0=\frac{8}{12}=2/3\, ft.\)` Now we are in the same units, we have that:
   * `\(m=1/16\, slugs.\)`
   * `\(|F|=k|s|,\)` then `\(k=\frac{|F|}{|s|}=\frac{2}{1/2}=4\, lb/ft.\)`
@@ -136,7 +137,7 @@ So my ODE is `$$\frac{1}{16}x''+4x=0.$$` The auxiliary polynomial is `$$\frac{1}
 
 A mass weighing 20pounds, attached to the end of a spring, stretches it 4 in. Initially, the mass is released from rest from a point 3 inch above the equilibrium position. Find the function that describes the motion.
 --
-
+&lt;br/&gt;&lt;br/&gt;
 The conversion of `\(20lbs\)` to slugs is `\(m=\frac{20}{32}=5/8\, slugs.\)` The conversion of `\(4in\)` to feet is `\(s=\frac{4}{12}=1/3\, ft.\)` The conversion of `\(3in\)` to feet is `\(x_0=\frac{3}{12}=1/4\, ft.\)` Now we are in the same units, we have that:
   * `\(m=5/8\, slugs.\)`
   * `\(|F|=k|s|,\)` then `\(k=\frac{|F|}{|s|}=\frac{20}{1/3}=60\, lb/ft.\)`
@@ -160,6 +161,7 @@ Therefore the function that models the displacement is `$$x(t)=\frac{1}{4}\cos(4
 A mass weighing `\(8lbs\)` stretches a spring `\(2ft.\)` Assuming that the damping force is equal to `\(2\)` times the instant velocity. Find the function that describes the motion if the mass is initially released from the equilibrium with a velocity (negative) of `\(3ft/s.\)`
 
 --
+&lt;br/&gt;&lt;br/&gt;
 The conversion of `\(8lbs\)` to slugs is `\(m=\frac{8}{32}=1/4\, slugs.\)` The conversion of `\(2ft\)` to feet is `\(s=2\, ft.\)` Now we are in the same units, we have that:
   * `\(m=1/4\, slugs.\)`
   * `\(|F|=k|s|,\)` then `\(k=\frac{|F|}{|s|}=\frac{8}{2}=4\, lb/ft.\)`
@@ -184,10 +186,10 @@ A mass weighing 64 pounds stretches a spring 0.32 foot.
 The mass is initially released from a point 8 inches
 above the equilibrium position with a downward velocity
 of 5 ft /s.
-(a) Find the equation of motion.
-(b) What are the amplitude and period of motion?
+(a) Find the equation of motion.&lt;br/&gt;
+(b) What are the amplitude and period of motion? &lt;br/&gt;
 (c) How many complete cycles will the mass have completed
-at the end of 3p seconds?
+at the end of 3p seconds? &lt;br/&gt;
 (d) At what time does the mass pass through the equilibrium
 position heading downward for the second
 time?

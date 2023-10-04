@@ -1,0 +1,20 @@
+---
+title: "S05: Modelling with Higher Order LODEs with cc."
+weight: 5
+subtitle: ""
+excerpt: "The vertical spring model"
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-05
+draft: false
+---
+
+# Session's Goals
+
+* We will use the Newton law to model a spring-mass system.
+* Using the Auxiliary polynomial and Undeterminated Coefficients we will solve those models.
+
+Content for **Session 05** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-05).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-05", ratio = "4:3")
+```

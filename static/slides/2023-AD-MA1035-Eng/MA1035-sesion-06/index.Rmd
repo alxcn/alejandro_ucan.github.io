@@ -1,6 +1,6 @@
 ---
-title: "Sistemas de EDOs lineales"
-subtitle: "Sesión 06"
+title: "Systems of LODEs"
+subtitle: "Session 06"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -48,75 +48,84 @@ xaringanExtra::use_logo(
   position = xaringanExtra::css_position(top = "2em", right = "2em")
 )
 ```
-# Objetivos de la Sesión
+# Goals
 
-* Conocer diferentes problematicas que involucran sistemas de EDOs. <br/><br/>
-* Conocer la forma matricial de un sistema de EDOs. <br/><br/>
-* Estudiar la solución (vector de funciones) de un sistema. 
-
----
-# Recordando:
-
-> Recordemos que si tenemos una población $P(t),$ su crecimiento puede ser modelado mediante la ecuación diferencial $$\frac{dP}{dt}=kP,$$ <br/><br/> de igual manera podemos considerar la presencia de una fracción de inmigrantes (por el momento constante) $$\frac{dP}{dt}=kP-r.$$ <br/><br/>
-Realmente sabemos que la población que inmigra no es constante en el tiempo, así que el modelo anterior no es tan real.
+* Know different problems involving systems of ODEs. <br/><br/>
+* Know the matrix form of a system of ODEs. <br/><br/>
+* Study the solution (vector of functions) of a system.
 
 ---
-# Un modelo más real
+# Recall
 
-> Nuestro modelo sería más realista si $R(t)$ define la población de inmigrantes en el tiempo $t,$ $$\frac{dP}{dt}=kP-R,$$ y si además tenemos información del crecimiento de la población inmigrante, por ejemplo $$\frac{dR}{dt}=sR.$$ <br/><br/> 
-Entonces el modelo sería $$\frac{dP}{dt}=kP-R,$$ $$\frac{dR}{dt}=sR.$$
-
----
-# Sistema de EDOs lineales
-
-> Un sistema de ecuaciones diferenciales es un par de EDOs que involucran dos funciones variables, de la forma general $$\frac{dx}{dt}=g_1(t,x,y)$$ $$\frac{dy}{dt}=g_2(t,x,y)$$ y si pedimos que sean lineales las ecuaciones entonces $$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$ $$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$
+> To model the population growth we use a function $P(t)$ that represents the population at time $t.$ The main hypothesis is that the speed of growth is proportional to the population, $$\frac{dP}{dt}=kP.$$ What if we consider a population that migrates to another country? <br/><br/>
+ $$\frac{dP}{dt}=kP-r.$$ <br/><br/>
+But, in the real world the population that migrates is not constant in time, so the previous model is not so real.
 
 ---
-# Sistema Predador-Presa
+# A more realistic model
 
-> Supongamos que tenemos dos especies que interactuan en un ecosistemas $x(t)$ y $y(t),$ de donde $x(t)$ es extrictamente vegetariana y $y(t)$ carnivora (consume a $x(t)$) entonces $$\frac{dy}{dt}=-ay+bxy$$ $$\frac{dx}{dt}=cx-dxy.$$ Este modelo se conoce como el __Lotka-Volterra para predador-presa.__
+> Assume that $R(t)$ defines the migrate population at time $t,$ so my previous ODE changes to $$\frac{dP}{dt}=kP-R,$$ and if we have information about the growth of the migrate population, for example $$\frac{dR}{dt}=sR.$$ <br/><br/> 
+Then the model would be $$\frac{dP}{dt}=kP-R,$$ $$\frac{dR}{dt}=sR.$$
+
 
 ---
-# ¿Cómo se ve?
+# System of linear ODEs
 
-```{r, echo=FALSE, out.width="60%", fig.cap="Ejempo de Soluciónes"}
+> A system of ODEs is a pair of ODEs that involves two functions, in general the form is $$\frac{dx}{dt}=g_1(t,x,y)$$ $$\frac{dy}{dt}=g_2(t,x,y)$$  where $g_1$ and $g_2$ could be any kind of functions. <br/><br/><br/>
+Similar to the single ODEs, the systems can be classified in the type of the function $g_1$ and $g_2.$ We say that the system is __linear__ if the functions $g_1$ and $g_2$ are linear functions $$g_1(t,x,y)=c_1x+c_2y+f_1(t)$$ $$g_2(t,x,y)=k_1 x+k_2y+f_2(t).$$
+
+---
+# Prey-Predator System
+
+> Assume that we have two species that interact in an ecosystem, such that $x(t)$ and $y(t)$ measures the population at time $t.$ Where $x(t)$ is a vegetarian species and $y(t)$ is a carnivore (consume $x(t)$) then $$\frac{dy}{dt}=-ay+bxy$$ $$\frac{dx}{dt}=cx-dxy$$  where: <br/><br/>
+* $a$ is the rate of natural death for the carnivore. <br/><br/>
+* $b$ is the rate of growth of the carnivore population per vegetarian. <br/><br/>
+* $c$ is the rate of natural death for the vegetarian. <br/><br/>
+* $d$ is the rate of growth of the vegetarian population per carnivore. <br/><br/>
+
+This model is known as the __Lotka-Volterra for prey-predator.__
+
+---
+# How does it look a solution for that system?
+
+```{r, echo=FALSE, out.width="60%", fig.cap="Solutions for the Lotka-Volterra system."}
 knitr::include_graphics("https://strimas.com/post/2017-10-13-lotka-volterra/index_files/figure-html/time-plot-1.png")
 ```
 ---
-# Sistema de EDOs lineales
+# Systems of LODEs
 
-> Consideremos el siguiente sistema de EDOS lineales de $n$ ecuaciones con $n$ incognitas: $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&=& x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &=& x'_2 \\ \vdots & = & \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&=& x'_n \\ \end{array}$$  
+> Consider the following system of LODEs with $n-$equations and $n-$unknowns:
+ $$ \begin{array}{ccc} a_{11} x_1 + a_{12} x_2 +\cdots + a_{1n} x_n +f_1(t)&=& x'_1 \\ a_{12} x_1 + b_{22} x_2 +\cdots + a_{2n} x_n +f_2(t) &=& x'_2 \\ \vdots & = & \vdots \\ a_{n1} x_1 + a_{n2} x_2 +\cdots + a_{nn} x_n +f_n(t)&=& x'_n \\ \end{array}$$  
 
 ---
-## Versión matricial 
+## Matrix form
 
-> La expresión anterior se puede expresar de forma matricial: 
+> Last expressión can be expresed as:
 
 $$\left(\begin{array}{c} x'_1 \\ x'_2 \\ \vdots \\ x'_n \end{array}\right) =\left(\begin{array}{c} a_{11} & a_{12} & \ldots & a_{1n}\\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \ldots & a_{nn} \end{array}\right) \left(\begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{array}\right)+ \left(\begin{array}{c} f_1(t) \\ f_2(t) \\ \vdots \\ f_n(t) \end{array}\right)$$
 $$ X' = A X+F$$
 
 ---
-# ¿Cómo se ve la solución?
+# How is the solution?
 
-> La solución de un sistema es un vector $$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$ que satisface las ecuaciones anteriores.
+> The solution of a system is a vector of functions $$X=\left(\begin{array}{c} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{array}\right)$$ that satisfies the previous equations.
+<br/><br/>
+#### Example
 
----
-# Ejemplo
-
-> Verifique que el siguiente vector $$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$ es resultado del sistema $$X'=\left(\begin{array} 1 & 3 \\ 5 & 3 \end{array}\right) X$$ y también $$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$
-
----
-# Superposición e Independencia Lineal
-
-> En un sistema de EDOs homogéneas, si $X_1$ y $X_2$ son soluciones, para cualquier número reales $c_1$ y $c_2,$ entonces $$c_1 X_1 + c_2 X_2$$ también es solución. <br/><br/> 
-__Definición:__ decimos que las soluciones $X_1, \, X_2,\, \cdots,\, X_n$ son __linealmente indepentiendes__ si la unica combinación $$c_1 X_1+c_2 X_2+\cdots + c_n X_n=0$$ entonces $c_1=c_2=\cdots=c_n=0.$
+> Lets verify that $$\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)$$ is a solution for $$X'=\left(\begin{array} 1 & 3 \\ 5 & 3 \end{array}\right) X$$ and also $$\left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right).$$
 
 ---
-## Ejemplo:
+# Superposition and Linear Independence
 
-> En el ejemplo anterior, los vectores solución $$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$ son linealmente independientes.
+> __Superposition:__ if $X_1$ and $X_2$ are solutions of the system, then $$c_1 X_1+c_2 X_2$$ is also a solution. <br/><br/>
+__Definition:__ we say that the vector solution $X_1, \, X_2,\, \cdots,\, X_n$ are __linealmente indepentiendes__ if the linear combination $$c_1 X_1+c_2 X_2+\cdots + c_n X_n=O$$ where $O$ is the zero function, we have that $c_1=c_2=\cdots=c_n=0.$
 
 ---
-## Actividad:
+#### Example:
 
-> Compruebe que las funciones vectores $$X_1=\left(\begin{array}{c} \cos(t) \\ \frac{-\cos(t)}{2}+\frac{\sin(t)}{2}\\ -\cos(t)-\sin(t) \end{array}\right) \mbox{ y } \left(\begin{array}{c} 0 \\ e^t \\ 0  \end{array}\right)$$ es un conjunto solución linealmente independiente para el sistema $$X'=\left(\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 0 \\ -2 & 0 & -1\end{array}\right) X$$
+> Prove that $$X_1=\left(\begin{array}{c} e^{-2t} \\ -e^{-2t}  \end{array}\right)\quad \mbox{y} \quad \left(\begin{array}{c} 3e^{6t} \\ 5e^{6t}  \end{array}\right)$$ are linearly independent.
+
+---
+#### Example:
+
+> Prove that $$X_1=\left(\begin{array}{c} \cos(t) \\ \frac{-\cos(t)}{2}+\frac{\sin(t)}{2}\\ -\cos(t)-\sin(t) \end{array}\right) \mbox{ y } \left(\begin{array}{c} 0 \\ e^t \\ 0  \end{array}\right)$$ is a linearly independent solution for $$X'=\left(\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 0 \\ -2 & 0 & -1\end{array}\right) X$$
