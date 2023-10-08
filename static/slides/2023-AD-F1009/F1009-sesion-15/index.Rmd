@@ -63,7 +63,7 @@ xaringanExtra::use_logo(
 ---
 # Idea intuitiva:
 
-> Imaginemos que hacemos tomamos funciones periódicas cuyo periodo tiende a infinito (cada vez más pequeño). Esto implicaria que nuestra suma se hace cada vez más __fina.__
+> Imaginemos que hacemos tomamos funciones periódicas cuyo periodo tiende a cero (cada vez más pequeño). Esto implicaria que nuestra suma se hace cada vez más __fina.__
 $$\sum_{j=-\infty}^\infty \to \int_{-\infty}^\infty.$$
 
 ---
@@ -79,7 +79,7 @@ $$\sum_{j=-\infty}^\infty \to \int_{-\infty}^\infty.$$
 ---
 # Transformada de Fourier
 
-> __Definición:__ Sea $f$ una función (integrable). Definimos el _operador lineal_ $\mathscr{F}$ que va desde el espacio de funciones integrables en si mismo dada por $$g(\alpha)=\mathscr{F}(f)(\alpha)=\int_{-\infty}^\infty f(x)\exp\left(-2\pi i x\alpha\right)dx$$
+> __Definición:__ Sea $f$ una función (integrable). Definimos el _operador lineal_ $\mathscr{F}$ que va desde el espacio de funciones integrables en al de funciones acotadas $$g(\alpha)=\mathscr{F}(f)(\alpha)=\int_{-\infty}^\infty f(x)\exp\left(-2\pi i x\alpha\right)dx$$
 $$f(x)=\mathscr{F}^{-1}(g)(x)=\frac{1}{2\pi}\int_{-\infty}^\infty g(\alpha)\exp\left(2\pi i x\alpha\right)dx$$
 
 ---
@@ -113,10 +113,10 @@ $$=\frac{\sin(2\pi\alpha a)}{\pi\alpha}$$
 # Propiedades de la transformada de Fourier
 
 > __Proposición:__ Sea $f$ una función integrable, entonces se cumple: <br/><br/>
-* \overline{$\mathscr{F}^{-1}(f)}=\mathscr{F}^{-1}(\overline{f}).$ <br/><br/>
+  * $\overline{\mathscr{F}^{-1}(f)}=\mathscr{F}^{-1}(\overline{f}).$ <br/><br/>
   * $\mathscr{F}(f)(-\alpha)=\mathscr{F}(f_\sigma)$ dónde $f_\sigma(x)=f(-x).$ <br/><br/>
   * Si $f(x)$ es par (impar) entonces $g(\alpha)$ es par (impar).  <br/><br/>
-  * Si $f(x)$ es real y par (real e impar) entonces $g(\alpha)$ es real y real (imaginaria e impar).
+  * Si $f(x)$ es real y par (real e impar) entonces $g(\alpha)$ es real y par (imaginaria e impar).
   
 ---
 # Actividad en clase:

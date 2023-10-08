@@ -52,7 +52,7 @@ xaringanExtra::use_logo(
 
  * Definir la problematica de estudiar señales continuas. <br/><br/>
  * Resolver cómo calcular los coeficientes de la seria de Fourier con datos discretos. <br/><br/>
- * Enunciar los métodos básicos.
+ * Enunciar el método básico.
 ---
 # Problemática
 

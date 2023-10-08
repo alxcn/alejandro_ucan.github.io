@@ -1,20 +1,21 @@
 ---
-title: "S05: Modelling with Higher Order LODEs with cc."
-weight: 5
+title: "S06: Systems of LODEs"
+weight: 6
 subtitle: ""
-excerpt: "The vertical spring model"
+excerpt: "Definition, interpretation and solutions for Systems of LODEs"
 date: '`r Sys.Date()`'
-slug: MA1035Eng-session-05
+slug: MA1035Eng-session-06
 draft: false
 ---
 
 # Session's Goals
 
-* We will use the Newton law to model a spring-mass system.
-* Using the Auxiliary polynomial and Undeterminated Coefficients we will solve those models.
+* Know different problems involving systems of ODEs. <br/><br/>
+* Know the matrix form of a system of ODEs. <br/><br/>
+* Study the solution (vector of functions) of a system.
 
-Content for **Session 05** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-05).
+Content for **Session 06** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-06).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-05", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-06", ratio = "4:3")
 ```

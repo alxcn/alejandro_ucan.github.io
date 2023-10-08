@@ -115,5 +115,6 @@ abline(h = 0, col = "red")
 2. Use the __criterium__ to decide if the data fits a polynomial function. <br/><br/>
 3. Use the __polynomial regression__ to fit a polynomial function to the data. <br/><br/>
 
+---
 
 
