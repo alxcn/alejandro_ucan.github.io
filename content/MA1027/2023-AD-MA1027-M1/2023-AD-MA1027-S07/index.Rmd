@@ -1,0 +1,22 @@
+---
+title: "S07: Exponential Functions"
+weight: 7
+subtitle: ""
+excerpt: "Exponential growth and decay in business"
+date: '`r Sys.Date()`'
+slug: MA1027-session-07
+draft: false
+---
+
+In this session of **MA1027** our goals are:
+
+* Describe cases where the growth/decay is exponential. <br/><br/>
+* Describe the criterium to decide if a model is exponential. <br/><br/>
+* Describe the process to find an exponential model. <br/><br/>
+* Use the exponential regression to predict values. <br/><br/>
+
+The slides for **Session 07** are in [slides](/slides/2023-AD-MA1027/MA1027-sesion-07).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1027/MA1027-sesion-07", ratio = "4:3")
+```
