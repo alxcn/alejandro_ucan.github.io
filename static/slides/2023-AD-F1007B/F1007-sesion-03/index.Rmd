@@ -1,0 +1,78 @@
+---
+title: "Integration Techniques and Applications"
+subtitle: "Session 03"  
+author: 
+  - "Alejandro Ucan"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#000080",
+  secondary_color = "#f2f3f4",
+  inverse_header_color = "#00147e"
+)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_scribble()
+```
+
+# Goals:
+
+ * Direct integration. <br/><br/>
+ * Substitution. <br/><br/>
+
+---
+# Direct Integration
+
+> __Method:__ Direct integration is a method of integration in which we use the antiderivative of the integrand to find the value of the definite integral. <br/><br/>
+
+--
+#### Example
+
+1. $\int_{0}^{1} (x^2 + 2x + 1) dx$ <br/><br/>
+2. $\int_{-1}^{1} (x^3 - 2x^2 + 3x - 1) dx$ <br/><br/>
+3. $\int_{-5}^{6} e^{x}dx$ <br/><br/>
+4. $\int_{1}^{e^2} \frac{1}{x} dx$ <br/><br/>
+5. $\int_{0}^{\pi} \sin(x) dx$ <br/><br/>
+
+---
+# Substitution
+
+> __Method:__ Substitution is a method of integration in which we use a change of variable to transform the integrand into a form that is easier to integrate (and use direct integration). <br/><br/>
+
+--
+#### Example
+
+1. $\int_{0}^{1} \frac{2x+2}{(x^2 + 2x + 1)} dx$ <br/><br/>
+2. $\int_{-1}^{1} xe^{3x^2} dx$ <br/><br/>
+3. $\int_{0}^{\pi/4} \tan(x)dx$ <br/><br/>
+
+---
+# Applications
+
