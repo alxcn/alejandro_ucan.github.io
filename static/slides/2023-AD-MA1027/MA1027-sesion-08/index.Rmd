@@ -53,7 +53,7 @@ xaringanExtra::use_logo(
 - Understand the logarithmic model.
 - Solve logarithmic equations.
 - State the criterium for logarithmic models.
-- Use the logarithmic model to make predictions.
+- Use the logarithmic model to provide information about business problems.
 
 ---
 # Motivation:
@@ -146,7 +146,7 @@ The equilibrium of this function is when $$5^{q-2}=4e^{-q},$$ therefore $$(q-2)\
 
 --
 <br/><br/>
-Consider the following data $x=$1,2,3,4,5 and $y=$0, 150.51, 238.56, 301.02, 349.48.
+Consider the following data $x=$ 1,2,3,4,5 and $y=$ 0, 150.51, 238.56, 301.02, 349.48.
 
 ---
 

@@ -1,0 +1,22 @@
+---
+title: "S16: Convolución y Transformadas de Laplace"
+weight: 16
+subtitle: ""
+excerpt: "Definiremos el concepto de Transformada integral y utilizaremos particularmente la de Laplace para resolver EDOs."
+date: '`r Sys.Date()`'
+slug: F1009-sesion-16
+draft: false
+---
+
+En esta sesión de __F1009__ tendremos por objetivo:
+
+ * Introducir el espacio de funciones de decrecimiento rápido. <br/><br/>
+ * Definir la convolución de dos funciones. <br/><br/>
+ * Introducir el concepto de Transformada Integral. <br/><br/>
+ * Introducir el concepto de Transformada de Laplace.
+ 
+El contenido para la **Sesión 16** se encuentra en [slides](/slides/2023-AD-F1009/F1009-sesion-16).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1009/F1009-sesion-16", ratio = "4:3")
+```
