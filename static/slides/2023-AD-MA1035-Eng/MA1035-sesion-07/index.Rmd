@@ -87,7 +87,7 @@ xaringanExtra::use_logo(
 > __Method of Eigenfunctions:__ For the system $X'=AX.$ 
   1. Find the eigenvalues and eigenvectors of $A.$ 
       * If the eigenvalues are real and distinct, then the general solution $$X_1=e^{\lambda_1}v_1\mbox{ and } X_2=e^{\lambda_2}v_2.$$
-      * If the eigenvalues are real and repeated, then the general solution $$X_1=e^{\lambda}v_1\mbox{ and } X_2=te^{\lambda}v_1.$$
+      * If the eigenvalues are real and repeated, then the general solution $$X_1=e^{\lambda}v_1\mbox{ and } X_2=te^{\lambda}v_2.$$
       * If the eigenvalues are complex conjugated, then the general solution $$X_1=e^{\alpha t}\left(\cos(\beta t)v_1+\sin(\beta t)v_2\right)\mbox{ and } X_2=e^{\alpha t}\left(\cos(\beta t)v_1-\sin(\beta t)v_2\right).$$
       
   2. Express the general solution as $$X=c_1 X_1+c_2 X_2.$$

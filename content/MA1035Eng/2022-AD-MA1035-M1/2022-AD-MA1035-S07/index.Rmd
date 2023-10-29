@@ -1,0 +1,20 @@
+---
+title: "S07: Eigenfunctions for Homogeneous Systems of LODEs"
+weight: 7
+subtitle: ""
+excerpt: "Type of Solutions for Systems of homogeneuous LODE's"
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-07
+draft: false
+---
+
+# Session's Goals
+
+* Use eigenvalues and eigenvectors to solve systems of ODEs. <br/><br/>
+* Use the Wronskian to test for linear independence. <br/><br/>
+
+Content for **Session 07** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-07).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-07", ratio = "4:3")
+```

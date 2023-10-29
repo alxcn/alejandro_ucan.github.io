@@ -1,0 +1,20 @@
+---
+title: "Definite Integral"
+weight: 1
+subtitle: "The real value of the area under a curve"
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: F1007-sesion-02
+draft: false
+---
+
+ * Prove that Riemann sums approximate the area under the curve. <br/><br/>
+ * Define the definite integral. <br/><br/>
+ * Compute definite integrals using the definition. <br/><br/>
+ * State the Foundamental Theorem of Calculus. <br/><br/>
+
+El contenido para la **Sesión 02** se encuentra en following [slides](/slides/2023-AD-F1007B/F1007-sesion-02).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1007B/F1007-sesion-02", ratio = "4:3")
+```

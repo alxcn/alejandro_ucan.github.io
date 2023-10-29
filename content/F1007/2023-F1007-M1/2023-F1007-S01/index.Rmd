@@ -1,0 +1,19 @@
+---
+title: "Riemann Sums"
+weight: 1
+subtitle: "How to approximate the value of under a curve"
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: F1007-sesion-01
+draft: false
+---
+
+ * Introduce the problem of compute the area under a curve. <br/><br/>
+ * Interval partitions. <br/><br/>
+ * Riemann sums.
+
+El contenido para la **Sesión 01** se encuentra en following [slides](/slides/2023-AD-F1007B/F1007-sesion-01).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1007B/F1007-sesion-01", ratio = "4:3")
+```

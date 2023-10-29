@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas de EDOs lineales P. III</title>
+    <title>Generalized Eigenvectors for repeated eigenvalues</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-17" />
+    <meta name="date" content="2023-10-29" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xeb04dafd3234dadad73aae46867fcba","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d64751041b2242e0a772a24970569951","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sistemas de EDOs lineales P. III
+# Generalized Eigenvectors for repeated eigenvalues
 ]
 .subtitle[
-## Sesión 08
+## Session 08
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-17
+### 2023-10-29
 ]
 
 ---
@@ -76,72 +76,47 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Goals
 
-* Solución en el caso de valores propios repetidos. &lt;br/&gt;&lt;br/&gt;
-* Solución en el caso de valores propios complejos. &lt;br/&gt;&lt;br/&gt;
-* Planos fase. &lt;br/&gt;&lt;br/&gt;
-* Solución de Sistemas no homogéneos.
-
----
-# Valores propios repetidos.
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X.$$` Queremos construir una solución general. El polinomio característico es: `$$\lambda^2-2\lambda +1=0,$$` así que el único valor propio es `\(\lambda=1.\)` Su vector propio es `$$(A+I)=\left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right)\Rightarrow 2v_1+2v_2=0\Rightarrow v_2=-v_1.$$` &lt;br/&gt;
-Para conseguir el otro vector para que nuestra solución general este completo, para esto  debemos resolver `$$(A-\lambda I)w=v.$$`
+* Understand the concept of generalized eigenvectors. &lt;br/&gt;&lt;br/&gt;
+* Understand the solution in the case of complex eigenvalues. &lt;br/&gt;&lt;br/&gt;
+* Understand the phase plane. &lt;br/&gt;&lt;br/&gt;
 
 ---
-## Continuación ejemplo
+# Generalized eigenvectors
 
-&gt; Resolvamos para `$$(A+I)w=v\Rightarrow \left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right) \left(\begin{array}{c} w_1  \\ w_2 \end{array}\right) =\left(\begin{array}{c} 1  \\ -1 \end{array}\right),$$` que se reduce a la ecuación `$$2w_1+2w_2=1\Leftrightarrow 2w_1=1+2w_2.$$` Podemos tomar el valor `\(w_2=0,\)` y mi otro vector sería `$$\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right)$$` Así mi solución general es `$$X=c_1e^{-t}\left(\begin{array}{c} -1 \\ 1 \end{array}\right)+c_2te^{-t}\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right).$$`
+
+&gt; Consider the system `$$X'= \left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X.$$` We want to build a general solution. The characteristic polynomial is: `$$\lambda^2-2\lambda +1=0,$$` so the only eigenvalue is `\(\lambda=1.\)` Its eigenvector is `$$(A+I)=\left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right)\Rightarrow 2v_1+2v_2=0\Rightarrow v_2=-v_1.$$` &lt;br/&gt;
+In this case, we say that the eigenvector is not enough to build a general solution. We need to find a second vector. In order to do this, we need to find `\(w\)` such that `$$(A-\lambda I)w=v.$$`
+---
+## Continuation example
+
+&gt; Solve the system `$$X'= \left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X.$$` &lt;br/&gt;&lt;br/&gt; We have that `$$(A+I)w=v\Rightarrow \left(\begin{array}{cc} 2 &amp; 2 \\ -2 &amp; -2 \end{array}\right) \left(\begin{array}{c} w_1  \\ w_2 \end{array}\right) =\left(\begin{array}{c} 1  \\ -1 \end{array}\right),$$` which reduces to the equation `$$2w_1+2w_2=1\Leftrightarrow 2w_1=1+2w_2.$$` We can take the value `\(w_2=0,\)` and my other vector would be `$$\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right)$$` Thus my general solution is `$$X=c_1e^{-t}\left(\begin{array}{c} -1 \\ 1 \end{array}\right)+c_2te^{-t}\left(\begin{array}{c} 1/2 \\ 0 \end{array}\right).$$`
 
 ---
-### Ejemplo 2:
+### Example 2:
 
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 3 &amp; -18 \\ 2 &amp; -9 \end{array}\right)X.$$`
+&gt; Find the general solution for `$$X'=\left(\begin{array}{cc} 3 &amp; -18 \\ 2 &amp; -9 \end{array}\right)X.$$`
 
-
----
-# Valores propios complejos.
-
-&gt; Consideremos el sistema `$$X'= \left(\begin{array}{cc} 6 &amp; -1 \\ 5 &amp; 4 \end{array}\right) X.$$` &lt;br/&gt;&lt;br/&gt; Su polinomio caracteristico es `$$\lambda^2-10\lambda+29=0\Rightarrow \lambda_1=5+2i\quad \lambda_2=5-2i.$$` &lt;br/&gt;&lt;br/&gt; Sus vectores propios son `$$v_1=\left(\begin{array}{c} 1 \\ 1-2i \end{array}\right)\quad v_2=\left(\begin{array}{c} 1 \\ 1+2i \end{array}\right)$$`
----
-## Reescribiendo los vectores propios: 
-
-&gt; Como queremos funciones reales, tenemos que reescribir los vectores de tal forma que sean reales. &lt;br/&gt;&lt;br/&gt;
-Sean `$$w_1=\left(\begin{array}{c} 1 \\ 1 \end{array}\right) \quad w_2=\left(\begin{array}{c} 0 \\ -2 \end{array}\right)$$` Así mi solución general será la combinación de las soluciones `$$X_1=(w_1\cos(2t)-w_2 \sin(2t))e^{t}$$` `$$X_2=(w_2\cos(2t)+w_1\sin(2t))e^t.$$`
 
 ---
-### Ejemplo 3:
+# Complex Eigenvalues
 
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} -1 &amp; 2 \\ -1 &amp; 1 \end{array}\right)X.$$`
+&gt; Consider the system `$$X'= \left(\begin{array}{cc} 6 &amp; -1 \\ 5 &amp; 4 \end{array}\right) X.$$` &lt;br/&gt;&lt;br/&gt; Its characteristic polynomial is `$$\lambda^2-10\lambda+29=0\Rightarrow \lambda_1=5+2i\quad \lambda_2=5-2i.$$` &lt;br/&gt;&lt;br/&gt; Its eigenvectors are `$$v_1=\left(\begin{array}{c} 1 \\ 1-2i \end{array}\right)\quad v_2=\left(\begin{array}{c} 1 \\ 1+2i \end{array}\right)$$`
+---
+## Rewriting the eigenvectors 
+
+&gt; As we want real functions, we need to rewrite the eigenvectors in order to get real functions. &lt;br/&gt;&lt;br/&gt; Let `$$w_1=\left(\begin{array}{c} 1 \\ 1 \end{array}\right) \quad w_2=\left(\begin{array}{c} 0 \\ -2 \end{array}\right)$$` Thus my general solution is `$$X=c_1e^{(5+2i)t}\left(\begin{array}{c} 1 \\ 1-2i \end{array}\right)+c_2e^{(5-2i)t}\left(\begin{array}{c} 1 \\ 1+2i \end{array}\right).$$`
+---
+### Example 3:
+
+&gt; Find the general solution for `$$X'=\left(\begin{array}{cc} -1 &amp; 2 \\ -1 &amp; 1 \end{array}\right)X.$$`
 
 ---
-# Planos Fase:
+# Phase Plane
 
 &lt;iframe src="https://www.geogebra.org/calculator/xnzc4b6w?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"&gt;&lt;/iframe&gt;
 
----
-# Sistemas no homogéneos
-
-&gt; Al igual que las ecuaciones lineales no homogéneas, la solución general de un sistema de EDOs no homogénea está formada por la solución general del sistema homogéneo y una solución particular. 
-
-### Ejemplo 3: 
-
-&gt; Considere el sistema `$$X'= \left(\begin{array}{cc} 2 &amp; 7 \\ -5 &amp; -10 \end{array}\right) X+\left(\begin{array}{c} -8 \\ 3 \end{array}\right).$$` Primero encontremos la solución particular, como el vector que hace nuestro sistema no homogéneo es __constante__ podemos considerar que mi solución modelo es constante,
-
----
-### continuación:
-
-Digamos `$$X_p=\left(\begin{array}{c} a_1 \\ b_1 \end{array}\right),$$` 
-sustituyendo en mi sistema obtenemos
-`$$0=2a_1+7b_1-8$$` `$$0=-5a_1-10b_1+3$$` 
-
-$$2a_1+7b_1=8 $$ `$$-5a_1-10b_1=3$$` cuya solución es `$$a_1=-\frac{101}{15}\mbox{ y }a_2=-\frac{46}{15}.$$`
-
----
-### Ejemplo 4:
-
-&gt; Considere el sistema `$$X'= \left(\begin{array}{cc} 6 &amp; 1 \\ 4 &amp; 3 \end{array}\right) X+\left(\begin{array}{c} 6t \\ -10t+4 \end{array}\right).$$` 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

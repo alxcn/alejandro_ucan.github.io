@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas de EDOs lineales P. II</title>
+    <title>Eigenfunctions for Systems of LODEs</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-10-29" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c85dd6d7341444c99ba441b36b1456c2","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x529e70ab52e499b9b3e840d3532ff5f","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sistemas de EDOs lineales P. II
+# Eigenfunctions for Systems of LODEs
 ]
 .subtitle[
-## Sesión 07
+## Session 07
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-10-29
 ]
 
 ---
@@ -76,66 +76,70 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Goals
 
-* Utilizar vectores y valores propios para resolver Sistemas de EDOs. &lt;br/&gt;&lt;br/&gt;
-* Casos: valores propios distinto y valores propios repetidos. &lt;br/&gt;&lt;br/&gt;
-* El Wronksiano como test para independencia lineal. 
-
----
-# Condiciones en nuestro sistema.
-
-&gt; __Convención:__ En lo que sigue del tema consideraremos que nuestro sistema es de dos ecuaciones con dos funciones incognitas cuyas EDOs son lineales de coeficientes constantes. Esto se describe de la forma general `$$\begin{array}{c} x'= a_{11}x+a_{22}y+f_1(t) \\ y'=a_{21}x+a_{22}y+f_2(t) \end{array}$$`
+* Use eigenvalues and eigenvectors to solve systems of ODEs. &lt;br/&gt;&lt;br/&gt;
+* Use the Wronskian to test for linear independence. &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Resolución de Sistemas de EDOs homogéneos.
+# Conventions for Systems of ODEs
 
-&gt; Dado nuestro sistema `$$X'=AX$$` consideremos la matriz `\(A.\)` Supongamos que `\((\lambda,v)\)` formado por el valor propio de `\(A\)` y su vector propio asociado. Sea `\(F=e^{\lambda t}v,\)` el vector de funciones, entonces el vector `\(F\)` es un vector de soluciones del sistema. 
-
----
-### Ejemplo: 
-
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 3 &amp; 1 \\ 0 &amp; -3 \end{array}\right) X$$` Compruebe que el par `\(\left(3,(1,0)^t\right)\)` es un par de valor y vector propio de `\(A\)` y construye la solución.
+&gt; In what follows we will deal with systems of two equations with two unknown functions whose ODEs are linear with constant coefficients. This is described in the general form `$$\begin{array}{c} x'= a_{11}x+a_{22}y+f_1(t) \\ y'=a_{21}x+a_{22}y+f_2(t) \end{array}$$` where `\(a_{ij}\)` are constants and `\(f_1(t)\)` and `\(f_2(t)\)` are functions of `\(t.\)`
 
 ---
-### Ejemplo: 
+# Solving for Homogeneous systems
 
-&gt; Considere el sistema: `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X$$` Compruebe que el par `\(\left(-1,(-1,1)^t\right)\)` es un par de valor y vector propio de `\(A\)` y construye la solución. Comprueba que también es solución `\(-te^{-t}(1/2,0)^t.\)`
+&gt; Given the system `$$X'=AX$$` consider the matrix `\(A.\)` Suppose that `\((\lambda,v)\)` is an eigenvalue-eigenvector pair of `\(A\)` and assume that `\(\lambda\)` is real. Let `\(F=e^{\lambda t}v\)` be a vector of functions, then the vector `\(F\)` is a solution vector of the system.
+
 
 ---
-## Test de Independencia Lineal
+#### Example: 
 
-&gt; __Definición:__ Consideremos los vectores función solución `\(X_1\)` y `\(X_2\)` para un sistema de EDOs. El __wronksiano__ de las soluciones es el determinante de la matriz `$$\left(\begin{array}{cc} x_1 &amp; x_2 \\ y_1  &amp; y_2\end{array}\right)$$` y se denota por `\(W(X_1,X_2).\)`
+&gt; Consider the system `$$X'=AX$$` where `$$A=\left(\begin{array}{cc} 3 &amp; 1 \\ 0 &amp; -3 \end{array}\right).$$` Find the eigenvalues and eigenvectors of `\(A\)` and construct the general solution.
 
+---
+#### Example: 
+
+&gt; Consider the system `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X.$$` Find the eigenvalues and eigenvectors of `\(A\)` and construct the general solution.
+
+---
+## Test for linear independence
+
+&gt; __Definition:__ Consider the solution function vectors `\(X_1\)` and `\(X_2\)` for a system of ODEs. The __Wronskian__ of the solutions is the determinant of the matrix `$$\left(\begin{array}{cc} x_1 &amp; x_2 \\ y_1  &amp; y_2\end{array}\right)$$` and is denoted by `\(W(X_1,X_2).\)`
 &lt;br/&gt;&lt;br/&gt;
-&gt; __Teorema [de Abel o Criterio del Wronksiano]:__ Las soluciones `\(X_1\)` y `\(X_2\)` son __linealmente independientes__ si `$$W(X_1,X_2)\neq 0.$$`
+&gt; __Theorem [Abel's]:__ The solutions `\(X_1\)` y `\(X_2\)` are __linearly independents__ if `$$W(X_1,X_2)\neq 0.$$`
 
 ---
-### Ejemplo:
+## Solution for Systems of ODEs
 
-&gt; Compruebe que para el sistema `$$X'=\left(\begin{array}{cc} 1 &amp; 2 \\ -2 &amp; -3 \end{array}\right) X$$` las siguientes soluciones son linealmente independientes. `$$X_1=e^{-t}\left(\begin{array}{c} -1 \\ 1 \end{array}\right) \mbox{ y } X_2=t e^{-t}\left(\begin{array}{c} \frac{1}{2} \\ 0 \end{array}\right).$$`
-
-
----
-## Método para obtener soluciones de un sistema. 
-
-&gt; __Método de Vectores y Valores propios__: Para el sistema `\(X'=AX.\)` Realice
-  1. Calcular los diferentes valores y vectores propios. 
-      * Si son valores propios reales distintos entonces las soluciones son `$$X_1=e^{\lambda_1}v_1\mbox{ y } X_2=e^{\lambda_2}v_2.$$`
-      * Sin son valores propios reales repetidos, entonces la soluciones son `$$X_1=e^{\lambda}v\mbox{ y }X_2=te^{\lambda}v_1$$` donde `\(v_1\)` es l.i de `\(v.\)`
-  2. Comprobar con el Criterio del Wronksiano que realmente son soluciones l.i.
-  3. Expresar la solución general como `$$X=c_1X_1+c_2X_2.$$`
+&gt; __Method of Eigenfunctions:__ For the system `\(X'=AX.\)` 
+  1. Find the eigenvalues and eigenvectors of `\(A.\)` 
+      * If the eigenvalues are real and distinct, then the general solution `$$X_1=e^{\lambda_1}v_1\mbox{ and } X_2=e^{\lambda_2}v_2.$$`
+      * If the eigenvalues are real and repeated, then the general solution `$$X_1=e^{\lambda}v_1\mbox{ and } X_2=te^{\lambda}v_2.$$`
+      * If the eigenvalues are complex conjugated, then the general solution `$$X_1=e^{\alpha t}\left(\cos(\beta t)v_1+\sin(\beta t)v_2\right)\mbox{ and } X_2=e^{\alpha t}\left(\cos(\beta t)v_1-\sin(\beta t)v_2\right).$$`
+      
+  2. Express the general solution as `$$X=c_1 X_1+c_2 X_2.$$`
+  3. If there are initial conditions, use them to find the constants `\(c_1\)` and `\(c_2.\)`
   
----
-## Actividad en clase:
 
-&gt; Resuelva los siguientes sistemas de EDOs `\(X'=AX\)` donde `\(A\)` es la matriz: &lt;br/&gt;&lt;br/&gt;
- * `\(A=\left(\begin{array}{cc} 1 &amp; 2 \\ 4 &amp; 3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+---
+#### Example 1:
+
+Find the general solution for `\(X'=AX\)` if `\(A=\left(\begin{array}{cc} 1 &amp; 2 \\ 4 &amp; 3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+  
   * `\(A=\left(\begin{array}{cc} -4 &amp; 2 \\ -\frac{5}{2} &amp; 2 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 10 &amp; -5 \\ 8 &amp; -12 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 3 &amp; -1 \\ 9 &amp; -3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} -1 &amp; 3 \\ -3 &amp; 5 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(A=\left(\begin{array}{cc} 2 &amp; 4 \\ -1 &amp; 6 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+#### Example 2:
+
+Find the general solution for `\(X'=AX\)` if `\(A=\left(\begin{array}{cc} 10 &amp; -5 \\ 8 &amp; -12 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+#### Example 3:
+
+Find the general solution for `\(A=\left(\begin{array}{cc} 3 &amp; -1 \\ 9 &amp; -3 \end{array}\right).\)` &lt;br/&gt;&lt;br/&gt;
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,0 +1,21 @@
+---
+title: "S18: Diferenciación Compleja"
+weight: 18
+subtitle: ""
+excerpt: "Introduciremos el concepto de diferenciabilidad compleja, sus principales impedimentos y derivadas de funciones elementales"
+date: '`r Sys.Date()`'
+slug: F1009-sesion-18
+draft: false
+---
+
+En esta sesión de __F1009__ tendremos por objetivo:
+
+ * Conocer la definición de derivada (compleja). <br/><br/>
+ * Deducir las ecuaciones de Cauchy-Riemann y sus implicaciones diferenciables. <br/><br/>
+ * Definir la propiedad de holomorficidad en las funciones y otras propiedades relacionadas a la derivación compleja. <br/><br/>
+ 
+El contenido para la **Sesión 18** se encuentra en [slides](/slides/2023-AD-F1009/F1009-sesion-18).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1009/F1009-sesion-18", ratio = "4:3")
+```
