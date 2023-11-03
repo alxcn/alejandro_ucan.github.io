@@ -65,7 +65,7 @@ Calcula $\displaystyle{\int_C \frac{zdz}{(9-z^2)(z+i)}=\frac{\pi}{5}},$ donde $C
 ---
 # Sucesiones y Series
 
-> __Definición:__ una serie es una función $f:\mathbb{N}\to \mathbb{C}$ que asigna a cada natural un número complejo $$n\mapsto z_n$$ y usualmente se denota como $(z_n)$ como un vector con "infinitas" entradas.
+> __Definición:__ una sucesión es una función $f:\mathbb{N}\to \mathbb{C}$ que asigna a cada natural un número complejo $$n\mapsto z_n$$ y usualmente se denota como $(z_n)$ como un vector con "infinitas" entradas.
 
 ### Ejemplos:
 
