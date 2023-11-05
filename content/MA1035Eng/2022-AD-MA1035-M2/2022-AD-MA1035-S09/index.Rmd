@@ -1,0 +1,21 @@
+---
+title: "S09: Laplace Transform"
+weight: 9
+subtitle: ""
+excerpt: "We will use the Laplace Transform to ease the solution of an IVP"
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-09
+draft: false
+---
+
+# Session's Goals
+
+* Motivate the Laplace transform. <br/><br/>
+* Define the Laplace transform. <br/><br/>
+* Compute the Laplace transform of some functions.
+
+Content for **Session 09** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-09).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-09", ratio = "4:3")
+```

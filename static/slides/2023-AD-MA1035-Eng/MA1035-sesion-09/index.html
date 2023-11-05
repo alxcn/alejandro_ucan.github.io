@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Transformada de Laplace</title>
+    <title>Laplace Transform</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-28" />
+    <meta name="date" content="2023-11-05" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a880dbdb50e94550b016ca6bc5e930ff","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xded48c99185407cb0958795c0795192","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Transformada de Laplace
+# Laplace Transform
 ]
 .subtitle[
-## Sesión 09
+## Session 09
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-28
+### 2023-11-05
 ]
 
 ---
@@ -76,80 +76,75 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Objetivos de la Sesión
+# Goals:
 
-* Motivar la transformada de Laplace. &lt;br/&gt;&lt;br/&gt;
-* Definir la transformada de Laplace. &lt;br/&gt;&lt;br/&gt;
-* Calcular la transformada de Laplace.
+* Motivate the Laplace transform. &lt;br/&gt;&lt;br/&gt;
+* Define the Laplace transform. &lt;br/&gt;&lt;br/&gt;
+* Compute the Laplace transform of some functions.
 
 ---
-# Transformadas Integrales
+# Integral transforms
 
-### Motivación:
-
-&gt; La derivada y la anti-derivada son transformaciones de funciones, y se pueden pensar como transformaciones lineales.
+&gt; The derivative and anti-derivative are transformations of functions, and can be thought of as linear transformations.
 
 &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
 
-&gt; Podemos definir funciones a traves de integrales.
+&gt; Remember that through anti-derivatives we can define functions.
 
 
 ---
-### Motivación:
+### Motivation:
 
-Problemas dificiles de resolver en su presentación original, que transformados pueden ser mas sencillos. La _tranformada integral_ mapea una ecuación en su "dominio" original en otro "dominio" de tal manera que la manipulación de la ecuación sea más sencilla que originalmente y la solución puede ser reconvertirse al dominio original.
-
----
-## Formalismo
-
-&gt; __Definición:__ una transformada integral es una mapeo `\(T\)` entre espacios de funciones dada por `$$T(f)(u)=\int_{t_1}^{t_2}f(t)K(t,u)dt,$$` la función `\(K(t,u)\)` se le conoce como __kernel__ o __núcleo__ de la transformación. &lt;br/&gt;&lt;br/&gt; Es posible definir una transformada inversa: `$$T^{-1}(g)(t)=\int_{u_1}^{u_2} g(u)K^{-1}(t,u)du.$$` &lt;br/&gt;&lt;br/&gt; A `\(K(t,u)\)` se le conoce como Kernel de la transformada.
+Some problems (stated in some domain) are difficult to solve in their original presentation, but transformed can be simpler. The _integral transform_ maps an equation in its original "domain" into another "domain" in such a way that the manipulation of the equation is simpler than originally and the solution can be reconverted to the original domain.
 
 ---
-# La transformada de Laplace
+# Laplace Transform
 
-&gt; __Definición:__ la _transformada de Laplace_ definida para funciones `\(f(t)\)` con `\(t\geq 0\)` es la función `\(F(s)\)` definida por `$$F(s)=\int_0^\infty f(t)e^{-st}dt=\lim_{b\to\infty}\int_0^b f(t)e^{-st}$$` donde `\(s\)` es un parametro. &lt;br/&gt;&lt;br/&gt; La notación usual para la transformada de Laplace es `\(\mathcal{L}\{f(t)\}=F(s).\)`
+&gt; __Definition:__ the Laplace transform of a function `\(f(t)\)` with `\(t\geq 0\)` is the function `\(F(s)\)` defined by `$$F(s)=\int_0^\infty f(t)e^{-st}dt=\lim_{b\to\infty}\int_0^b f(t)e^{-st}$$` where `\(s\)` is a parameter. &lt;br/&gt;&lt;br/&gt; The usual notation for the Laplace transform is `\(\mathcal{L}\{f(t)\}=F(s).\)`
+---
+### Example:
+
+&gt; Compute the Laplace transforms of `\(f(t)=1\)` and `\(f(t)=t.\)`
 
 ---
-### Ejemplo:
+### Example:
 
-&gt; Calcule las transformadas de Laplace de las funciones `\(f(t)=1\)` y `\(f(t)=t.\)`
-
-
+&gt; Compute the Laplace transform of: `\(f(t)=-3t^2+2t+1,\)` `\(f(t)=\cos(3t)\)` and `\(f(t)=e^{2t}.\)`
 ---
-### Actividad en clase:
+### The advantages
 
-&gt; Utilizando la definición de la transformada de Laplace, comprueba que se cumple: &lt;br/&gt;&lt;br/&gt;
-  * `\(\mathcal{L}\{f\}=\frac{2}{s^3}\)` para `\(f(t)=t^2.\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(\mathcal{L}\{f\}=\frac{1}{s-a}\)` para `\(f(t)=e^{at}.\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(\mathcal{L}\{f\}=\frac{s}{s^2+b^2}\)` para `\(f(t)=\cos(bt).\)` &lt;br/&gt;&lt;br/&gt;
-  
----
-### La ventaja
-
-&gt; La ventaja de la transformada de Laplace es que es un calculo que se hace una sola vez, y que existen fórmulas preescritas para que las utilicemos de manera directa. 
-
+&gt; The Laplace transform calculation is something that you do only once, because there are some formulaes that you can use directly.
 &lt;br/&gt;&lt;br/&gt;
-&gt; __Teorema:__ Se cumple que:
+&gt; __Theorem:__ It follows that:
   * `\(\mathcal{L}\{1\}=\frac{1}{s}.\)`
-  * `\(\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}.\)`
+  * `\(\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}.\)` for an integer `\(n&gt;0\)`
   * `\(\mathcal{L}\{e^{at}\}=\frac{1}{s-a}.\)`
   * `\(\mathcal{L}\{\sin(kt)\}=\frac{k}{s^2+k^2}.\)`
   * `\(\mathcal{L}\{\cos(kt)\}=\frac{s}{s^2+k^2}.\)`
 
 ---
 
-## Propiedades de la Transformada de Laplace
+## Laplace transform Linearity
 
-&gt; __Linealidad:__ Sean `\(f\)` y `\(g\)` dos funciones definidad en `\([0,\infty)\)` tales que sus transformadas de Laplace existen, entonces se cumple `$$\mathcal{L}\{f+g\}=\mathcal{L}\{f\}+\mathcal{L}\{g\}.$$` Además, si `\(c\)` es una constante, `$$\mathcal{L}\{cf\}=c\mathcal{L}\{f\}.$$`
+
+&gt; __Linearity:__ Let `\(f\)` and `\(g\)` be two functions defined on `\([0,\infty)\)` such that their Laplace transforms exist, then `$$\mathcal{L}\{c_1 f+c_2 g\}=c_1\mathcal{L}\{f\}+c_2 \mathcal{L}\{g\}.$$`
 
 ---
-### Ejemplo
+### Example
 
-&gt; Utilizando la linealidad de la transformada de Laplace, calcula las transformadas de las siguientes funciones: &lt;br/&gt;&lt;br/&gt;
+&gt; Using Linearity in the Laplace transform, transform the following functions:
   * `\(f(t)=-5+3t+4t^2\)`
-  * `\(f(t)=e^{t}+e^{-3t}\)`
-  * `\(f(t)=-3t^3+\cos(4t).\)`
-  * `\(f(t)=\frac{\sin(3t)-\cos(4t)}{5}\)`
+  * `\(f(t)=5e^{t}-2e^{-3t}\)`
+  * `\(f(t)=-3t^3+\cos(4t)+ 2\sin(4t).\)`
+  * `\(f(t)=\frac{\sin(3t)-\cos(4t)}{5}.\)`
+
+---
+# Laplace Transforms for Piecewise Functions:
+
+&gt; Using the integral definition, compute the Laplace transform of the following functions: &lt;br/&gt;
+  * `\(f(t)=-1\)` if `\(0\leq t \leq 1\)` and `\(f(t)=1\)` if `\(t&gt;1.\)`
+  * `\(f(t)=0\)` if `\(0\leq t\leq a\)` and `\(f(t)=t\)` if `\(t&gt;a.\)`
+  * `\(f(t)=1\)` if `\(a\leq t\leq b\)` and `\(f(t)=0\)` otherwise.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

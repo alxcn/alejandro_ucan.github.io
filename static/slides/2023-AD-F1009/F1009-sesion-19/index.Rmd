@@ -1,6 +1,6 @@
 ---
 title: "Integración compleja"
-subtitle: "Sesión 18"
+subtitle: "Sesión 19"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'

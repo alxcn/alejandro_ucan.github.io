@@ -1,0 +1,21 @@
+---
+title: "S10: Applied Laplace Transform"
+weight: 10
+subtitle: ""
+excerpt: "Laplace transforms of derivatives and IVPs"
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-10
+draft: false
+---
+
+# Session's Goals
+
+* Introduce the inverse of a Laplace transform. <br/><br/>
+* Introduce the relationship between the Laplace transform and the derivative of a function. <br/><br/>
+* Solve initial value problems using Laplace transforms. <br/><br/>
+
+Content for **Session 10** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-10).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-10", ratio = "4:3")
+```

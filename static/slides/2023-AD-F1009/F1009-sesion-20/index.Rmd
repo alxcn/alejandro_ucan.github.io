@@ -1,6 +1,6 @@
 ---
 title: "Series de funciones complejas"
-subtitle: "Sesión 19"
+subtitle: "Sesión 20"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'

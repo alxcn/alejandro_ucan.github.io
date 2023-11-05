@@ -52,7 +52,7 @@ xaringanExtra::use_logo(
 
 * Motivate the Laplace transform. <br/><br/>
 * Define the Laplace transform. <br/><br/>
-* Compute the Laplace transform.
+* Compute the Laplace transform of some functions.
 
 ---
 # Integral transforms
@@ -109,3 +109,11 @@ Some problems (stated in some domain) are difficult to solve in their original p
   * $f(t)=5e^{t}-2e^{-3t}$
   * $f(t)=-3t^3+\cos(4t)+ 2\sin(4t).$
   * $f(t)=\frac{\sin(3t)-\cos(4t)}{5}.$
+
+---
+# Laplace Transforms for Piecewise Functions:
+
+> Using the integral definition, compute the Laplace transform of the following functions: <br/>
+  * $f(t)=-1$ if $0\leq t \leq 1$ and $f(t)=1$ if $t>1.$
+  * $f(t)=0$ if $0\leq t\leq a$ and $f(t)=t$ if $t>a.$
+  * $f(t)=1$ if $a\leq t\leq b$ and $f(t)=0$ otherwise.

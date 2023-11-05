@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Applied Laplace Transform</title>
+    <title>Series de funciones complejas</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
     <meta name="date" content="2023-11-05" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x148c1f6308d45869d97dc577987dd07","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xac5d926d3114ddba8a69c98192bab90","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,10 +22,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Applied Laplace Transform
+# Series de funciones complejas
 ]
 .subtitle[
-## Session 10
+## Sesión 20
 ]
 .author[
 ### Alejandro Ucan
@@ -76,79 +76,93 @@ top:2em;right:2em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
-# Goals
+# Objetivos:
 
-
-* Introduce the inverse of a Laplace transform. &lt;br/&gt;&lt;br/&gt;
-* Introduce the relationship between the Laplace transform and the derivative of a function. &lt;br/&gt;&lt;br/&gt;
-* Solve initial value problems using Laplace transforms. &lt;br/&gt;&lt;br/&gt;
+ * Introducir la fórmula integral de Cauchy. &lt;br/&gt;&lt;br/&gt;
+ * Introducir el concepto de Series y su convergencia. &lt;br/&gt;&lt;br/&gt;
+ * Definir las series de funciones asociadas a una función compleja  (Taylor y Laurent). &lt;br/&gt;&lt;br/&gt;
 
 ---
-# Most commun Laplace transforms:
+# La fórmula Integral de Cauchy
 
-The next list has the Laplace transforms for the most commun functions
+&gt; __Teorema:__ Sea `\(f\)` una función holomorfa dentro y en un contorno simple cerrada `\(C,\)` orientadas positivamente. Si `\(z_0\)` es un punto interior a `\(C,\)` entonces `$$f(z_0)=\frac{1}{2\pi i} \int_C \frac{f(z)}{z-z_0}dz.$$`
 
-  * `\(\mathcal{L}\left\{t^n\right\}=\frac{n!}{s^{n+1}}\)` 
-  * `\(\mathcal{L}\left\{e^{at}\right\}=\frac{1}{s-a}\)`
-  * `\(\mathcal{L}\left\{\sin(kt)\right\}=\frac{k}{s^2+k^2}\)`
-  * `\(\mathcal{L}\left\{\cos(kt)\right\}=\frac{s}{s^2+k^2}\)`
-  * `\(\mathcal{L}\left\{\sinh(kt)\right\}=\frac{k}{s^2-k^2}\)`
-  * `\(\mathcal{L}\left\{\cos(kt)\right\}=\frac{s}{s^2-k^2}\)`
-  
+### Ejemplo:
+
+Calcula `\(\displaystyle{\int_C \frac{zdz}{(9-z^2)(z+i)}=\frac{\pi}{5}},\)` donde `\(C\)` es el circulo `\(|z|=2.\)`
 ---
-# Inverse Laplace Transform 
+# Sucesiones y Series
 
-&gt; Suppose that we know the Laplace transform of an unknown function, how to determine the function that produces the Laplace transform? &lt;br/&gt;&lt;br/&gt;
-&gt; __Definition:__ The inverse Laplace transform of `\(F(s)\)` is the function `\(f(t)\)` such that `$$\mathcal{L}\{f(t)\}=F(s).$$`
-  
---
-&lt;br/&gt;&lt;br/&gt;  
-  * `\(F(s)=\frac{1}{s^5}\)`
-  * `\(F(s)=\frac{1}{s^2+7}\)`
-  * `\(F(s)=\frac{s^2+6s+9}{(s-1)(s-2)(s+4)}\)`
-  
+&gt; __Definición:__ una sucesión es una función `\(f:\mathbb{N}\to \mathbb{C}\)` que asigna a cada natural un número complejo `$$n\mapsto z_n$$` y usualmente se denota como `\((z_n)\)` como un vector con "infinitas" entradas.
+
+### Ejemplos:
+
 ---
-# Laplace transform of a Derivative:
+## Convergencia:
 
-&gt; __Theorem:__ If `\(\mathcal{L}\{f(t)\}=F(s)\)` exists, then `$$\mathcal{L}\{f'(t)\}=sF(s)-f(0)$$` `$$\mathcal{L}\{f^(n)(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0).$$`
+&gt; __Definición:__ decimos que una sucesión `\((z_n)\)` es __convergente__ si existe un complejo `\(w\)` que cumple con la siguiente propiedad `$$|z_n-w|&lt;\varepsilon \mbox{ para todo} n\geq N.$$` Al complejo `\(w\)` se le conoce como __límite__ de la sucesión. &lt;br/&gt;&lt;br/&gt;
+Si no existe el límite, decimos que la sucesión es __divergente.__
 
---
+---
+## Ejemplos:
+
+&gt; Consideremos la función `\(f(n)=1/n.\)` Esta es convergente. Por lo contrario, la sucesión `\(f(n)=n^2\)` es divergente.
+
 &lt;br/&gt;&lt;br/&gt;
-### Example: 
-
-Find the solution of the initial value problem `\(y'+3y=13\sin(2t)\quad y(0)=6.\)`
+&gt; __Teorema:__ Sea `\((z_n)\)` convergente a `\(z.\)` Y consideremos que `\(z_n=x_n+iy_n.\)` Si `\((x_n)\)` y `\((y_n)\)` son convergentes a `\(x\)` y `\(y\)` respectivamente. Entonces, `\(z=x+iy.\)`
 
 ---
-#### Solution:
+## Series
 
-1. We apply Laplace transform in both sides of the equation:
-`$$\mathcal{L}(y')+3\mathcal{L}(y)=\mathcal{13\sin(2t)}$$`
-2. We use derivative theorem to express the transform of the derivative.
-`$$s^2 \mathcal{L}(y)-sy(0)=\frac{26}{s^2+4}$$`
-3. We solve for `\(\mathcal{L}(y)\)` `$$(s^2-6s)\mathcal{L}(y)=\frac{26}{s^2+4}\Rightarrow \mathcal{L}(y)=\frac{26}{s(s-6)(s^2+4)}$$`
+&gt; __Definición:__ una __serie__ es una _sucesión_ particular definida por sumas, es decir, `\((S_n)\)` donde `$$S_n=\sum_{j=1}^n z_n.$$`
 
----
-#### Solution:
+### Ejemplo:
 
-4. We use partial fractions to express `\(\mathcal{L}(y)\)` as a sum of simpler fractions 
-`$$\mathcal{L}(y)=\frac{13 (3 s - 2)}{40 (s^2 + 4)} + \frac{13}{120 (s - 6)} - \frac{13}{12 s}$$`
-
-5. Then we use the table of Laplace transforms to find the inverse transform. 
-
-`$$y(t)=-\frac{13}{12}+\frac{13}{120}e^{6t}+\frac{13}{40}\left(3\cos(2t)-\frac{1}{2}\sin(2t)\right)$$`
+Consideremos la serie dada por la sumas parciales de la sucesión `\(z_n=\frac{1}{2^n},\)` es una serie convergente. Al igual que la serie dada por la suma de la sucesión `\(z_n=i^n.\)`
 
 ---
-### Example
+## Series de Potencias:
 
-Find the solution of the following initial value problem `$$y''-3y'+2y=e^{-4t},\quad y(0)=1,\quad y'(0)=5.$$`
+&gt; __Definición:__ Una serie de potencias es una serie dada de la forma: `$$a_0+\sum_{n=1}^N a_n(z-z_0)^n.$$`
 
-
----
-### Example
-
-Find the solution of the following initial value problem `$$2y'''+3y''-3y'-2y=e^{-t},\, y(0)=0,\,y'(0)=0,\,y''(0)=1.$$`
+&lt;br/&gt;&lt;br/&gt;
+__Teorema:__ Sea `\(f\)` una función analítica en un disco `\(C_0\)` con centro `\(z_0\)` y radio `\(r_0.\)` Para un punto `\(z\in C_0\)` definimos `$$f(z)=f(z_0)+f'(z_0)(z-z_0)+\frac{f''(z_0)}{2!}(z-z_0)^2+\cdots+ \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n+\cdots$$`
+y es convergente cuando `\(|z-z_0|&lt;r_0.\)`
 
 ---
+### Sketch de la prueba:
+
+Por la fórmula integral de Cauchy, tenemos `$$f(z)=\frac{1}{2\pi i}\int_{C_1}\frac{f(s)ds}{s-z}.$$`
+
+Notemos que `$$\frac{1}{s-z}=\left(\frac{1}{s-z_0}\right)\left(\frac{1}{1-\frac{z-z_0}{s-z_0}}\right)$$` y aplicando la identidad de Legendre `$$\frac{1}{s-z}=\left(\frac{1}{s-z_0}\right) \left(1+\frac{z-z_0}{s-z_0}+\cdots +\left(\frac{z-z_0}{s-z_0}\right)^{N-1}+\frac{1}{1-\frac{z-z_0}{s-z_0}}\left(\frac{z-z_0}{s-z_0}\right)^N\right)$$`
+
+---
+Lo anterior implica que `$$\frac{f(s)}{s-z}=\frac{f(s)}{s-z_0}+\frac{f(s)}{(s-z_0)^2}(z-z_0)+\cdots$$`
+
+y además sabemos que `$$\frac{1}{2\pi i}\int_{C_1}\frac{f(s)ds}{(s-z_0)^{n+1}}=\frac{1}{n!}f^{(n)}(z_0).$$`
+
+---
+### Ejemplo:
+
+Encuentre la expansión en serie de potencias de `\(f(z)=\exp(z)\)` al rededor de `\(0.\)`
+
+---
+### Ejemplo:
+
+A partir de lo anterior, deduzca la serie de potencias de `\(f(z)=\sin(z)\)` al rededor de `\(z=0.\)`
+
+---
+### Ejemplo:
+
+Calcula la expansión en series de la función `\(f(z)=(1+z)^{-1}\)` al rededor del cero.
+
+---
+
+## Series de Laurent
+
+Supongamos que `\(C_1\)` y `\(C_2\)` son dos circulos concentricos a un punto `\(z_0\)` con radios `\(r_1\)` y `\(r_2\)` respectivamente. 
+
+&gt; __Teorema:__ Si `\(f\)` es analítica en `\(C_i\)` y en el anillo que acotan, entonces en cada punto `\(z\)` en el dominio se tiene que `$$f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n + \sum_{n=1}^\infty \frac{b_n}{(z-z_n)^n},$$` donde `$$a_n=\frac{1}{2\pi i}\int_{C_1}\frac{f(s)ds}{(s-z_0)^{n+1}}$$` `$$b_n=\frac{1}{2\pi i}\int_{C_2} \frac{f(s)}{(s-z_0)^{-n+1}}.$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
