@@ -82,7 +82,7 @@ The next list has the Laplace transforms for the most commun functions
 ---
 # Laplace transform of a Derivative:
 
-> __Theorem:__ If $\mathcal{L}\{f(t)\}=F(s)$ exists, then $$\mathcal{L}\{f'(t)\}=sF(s)-f(0)$$ $$\mathcal{L}\{f^(n)(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0).$$
+> __Theorem:__ If $\mathcal{L}\{f(t)\}=F(s)$ exists, then $$\mathcal{L}\{f'(t)\}=sF(s)-f(0)$$ $$\mathcal{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots- f^{(n-1)}(0).$$
 
 --
 <br/><br/>
