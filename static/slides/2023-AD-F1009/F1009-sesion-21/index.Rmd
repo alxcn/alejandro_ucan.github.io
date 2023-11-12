@@ -1,6 +1,6 @@
 ---
 title: "Residuos y el Teorema del Residuo"
-subtitle: "Sesión 20"
+subtitle: "Sesión 21"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'

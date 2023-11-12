@@ -1,20 +1,21 @@
 ---
-title: "Functions via Derivatives"
-weight: 1
-subtitle: "We will state the idea of a differential equation."
+title: "Integration Tehcniques and Center of Mass"
+weight: 3
+subtitle: "We will introduce the analytical way to compute the center of mass"
 excerpt: ""
 date: '`r Sys.Date()`'
-slug: F1006-sesion-03
+slug: F1007-sesion-03
 draft: false
 ---
 
 # Goals:
 
- * State a differential equation and its solution. <br/><br/>
- * Approximate solutions for some applicated differential equations. <br/><br/>
+* Substitution. <br/><br/>
+* By parts. <br/><br/>
+* Center of Mass. <br/><br/>
 
-El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2022-AD-F1006/F1006-sesion-03).
+El contenido para la **Sesión 03** se encuentra en following [slides](/slides/2023-AD-F1007B/F1007-sesion-03).
 
 ```{r embed-xaringan, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "/slides/2022-AD-F1006/F1006-sesion-03", ratio = "4:3")
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-F1007B/F1007-sesion-03", ratio = "4:3")
 ```

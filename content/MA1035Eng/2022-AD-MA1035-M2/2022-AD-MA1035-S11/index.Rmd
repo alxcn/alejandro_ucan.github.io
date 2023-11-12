@@ -1,0 +1,21 @@
+---
+title: "S11: 1st traslation theorem"
+weight: 11
+subtitle: ""
+excerpt: ""
+date: '`r Sys.Date()`'
+slug: MA1035Eng-session-11
+draft: false
+---
+
+# Session's Goals
+
+* State 1st Traslation Theorem. <br/><br/>
+* Provide some examples on how to apply the theorem. <br/><br/>
+* Apply the theorem to solve ODEs.
+
+Content for **Session 11** is following [slides](/slides/2023-AD-MA1035-Eng/MA1035-sesion-11).
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/2023-AD-MA1035-Eng/MA1035-sesion-11", ratio = "4:3")
+```

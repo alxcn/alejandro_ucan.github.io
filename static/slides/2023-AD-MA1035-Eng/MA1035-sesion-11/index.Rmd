@@ -62,7 +62,8 @@ xaringanExtra::use_logo(
 > What is the Laplace transform of the function $f(t)=e^{5t}t.$
 
 --
-Following the definition of the Laplace transform, we have that: $$\mathcal{L}\{e^{5t}t\}=\int_0^\infty e^{-st}e^{5t}t\,dt=\int_0^\infty te^{-(s-5)t}\,dt$$ $$\lim_{a\to\infty} -\frac{te^{-(s-5)t}}{s-5}-\frac{e^{-(s-5)t}{(s-5)^2}}{s-5}\bigg|_0^a=\frac{1}{(s-5)^2}.$$
+<br/><br/>
+Following the definition of the Laplace transform, we have that: $$\mathcal{L}\{e^{5t}t\}=\int_0^\infty e^{-st}e^{5t}t\,dt=\int_0^\infty te^{-(s-5)t}\,dt$$ $$\lim_{a\to\infty} -\frac{te^{-(s-5)t}}{s-5}-\frac{e^{-(s-5)t}}{(s-5)^2}\bigg|_0^a=\frac{1}{(s-5)^2}.$$
 
 ---
 # 1st Traslation Theorem
@@ -90,11 +91,11 @@ Following the definition of the Laplace transform, we have that: $$\mathcal{L}\{
 ### Example (Inverse Calculation):
 
 > Find the inverse Laplace transform of: 
-$$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}$$
+$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}$
 --
-<br/><br/>
+<br/>
 ##### Solution:
-Let's find out the partial fractions: $$\frac{2s+5}{(s-3)^2}=\frac{A}{(s-3)}+\frac{B}{(s-3)^2}=\frac{2}{s-3}+\frac{-1}{(s-3)^2}.$$
+Let's find out the partial fractions: $\frac{2s+5}{(s-3)^2}=\frac{A}{(s-3)}+\frac{B}{(s-3)^2}=\frac{2}{s-3}+\frac{-1}{(s-3)^2}.$
 
 Now we notice that those are shifted functions, therefore we look for the corresponding transform and we multiply it by an exponential factor: $$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}=\mathcal{L}^{-1}\left\{\frac{2}{s-3}\right\}+\mathcal{L}^{-1}\left\{\frac{-1}{(s-3)^2}\right\}=2e^{3t}-te^{3t}.$$
 
@@ -102,11 +103,11 @@ Now we notice that those are shifted functions, therefore we look for the corres
 ### Example (Inverse Calculation):
 
 > Find the inverse Laplace transform of:
-$$\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}$$
+$\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}$
 --
-<br/><br/>
+<br/>
 ##### Solution:
-First we check if the denominator has real roots: $$s^2+4s+6=0\implies s=\frac{-4\pm\sqrt{16-4(1)(6)}}{2}=-2\pm i.$$ Therefore the roots are complex and we need to complete the square: $$s^2+4s+6=(s+2)^2+4.$$ Therefore the fraction is $$\frac{s+5}{(s+2)^2+4}=\frac{(s+2)}{(s+2)^2+4}+\frac{3}{(s+2)^2+4}$$ We use the formulaes to find the inverse: $$\mathcal{L}^{-1}\left\{\frac{(s+2)}{(s+2)^2+4}\right\}=e^{-2t}\cos(2t)$$ $$\mathcal{L}^{-1}\left\{\frac{3}{(s+2)^2+4}\right\}=\frac{3}{2}e^{-2t}\sin(2t).$$
+First we check if the denominator has real roots: $s^2+4s+6=0\implies s=\frac{-4\pm\sqrt{16-4(1)(6)}}{2}=-2\pm i.$ Therefore the roots are complex and we need to complete the square: $$s^2+4s+6=(s+2)^2+4.$$ Therefore the fraction is $$\frac{s+5}{(s+2)^2+4}=\frac{(s+2)}{(s+2)^2+4}+\frac{3}{(s+2)^2+4}$$ We use the formulaes to find the inverse: $$\mathcal{L}^{-1}\left\{\frac{(s+2)}{(s+2)^2+4}\right\}=e^{-2t}\cos(2t)\quad \mathcal{L}^{-1}\left\{\frac{3}{(s+2)^2+4}\right\}=\frac{3}{2}e^{-2t}\sin(2t).$$
 
 ---
 ### Example (Solving IVP)

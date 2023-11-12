@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>1er Teorema de Traslación</title>
+    <title>1st Traslation Theorem</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-11-11" />
+    <meta name="date" content="2023-11-12" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa661544dabb4e9f88963b48dd5b0c53","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x241ecc674e6465f808b3281f4c81e01","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,16 +22,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# 1er Teorema de Traslación
+# 1st Traslation Theorem
 ]
 .subtitle[
-## Sesión 11
+## Session 11
 ]
 .author[
 ### Alejandro Ucan
 ]
 .date[
-### 2022-11-11
+### 2023-11-12
 ]
 
 ---
@@ -77,62 +77,86 @@ top:2em;right:2em;
 })()</script>
 </div>
 
-# Objetivos de la Sesión
+# Goals
 
-* Introduciremos el 1er teorema de Traslación. &lt;br/&gt;&lt;br/&gt;
-* Aplicaremos el 1er teorema de traslación en el calculo de transformadas. &lt;br/&gt;&lt;br/&gt;
-* Aplicaremos este teorema a la solución de EDOs.
+* State 1st Traslation Theorem. &lt;br/&gt;&lt;br/&gt;
+* Provide some examples on how to apply the theorem. &lt;br/&gt;&lt;br/&gt;
+* Apply the theorem to solve ODEs.
+
 ---
-# Motivación:
+# Motivation:
 &lt;br/&gt;&lt;br/&gt;
 
-&gt; Calcule la transformada de Laplace de la función `\(f(t)=e^{5t}t^3.\)`
+&gt; What is the Laplace transform of the function `\(f(t)=e^{5t}t.\)`
 
-
----
-# 1er Teorema de Traslación
-
-&gt; __Teorema:__ Sea `\(f(t)\)` una función tal que `\(\mathcal{L}\{f(t)\}=F(s)\)` exista. Entonces se cumple que `$$\mathcal{L}\{e^{at}f(t)\}=F(s-a).$$`
-
+--
 &lt;br/&gt;&lt;br/&gt;
-&gt; _Implicaciones del Teorema:_ ahora cada que veamos una función conocida "trasladada" por un factor exponencial, esto se traduce en la transformada como una traslación en la `\(s.\)`
+Following the definition of the Laplace transform, we have that: `$$\mathcal{L}\{e^{5t}t\}=\int_0^\infty e^{-st}e^{5t}t\,dt=\int_0^\infty te^{-(s-5)t}\,dt$$` `$$\lim_{a\to\infty} -\frac{te^{-(s-5)t}}{s-5}-\frac{e^{-(s-5)t}}{(s-5)^2}\bigg|_0^a=\frac{1}{(s-5)^2}.$$`
 
 ---
-## Aplicando el teorema:
+# 1st Traslation Theorem
 
-### Ejemplo (Calculo directo):
-&gt; Calcule las transformadas de Laplace de `\(f(t)=e^{5t}t^3,\)` `\(f(t)=e^{-2t}\cos(4t)\)` y `\(f(t)=e^{-2t}\)` si `\(t&gt;1\)` y `\(f(t)=0\)` de lo contrario.
-
----
-### Ejemplo (Calculo de Inversas):
-
-&gt; Calcule la Transformada inversa como se te indica: 
-`$$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}$$`
+&gt; __Theorem:__ Let `\(f(t)\)` be a function such that `\(\mathcal{L}\{f(t)\}=F(s)\)` exists. Then `$$\mathcal{L}\{e^{at}f(t)\}=F(s-a).$$`
+&lt;br/&gt;&lt;br/&gt;
+&gt; __Some Implications:__ From now, every time we see a known function "shifted" by an exponential factor, this translates as a shift in `\(s\)` in the transform.
 
 ---
-### Ejemplo (Calculo de Inversas):
+## Applying the Theorem:
 
-&gt; Calcule la Transformada inversa como se te indica:
-`$$\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}$$`
+### Example (Direct Calculation):
+
+&gt; Compute the Laplace Transform of `\(f(t)=e^{5t}t^3,\)` `\(g(t)=e^{-2t}\cos(4t)\)` y `\(h(t)=e^{-2t}\)` if `\(t&gt;1\)` and `\(h(t)=0\)` otherwise.
+
+--
+&lt;br/&gt;&lt;br/&gt;
+##### Solution:
+
+1. The shifted function of `\(f\)` is `\(t^3\)` and its transform is `\(\frac{3!}{s^4}.\)` Therefore the transform of `\(f\)` is `\(\frac{3!}{(s-5)^4}.\)` &lt;br/&gt;
+2. The shifted function of `\(g\)` is `\(\cos(4t)\)` and its transform is `\(\frac{s}{s^2+4^2}.\)` Therefore the transform of `\(g\)` is `\(\frac{s+2}{(s+2)^2+4^2}.\)` &lt;br/&gt;
+3. The shifted function of `\(h\)` is the unit step function and its transform is `\(\frac{e^s}{s}.\)` Therefore the transform of `\(h\)` is `\(e^{s+2}\frac{1}{s+2}.\)` &lt;br/&gt;
 
 ---
-### Ejemplo (Solución de EDOs)
+### Example (Inverse Calculation):
 
-&gt; Encuentre la solución de la EDO `$$y''-6y'+9y=t^2e^{3t},\quad y(0)=2,\quad y'(0)=17.$$`
+&gt; Find the inverse Laplace transform of: 
+`\(\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}\)`
+--
+&lt;br/&gt;
+##### Solution:
+Let's find out the partial fractions: `\(\frac{2s+5}{(s-3)^2}=\frac{A}{(s-3)}+\frac{B}{(s-3)^2}=\frac{2}{s-3}+\frac{-1}{(s-3)^2}.\)`
+
+Now we notice that those are shifted functions, therefore we look for the corresponding transform and we multiply it by an exponential factor: `$$\mathcal{L}^{-1}\left\{\frac{2s+5}{(s-3)^2}\right\}=\mathcal{L}^{-1}\left\{\frac{2}{s-3}\right\}+\mathcal{L}^{-1}\left\{\frac{-1}{(s-3)^2}\right\}=2e^{3t}-te^{3t}.$$`
 
 ---
-### Ejemplo (Solución de EDOs)
+### Example (Inverse Calculation):
 
-&gt; Encuentre la solución de la EDO `$$y''+4y'+6y=1+e^{-t},\quad y(0)=0,\quad y'(0)=0.$$`
+&gt; Find the inverse Laplace transform of:
+`\(\mathcal{L}^{-1}\left\{\frac{s+5}{s^2+4s+6}\right\}\)`
+--
+&lt;br/&gt;
+##### Solution:
+First we check if the denominator has real roots: `\(s^2+4s+6=0\implies s=\frac{-4\pm\sqrt{16-4(1)(6)}}{2}=-2\pm i.\)` Therefore the roots are complex and we need to complete the square: `$$s^2+4s+6=(s+2)^2+4.$$` Therefore the fraction is `$$\frac{s+5}{(s+2)^2+4}=\frac{(s+2)}{(s+2)^2+4}+\frac{3}{(s+2)^2+4}$$` We use the formulaes to find the inverse: `$$\mathcal{L}^{-1}\left\{\frac{(s+2)}{(s+2)^2+4}\right\}=e^{-2t}\cos(2t)\quad \mathcal{L}^{-1}\left\{\frac{3}{(s+2)^2+4}\right\}=\frac{3}{2}e^{-2t}\sin(2t).$$`
 
 ---
-# Actividad 
+### Example (Solving IVP)
 
-&gt; Utiliza el 1er teorema de traslación para encontrar la solución a las EDOs:
-* `\(y'+4y=e^{-4t},\, y(0)=2.\)`
-* `\(y'-y=1+te^{t},\, y(0)=0.\)`
-* `\(y''+2y'+y=0,\, y(0)=1,\, y'(0)=1.\)`
-* `\(y''-4y'+4y=t^3e^{2t},\, y(0)=0,\, y'(0)=0.\)`
+&gt; Find the solution of the IVP: `\(y''-6y'+9y=t^2e^{3t},\quad y(0)=2,\quad y'(0)=17.\)`
+
+--
+&lt;br/&gt;&lt;br/&gt;
+First we apply Laplace transform in both sides of the ODE. `$$s^2\mathcal{L}\{y\}-sy(0)-y'(0)-6s\mathcal{L}\{y\}+6y(0)+9\mathcal{L}\{y\}=\mathcal{L}\{t^2e^{3t}\}$$` `$$\implies (s^2-6s+9)\mathcal{L}\{y\}=2s+5+\frac{2}{(s-3)^3}$$` 
+We simplify and check if the quadratic polynomial is factorizable:
+`$$\mathcal{L}\{y\}=\frac{2s+17}{(s-3)^3}+\frac{2}{(s-3)^3(s-3)^2}$$` We find the inverse Laplace transform.
+
+---
+### Example (Solving IVP)
+
+&gt; Find the solution of the IVP: `$$y''+4y'+6y=e^{-t},\quad y(0)=0,\quad y'(0)=0.$$`
+
+--
+&lt;br/&gt;&lt;br/&gt;
+First we apply Laplace transform in both sides fo the ODE `$$s^2\mathcal{L}\{y\}-sy(0)-y'(0)+4s\mathcal{L}\{y\}-4y(0)+6\mathcal{L}\{y\}=\mathcal{L}\{e^{-t}\}$$` `$$\implies (s^2+4s+6)\mathcal{L}\{y\}=\frac{1}{s+1}$$` We use partial fractions: `$$\mathcal{L}\{y\}=\frac{1}{(s+1)(s^2+4s+6)}=\frac{1/3}{s-1}+\frac{s-1/3}{s^2+4s+6}$$` We construct the function using the inverse Laplace transform.
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

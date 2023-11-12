@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Functions via Only Derivatives</title>
+    <title>Integration Techniques and Applications</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alejandro Ucan" />
-    <meta name="date" content="2022-10-15" />
+    <meta name="date" content="2023-11-12" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xce0f7886178430ea3411986d14766b7","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xd352be2cfa640c4ba53577ba792ca7c","expires":1}</script>
     <script src="index_files/himalaya/himalaya.js"></script>
     <script src="index_files/js-cookie/js.cookie.js"></script>
     <link href="index_files/editable/editable.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Functions via Only Derivatives
+# Integration Techniques and Applications
 ]
 .subtitle[
 ## Session 03
@@ -31,7 +31,7 @@ class: center, middle, inverse, title-slide
 ### Alejandro Ucan
 ]
 .date[
-### 2022-10-15
+### 2023-11-12
 ]
 
 ---
@@ -45,70 +45,71 @@ class: center, middle, inverse, title-slide
 
 # Goals:
 
- * State a differential equation and its solution. &lt;br/&gt;&lt;br/&gt;
- * Approximate solutions for some applicated differential equations. &lt;br/&gt;&lt;br/&gt;
- 
+* Substitution. &lt;br/&gt;&lt;br/&gt;
+* By parts. &lt;br/&gt;&lt;br/&gt;
+* Center of Mass. &lt;br/&gt;&lt;br/&gt;
+
 ---
-# Knowing the function only by its derivative.
+# Substitution
 
-&gt; Sometimes, in a problem, we only have information about the derivative (instant velocity or acceleration) but nothing related to the function. We would like to have some information about the function associated to the derivative (the displacement).
+&gt; __Method:__ Substitution is a method of integration in which we use a change of variable to transform the integrand into a form that is easier to integrate (and use direct integration). &lt;br/&gt;&lt;br/&gt;
 
+`$$\int_{a}^{b} f(g(x))g'(x)dx = \int_{g(a)}^{g(b)} f(u)du$$`
+
+--
+#### Example
+
+1. `\(\int_{0}^{1} \frac{2x+2}{(x^2 + 2x + 1)} dx\)` &lt;br/&gt;&lt;br/&gt;
+2. `\(\int_{-1}^{1} xe^{3x^2} dx\)` &lt;br/&gt;&lt;br/&gt;
+3. `\(\int_{0}^{\pi/4} \tan(x)dx\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+# By Parts
+
+&gt; __Method:__ By parts is a method of integration in which we use the product rule of differentiation to transform the integrand into a form that is easier to integrate (and use direct integration). &lt;br/&gt;&lt;br/&gt;
+
+`$$\int_{a}^{b} f(x)g'(x)dx = f(x)g(x) \Big|_{a}^{b} - \int_{a}^{b} f'(x)g(x)dx$$`
+
+__Remarks:__ The choice of `\(f\)` and `\(g'\)` in the integral depend in the following criteria: the choice of `\(f\)` must be the function that simplify when we derive it, and the choice of `\(g'\)` should be the one that is easier to integrate. &lt;br/&gt;&lt;br/&gt;
+
+---
+#### Example
+
+1. `\(\int_{0}^{1} x\ln(x)dx\)` &lt;br/&gt;&lt;br/&gt;
+2. `\(\int_{0}^{1} xe^x dx\)` &lt;br/&gt;&lt;br/&gt;
+3. `\(\int_{0}^{1} x\cos(x) dx\)` &lt;br/&gt;&lt;br/&gt;
+
+---
+# Center of Mass
+
+&gt; __Definition:__ Given a wire with endpoint `\((a,0)\)` and `\((b,0)\)`, that has density `\(\rho(x)\)`, the center of mass of the wire is given by the following formula: &lt;br/&gt;&lt;br/&gt; `$$\overline{x}=\displaystyle{\frac{\int_{a}^{b} \rho(x)x dx}{\int_a^b \rho(x)dx}}$$` and the point where is the center of mass is given by `\((\overline{x},0).\)`
+
+---
+#### Example
+
+&gt; Consider a wire from `\((0,0)\)` to `\((10,0)\)` with density function given by `\(x.\)` Find the center of mass.
+
+--
 &lt;br/&gt;&lt;br/&gt;
-&gt; __Example:__ We have that the velocity of an object has the expression: `$$v(t)=2t.$$` If we denote the displacement function by `\(d(t)\)` then the previous equation is equivalent to `$$d'(t)=2t$$`
+#### Solution:
+
+1. We compute the corresponding integrals: `$$\int_{0}^{10} x dx = 50$$` and `$$\int_{0}^{10} x^2 dx = \frac{1000}{3}$$` &lt;br/&gt;&lt;br/&gt;
+2. We compute the center of mass: `$$\overline{x} = \frac{\frac{1000}{3}}{50} = \frac{20}{3}$$` &lt;br/&gt;&lt;br/&gt;
+3. The center of mass is given by `\((\frac{20}{3},0).\)`
 
 ---
-# A differential equation
+#### Example
 
-Last equation is known as a __diferential equation__ (an equation involving functions and derivative as variables). 
+&gt; Consider a wire from `\((0,0)\)` to `\((\pi,0)\)` with density function given by `\(\sin(x).\)` Find the center of mass.
 
-&gt; The equation `$$d'(t)=2t$$` can be solved easily using the _Fundamental Theorem of Calculus_ and this process is called __antidifferentiation__. &lt;br/&gt;&lt;br/&gt;
-We can think that _antidifferentiation_ is the __inverse process__ to differentiation.
-
----
-## How it works the antidifferentiation?
-
-&gt; Recall that the equation is `$$d'(t)=2t,$$` then we look trhough our differentiations rules. The one that apply to this case is: `$$\frac{d t^n}{dt}=nt^{n-1}$$` in this case `\(n=2\)` therefore `\(d(t)=t^2+c.\)`
-
----
-## Example:
-
-&gt; Can you guess the antiderivative of the following derivatives? &lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=10t^9.\)`&lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=3t^2-2t\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=4t\)` &lt;br/&gt;&lt;br/&gt;
-
----
-# There is an easy way?
-
-&gt; __Rules of antidifferentiation:__ If we have the equation `\(F'(t)=f(t)\)` then we will denote by $\int f(t)dt $ the antiderivate that satisfy the equation. Therefore: &lt;br/&gt;&lt;br/&gt;
-  * `\(\int (f+g)dt=\int fdt +\int gdt\)`. &lt;br/&gt;&lt;br/&gt;
-  * `\(\int kfdt = k\int fdt\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(\int t^n dt = \frac{t^{n+1}}{n+1}\)` for `\(n\neq 1.\)`
-
----
-# Exercice:
-
-&gt; Find the antiderivatives of the functions:
-  * `\(F'(t)=2t^3-4t^5+4t^6.4\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(F'(t)=-4t+3t^5-10t^7.\)`
-
----
-# How can restrict our function solution?
-
-&gt; The antiderivate gives a __family__ of functions that have the proposed derivate, but if what if we want to restrict this family to only one solution. &lt;br/&gt;&lt;br/&gt;
-To do this, we need extra information, this is information is usually called: __initial condition.__
-
+--
 &lt;br/&gt;&lt;br/&gt;
-__Example:__ We have that the velocity of an object has the expression: `$$v(t)=2t$$` and at time cero the displacement satisfy `\(d(0)=4.\)` Then we substitute at `\(d(t)=t^2+c\)` the value cero and we obtain an equation `$$d(0)=(0)^2+c=c=4$$` therefore the function is `$$d(t)=t^2+4.$$`
----
-## Exercice:
+#### Solution:
 
-&gt; Solve the following differential equations and find the unique function that satisfy the initial contidion. &lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=4t-3\)` and `\(F(0)=0.\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=3t^2-2t-10t^4\)` and `\(F(0)=-3.\)` &lt;br/&gt;&lt;br/&gt;
-  * `\(f'(t)=10t^9-3t^5\)` and `\(F(0)=4.\)`&lt;br/&gt;&lt;br/&gt;
+1. We compute the corresponding integrals: `$$\int_{0}^{\pi} \sin(x) dx = 2$$` and `$$\int_{0}^{\pi} x\sin(x) dx = \pi$$` &lt;br/&gt;&lt;br/&gt;
+2. We compute the center of mass: `$$\overline{x} = \frac{\pi}{2}$$` &lt;br/&gt;&lt;br/&gt;
+3. The center of mass is given by `\((\frac{\pi}{2},0).\)`
 
-  
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
