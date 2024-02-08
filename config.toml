@@ -125,27 +125,41 @@ enableEmoji = true
     title = "Teaching Information"
     url = "/teaching/"
     weight = 4
-  [[menu.header]]
-    name = "F1009"
-    title = "Métodos Matemáticos para la Física"
-    url = "/f1009/"
-    weight = 5
-  [[menu.header]]
-    name = "F1007b"
-    title = "Modelling in Engineering with Conservative Laws"
-    url = "/f1007/"
-    weight = 6
-  [[menu.header]]
-    name = "MA1035"
-    title = "Engeneering modeling via Dynamical Systems"
-    url = "/ma1035Eng/"
-    weight = 7
+  #[[menu.header]]
+  #  name = "F1009"
+  #  title = "Métodos Matemáticos para la Física"
+  #  url = "/f1009/"
+  #  weight = 5
+  #[[menu.header]]
+  #  name = "F1007b"
+  #  title = "Modelling in Engineering with Conservative Laws"
+  #  url = "/f1007/"
+  #  weight = 6
+  #[[menu.header]]
+  #  name = "MA1035"
+  #  title = "Engeneering modeling via Dynamical Systems"
+  #  url = "/ma1035Eng/"
+  #  weight = 7
   #[[menu.header]]
   #  name = "MA103"
   #  title = "Modelación en Ingenieria mediante Sistemas Dinámicos"
   #  url = "/ma1035/"
   #  weight = 8
-
+  [[menu.header]]
+    name = "MA1029_Eng"-
+    title = "Intermediate Mathematical Modeling"
+    url = "/ma1029_eng/"
+    weight = 5
+  [[menu.header]]
+    name = "MA1029"
+    title = "Modelación Matemática Intermedia"
+    url = "/ma1029/"
+    weight = 6
+  #[[menu.header]]
+  #  name = "F1017B"
+  #  title = "Sistemas Electromagnéticos"
+  #  url = "/f1017/"
+  #  weight = 7
     
     
   # Configure footer  
