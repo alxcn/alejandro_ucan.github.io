@@ -15,8 +15,8 @@ sidebar:
   description: |
     Puedes encontrar los recursos de los siguientes periodos:
     
-    - 2023 FJ Módulo 1
-    - 2023 FJ Módulo 2
+    - [2023 FJ Módulo 1](alejandro-ucan.netlify.app/ma1029/M1)
+    - [2023 FJ Módulo 2](alejandro-ucan.netlify.app/ma1029/M2)
     
   #  Check out the _index.md file in the /blog folder 
   #  to edit this content. 
