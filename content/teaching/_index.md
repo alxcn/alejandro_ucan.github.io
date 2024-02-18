@@ -27,8 +27,8 @@ sidebar_left: no
 |     Horario | Lunes | Martes | Miercoles | Jueves | Viernes |
 |-------------|-------|--------|-----------|--------|---------|
 |07:00 - 09:00|       |        |           |        |         |
-|09:00 - 11:00|Investigación|        |           |Investigación|         |
-|11:00 - 13:00|MA2007B-602|MA2007B-602|           |MA2007B-602|MA2007B-602|
+|09:00 - 11:00|Investigación|        |  Asesorías         |Investigación|         |
+|11:00 - 13:00|MA2007B-602|MA2007B-602|   Asesorías        |MA2007B-602|MA2007B-602|
 |13:00 - 15:00|       |        |           |        |         |
 |15:00 - 17:00|       |        |           |        |         |
 |17:00 - 19:00| MA1029-425| MA1029-414|           |MA1029-425|MA1029-414|
