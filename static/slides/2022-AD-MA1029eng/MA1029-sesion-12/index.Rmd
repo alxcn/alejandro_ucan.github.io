@@ -1,6 +1,6 @@
 ---
-title: "Integrales Triples"
-subtitle: "Sesión 12"
+title: "Triple Integrals"
+subtitle: "Session 12"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -41,81 +41,82 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
-# Objetivos:
+# Goals for the session:
 
- * Conocer la diferencial de volumen. <br/><br/>
- * Definir la integral en $\mathbb{R}^3$. <br/><br/>
- * Calcular integrales triples en regiones elementales.
+ * Know the volume differential. <br/><br/>
+ * Define the integral in $\mathbb{R}^3$. <br/><br/>
+ * Calculate triple integrals in elementary regions.
 
-
----
-# Integral triple:
-
-> Sea $f(x,y,z)$ una función continua en una región caja dada por $B=[a,b]\times [c,d]\times [e,f].$ Dada una partición de la región $(x_i,y_j,z_k)$ con 
-$$x_{i+1}-x_{i}=\Delta x,\quad y_{j+1}-y_j=\Delta y \mbox{ y } z_{k+1}-z_k =\Delta z.$$ Entonces la siguiente suma aproxima el volumen debajo de la gráfica de $f,$ $$\sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^s f(x_i,y_j,z_k)\Delta x \Delta y \Delta k.$$ 
-<br/><br/>
-Refinando la partición, en el límite obtenemos la integral de la función en la región $R,$ denotada por $$\int_B f \, dV.$$
 
 ---
-# ¿Cómo calculo integrales triples?
+# Triple Integral:
 
-El teorema de Fubini es valido para integrales triples, así que para calcularlo basta realizar una integración iterada.
+> The notion of triple integral is a generalization of the concept of integral to three-dimensional space. Using this, we can calculate the "volume" of a solid of four dimensions. The naive idea comes from the volume of a box, in fourth dimension, the box will have 4 different sides, and the volume will be the product of the four sides. Therefore in our case, $$f(x,y,z)dx dy dz$$ is the volume of a box-base with sides $dx, dy$ and $dz$.
+
+---
+# How to compute triple integrals?
+
+Fubini's theorem is valid for triple integrals, so to calculate it, we just need to perform an iterated integration.
 
 $${\int\!\int\!\int}_B fdV=\int_a^b \int_c^d \int_e^f f(x,y,z)dzdydx.$$
 
-Y el orden no afecta.
+Recall that in the case of numerical limits, the change does not affect the result.
 
 ---
-# ¿Sólo puedo integrar en cajas?
+# Triple integral in elementary regions:
 
-> __Definición:__ Una región __elemental__ en $\mathbb{R}^3$ es una región en la cual una de las variables está acotada entre dos funciones de las otras dos variables.
+> **Definition:** an *elementary* region in $\mathbb{R}^3$ is a region in which one of the variables is bounded between two functions of the other two variables.
 
 <br/><br/>
 
-__Ejemplo:__ La __bola__ de radio uno en $\mathbb{R}^3$ es una región elemental descrita por la siguientes inecuaciones: $$-1\leq x\leq 1,$$
+**Example:** The *ball* of radius one in $\mathbb{R}^3$ is an elementary region described by the following inequalities: $$-1\leq x\leq 1,$$
 $$-\sqrt{1-x^2} \leq y\leq \sqrt{1-x^2},$$ 
 $$ -\sqrt{1-x^2-y^2} \leq z \leq \sqrt{1-x^2-y^2}.$$
 
 ---
-# Ejemplos:
+# Other Examples:
 
-Algunos ejemplos de regiones elementales:
+Other examples of elementary regions are:
 
-* Consideremos la región dada por un cilindro: $$-1\leq x \leq 1$$ $$-\sqrt{1-x^2}\leq y \leq \sqrt{1-x^2}$$ $$ -2\leq z \leq 2.$$
+* Consider the following cylinder: $$-1\leq x \leq 1$$ $$-\sqrt{1-x^2}\leq y \leq \sqrt{1-x^2}$$ $$ -2\leq z \leq 2.$$
 
-* Consideremos un prisma triangular: $$-1 \leq x \leq 2$$ $$0\leq y \leq 2$$ $$0\leq z\leq 3-2x-2y$$
+* Consider the following prism: 
+$$0 \leq x \leq 2$$ $$0\leq y \leq 2$$ $$0\leq z\leq 5-2x-2y$$
 
 ---
-# Ejemplo 1:
+# Example 1:
 
-> Encuentre la integral de $f(x,y,z)=z$ en la región acotada por los planos $x=0,\,y=0,\, z=0$ y $x+y+z=1$
+> Find the volume of the solid enclosed by the function $f(x,y,z)=z$ over the region bounded by $x=0,\,y=0,\, z=0$ y $x+y+z=1$
+--
 
 $$R: 0\leq x\leq 1,\, 0\leq y \leq 1-x,\, 0\leq z\leq 1-x-y.$$
 
 $$\int\int\int_R z dV= \int_0^1\int_0^{1-x}\int_0^{1-x-y} z dzdydx$$
 ---
-# Ejemplo:
+# Example 2:
 
-> Encuentre la integral de la función $f(x,y,z)=\sqrt{x^2+z^2}$ en la región acotada por el paraboloide $y=x^2+z^2$ y $y=4.$
+> Find the volume of the solid enclosed by the function $f(x,y,z)=z$ over the region bounde by the paraboloid $y=x^2+z^2$ and $y=4.$
+--
 
 $$E: -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq z\leq \sqrt{4-x^2},\, x^2+z^2\leq y\leq 4$$
 
-$$\int\int\int_E \sqrt{x^2+z^2}dV= \int_{-2}^2\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\int_{x^2+z^2}^4  \sqrt{x^2+z^2} dydzdx$$
+$$\int\int\int_E \sqrt{x^2+z^2}dV= \int_{-2}^2\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\int_{x^2+z^2}^4  z dydzdx$$
 ---
-#### Ejemplo 1:
+What if we try with the following limits:
 
-Calcula las siguientes integrales
+$$0\leq y\leq4,\, -\sqrt{y}\leq x \leq \sqrt{y},\, -\sqrt{y-x^2}\leq z \leq \sqrt{y-x^2}$$
+---
+#### Exercise 1:
+
+Compute the following triple integrals:
   * $\int_0^1\int_0^z\int_0^{x+z}6xzdydxdz$
   * $\int_0^1\int_0^z\int_0^y ze^{-y^2}dxdydz$
   * $\int_0^{\sqrt{\pi}}\int_0^x\int_0^{xz}x^2\sin(y)dydzdx$
 
 
 ---
-#### Ejemplo 2:
+#### Exercise 2:
 
-Dibuja la región $E$ y calcula la integral de $f(x,y,z)=6.$ La región $E$ es la región acotada bajo el plano $z=1+x+y$ y $z=0$ acotadas por las curvas $y=\sqrt{x},\, y=0$ y $x=1.$
+Draw the region $E$ and compute the integral of $f(x,y,z)=6.$ The region is given under the plane $z=1+x+y$ and above $z=0$ bounded by the curves $y=\sqrt{x},\, y=0$ y $x=1.$
 
 
----
-#### Ejemplo 3:
-Dibuja la región $E$ y calcula la integral de $f(x,y,z)=xy.$ La región $E$ es la región acotada por los cilindros parabólicos $z=1-y^2$ y $x=y^2$ y los planos $z=0$ y $z=x+y.$
