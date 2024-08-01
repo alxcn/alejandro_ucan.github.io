@@ -1,6 +1,6 @@
 ---
-title: "Coordenadas Cilíndricas"
-subtitle: "Sesión 13"
+title: "Cylindrical Coordinates"
+subtitle: "Session 13"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -41,79 +41,77 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
-# Objetivos:
+# Goals for the session:
 
- * Definir el sistema de coordenadas cilíndrico. <br/><br/>
- * Determinar el diferencial de volumen en coordenadas cilíndricas. <br/><br/>
- * Calcular integrales triples en coordenadas cilíndricas.
+ * Define the Cylindrical coordinate system. <br/><br/>
+ * Introduce the volume differential in cylindrical coordinates. <br/><br/>
+ * Compute triple integrals in cylindrical coordinates.
 
 
 ---
-# Coordenadas Cilíndricas $(\theta,r,z).$
+# Cylindrical Coordinates $(r,\theta,z).$
 
 <iframe src="https://www.geogebra.org/calculator/za424zgv?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
-# ¿Cómo traduzco entre coordenadas?
+# How to translate between coordinates?
 
-Existen expresiones que nos permiten hacer la conversión entre distintos tipos de coordenadas. Por ejemplo:
+There are expressions that allow us to convert between different types of coordinates. For example:
 
-> Si tengo un punto $(x,y,z)$ (coordenadas rectangulares) y lo quiero en coordenadas _cilíndricas_, entonces se cumple: <br/>
+> Given a point $(x,y,z)$ (rectangular coordinates) and I want it in _cylindrical coordinates_, then it satisfies: <br/>
 - $r^2= x^2+y^2,$ <br/>
-- $\tan(\theta)=\frac{y}{x}$ y <br/>
+- $\tan(\theta)=\frac{y}{x}$ <br/>
 - $z=z.$
 
 <br/>
 
-> Si tengo un punto $(\theta,r,z)$ y lo quiero en coordenadas _rectangulares_, entonces se cumple: <br/>
+> Given a point $(r,\theta,z)$ and I want it in _rectangular coordinates_, then it satisfies: <br/>
 - $x=r\cdot \cos(\theta)$ <br/>
-- $y=r\cdot \sin(\theta)$ y 
+- $y=r\cdot \sin(\theta)$  
 - $z=z.$
 
 ---
-## Veamos algunas regiones cilíndricas
+# How my Volume differential changes?
 
-> Describa la región acotada por el plano $z=0$ y el paraboloide $z=4-x^2-y^2$ en coordenadas cilíndricas.
-
----
-
-## Veamos algunas regiones cilíndricas.
-
-> Describa la región dentro de la esfera $x^2+y^2+z^2=4$ y el cilindro $x^2+y^2=2.$
+> The volume differential changes to $$dV=r dr d\theta dz.$$
 
 ---
-# ¿Cómo cambia mi diferencial de volumen?
+## Lets express 3D regions in cylindrical coordinates.
 
-> El diferencial de volumen cambia a $dV=r d\theta d r dz.$
-```{r, echo=FALSE, out.width="40%", fig.cap="Diferencial de área"}
-knitr::include_graphics("http://citadel.sjfc.edu/faculty/kgreen/vector/Block3/jacob/volume_cyl.gif")
-```
-
+> Describe the region bounded by the plane $z=0$ and the paraboloid $z=4-x^2-y^2$ in cylindrical coordinates, and compute its volumen.
 ---
-# Ejemplo:
 
-> Calcula la integral de $f(x,y,z)=x^2+y^2$ en la región delimitada por el paraboloide $x^2+y^2=2z$ y $z=2.$ <br/><br/>
+## Lets express 3D regions in cylindrical coordinates.
 
-Notemos que $x^2+y^2=r^2$ y la ecuación del hiperboloide se reduce a $r^2=2z.$ Por lo que la integral se traduce en $$\int_0^{2\pi} \int_0^2\int_{r^2/2}^2 r^2 r dz dr d\theta= \int_0^{2\pi} \int_0^2\int_{r^2/2}^2 r^3 dz dr d\theta$$
+> Describe the region enclosed by the sphere $x^2+y^2+z^2=4$ and the cylinder $x^2+y^2=2.$
+---
+# Example
+
+> Compute the forth-dimensional volume of the region whose height is given by the function $f(x,y,z)=x^2+y^2$ and base the 3-dimensional region bounded by $x^2+y^2=2z$ and $z=2.$ <br/><br/>
+
+--
+Recall that for the paraboloid, the level curves are given by circles $x^2+y^2=k^2$ which is a circle. The shadow of the biggest circle that appears is the one at level $k^2=2.$ Therefore, my radious takes values from $[0,\sqrt{2}]$ and $\theta$ from $[0,2\pi].$
+Changing my integral to cylindrical coordinates, I have: $$\int_0^{2\pi}\int_0^{\sqrt{2}}\int_{r^2}^2 r^2 r dz dr d\theta$$
 $$=\int_0^{2\pi} \int_0^2 r^3\left(2-\frac{r^2}{2}\right) dr d\theta = \int_0^{2\pi}\frac{r^4}{2}-\frac{r^6}{12}\big{|}_{0}^2 d\theta$$
 $$=\frac{8}{3}\int_0^{2\pi}d\theta = \frac{16\pi}{3}.$$
 
 ---
-# Ejercicio:
+# Exercise:
 
-> Calcula el volumen de la región acotada por los paraboloides $x^2+y^2=4z$ y $x^2+y^2=-2z+6$
+> Compute the volume of the region enclosed by the paraboloids $x^2+y^2=4z$ and $x^2+y^2=-2z+6$
 
 ---
-# Solución:
+# Solution:
 
-> La región descrita es: $0\leq r\leq 2,$ $0\leq \theta \leq 2\pi$ y $\frac{r^2}{4}\leq r \leq \frac{6-r^2}{2}.$ <br/><br/> Así mi integral está dada por: $$\int_0^{2\pi}\int_0^2\int_{\frac{r^2}{4}}^{\frac{6-r^2}{2}}dzdrd\theta=\int_0^{2\pi}\int_0^2 \frac{12-r^2}{4} dr d\theta$$
+> The described region is: $0\leq r\leq 2,$ $0\leq \theta \leq 2\pi$ and $\frac{r^2}{4}\leq r \leq \frac{6-r^2}{2}.$ <br/><br/> 
+Therefore my integral is given by $$\int_0^{2\pi}\int_0^2\int_{\frac{r^2}{4}}^{\frac{6-r^2}{2}}dzdrd\theta=\int_0^{2\pi}\int_0^2 \frac{12-r^2}{4} dr d\theta$$
 $$\int_0^{2\pi}3r-\frac{r^3}{12}\big{|}_0^2 d\theta =2\pi \left(6-\frac{8}{12}\right)=\frac{32\pi}{3}.$$
 
 ---
-# Actividad:
+# Activity:
 
-> Calcule las siguientes integrales en coordenadas esféricas: <br/><br/>
-  * $f(x,y,z)=x^2+y^2$ en la región acotado por el cono $z^2=x^2+y^2$ y $z=2.$ <br/><br/>
-  * $f(x,y,z)=\sqrt{x^2+y^2}$ en la región del cilindro $x^2+y^2=16$ acotada por los plano $z=-5$ y $z=4.$ <br/><br/>
-  * $f(x,y,z)=e^z$ en la región acotada por el paraboloide $z=1+x^2+y^2,$ el cilindro $x^2+y^2=5$ y el plano $z=0.$
+> Compute the following integrals in cylindrical coordinates: <br/><br/>
+ * $f(x,y,z)=x^2+y^2$ region bounded by the cone $z^2=x^2+y^2$ and $z=2.$ <br/><br/>
+  * $f(x,y,z)=\sqrt{x^2+y^2}$ in the region bounded by the cylinder $x^2+y^2=16$ between $z=-5$ y $z=4.$ <br/><br/>
+  * $f(x,y,z)=e^z$ in the region bounded $z=1+x^2+y^2,$ the cylinder $x^2+y^2=5$ and the plane $z=0.$
   

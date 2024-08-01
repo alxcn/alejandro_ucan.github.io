@@ -1,6 +1,6 @@
 ---
-title: "Coordenadas Esféricas"
-subtitle: "Sesión 14"
+title: "Spherical Coordinates"
+subtitle: "Session 14"
 author: 
   - "Alejandro Ucan"
 date: '`r Sys.Date()`'
@@ -41,68 +41,66 @@ style_duo_accent(
 xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_scribble()
 ```
-# Objetivos:
+# Goals of the day
 
- * Definir el sistema de coordenadas esféricas. <br/><br/>
- * Determinar el diferencial de volumen en coordenadas esféricas. <br/><br/>
- * Calcular integrales triples en coordenadas esféricas.
-
+ * Define spherical coordinates. <br/><br/>
+ * Determine the differential of volume in spherical coordinates. <br/><br/>
+ * Calculate triple integrals in spherical coordinates.
 
 ---
-# Coordenadas Esféricas $(\theta,r,z).$
+# Spherical Coordinates $(r,\theta,\phi).$
 
 <iframe src="https://www.geogebra.org/classic/qxudhmhs?embed" width="1200" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 
 ---
-# ¿Cómo traduzco entre coordenadas?
+# How to translate between coordinates?
 
-Existen expresiones que nos permiten hacer la conversión entre distintos tipos de coordenadas. Por ejemplo:
+The following expressions are used to change between different types of coordinates. For example:
 
-> Si tengo un punto $(x,y,z)$ (coordenadas rectangulares) y lo quiero en coordenadas _cilíndricas_, entonces se cumple: <br/>
+> Given a point in rectangular coordinates $(x,y,z)$ and I want it in _spherical coordinates_, then: <br/>
 - $r^2= x^2+y^2+z^2,$ <br/>
 - $\theta=\arccos\frac{y}{\sqrt{x^2+y^2}}$ y <br/>
 - $\phi=\arcsin\frac{z}{\sqrt{x^2+y^2+z^2}}.$
 
 <br/>
 
-> Si tengo un punto $(\theta,r,z)$ y lo quiero en coordenadas _rectangulares_, entonces se cumple: <br/>
+> Given a point in spherical coordinates $(r,\theta,\phi)$ and I want it in _rectangular coordinates_, then: <br/>
 - $x=r\cdot \cos(\theta)\sin(\phi)$ <br/>
-- $y=r\cdot \sin(\theta)\sin(\phi)$ y 
+- $y=r\cdot \sin(\theta)\sin(\phi)$
 - $z=r\cos(\phi).$
+---
+# The volume differential in spherical coordinates
+
+> The volume differential in spherical coordinates is given by  $$dV=r^2\sin(\phi) d\theta d\phi d r.$$
+
 
 ---
-## Veamos algunas regiones esféricas
+## Lets work with spherical regions
 
-> Describa la región en la figura en coordenadas esféricas.
+
+> Describe the following region using spherical coordinates and compute its volumen:
+Describa la región en la figura en coordenadas esféricas.
 
 ![Región](regionesf_1.png)
 
 ---
 ## Veamos algunas regiones esféricas
 
-> Describa la región acotada por el cono $z=\sqrt{x^2+y^2}$ y la esfera $x^2+y^2+z^2=z$ en coordenadas esféricas.
+> Describe the following region inside the sphere $x^2+y^2+z^2=9$ but outside the cone $z^2=x^2+y^2$ and compute its volume.
 
 ---
-# ¿Cómo cambia mi diferencial de volumen?
+# Example:
 
-> El diferencial de volumen cambia a $dV=r^2\sin(\phi) d\theta d\phi d r.$
-```{r, echo=FALSE, out.width="80%", fig.cap="Diferencial de área"}
-knitr::include_graphics("https://files.mtstatic.com/site_4425/5231/0?Expires=1681674231&Signature=WX2~g~I1n1AtsjbMQHHP84KprFsUbI0k3ug3VGxr4AUcRonG76sC8pG1F8EOj~aOjGbt9FXn5rflvBa3iedukxQwy-fuM-~9Fn71JVZ-GTUkrqY2iO0buhgaOyfEVWYW~Z-uIQlxWqwMvb7LZcn6YGLxltC5RgqTGXd-91fMSYU_&Key-Pair-Id=APKAJ5Y6AV4GI7A555NA")
-```
-
----
-# Ejemplo:
-
-> Calcule la integral de $f(x,y,z)=9-x^2-y^2$ en la región $R$ dada por el hemisferio $z\geq 0$ y $x^2+y^2+z^2\leq 9.$
+> Compute the volume of the region whose height is given by $f(x,y,z)=9-x^2-y^2$ and base is the 3D region $R$ bounded by $z\geq 0$ and $x^2+y^2+z^2\leq 9.$
 
 
 ---
-# Ejemplo:
+# Example:
 
-> Calcule la integral de la función $f(x,y,z)=z$ en la región acotada por las esféras $x^2+y^2+z^2=1$ y $x^2+y^2+z^2=4$ en el primer octante.
+> Compute the volume of the region whose height is given by  $f(x,y,z)=z$ and the 3D region $R$ bounded between  $x^2+y^2+z^2=1$ and $x^2+y^2+z^2=4$ in the first octant.
 
 ---
-# Ejemplo
+# Activity:
 
-> Calcule el valor de la integral de la función $f(x,y,z)=e^{\sqrt{x^2+y^2+z^2}}$ en el octavo de la esfera $x^2+y^2+z^2=9$ en el primer octante.
+> ompute the volume of the region whose height is given by $f(x,y,z)=e^{\sqrt{x^2+y^2+z^2}}$ in the region bounded between $z\geq 0,$ $x\geq 0,$ $y\geq 0$ and $x^2+y^2+z^2\leq 9.$
